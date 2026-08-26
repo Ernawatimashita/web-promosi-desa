@@ -4,13 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Profil Desa Pusaka</title>
+<title>Profil Desa Pusaka | Dusun Puting & Dusun Beliung</title>
+
+<meta name="description" content="Profil Desa Pusaka yang terdiri dari Dusun Puting dan Dusun Beliung.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
     --green:#123d27;
     --green2:#23734a;
@@ -18,7 +22,9 @@
     --gold:#e5bd61;
     --dark:#102119;
     --text:#64736a;
+    --white:#fff;
     --line:#e4ebe5;
+    --shadow:0 20px 60px rgba(15,55,35,.12);
 }
 
 *{
@@ -36,6 +42,7 @@ body{
     color:var(--dark);
     line-height:1.7;
     background:#fff;
+    overflow-x:hidden;
 }
 
 a{
@@ -54,7 +61,8 @@ img{
     margin:auto;
 }
 
-/* NAVBAR */
+
+/* ================= NAVBAR ================= */
 
 .navbar{
     position:fixed;
@@ -91,11 +99,13 @@ img{
     border-radius:13px;
     background:var(--green);
     color:#fff;
+    font-size:1.2rem;
 }
 
 .nav-links{
     display:flex;
     gap:5px;
+    align-items:center;
 }
 
 .nav-links a{
@@ -103,6 +113,7 @@ img{
     border-radius:11px;
     color:#47564d;
     font-weight:600;
+    transition:.25s;
 }
 
 .nav-links a:hover,
@@ -116,25 +127,57 @@ img{
     color:#fff!important;
 }
 
-/* HERO */
+.nav-contact:hover{
+    background:var(--green2)!important;
+    color:#fff!important;
+}
+
+
+/* ================= HERO ================= */
 
 .page-hero{
     min-height:500px;
     padding-top:72px;
+
     display:flex;
     align-items:center;
+
     color:#fff;
 
     background:
-        linear-gradient(90deg,rgba(7,35,20,.92),rgba(7,35,20,.45)),
+        linear-gradient(
+            90deg,
+            rgba(7,35,20,.92),
+            rgba(7,35,20,.45)
+        ),
         url("assets/img/desa.jpg") center/cover no-repeat;
+}
+
+.page-hero-content{
+    max-width:800px;
+}
+
+.page-label{
+    display:inline-block;
+    margin-bottom:10px;
+
+    color:#dceebf;
+
+    font-size:.78rem;
+    font-weight:900;
+
+    letter-spacing:.15em;
+    text-transform:uppercase;
 }
 
 .page-hero h1{
     font-family:"Playfair Display",Georgia,serif;
+
     font-size:clamp(3rem,7vw,5.5rem);
+
     line-height:1;
-    margin-bottom:18px;
+
+    margin-bottom:20px;
 }
 
 .page-hero h1 span{
@@ -143,11 +186,14 @@ img{
 
 .page-hero p{
     max-width:650px;
+
     color:#e6eee8;
+
     font-size:1.05rem;
 }
 
-/* SECTION */
+
+/* ================= SECTION ================= */
 
 section{
     padding:90px 0;
@@ -156,92 +202,223 @@ section{
 .grid{
     display:grid;
     grid-template-columns:1fr 1fr;
+
     gap:55px;
+
     align-items:center;
 }
 
 .photo{
     height:450px;
-    border-radius:28px;
+
     overflow:hidden;
-    box-shadow:0 20px 50px rgba(15,55,35,.15);
+
+    border-radius:28px;
+
+    box-shadow:
+        0 20px 50px rgba(15,55,35,.15);
 }
 
 .photo img{
     height:100%;
+
+    transition:.5s;
+}
+
+.photo:hover img{
+    transform:scale(1.05);
 }
 
 .label{
     color:var(--green2);
+
     font-size:.78rem;
+
     font-weight:900;
+
     letter-spacing:.15em;
+
     text-transform:uppercase;
 }
 
 h2{
     font-family:"Playfair Display",Georgia,serif;
+
     font-size:clamp(2.2rem,4vw,3.5rem);
+
     line-height:1.1;
+
     margin:8px 0 18px;
 }
 
 p{
     color:var(--text);
+
     margin-bottom:15px;
 }
 
-/* DUSUN */
+
+/* ================= DUSUN ================= */
 
 .soft{
     background:var(--cream);
 }
 
+.section-title{
+    max-width:750px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.section-title h2{
+    margin-top:8px;
+}
+
+.section-title p{
+    margin-top:10px;
+}
+
 .dusun-grid{
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:25px;
-    margin-top:40px;
+
+    margin-top:45px;
 }
 
 .dusun{
+    position:relative;
+
+    overflow:hidden;
+
     background:#fff;
-    padding:32px;
+
+    padding:35px;
+
     border:1px solid var(--line);
+
     border-radius:25px;
-    box-shadow:0 10px 30px rgba(20,70,40,.06);
+
+    box-shadow:
+        0 10px 30px rgba(20,70,40,.06);
+
     transition:.3s;
 }
 
 .dusun:hover{
     transform:translateY(-7px);
-    box-shadow:0 20px 40px rgba(20,70,40,.12);
+
+    box-shadow:
+        0 20px 40px rgba(20,70,40,.12);
+}
+
+.dusun::after{
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    right:-40px;
+    top:-40px;
+
+    border-radius:50%;
+
+    background:#e9f4eb;
+
+    opacity:.7;
 }
 
 .dusun-icon{
+    position:relative;
+
+    z-index:2;
+
     width:55px;
     height:55px;
+
     display:grid;
     place-items:center;
+
     background:#e4f1e5;
+
     border-radius:16px;
+
     font-size:1.5rem;
+
     margin-bottom:18px;
 }
 
 .dusun h3{
-    font-size:1.4rem;
-    margin-bottom:8px;
+    position:relative;
+
+    z-index:2;
+
+    font-family:"Playfair Display",Georgia,serif;
+
+    font-size:1.7rem;
+
+    margin-bottom:10px;
+
     color:var(--green);
 }
 
-/* VISI MISI */
+.dusun p{
+    position:relative;
+
+    z-index:2;
+}
+
+.dusun-info{
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-top:20px;
+}
+
+.dusun-info span{
+    padding:7px 11px;
+
+    border-radius:100px;
+
+    background:#edf6ee;
+
+    color:var(--green2);
+
+    font-size:.8rem;
+
+    font-weight:700;
+}
+
+
+/* ================= VISI MISI ================= */
 
 .visi{
     background:var(--green);
+
     color:#fff;
-    padding:45px;
+
+    padding:50px;
+
     border-radius:30px;
+
+    box-shadow:var(--shadow);
+}
+
+.visi .label{
+    color:#dceebf;
 }
 
 .visi h2{
@@ -254,438 +431,263 @@ p{
 
 .misi{
     display:grid;
+
     gap:12px;
+
     margin-top:20px;
 }
 
 .misi div{
-    padding:13px 16px;
+    padding:14px 17px;
+
     border-radius:12px;
+
     background:rgba(255,255,255,.08);
+
+    color:#eef7f0;
 }
 
-/* FOOTER */
+
+/* ================= POTENSI ================= */
+
+.potensi-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:22px;
+
+    margin-top:45px;
+}
+
+.potensi-card{
+    background:#fff;
+
+    border:1px solid var(--line);
+
+    border-radius:22px;
+
+    padding:28px;
+
+    transition:.3s;
+}
+
+.potensi-card:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(20,70,40,.10);
+}
+
+.potensi-icon{
+    width:50px;
+    height:50px;
+
+    display:grid;
+    place-items:center;
+
+    background:#e5f2e6;
+
+    border-radius:14px;
+
+    font-size:1.35rem;
+
+    margin-bottom:15px;
+}
+
+.potensi-card h3{
+    color:var(--green);
+
+    margin-bottom:8px;
+}
+
+.potensi-card p{
+    font-size:.93rem;
+}
+
+
+/* ================= GALERI ================= */
+
+.gallery{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+    margin-top:45px;
+}
+
+.gallery-photo{
+    height:330px;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    box-shadow:
+        0 15px 40px rgba(15,55,35,.12);
+}
+
+.gallery-photo img{
+    height:100%;
+
+    transition:.5s;
+}
+
+.gallery-photo:hover img{
+    transform:scale(1.06);
+}
+
+
+/* ================= FOOTER ================= */
 
 footer{
     background:#0d2819;
+
     color:#bfcfc3;
-    padding:45px 0 20px;
+
+    padding:55px 0 20px;
 }
 
 .footer-grid{
     display:grid;
+
     grid-template-columns:1.5fr 1fr 1fr;
+
     gap:30px;
 }
 
 .footer-title{
     color:#fff;
+
     font-weight:800;
+
     margin-bottom:10px;
+
+    font-size:1.1rem;
+}
+
+.footer-text{
+    color:#aebfb3;
 }
 
 .footer-links{
     display:grid;
+
     gap:7px;
+}
+
+.footer-links a{
+    transition:.2s;
 }
 
 .footer-links a:hover{
     color:#fff;
+
+    transform:translateX(3px);
+}
+
+.socials{
+    display:flex;
+
+    gap:8px;
+
+    margin-top:16px;
+}
+
+.social{
+    width:40px;
+    height:40px;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid rgba(255,255,255,.13);
+
+    border-radius:12px;
+
+    transition:.25s;
+}
+
+.social:hover{
+    background:rgba(255,255,255,.08);
 }
 
 .copy{
     border-top:1px solid rgba(255,255,255,.1);
+
     margin-top:35px;
+
     padding-top:18px;
+
     text-align:center;
+
     font-size:.88rem;
+
     color:#8fa497;
 }
 
-/* MOBILE */
 
-@media(max-width:800px){
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
 
     .nav-inner{
-        flex-direction:column;
-        padding:12px 0;
+        min-height:70px;
     }
 
     .nav-links{
-        width:100%;
+        gap:2px;
+
         overflow-x:auto;
+
+        max-width:70%;
     }
 
     .nav-links a{
         white-space:nowrap;
+
         font-size:.85rem;
     }
 
-    .page-hero{
-        padding-top:130px;
-        padding-bottom:80px;
-    }
-
-    .grid,
-    .dusun-grid,
-    .footer-grid{
+    .grid{
         grid-template-columns:1fr;
     }
 
-    .photo{
-        height:330px;
+    .dusun-grid{
+        grid-template-columns:1fr;
     }
 
-    section{
-        padding:70px 0;
+    .potensi-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
     }
 }
-</style>
-</head>
 
-<body>
 
-<!-- NAVBAR -->
-<header class="navbar">
-    <div class="container nav-inner">
+@media(max-width:600px){
 
-        <a href="index.html" class="logo">
-            <span class="logo-icon">🌿</span>
-            <span>Desa Pusaka</span>
-        </a>
+    .container{
+        width:calc(100% - 30px);
+    }
 
-        <nav class="nav-links">
-            <a href="index.html">🏠 Beranda</a>
-            <a class="active" href="profil.html">👥 Profil</a>
-            <a href="wisata.html">🌿 Wisata</a>
-            <a href="produk.html">🛍️ Produk UMKM</a>
-            <a class="nav-contact" href="kontak.html">📍 Kontak</a>
-        </nav>
+    .nav-inner{
+        flex-wrap:wrap;
 
-    </div>
-</header>
+        padding:10px 0;
+    }
 
+    .logo{
+        font-size:.95rem;
+    }
 
-<!-- HERO -->
-<section class="page-hero">
+    .logo-icon{
+        width:38px;
+        height:38px;
+    }
 
-    <div class="container">
-
-        <div>
-            <div class="label" style="color:#dceebf">
-                PROFIL DESA
-            </div>
-
-            <h1>
-                Mengenal
-                <span>Desa Pusaka</span>
-            </h1>
-
-            <p>
-                Desa yang tumbuh dari kebersamaan masyarakat,
-                kekayaan alam, pertanian, budaya, dan potensi lokal.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- TENTANG DESA -->
-<section>
-
-    <div class="container">
-
-        <div class="grid">
-
-            <div class="photo">
-                <img
-                    src="assets/img/kantor-desa.jpg"
-                    alt="Kantor Desa Pusaka"
-                >
-            </div>
-
-            <div>
-
-                <span class="label">
-                    Tentang Desa
-                </span>
-
-                <h2>
-                    Desa Pusaka,
-                    <br>
-                    desa yang penuh potensi.
-                </h2>
-
-                <p>
-                    Desa Pusaka merupakan wilayah yang memiliki
-                    potensi alam dan sumber daya masyarakat yang
-                    terus dikembangkan.
-                </p>
-
-                <p>
-                    Kehidupan masyarakat yang masih menjunjung
-                    tinggi kebersamaan dan gotong royong menjadi
-                    salah satu kekuatan utama desa.
-                </p>
-
-                <p>
-                    Potensi pertanian, UMKM, wisata, budaya,
-                    dan kegiatan masyarakat menjadi bagian
-                    penting dalam perkembangan Desa Pusaka.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- DUSUN -->
-<section class="soft">
-
-    <div class="container">
-
-        <div style="text-align:center;max-width:700px;margin:auto">
-
-            <span class="label">
-                Wilayah Desa
-            </span>
-
-            <h2>
-                Desa Pusaka Memiliki 2 Dusun
-            </h2>
-
-            <p>
-                Setiap dusun memiliki karakteristik,
-                kegiatan, dan potensi masyarakat yang
-                menjadi bagian dari Desa Pusaka.
-            </p>
-
-        </div>
-
-
-        <div class="dusun-grid">
-
-            <article class="dusun">
-
-                <div class="dusun-icon">
-                    🏡
-                </div>
-
-                <h3>
-                    Dusun 1
-                </h3>
-
-                <p>
-                    Dusun 1 merupakan salah satu wilayah
-                    Desa Pusaka yang menjadi bagian dari
-                    kehidupan dan aktivitas masyarakat desa.
-                </p>
-
-                <p>
-                    Potensi wilayah dapat dikembangkan
-                    melalui pertanian, kegiatan masyarakat,
-                    serta usaha lokal.
-                </p>
-
-            </article>
-
-
-            <article class="dusun">
-
-                <div class="dusun-icon">
-                    🌾
-                </div>
-
-                <h3>
-                    Dusun 2
-                </h3>
-
-                <p>
-                    Dusun 2 memiliki suasana lingkungan
-                    yang asri dengan aktivitas masyarakat
-                    dan potensi lokal yang beragam.
-                </p>
-
-                <p>
-                    Kebersamaan masyarakat menjadi modal
-                    penting untuk mengembangkan potensi
-                    dusun dan Desa Pusaka.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- VISI MISI -->
-<section>
-
-    <div class="container">
-
-        <div class="visi">
-
-            <span class="label" style="color:#dceebf">
-                Visi & Misi
-            </span>
-
-            <h2>
-                Membangun Desa Pusaka
-                yang maju dan sejahtera.
-            </h2>
-
-            <p>
-                Mewujudkan masyarakat desa yang mandiri,
-                produktif, kompak, dan mampu mengembangkan
-                potensi lokal secara berkelanjutan.
-            </p>
-
-            <div class="misi">
-
-                <div>
-                    🌾 Mengembangkan potensi pertanian
-                    dan ekonomi lokal.
-                </div>
-
-                <div>
-                    🤝 Meningkatkan semangat gotong royong
-                    masyarakat.
-                </div>
-
-                <div>
-                    🌿 Menjaga lingkungan dan potensi alam desa.
-                </div>
-
-                <div>
-                    🛍️ Mendukung perkembangan UMKM masyarakat.
-                </div>
-
-                <div>
-                    🏡 Meningkatkan kualitas kehidupan
-                    masyarakat desa.
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- GALERI -->
-<section class="soft">
-
-    <div class="container">
-
-        <div style="text-align:center;max-width:700px;margin:auto">
-
-            <span class="label">
-                Galeri
-            </span>
-
-            <h2>
-                Kehidupan Desa Pusaka
-            </h2>
-
-        </div>
-
-        <div class="dusun-grid">
-
-            <div class="photo">
-                <img
-                    src="assets/img/jalan-desa.jpg"
-                    alt="Jalan Desa Pusaka"
-                >
-            </div>
-
-            <div class="photo">
-                <img
-                    src="assets/img/kegiatan.jpg"
-                    alt="Kegiatan Masyarakat"
-                >
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-
-    <div class="container">
-
-        <div class="footer-grid">
-
-            <div>
-
-                <div class="footer-title">
-                    🌿 Desa Pusaka
-                </div>
-
-                <p>
-                    Website promosi Desa Pusaka untuk
-                    memperkenalkan potensi alam, budaya,
-                    wisata, pertanian, UMKM, dan masyarakat.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <div class="footer-title">
-                    Navigasi
-                </div>
-
-                <div class="footer-links">
-                    <a href="index.html">🏠 Beranda</a>
-                    <a href="profil.html">👥 Profil</a>
-                    <a href="wisata.html">🌿 Wisata</a>
-                    <a href="produk.html">🛍️ Produk UMKM</a>
-                    <a href="kontak.html">📍 Kontak</a>
-                </div>
-
-            </div>
-
-
-            <div>
-
-                <div class="footer-title">
-                    Informasi
-                </div>
-
-                <div class="footer-links">
-                    <a href="wisata.html">Destinasi Wisata</a>
-                    <a href="produk.html">Produk Lokal</a>
-                    <a href="kontak.html">Hubungi Desa</a>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="copy">
-            © 2026 Desa Pusaka. Semua Hak Dilindungi.
-        </div>
-
-    </div>
-
-</footer>
-
-</body>
-  </html>
+    .nav
