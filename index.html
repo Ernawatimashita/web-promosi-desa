@@ -596,4 +596,460 @@
 
         /* =====================================================
            SEJARAH
-        =================================================
+        ===================================================== */
+
+        .sejarah {
+            background: var(--cream);
+        }
+
+        .sejarah-box {
+            max-width: 900px;
+
+            margin: auto;
+
+            padding: 45px;
+
+            background: white;
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+
+            border-left: 6px solid var(--green2);
+        }
+
+        .sejarah-box h3 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 30px;
+
+            color: var(--green);
+
+            margin-bottom: 18px;
+        }
+
+        .sejarah-box p {
+            color: var(--text);
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =====================================================
+           POTENSI
+        ===================================================== */
+
+        .potensi {
+            background: white;
+        }
+
+        .potensi-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 24px;
+        }
+
+        .potensi-card {
+            padding: 30px;
+
+            background: var(--cream);
+
+            border: 1px solid var(--line);
+
+            border-radius: 22px;
+
+            transition: .3s ease;
+        }
+
+        .potensi-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow: var(--shadow);
+        }
+
+        .potensi-icon {
+            width: 60px;
+            height: 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 16px;
+
+            background: var(--light-green);
+
+            font-size: 28px;
+
+            margin-bottom: 20px;
+        }
+
+        .potensi-card h3 {
+            color: var(--green);
+
+            font-size: 21px;
+
+            margin-bottom: 10px;
+        }
+
+        .potensi-card p {
+            color: var(--text);
+
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           UMKM
+        ===================================================== */
+
+        .umkm {
+            background: var(--light-green);
+        }
+
+        .umkm-container {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .umkm-image {
+            position: relative;
+        }
+
+        .umkm-image img {
+            width: 100%;
+
+            height: 500px;
+
+            object-fit: cover;
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+        }
+
+        .umkm-badge {
+            position: absolute;
+
+            left: 20px;
+            bottom: 20px;
+
+            padding: 12px 18px;
+
+            background: white;
+
+            color: var(--green);
+
+            border-radius: 50px;
+
+            font-weight: 800;
+
+            box-shadow: var(--shadow);
+        }
+
+        .umkm-content .section-label {
+            margin-bottom: 15px;
+        }
+
+        .umkm-content h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(35px, 5vw, 50px);
+
+            line-height: 1.15;
+
+            color: var(--green);
+
+            margin-bottom: 20px;
+        }
+
+        .umkm-content p {
+            color: var(--text);
+
+            margin-bottom: 20px;
+        }
+
+        .umkm-description {
+            padding: 22px;
+
+            background: white;
+
+            border-radius: 18px;
+
+            border: 1px solid var(--line);
+
+            margin: 25px 0;
+        }
+
+        .umkm-description strong {
+            color: var(--green);
+        }
+
+        .umkm-info {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-bottom: 25px;
+        }
+
+        .umkm-info span {
+            padding: 8px 14px;
+
+            background: white;
+
+            border: 1px solid var(--line);
+
+            border-radius: 50px;
+
+            color: var(--green);
+
+            font-size: 14px;
+
+            font-weight: 700;
+        }
+
+        .btn-umkm {
+            background: var(--green);
+
+            color: white;
+
+            padding: 15px 25px;
+
+            border-radius: 12px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            font-weight: 800;
+
+            transition: .3s ease;
+        }
+
+        .btn-umkm:hover {
+            background: var(--green2);
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 10px 25px rgba(18, 61, 39, .20);
+        }
+
+
+        /* =====================================================
+           PRODUK UMKM
+        ===================================================== */
+
+        .produk {
+            background: white;
+        }
+
+        .produk-card {
+            max-width: 900px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            overflow: hidden;
+
+            background: white;
+
+            border: 1px solid var(--line);
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+        }
+
+        .produk-card-image {
+            min-height: 500px;
+        }
+
+        .produk-card-image img {
+            width: 100%;
+
+            height: 100%;
+
+            min-height: 500px;
+
+            object-fit: cover;
+        }
+
+        .produk-card-content {
+            padding: 45px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+        .produk-kategori {
+            display: inline-block;
+
+            width: fit-content;
+
+            padding: 7px 13px;
+
+            background: var(--light-green);
+
+            color: var(--green2);
+
+            border-radius: 50px;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            margin-bottom: 15px;
+        }
+
+        .produk-card-content h3 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 38px;
+
+            color: var(--green);
+
+            line-height: 1.2;
+
+            margin-bottom: 18px;
+        }
+
+        .produk-card-content p {
+            color: var(--text);
+
+            margin-bottom: 20px;
+        }
+
+        .produk-highlight {
+            list-style: none;
+
+            margin: 10px 0 25px;
+        }
+
+        .produk-highlight li {
+            margin-bottom: 9px;
+
+            color: #31523f;
+
+            font-weight: 600;
+        }
+
+        .produk-highlight li::before {
+            content: "✓";
+
+            color: var(--green2);
+
+            font-weight: 800;
+
+            margin-right: 8px;
+        }
+
+        .btn-produk {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: fit-content;
+
+            padding: 14px 22px;
+
+            background: var(--green);
+
+            color: white;
+
+            border-radius: 12px;
+
+            font-weight: 800;
+
+            transition: .3s ease;
+        }
+
+        .btn-produk:hover {
+            background: var(--green2);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =====================================================
+           BUDAYA
+        ===================================================== */
+
+        .budaya {
+            background: var(--cream);
+        }
+
+        .budaya-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 24px;
+        }
+
+        .budaya-card {
+            padding: 30px;
+
+            background: white;
+
+            border-radius: 22px;
+
+            border: 1px solid var(--line);
+
+            transition: .3s ease;
+        }
+
+        .budaya-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow: var(--shadow);
+        }
+
+        .budaya-card span {
+            font-size: 35px;
+
+            display: block;
+
+            margin-bottom: 15px;
+        }
+
+        .budaya-card h3 {
+            color: var(--green);
+
+            margin-bottom: 8px;
+        }
+
+        .budaya-card p {
+            color: var(--text);
+
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           KONTAK
+        ===================================================== */
+
+        .kontak {
+            background: var(--green);
+
+           
