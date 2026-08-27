@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Desa Pusaka | Pesona Alam, Budaya & Produk Lokal</title>
+    <title>Desa Pusaka | Pesona Alam & Masyarakat</title>
 
     <meta name="description"
-        content="Website Desa Pusaka yang menampilkan profil, sejarah, potensi desa, UMKM, dan produk lokal Desa Pusaka.">
+        content="Website Desa Pusaka yang menampilkan profil, sejarah, potensi, budaya, kegiatan masyarakat, dan dokumentasi desa.">
 
     <!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +17,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
         rel="stylesheet">
+
 
     <style>
 
@@ -76,6 +77,7 @@
         img {
             width: 100%;
             display: block;
+            object-fit: cover;
         }
 
         button {
@@ -94,6 +96,7 @@
 
         .navbar {
             position: fixed;
+
             top: 0;
             left: 0;
             right: 0;
@@ -173,7 +176,7 @@
 
             align-items: center;
 
-            gap: 5px;
+            gap: 8px;
 
             list-style: none;
         }
@@ -323,4 +326,137 @@
 
             font-size: 17px;
 
-            margin-bottom: 30
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            min-height: 48px;
+
+            padding: 12px 20px;
+
+            border-radius: 13px;
+
+            border: 2px solid transparent;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: .25s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary {
+            background: var(--green);
+
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--green2);
+
+            box-shadow: 0 12px 30px rgba(18, 61, 39, .20);
+        }
+
+        .btn-light {
+            background: white;
+
+            color: var(--green);
+        }
+
+        .btn-light:hover {
+            background: var(--green3);
+        }
+
+        .btn-outline-light {
+            background: transparent;
+
+            border-color: rgba(255, 255, 255, .45);
+
+            color: white;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+
+            color: var(--green);
+        }
+
+        .hero-tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+        .hero-tag {
+            padding: 7px 13px;
+
+            border: 1px solid rgba(255, 255, 255, .18);
+
+            background: rgba(0, 0, 0, .15);
+
+            border-radius: 50px;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           GENERAL SECTION
+        ===================================================== */
+
+        section {
+            scroll-margin-top: 90px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-soft {
+            background: var(--cream);
+        }
+
+        .section-heading {
+            max-width: 760px;
+
+            margin: 0 auto 50px;
+
+            text-align: center;
+        }
+
+        .section-heading.left {
+            margin-left: 0;
+
+            text-align: left;
+        }
+
+        .section-label {
+            display: inline-block;
+
+            color: var(--green2);
+
+            font-size
