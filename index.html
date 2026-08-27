@@ -7,9 +7,9 @@
 <title>Desa Pusaka | Profil Desa</title>
 
 <meta name="description"
-content="Website resmi Desa Pusaka yang menampilkan profil, sejarah, kegiatan, galeri dan informasi desa.">
+content="Website Desa Pusaka yang menampilkan profil, sejarah, kegiatan, galeri dan informasi desa.">
 
-<!-- Google Fonts -->
+<!-- GOOGLE FONT -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -67,18 +67,24 @@ button {
 .header {
     width: 100%;
     height: 105px;
-    background: rgba(255,255,255,0.97);
+
+    background: rgba(255,255,255,0.98);
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 0 38px;
+
     position: sticky;
     top: 0;
+
     z-index: 1000;
-    box-shadow: 0 3px 20px rgba(0,0,0,0.04);
+
+    box-shadow: 0 3px 20px rgba(0,0,0,0.05);
 }
 
-/* Logo */
+/* LOGO */
 
 .logo-area {
     display: flex;
@@ -89,18 +95,25 @@ button {
 .logo-box {
     width: 74px;
     height: 74px;
+
     background: var(--green-dark);
+
     border-radius: 20px;
+
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
     font-size: 40px;
 }
 
 .logo-text {
     font-family: "Playfair Display", serif;
+
     font-weight: 700;
+
     font-size: 34px;
+
     color: var(--green-dark);
 }
 
@@ -116,8 +129,11 @@ button {
 
 .desktop-menu a {
     color: #284b3b;
+
     font-weight: 600;
+
     font-size: 15px;
+
     transition: 0.3s;
 }
 
@@ -132,10 +148,15 @@ button {
 .menu-button {
     width: 80px;
     height: 80px;
+
     border: none;
+
     border-radius: 22px;
+
     background: var(--green-dark);
+
     color: white;
+
     cursor: pointer;
 
     display: none;
@@ -143,17 +164,36 @@ button {
     align-items: center;
     justify-content: center;
 
-    font-size: 38px;
+    flex-direction: column;
 }
 
 .menu-button span {
     display: block;
+
     width: 31px;
     height: 3px;
+
     background: white;
-    margin: 6px 0;
+
+    margin: 5px 0;
+
     border-radius: 5px;
+
     transition: 0.3s;
+}
+
+/* ANIMASI HAMBURGER */
+
+.menu-button.active span:nth-child(1) {
+    transform: translateY(13px) rotate(45deg);
+}
+
+.menu-button.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-button.active span:nth-child(3) {
+    transform: translateY(-13px) rotate(-45deg);
 }
 
 /* =========================================================
@@ -162,10 +202,12 @@ button {
 
 .mobile-menu {
     position: fixed;
+
     top: 105px;
     right: 0;
 
     width: 280px;
+
     min-height: calc(100vh - 105px);
 
     background: white;
@@ -173,6 +215,7 @@ button {
     padding: 30px 25px;
 
     transform: translateX(100%);
+
     transition: 0.35s ease;
 
     z-index: 999;
@@ -186,16 +229,44 @@ button {
 
 .mobile-menu a {
     display: block;
+
     padding: 18px 15px;
+
     border-bottom: 1px solid #e8eee9;
 
     font-size: 17px;
+
     font-weight: 600;
+
     color: var(--green-dark);
 }
 
 .mobile-menu a:hover {
     background: #eff7f1;
+}
+
+/* OVERLAY */
+
+.menu-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.35);
+
+    z-index: 998;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.3s;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+
+    visibility: visible;
 }
 
 /* =========================================================
@@ -204,6 +275,7 @@ button {
 
 .hero {
     min-height: 680px;
+
     background:
         linear-gradient(
             120deg,
@@ -213,9 +285,11 @@ button {
         url("images/desa.jpg");
 
     background-size: cover;
+
     background-position: center;
 
     display: flex;
+
     align-items: center;
 
     padding: 100px 7%;
@@ -223,6 +297,7 @@ button {
 
 .hero-content {
     max-width: 780px;
+
     color: white;
 }
 
@@ -230,12 +305,15 @@ button {
     display: inline-block;
 
     border: 1px solid rgba(255,255,255,0.4);
+
     padding: 12px 22px;
 
     border-radius: 50px;
 
     letter-spacing: 2px;
+
     font-size: 13px;
+
     font-weight: 700;
 
     margin-bottom: 25px;
@@ -243,15 +321,21 @@ button {
 
 .hero h1 {
     font-family: "Playfair Display", serif;
+
     font-size: clamp(50px, 7vw, 90px);
+
     line-height: 1.02;
+
     margin-bottom: 25px;
 }
 
 .hero p {
     font-size: 20px;
+
     line-height: 1.7;
+
     color: rgba(255,255,255,0.88);
+
     max-width: 650px;
 }
 
@@ -261,6 +345,7 @@ button {
     margin-top: 35px;
 
     background: white;
+
     color: var(--green-dark);
 
     padding: 17px 30px;
@@ -277,7 +362,7 @@ button {
 }
 
 /* =========================================================
-   SECTION UMUM
+   SECTION
 ========================================================= */
 
 .section {
@@ -286,31 +371,41 @@ button {
 
 .section-title {
     text-align: center;
+
     margin-bottom: 50px;
 }
 
 .section-title small {
     display: block;
+
     color: #6b927c;
+
     letter-spacing: 3px;
+
     font-weight: 700;
+
     margin-bottom: 12px;
 }
 
 .section-title h2 {
     font-family: "Playfair Display", serif;
+
     font-size: clamp(36px, 5vw, 55px);
+
     color: var(--green-dark);
 }
 
 /* =========================================================
-   CHIP
+   CHIPS
 ========================================================= */
 
 .chips {
     display: flex;
+
     flex-wrap: wrap;
+
     justify-content: center;
+
     gap: 12px;
 
     margin-bottom: 55px;
@@ -323,9 +418,10 @@ button {
 
     border-radius: 50px;
 
-    background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.7);
 
     font-size: 16px;
+
     color: #365b49;
 }
 
@@ -335,6 +431,7 @@ button {
 
 .stats {
     max-width: 1000px;
+
     margin: 0 auto;
 
     background: white;
@@ -342,6 +439,7 @@ button {
     border-radius: 32px;
 
     display: grid;
+
     grid-template-columns: repeat(4,1fr);
 
     overflow: hidden;
@@ -353,9 +451,11 @@ button {
     min-height: 190px;
 
     display: flex;
+
     flex-direction: column;
 
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
@@ -373,6 +473,7 @@ button {
     font-family: "Playfair Display", serif;
 
     font-size: 43px;
+
     font-weight: 700;
 
     color: var(--green-dark);
@@ -382,6 +483,7 @@ button {
 
 .stat-label {
     font-size: 16px;
+
     color: #727c77;
 }
 
@@ -390,20 +492,24 @@ button {
 ========================================================= */
 
 .activities-section {
-    padding-top: 60px;
+    padding: 80px 5% 100px;
 }
 
 .activities {
     max-width: 1100px;
+
     margin: auto;
 
     display: grid;
+
     grid-template-columns: repeat(2,1fr);
 
     gap: 28px;
 }
 
-/* CARD FOTO */
+/* =========================================================
+   CARD
+========================================================= */
 
 .activity-card {
     position: relative;
@@ -425,9 +531,11 @@ button {
 
 .activity-card:hover {
     transform: translateY(-7px);
+
+    box-shadow: 0 25px 55px rgba(20,50,35,0.16);
 }
 
-/* gambar */
+/* FOTO */
 
 .activity-image {
     position: absolute;
@@ -435,6 +543,7 @@ button {
     inset: 0;
 
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
@@ -447,6 +556,12 @@ button {
             #bfc9c3 65%,
             #252927 100%
         );
+
+    transition: 0.5s;
+}
+
+.activity-card:hover .activity-image {
+    transform: scale(1.04);
 }
 
 /* GRADASI */
@@ -461,22 +576,24 @@ button {
     background:
         linear-gradient(
             to top,
-            rgba(10,15,13,0.95) 0%,
-            rgba(10,15,13,0.65) 32%,
-            rgba(10,15,13,0.05) 68%,
+            rgba(10,15,13,0.96) 0%,
+            rgba(10,15,13,0.72) 30%,
+            rgba(10,15,13,0.18) 65%,
             transparent 100%
         );
 
     pointer-events: none;
 }
 
-/* isi */
+/* ISI CARD */
 
 .activity-content {
     position: absolute;
 
     left: 38px;
+
     right: 38px;
+
     bottom: 35px;
 
     color: white;
@@ -502,6 +619,8 @@ button {
     margin-bottom: 20px;
 
     background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(5px);
 }
 
 .activity-content h3 {
@@ -519,22 +638,23 @@ button {
 
     line-height: 1.6;
 
-    color: rgba(255,255,255,0.88);
+    color: rgba(255,255,255,0.9);
 }
 
 /* =========================================================
-   UPLOAD FOTO
+   TOMBOL TAMBAH FOTO
 ========================================================= */
 
 .upload-button {
     position: absolute;
 
     top: 20px;
+
     right: 20px;
 
     z-index: 5;
 
-    background: rgba(13,66,43,0.9);
+    background: rgba(13,66,43,0.95);
 
     color: white;
 
@@ -568,7 +688,43 @@ button {
 }
 
 /* =========================================================
-   ABOUT / HUBUNGI
+   GALERI
+========================================================= */
+
+.gallery {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.gallery-item {
+    height: 260px;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    background: #dfe8e2;
+
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/* =========================================================
+   HUBUNGI KAMI
 ========================================================= */
 
 .contact {
@@ -581,6 +737,7 @@ button {
 
 .contact-inner {
     max-width: 1150px;
+
     margin: auto;
 
     display: grid;
@@ -650,7 +807,10 @@ button {
 
 .contact-icon {
     width: 45px;
+
     height: 45px;
+
+    flex-shrink: 0;
 
     background: white;
 
@@ -661,9 +821,22 @@ button {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     font-size: 20px;
+}
+
+.address-link {
+    color: white;
+
+    transition: 0.3s;
+}
+
+.address-link:hover {
+    color: #bde2ca;
+
+    text-decoration: underline;
 }
 
 /* =========================================================
@@ -690,9 +863,11 @@ footer {
     position: fixed;
 
     right: 25px;
+
     bottom: 25px;
 
     width: 60px;
+
     height: 60px;
 
     border: none;
@@ -729,32 +904,6 @@ footer {
 }
 
 /* =========================================================
-   OVERLAY MOBILE
-========================================================= */
-
-.menu-overlay {
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(0,0,0,0.35);
-
-    z-index: 998;
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transition: 0.3s;
-}
-
-.menu-overlay.active {
-    opacity: 1;
-
-    visibility: visible;
-}
-
-/* =========================================================
    RESPONSIVE TABLET
 ========================================================= */
 
@@ -766,7 +915,6 @@ footer {
 
     .menu-button {
         display: flex;
-        flex-direction: column;
     }
 
     .activities {
@@ -789,6 +937,10 @@ footer {
     .contact-inner {
         grid-template-columns: 1fr;
     }
+
+    .gallery {
+        grid-template-columns: repeat(2,1fr);
+    }
 }
 
 /* =========================================================
@@ -805,6 +957,7 @@ footer {
 
     .logo-box {
         width: 74px;
+
         height: 74px;
 
         border-radius: 20px;
@@ -818,9 +971,16 @@ footer {
 
     .menu-button {
         width: 80px;
+
         height: 80px;
 
         border-radius: 22px;
+    }
+
+    .mobile-menu {
+        top: 105px;
+
+        width: 85%;
     }
 
     .hero {
@@ -830,284 +990,4 @@ footer {
     }
 
     .hero h1 {
-        font-size: 52px;
-    }
-
-    .hero p {
-        font-size: 17px;
-    }
-
-    .section {
-        padding: 65px 25px;
-    }
-
-    .stats {
-        border-radius: 28px;
-    }
-
-    .stat {
-        min-height: 165px;
-        padding: 15px;
-    }
-
-    .stat-number {
-        font-size: 36px;
-    }
-
-    .stat-label {
-        font-size: 14px;
-    }
-
-    .activity-card {
-        min-height: 460px;
-
-        border-radius: 30px;
-    }
-
-    .activity-content {
-        left: 38px;
-        right: 25px;
-        bottom: 30px;
-    }
-
-    .activity-content h3 {
-        font-size: 37px;
-    }
-
-    .activity-content p {
-        font-size: 16px;
-    }
-
-    .upload-button {
-        opacity: 1;
-    }
-
-    .contact {
-        padding: 75px 25px;
-    }
-
-    .contact h2 {
-        font-size: 48px;
-    }
-
-    .contact p {
-        font-size: 17px;
-    }
-
-    .back-top {
-        right: 20px;
-        bottom: 20px;
-
-        width: 60px;
-        height: 60px;
-    }
-}
-
-/* =========================================================
-   HP SANGAT KECIL
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .header {
-        padding: 0 15px;
-    }
-
-    .logo-text {
-        font-size: 23px;
-    }
-
-    .logo-box {
-        width: 65px;
-        height: 65px;
-    }
-
-    .menu-button {
-        width: 65px;
-        height: 65px;
-    }
-
-    .activity-content h3 {
-        font-size: 32px;
-    }
-}
-
-</style>
-</head>
-
-
-<body>
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
-<header class="header">
-
-    <a href="#beranda" class="logo-area">
-
-        <div class="logo-box">
-            🌿
-        </div>
-
-        <div class="logo-text">
-            Desa Pusaka
-        </div>
-
-    </a>
-
-
-    <!-- DESKTOP MENU -->
-
-    <nav class="desktop-menu">
-
-        <a href="#beranda">Beranda</a>
-        <a href="#profil">Profil Desa</a>
-        <a href="#sejarah">Sejarah</a>
-        <a href="#kegiatan">Kegiatan</a>
-        <a href="#galeri">Galeri</a>
-        <a href="#kontak">Hubungi Kami</a>
-
-    </nav>
-
-
-    <!-- HAMBURGER -->
-
-    <button
-        class="menu-button"
-        id="menuButton"
-        aria-label="Buka menu">
-
-        <span></span>
-        <span></span>
-        <span></span>
-
-    </button>
-
-</header>
-
-
-<!-- =====================================================
-     MOBILE MENU
-===================================================== -->
-
-<div class="menu-overlay" id="menuOverlay"></div>
-
-<nav class="mobile-menu" id="mobileMenu">
-
-    <a href="#beranda">🏠 Beranda</a>
-
-    <a href="#profil">🌿 Profil Desa</a>
-
-    <a href="#sejarah">📜 Sejarah Desa</a>
-
-    <a href="#kegiatan">🤝 Kegiatan</a>
-
-    <a href="#galeri">📷 Galeri</a>
-
-    <a href="#kontak">📞 Hubungi Kami</a>
-
-</nav>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero" id="beranda">
-
-    <div class="hero-content">
-
-        <div class="hero-label">
-            DESA PUSAKA
-        </div>
-
-        <h1>
-            Pesona Alam,<br>
-            Budaya &amp;<br>
-            Masyarakat
-        </h1>
-
-        <p>
-            Mengenal lebih dekat kehidupan,
-            sejarah, budaya dan potensi
-            Desa Pusaka.
-        </p>
-
-        <a href="#profil" class="hero-button">
-            Jelajahi Desa →
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PROFIL
-===================================================== -->
-
-<section class="section" id="profil">
-
-    <div class="section-title">
-
-        <small>TENTANG DESA</small>
-
-        <h2>
-            Desa Pusaka
-        </h2>
-
-    </div>
-
-
-    <!-- CHIPS -->
-
-    <div class="chips">
-
-        <div class="chip">
-            🌿 Alam Asri
-        </div>
-
-        <div class="chip">
-            🤝 Gotong Royong
-        </div>
-
-        <div class="chip">
-            🌾 Pertanian
-        </div>
-
-        <div class="chip">
-            🏡 2 Dusun
-        </div>
-
-    </div>
-
-
-    <!-- STATISTIK -->
-
-    <div class="stats">
-
-        <div class="stat">
-
-            <div class="stat-number">
-                1779
-            </div>
-
-            <div class="stat-label">
-                Awal Kisah
-            </div>
-
-        </div>
-
-
-        <div class="stat">
-
-            <div class="stat-number">
-                3.031
-            </div>
-
-            <div class="stat-label">
-                Jumlah Penduduk
-            </div>
-
-        </div>
+       
