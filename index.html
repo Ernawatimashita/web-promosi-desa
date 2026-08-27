@@ -1,409 +1,567 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Desa Pusaka | Pesona Alam, Budaya & Masyarakat</title>
-
-<meta name="description"
-content="Website Desa Pusaka yang memperkenalkan sejarah, potensi alam, budaya, kegiatan, jumlah penduduk, dan dusun Desa Pusaka.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-/* =========================================================
-   ROOT
-========================================================= */
-
-:root {
-    --green-dark: #0b2f1d;
-    --green: #123d27;
-    --green-light: #28784f;
-    --green-soft: #e7f3e9;
-
-    --cream: #f7faf5;
-    --cream-dark: #eef5ed;
-
-    --gold: #d9b65d;
-    --gold-light: #f0d98c;
-
-    --dark: #14231b;
-    --text: #68766d;
-    --white: #ffffff;
-
-    --line: #dce8de;
-
-    --shadow-sm: 0 10px 30px rgba(12, 52, 31, .08);
-    --shadow: 0 25px 70px rgba(12, 52, 31, .13);
-
-    --radius: 28px;
-
-    --transition: .35s ease;
-}
-
-
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "DM Sans", Arial, sans-serif;
-    color: var(--dark);
-    background: #fff;
-    line-height: 1.7;
-    overflow-x: hidden;
-}
-
-body.menu-open {
-    overflow: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button {
-    font-family: inherit;
-}
-
-img {
-    width: 100%;
-    display: block;
-}
-
-.container {
-    width: min(1160px, calc(100% - 40px));
-    margin: auto;
-}
-
-section {
-    scroll-margin-top: 90px;
-}
-
-
-/* =========================================================
-   SCROLL PROGRESS
-========================================================= */
-
-.scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 4px;
-    background: linear-gradient(
-        90deg,
-        var(--gold),
-        var(--green-light)
-    );
-    z-index: 9999;
-}
-
-
-/* =========================================================
-   NAVBAR
-========================================================= */
-
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    padding: 15px 0;
-    transition: var(--transition);
-}
-
-.navbar.scrolled {
-    padding: 9px 0;
-    background: rgba(255,255,255,.94);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    box-shadow: 0 8px 35px rgba(10,50,30,.08);
-}
-
-.nav-inner {
-    min-height: 62px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    color: #fff;
-    font-family: "Playfair Display", serif;
-    font-size: 23px;
-    font-weight: 800;
-    white-space: nowrap;
-}
-
-.navbar.scrolled .logo {
-    color: var(--green);
-}
-
-.logo-icon {
-    width: 44px;
-    height: 44px;
-    display: grid;
-    place-items: center;
-    border-radius: 14px;
-    background: rgba(255,255,255,.15);
-    border: 1px solid rgba(255,255,255,.25);
-    font-size: 21px;
-    transition: var(--transition);
-}
-
-.navbar.scrolled .logo-icon {
-    background: var(--green);
-    border-color: var(--green);
-}
-
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    list-style: none;
-}
-
-.nav-menu a {
-    position: relative;
-    display: block;
-    padding: 10px 12px;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 700;
-    transition: var(--transition);
-}
-
-.navbar.scrolled .nav-menu a {
-    color: #47564d;
-}
-
-.nav-menu a:hover,
-.nav-menu a.active {
-    background: rgba(255,255,255,.14);
-    color: #fff;
-}
-
-.navbar.scrolled .nav-menu a:hover,
-.navbar.scrolled .nav-menu a.active {
-    background: var(--green-soft);
-    color: var(--green);
-}
-
-.nav-contact {
-    background: #fff !important;
-    color: var(--green) !important;
-    padding-left: 17px !important;
-    padding-right: 17px !important;
-}
-
-.navbar.scrolled .nav-contact {
-    background: var(--green) !important;
-    color: #fff !important;
-}
-
-.menu-toggle {
-    display: none;
-    width: 44px;
-    height: 44px;
-    border: 0;
-    border-radius: 13px;
-    background: var(--green);
-    color: #fff;
-    cursor: pointer;
-    font-size: 21px;
-}
-
-
-/* =========================================================
-   HERO - FOTO KANTOR DESA PUSAKA
-========================================================= */
-
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    color: #fff;
-    padding-top: 100px;
-
-    /* FOTO BERANDA */
-    background-image:
-        linear-gradient(
-            90deg,
-            rgba(5,34,19,.72) 0%,
-            rgba(5,34,19,.52) 40%,
-            rgba(5,34,19,.20) 75%,
-            rgba(5,34,19,.10) 100%
-        ),
-        url("images/kantor-desa-pusaka.jpg");
-
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 80% 30%,
-            rgba(217,182,93,.12),
-            transparent 28%
-        );
-
-    pointer-events: none;
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 150px;
-
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(255,255,255,.08)
-    );
-
-    pointer-events: none;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 760px;
-    padding: 80px 0;
-    animation: heroUp 1s ease both;
-}
-
-@keyframes heroUp {
-    from {
-        opacity: 0;
-        transform: translateY(35px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 9px 15px;
-    border: 1px solid rgba(255,255,255,.30);
-    background: rgba(255,255,255,.12);
-    backdrop-filter: blur(12px);
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: .05em;
-    margin-bottom: 22px;
-}
-
-.hero h1 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(48px, 7vw, 84px);
-    line-height: .98;
-    letter-spacing: -.045em;
-    margin-bottom: 27px;
-}
-
-.hero h1 span {
-    color: var(--gold-light);
-}
-
-.hero p {
-    max-width: 650px;
-    color: rgba(255,255,255,.92);
-    font-size: 17px;
-    line-height: 1.8;
-    margin-bottom: 31px;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 27px;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 50px;
-    padding: 12px 21px;
-    border-radius: 14px;
-    border: 2px solid transparent;
-    font-size: 14px;
-    font-weight: 800;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.btn:hover {
-    transform: translateY(-4px);
-}
-
-.btn-primary {
-    background: var(--green);
-    color: #fff;
-    box-shadow: 0 10px 30px rgba(18,61,39,.2);
-}
-
-.btn-primary:hover {
-    background: var(--green-light);
-}
-
-.btn-light {
-    background: #fff;
-    color: var(--green);
-}
-
-.btn-light:hover {
-    background: var(--green-soft);
-}
-
-.btn-outline-light {
-    background: rgba(255,255,255,.08);
-    border-color: rgba(255,255,255,.55);
-    color: #fff;
-    backdrop-filter: blur(8px);
-}
-
-.btn-outline-light:hover {
-    background: #fff;
-    color: var(--green
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Desa Pusaka | Pesona Alam, Budaya & Masyarakat</title>
+
+    <meta name="description" content="Website resmi informasi dan promosi Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #1f2937;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            background: rgba(5, 34, 19, 0.96);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #ffffff;
+            color: #087f3e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #facc15;
+        }
+
+        .nav-button {
+            background: #facc15;
+            color: #17200f !important;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: 600 !important;
+        }
+
+        .nav-button:hover {
+            background: white;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           HERO / BERANDA
+           FOTO DIAMBIL DARI FILE:
+           kantor-desa-pusaka.jpg
+        ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+            padding-top: 100px;
+
+            background-image:
+                linear-gradient(
+                    90deg,
+                    rgba(5, 34, 19, 0.82) 0%,
+                    rgba(5, 34, 19, 0.62) 40%,
+                    rgba(5, 34, 19, 0.25) 75%,
+                    rgba(5, 34, 19, 0.12) 100%
+                ),
+                url("./kantor-desa-pusaka.jpg");
+
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            padding: 50px 0;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            backdrop-filter: blur(5px);
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 70px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: #facc15;
+        }
+
+        .hero p {
+            font-size: 17px;
+            max-width: 620px;
+            color: rgba(255,255,255,0.92);
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 13px 23px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #facc15;
+            color: #17200f;
+        }
+
+        .btn-primary:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #087f3e;
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           SECTION
+        ===================================================== */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-label {
+            color: #087f3e;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            color: #12351f;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: auto;
+            color: #6b7280;
+        }
+
+
+        /* =====================================================
+           TENTANG DESA
+        ===================================================== */
+
+        .about {
+            background: #f8faf9;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            color: #12351f;
+            margin-bottom: 18px;
+        }
+
+        .about-text p {
+            color: #667085;
+            margin-bottom: 15px;
+        }
+
+        .info-list {
+            margin-top: 25px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .info-item i {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #e4f5eb;
+            color: #087f3e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        /* =====================================================
+           POTENSI DESA
+        ===================================================== */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            border: 1px solid #edf0ee;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: #e5f7ec;
+            color: #087f3e;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: #12351f;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           SEJARAH
+        ===================================================== */
+
+        .history {
+            background: #12351f;
+            color: white;
+        }
+
+        .history .section-label {
+            color: #facc15;
+        }
+
+        .history .section-header h2 {
+            color: white;
+        }
+
+        .history .section-header p {
+            color: rgba(255,255,255,0.75);
+        }
+
+        .history-box {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .history-box p {
+            color: rgba(255,255,255,0.88);
+            margin-bottom: 18px;
+        }
+
+        .history-box p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =====================================================
+           STATISTIK
+        ===================================================== */
+
+        .stats {
+            background: #f8faf9;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.06);
+        }
+
+        .stat i {
+            color: #087f3e;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .stat h3 {
+            color: #12351f;
+            font-size: 30px;
+        }
+
+        .stat p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           KONTAK
+        ===================================================== */
+
+        .contact {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-box {
+            padding: 35px;
+            border-radius: 20px;
+            background: #f8faf9;
+        }
+
+        .contact-box h3 {
+            color: #12351f;
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item i {
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
+            background: #e4f5eb;
+            color: #087f3e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-item h4 {
+            color: #12351f;
+        }
+
+        .contact-item p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           SOCIAL MEDIA
+        ===================================================== */
+
+        .social {
+            margin-top: 25px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .social a {
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #12351f;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .social a:hover {
+            background: #087f3e;
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #071b10;
+            color: white;
+            padding: 45px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 35px;
+        }
+
+        .footer
+       </html>
