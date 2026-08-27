@@ -18,7 +18,6 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
         rel="stylesheet">
 
-
     <style>
 
         /* =====================================================
@@ -63,27 +62,20 @@
 
         body {
             font-family: "DM Sans", Arial, sans-serif;
-
             color: var(--dark);
-
             background: white;
-
             line-height: 1.7;
-
             overflow-x: hidden;
         }
 
         a {
             text-decoration: none;
-
             color: inherit;
         }
 
         img {
             width: 100%;
-
             display: block;
-
             object-fit: cover;
         }
 
@@ -93,7 +85,6 @@
 
         .container {
             width: min(1160px, calc(100% - 40px));
-
             margin: auto;
         }
 
@@ -698,4 +689,995 @@
         }
 
         .history-box p {
-            color: #526
+            color: #52635a;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =====================================================
+           UMKM
+        ===================================================== */
+
+        .umkm {
+            background: white;
+        }
+
+        .umkm-card {
+            display: grid;
+
+            grid-template-columns: 1.05fr 1fr;
+
+            gap: 45px;
+
+            align-items: center;
+
+            padding: 25px;
+
+            background: var(--cream);
+
+            border: 1px solid var(--line);
+
+            border-radius: 30px;
+
+            box-shadow: var(--shadow);
+        }
+
+        .umkm-image {
+            overflow: hidden;
+
+            border-radius: 22px;
+        }
+
+        .umkm-image img {
+            height: 430px;
+
+            transition: .4s ease;
+        }
+
+        .umkm-card:hover .umkm-image img {
+            transform: scale(1.03);
+        }
+
+        .umkm-content {
+            padding: 15px 20px 15px 0;
+        }
+
+        .umkm-label {
+            display: inline-block;
+
+            padding: 7px 13px;
+
+            margin-bottom: 15px;
+
+            border-radius: 50px;
+
+            background: var(--green3);
+
+            color: var(--green2);
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            letter-spacing: .08em;
+        }
+
+        .umkm-content h3 {
+            color: var(--green);
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(32px,4vw,45px);
+
+            line-height: 1.1;
+
+            margin-bottom: 18px;
+        }
+
+        .umkm-content p {
+            color: var(--text);
+
+            margin-bottom: 18px;
+        }
+
+        .umkm-info {
+            display: grid;
+
+            gap: 10px;
+
+            margin: 20px 0 25px;
+
+            list-style: none;
+        }
+
+        .umkm-info li {
+            color: #31523f;
+
+            font-weight: 600;
+        }
+
+        .umkm-info li span {
+            margin-right: 7px;
+        }
+
+
+        /* =====================================================
+           KEUNGGULAN UMKM
+        ===================================================== */
+
+        .features {
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 18px;
+
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            padding: 25px;
+
+            background: white;
+
+            border: 1px solid var(--line);
+
+            border-radius: 20px;
+
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 52px;
+            height: 52px;
+
+            display: grid;
+
+            place-items: center;
+
+            margin: 0 auto 12px;
+
+            border-radius: 14px;
+
+            background: var(--green3);
+
+            font-size: 25px;
+        }
+
+        .feature-card h4 {
+            color: var(--green);
+
+            margin-bottom: 5px;
+        }
+
+        .feature-card p {
+            color: var(--text);
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta {
+            padding: 80px 0;
+
+            background: var(--green);
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(34px,5vw,50px);
+
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 650px;
+
+            margin: 0 auto 25px;
+
+            color: rgba(255,255,255,.85);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            padding: 35px 20px;
+
+            background: #0b2b1b;
+
+            color: white;
+
+            text-align: center;
+        }
+
+        footer h3 {
+            font-family: "Playfair Display", serif;
+
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: rgba(255,255,255,.70);
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav-menu {
+                gap: 2px;
+            }
+
+            .nav-menu a {
+                padding: 8px 9px;
+
+                font-size: 12px;
+            }
+
+            .about-grid,
+            .umkm-card {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+            .umkm-content {
+                padding: 5px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: min(100% - 25px, 1160px);
+            }
+
+            .nav-inner {
+                width: calc(100% - 25px);
+            }
+
+            .navbar {
+                padding: 8px 0;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .logo-icon {
+                width: 38px;
+                height: 38px;
+
+                font-size: 18px;
+            }
+
+            .nav-menu {
+                gap: 0;
+            }
+
+            .nav-menu a {
+                padding: 7px 5px;
+
+                font-size: 10px;
+            }
+
+            .hero {
+                min-height: 750px;
+
+                background-position: center;
+            }
+
+            .hero-content {
+                padding: 50px 0;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .about-image img {
+                height: 350px;
+            }
+
+            .image-badge {
+                right: 10px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+
+                margin-top: 40px;
+            }
+
+            .stat-card strong {
+                font-size: 28px;
+            }
+
+            .history-box {
+                padding: 28px 22px;
+            }
+
+            .umkm-card {
+                padding: 15px;
+
+                border-radius: 22px;
+            }
+
+            .umkm-image img {
+                height: 300px;
+            }
+
+            .umkm-content h3 {
+                font-size: 34px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
+
+    <header class="navbar" id="navbar">
+
+        <div class="nav-inner">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-icon">
+                    🌿
+                </span>
+
+                <span>
+                    Desa Pusaka
+                </span>
+
+            </a>
+
+
+            <nav>
+
+                <ul class="nav-menu">
+
+                    <li>
+                        <a href="#beranda" class="active">
+                            Beranda
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#tentang">
+                            Tentang
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#sejarah">
+                            Sejarah
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#umkm">
+                            UMKM
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="kontak.html" class="nav-contact">
+                            Kontak
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="hero" id="beranda">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <span class="hero-label">
+                    🌿 Selamat Datang di Desa Pusaka
+                </span>
+
+                <h1>
+                    Pesona <span>Desa Pusaka</span>
+                </h1>
+
+                <p>
+                    Mengenal lebih dekat keindahan alam, budaya,
+                    masyarakat, potensi desa, serta produk UMKM
+                    unggulan Desa Pusaka.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="#tentang" class="btn btn-light">
+                        Jelajahi Desa
+                    </a>
+
+                    <!-- TOMBOL LIHAT PRODUK UMKM -->
+
+                    <a href="#umkm" class="btn btn-primary">
+                        🛍️ Lihat Produk UMKM
+                    </a>
+
+                    <a href="kontak.html" class="btn btn-outline-light">
+                        📞 Hubungi Kami
+                    </a>
+
+                </div>
+
+
+                <div class="hero-tags">
+
+                    <span class="hero-tag">
+                        🌱 Alam
+                    </span>
+
+                    <span class="hero-tag">
+                        🏡 Masyarakat
+                    </span>
+
+                    <span class="hero-tag">
+                        🛍️ UMKM
+                    </span>
+
+                    <span class="hero-tag">
+                        🎭 Budaya
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TENTANG DESA
+    ===================================================== -->
+
+    <section class="section" id="tentang">
+
+        <div class="container">
+
+            <div class="about-grid">
+
+
+                <div class="about-image">
+
+                    <img
+                        src="images/desa.jpg"
+                        alt="Desa Pusaka">
+
+                    <div class="image-badge">
+                        🌿 Desa Pusaka
+                    </div>
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <span class="section-label">
+                        Tentang Desa
+                    </span>
+
+                    <h2>
+                        Mengenal <span>Desa Pusaka</span>
+                    </h2>
+
+                    <p>
+                        Desa Pusaka merupakan sebuah desa yang memiliki
+                        potensi alam, budaya, masyarakat, dan berbagai
+                        produk lokal yang menjadi bagian penting dari
+                        kehidupan masyarakat.
+                    </p>
+
+                    <p>
+                        Website ini hadir sebagai media informasi dan
+                        promosi untuk memperkenalkan Desa Pusaka kepada
+                        masyarakat luas.
+                    </p>
+
+
+                    <div class="check-list">
+
+                        <div class="check-item">
+
+                            <span class="check-icon">
+                                ✓
+                            </span>
+
+                            Potensi alam desa
+
+                        </div>
+
+                        <div class="check-item">
+
+                            <span class="check-icon">
+                                ✓
+                            </span>
+
+                            Produk UMKM masyarakat
+
+                        </div>
+
+                        <div class="check-item">
+
+                            <span class="check-icon">
+                                ✓
+                            </span>
+
+                            Budaya dan kegiatan masyarakat
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATISTIK -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <strong>
+                        🌱
+                    </strong>
+
+                    <span>
+                        Potensi Alam
+                    </span>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <strong>
+                        🛍️
+                    </strong>
+
+                    <span>
+                        Produk Lokal
+                    </span>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <strong>
+                        🎭
+                    </strong>
+
+                    <span>
+                        Budaya
+                    </span>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <strong>
+                        🤝
+                    </strong>
+
+                    <span>
+                        Masyarakat
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SEJARAH
+    ===================================================== -->
+
+    <section class="section history" id="sejarah">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    Sejarah Desa
+                </span>
+
+                <h2>
+                    Sejarah Singkat Desa Pusaka
+                </h2>
+
+                <p>
+                    Kisah yang menjadi bagian dari perjalanan
+                    terbentuknya Desa Pusaka.
+                </p>
+
+            </div>
+
+
+            <div class="history-box">
+
+                <div class="history-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Asal Usul Desa Pusaka
+                </h3>
+
+                <p>
+                    Konon, sekitar tahun 1779, dua orang pelaut dari
+                    Penghuluan berlayar menggunakan sampan dan singgah
+                    di kawasan hutan lebat dekat aliran sungai yang
+                    kini dikenal sebagai Sungai Sengobang.
+                </p>
+
+                <p>
+                    Mereka menemukan sebuah pohon besar dan berusaha
+                    menebangnya menggunakan kapak, parang, dan beliung.
+                    Saat menebang, tangkai beliung mereka patah dan
+                    hanya tersisa bagian ujungnya yang disebut
+                    “kuting”.
+                </p>
+
+                <p>
+                    Peristiwa tersebut kemudian menjadi bagian dari
+                    cerita turun-temurun masyarakat dan menjadi salah
+                    satu kisah yang mengiringi sejarah wilayah ini.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         UMKM
+    ===================================================== -->
+
+    <section class="section umkm" id="umkm">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    Produk Lokal
+                </span>
+
+                <h2>
+                    Produk UMKM Desa Pusaka
+                </h2>
+
+                <p>
+                    Kenali dan dukung produk unggulan hasil karya
+                    masyarakat Desa Pusaka.
+                </p>
+
+            </div>
+
+
+            <!-- PRODUK TEH SAPPANG -->
+
+            <div class="umkm-card">
+
+
+                <div class="umkm-image">
+
+                    <img
+                        src="images/teh-sappang.jpg"
+                        alt="Teh Sappang Pusaka">
+
+                </div>
+
+
+                <div class="umkm-content">
+
+                    <span class="umkm-label">
+                        Produk Unggulan UMKM
+                    </span>
+
+                    <h3>
+                        Teh Sappang Pusaka
+                    </h3>
+
+                    <p>
+                        Teh Sappang Pusaka merupakan produk minuman
+                        lokal yang menggunakan bahan utama sappang
+                        asli. Produk ini menjadi salah satu hasil
+                        kreativitas UMKM masyarakat Desa Pusaka yang
+                        dikemas secara menarik dan praktis.
+                    </p>
+
+                    <p>
+                        Dengan cita rasa khas dan identitas lokal yang
+                        kuat, Teh Sappang Pusaka menjadi salah satu
+                        produk yang dapat diperkenalkan sebagai bagian
+                        dari potensi ekonomi kreatif Desa Pusaka.
+                    </p>
+
+
+                    <ul class="umkm-info">
+
+                        <li>
+                            <span>🌿</span>
+                            Menggunakan sappang asli
+                        </li>
+
+                        <li>
+                            <span>🏡</span>
+                            Produk UMKM masyarakat Desa Pusaka
+                        </li>
+
+                        <li>
+                            <span>🎁</span>
+                            Cocok sebagai produk lokal dan oleh-oleh
+                        </li>
+
+                    </ul>
+
+
+                    <!-- TOMBOL PRODUK -->
+
+                    <a
+                        href="produk.html"
+                        class="btn btn-primary"
+                    >
+                        🛍️ Lihat Produk UMKM
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- KEUNGGULAN -->
+
+            <div class="features">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🌿
+                    </div>
+
+                    <h4>
+                        Bahan Lokal
+                    </h4>
+
+                    <p>
+                        Memanfaatkan bahan lokal yang menjadi
+                        bagian dari potensi Desa Pusaka.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🏡
+                    </div>
+
+                    <h4>
+                        Produk Desa
+                    </h4>
+
+                    <p>
+                        Dikembangkan sebagai produk UMKM
+                        masyarakat Desa Pusaka.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ❤️
+                    </div>
+
+                    <h4>
+                        Dukung UMKM
+                    </h4>
+
+                    <p>
+                        Dengan mengenal produk lokal, kita ikut
+                        mendukung perkembangan ekonomi masyarakat.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ===================================================== -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>
+                Dukung Produk Lokal Desa Pusaka
+            </h2>
+
+            <p>
+                Mari mengenal, mempromosikan, dan mendukung produk
+                UMKM masyarakat Desa Pusaka.
+            </p>
+
+            <a
+                href="produk.html"
+                class="btn btn-light"
+            >
+                🛍️ Lihat Semua Produk
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <h3>
+            Desa Pusaka
+        </h3>
+
+        <p>
+            Pesona Alam, Budaya & Masyarakat
+        </p>
+
+        <p>
+            © 2026 Desa Pusaka. Semua Hak Dilindungi.
+        </p>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+        /* NAVBAR BERUBAH SAAT SCROLL */
+
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener("scroll", function () {
+
+            if (window.scrollY > 50) {
+
+                navbar.classList.add("scrolled");
+
+            } else {
+
+                navbar.classList.remove("scrolled");
+
+            }
+
+        });
+
+
+        /* MENU AKTIF */
+
+        const navLinks = document.querySelectorAll(".nav-menu a");
+
+        navLinks.forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                navLinks.forEach(function(item) {
+
+                    item.classList.remove("active");
+
+                });
+
+                this.classList.add("active");
+
+            });
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
