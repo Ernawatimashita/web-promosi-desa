@@ -1,64 +1,21 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Kontak | Desa Pusaka</title>
 
     <meta name="description"
-          content="Kontak dan media sosial Desa Pusaka. Hubungi Desa Pusaka melalui Facebook, Instagram, WhatsApp, dan informasi kontak lainnya.">
+          content="Kontak resmi Desa Pusaka dan media sosial Facebook.">
 
-    <!-- GOOGLE FONT -->
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
           rel="stylesheet">
 
-
     <style>
-
-        /* =====================================================
-           ROOT
-        ===================================================== */
-
-        :root {
-            --green: #123d27;
-            --green2: #23734a;
-            --green3: #dff0e2;
-
-            --light-green: #eaf7ec;
-
-            --gold: #e5bd61;
-
-            --cream: #f4fbf5;
-
-            --dark: #102119;
-            --text: #64736a;
-
-            --white: #ffffff;
-
-            --line: #dce9df;
-
-            --shadow: 0 20px 60px rgba(15,55,35,.12);
-
-            --radius: 25px;
-        }
-
-
-        /* =====================================================
-           RESET
-        ===================================================== */
-
         * {
             margin: 0;
             padding: 0;
@@ -71,54 +28,33 @@
 
         body {
             font-family: "DM Sans", Arial, sans-serif;
-
-            color: var(--dark);
-
-            background: var(--cream);
-
+            background: #f4fbf5;
+            color: #102119;
             line-height: 1.7;
         }
 
         a {
             text-decoration: none;
-
-            color: inherit;
         }
 
-        .container {
-            width: min(1160px, calc(100% - 40px));
-
-            margin: auto;
-        }
-
-
-        /* =====================================================
-           NAVBAR
-        ===================================================== */
-
+        /* NAVBAR */
         .navbar {
-            position: fixed;
-
+            width: 100%;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,.08);
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-
-            z-index: 1000;
-
-            background: rgba(255,255,255,.96);
-
-            backdrop-filter: blur(15px);
-
-            box-shadow: 0 5px 25px rgba(0,0,0,.08);
+            z-index: 100;
         }
 
-        .nav-inner {
-            min-height: 75px;
+        .nav-container {
+            width: min(1100px, calc(100% - 30px));
+            margin: auto;
+
+            min-height: 70px;
 
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
 
             gap: 20px;
@@ -126,591 +62,522 @@
 
         .logo {
             display: flex;
-
             align-items: center;
-
             gap: 10px;
 
             font-family: "Playfair Display", serif;
-
-            font-size: 23px;
-
+            font-size: 24px;
             font-weight: 800;
 
-            color: var(--green);
+            color: #123d27;
         }
 
         .logo-icon {
-            width: 43px;
-            height: 43px;
+            width: 42px;
+            height: 42px;
 
-            display: grid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-            place-items: center;
-
-            border-radius: 13px;
-
-            background: var(--green);
-
+            background: #123d27;
             color: white;
 
-            font-size: 22px;
+            border-radius: 10px;
+            font-size: 21px;
         }
 
         .nav-menu {
             display: flex;
-
             align-items: center;
-
-            gap: 25px;
+            gap: 22px;
 
             list-style: none;
         }
 
         .nav-menu a {
-            color: #405148;
-
-            font-size: 15px;
-
-            font-weight: 700;
-
-            transition: .3s;
+            color: #102119;
+            font-weight: 600;
+            font-size: 14px;
         }
 
         .nav-menu a:hover,
         .nav-menu a.active {
-            color: var(--green2);
+            color: #23734a;
         }
 
-        .nav-contact {
-            padding: 10px 18px;
-
-            border-radius: 10px;
-
-            background: var(--green);
-
-            color: white !important;
-        }
-
-        .nav-contact:hover {
-            background: var(--green2);
-        }
-
-
-        /* =====================================================
-           HERO KONTAK
-        ===================================================== */
-
-        .contact-hero {
-            min-height: 470px;
-
-            padding-top: 75px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
+        /* HERO */
+        .hero {
+            padding: 80px 20px;
 
             text-align: center;
 
-            color: white;
-
             background:
                 linear-gradient(
-                    135deg,
-                    rgba(18,61,39,.96),
+                    rgba(18,61,39,.92),
                     rgba(35,115,74,.88)
                 );
-        }
 
-        .contact-hero-content {
-            max-width: 750px;
-
-            padding: 60px 0;
+            color: white;
         }
 
         .hero-label {
             display: inline-block;
 
-            padding: 8px 16px;
-
-            margin-bottom: 18px;
-
-            border: 1px solid rgba(255,255,255,.25);
-
-            background: rgba(255,255,255,.10);
+            padding: 7px 15px;
 
             border-radius: 50px;
 
+            background: rgba(255,255,255,.15);
+
+            border: 1px solid rgba(255,255,255,.3);
+
             font-size: 13px;
+            font-weight: 700;
 
-            font-weight: 800;
-
-            letter-spacing: .08em;
+            margin-bottom: 15px;
         }
 
-        .contact-hero h1 {
+        .hero h1 {
             font-family: "Playfair Display", serif;
 
-            font-size: clamp(42px, 7vw, 70px);
+            font-size: clamp(40px, 8vw, 60px);
 
-            line-height: 1.05;
+            line-height: 1.1;
 
-            margin-bottom: 18px;
+            margin-bottom: 15px;
         }
 
-        .contact-hero h1 span {
-            color: var(--gold);
-        }
-
-        .contact-hero p {
+        .hero p {
             max-width: 650px;
-
             margin: auto;
 
-            color: rgba(255,255,255,.88);
+            color: rgba(255,255,255,.9);
 
-            font-size: 17px;
+            font-size: 16px;
         }
 
-
-        /* =====================================================
-           KONTAK SECTION
-        ===================================================== */
+        /* CONTENT */
+        .container {
+            width: min(1100px, calc(100% - 30px));
+            margin: auto;
+        }
 
         .contact-section {
-            padding: 90px 0;
+            padding: 70px 0;
         }
-
-        .section-heading {
-            text-align: center;
-
-            max-width: 700px;
-
-            margin: 0 auto 50px;
-        }
-
-        .section-label {
-            display: inline-block;
-
-            padding: 7px 14px;
-
-            background: var(--light-green);
-
-            color: var(--green2);
-
-            border-radius: 50px;
-
-            font-size: 13px;
-
-            font-weight: 800;
-
-            margin-bottom: 12px;
-        }
-
-        .section-heading h2 {
-            font-family: "Playfair Display", serif;
-
-            font-size: clamp(32px, 5vw, 48px);
-
-            line-height: 1.15;
-
-            color: var(--green);
-
-            margin-bottom: 13px;
-        }
-
-        .section-heading p {
-            color: var(--text);
-        }
-
-
-        /* =====================================================
-           CONTACT GRID
-        ===================================================== */
 
         .contact-grid {
             display: grid;
 
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr 1fr;
 
-            gap: 25px;
+            gap: 30px;
         }
-
-
-        /* =====================================================
-           CONTACT CARD
-        ===================================================== */
 
         .contact-card {
-            padding: 32px;
-
             background: white;
 
-            border: 1px solid var(--line);
+            padding: 35px;
 
-            border-radius: var(--radius);
+            border-radius: 24px;
 
-            box-shadow: 0 12px 35px rgba(15,55,35,.07);
+            box-shadow:
+                0 15px 40px rgba(15,55,35,.09);
 
-            transition: .3s;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-
-            box-shadow: var(--shadow);
+            border: 1px solid #dce9df;
         }
 
         .contact-icon {
             width: 60px;
             height: 60px;
 
-            display: grid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-            place-items: center;
+            background: #eaf7ec;
 
-            margin-bottom: 18px;
+            border-radius: 16px;
 
-            background: var(--light-green);
+            font-size: 30px;
 
-            border-radius: 17px;
-
-            font-size: 27px;
+            margin-bottom: 20px;
         }
 
-        .contact-card h3 {
-            color: var(--green);
+        .contact-card h2 {
+            font-family: "Playfair Display", serif;
 
-            font-size: 21px;
+            color: #123d27;
 
-            margin-bottom: 8px;
+            font-size: 30px;
+
+            margin-bottom: 12px;
         }
 
         .contact-card p {
-            color: var(--text);
+            color: #64736a;
 
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-        .contact-card strong {
-            color: var(--green2);
+        .contact-info {
+            list-style: none;
         }
 
+        .contact-info li {
+            margin-bottom: 12px;
 
-        /* =====================================================
-           SOCIAL MEDIA
-        ===================================================== */
-
-        .social-section {
-            margin-top: 25px;
-
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 18px;
+            color: #31523f;
         }
 
-        .social-card {
-            display: flex;
+        /* FACEBOOK */
+        .facebook-card {
+            background: #123d27;
 
-            align-items: center;
+            color: white;
 
-            gap: 15px;
+            padding: 35px;
 
-            padding: 22px;
+            border-radius: 24px;
 
+            box-shadow:
+                0 15px 40px rgba(15,55,35,.15);
+        }
+
+        .facebook-card .contact-icon {
             background: white;
-
-            border: 1px solid var(--line);
-
-            border-radius: 20px;
-
-            box-shadow: 0 10px 30px rgba(15,55,35,.06);
-
-            transition: .3s;
+            color: #1877f2;
         }
 
-        .social-card:hover {
-            transform: translateY(-5px);
+        .facebook-card h2 {
+            font-family: "Playfair Display", serif;
 
-            border-color: #a9cfb2;
+            font-size: 30px;
 
-            box-shadow: var(--shadow);
+            margin-bottom: 12px;
         }
 
-        .social-icon {
-            width: 50px;
-            height: 50px;
+        .facebook-card p {
+            color: rgba(255,255,255,.85);
 
-            display: grid;
-
-            place-items: center;
-
-            border-radius: 14px;
-
-            background: var(--light-green);
-
-            font-size: 25px;
-
-            flex-shrink: 0;
+            margin-bottom: 25px;
         }
 
-        .social-info h3 {
-            color: var(--green);
-
-            font-size: 17px;
-
-            margin-bottom: 2px;
-        }
-
-        .social-info span {
-            color: var(--text);
-
-            font-size: 13px;
-        }
-
-
-        /* =====================================================
-           TOMBOL
-        ===================================================== */
-
-        .btn {
+        .facebook-button {
             display: inline-flex;
 
             align-items: center;
-
             justify-content: center;
 
-            gap: 8px;
+            gap: 10px;
 
-            padding: 13px 20px;
+            padding: 14px 22px;
+
+            background: white;
+
+            color: #123d27;
 
             border-radius: 12px;
 
             font-weight: 800;
 
-            transition: .3s;
+            transition: .3s ease;
         }
 
-        .btn-primary {
-            background: var(--green);
+        .facebook-button:hover {
+            transform: translateY(-3px);
 
-            color: white;
+            background: #eaf7ec;
         }
 
-        .btn-primary:hover {
-            background: var(--green2);
+        /* BACK BUTTON */
+        .back-button {
+            display: inline-flex;
 
-            transform: translateY(-2px);
-        }
+            align-items: center;
 
-        .btn-outline {
-            border: 2px solid var(--green);
+            gap: 8px;
 
-            color: var(--green);
-
-            background: white;
-        }
-
-        .btn-outline:hover {
-            background: var(--green);
-
-            color: white;
-        }
-
-
-        /* =====================================================
-           MAP / ALAMAT
-        ===================================================== */
-
-        .address-box {
             margin-top: 25px;
 
-            padding: 35px;
+            padding: 13px 20px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #eaf7ec,
-                    #ffffff
-                );
+            background: #23734a;
 
-            border: 1px solid var(--line);
-
-            border-radius: var(--radius);
-
-            text-align: center;
-        }
-
-        .address-box h3 {
-            font-family: "Playfair Display", serif;
-
-            font-size: 27px;
-
-            color: var(--green);
-
-            margin-bottom: 10px;
-        }
-
-        .address-box p {
-            max-width: 650px;
-
-            margin: 0 auto 20px;
-
-            color: var(--text);
-        }
-
-
-        /* =====================================================
-           FOOTER
-        ===================================================== */
-
-        footer {
-            padding: 55px 0 20px;
-
-            background: #0d2819;
-
-            color: #c6d6ca;
-        }
-
-        .footer-grid {
-            display: grid;
-
-            grid-template-columns: 1.5fr 1fr 1fr;
-
-            gap: 40px;
-        }
-
-        .footer-title {
             color: white;
 
-            font-weight: 900;
+            border-radius: 11px;
 
-            font-size: 18px;
-
-            margin-bottom: 10px;
+            font-weight: 700;
         }
 
-        .footer-text {
-            color: #aebfb3;
+        .back-button:hover {
+            background: #123d27;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #123d27;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px 20px;
+        }
+
+        footer p {
+            color: rgba(255,255,255,.8);
 
             font-size: 14px;
         }
 
-        .footer-links {
-            display: grid;
+        /* MOBILE */
+        @media (max-width: 768px) {
 
-            gap: 8px;
-        }
+            .nav-container {
+                min-height: 65px;
+            }
 
-        .footer-links a {
-            color: #c6d6ca;
+            .logo {
+                font-size: 20px;
+            }
 
-            transition: .2s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-
-            transform: translateX(3px);
-        }
-
-        .footer-socials {
-            display: flex;
-
-            gap: 8px;
-
-            margin-top: 15px;
-        }
-
-        .footer-social {
-            width: 40px;
-            height: 40px;
-
-            display: grid;
-
-            place-items: center;
-
-            border: 1px solid rgba(255,255,255,.15);
-
-            border-radius: 11px;
-
-            transition: .2s;
-        }
-
-        .footer-social:hover {
-            background: rgba(255,255,255,.10);
-
-            transform: translateY(-2px);
-        }
-
-        .copyright {
-            margin-top: 40px;
-
-            padding-top: 20px;
-
-            border-top: 1px solid rgba(255,255,255,.10);
-
-            text-align: center;
-
-            color: #8fa497;
-
-            font-size: 13px;
-        }
-
-
-        /* =====================================================
-           RESPONSIVE TABLET
-        ===================================================== */
-
-        @media(max-width: 800px) {
+            .logo-icon {
+                width: 38px;
+                height: 38px;
+            }
 
             .nav-menu {
-                gap: 12px;
+                gap: 10px;
             }
 
             .nav-menu a {
-                font-size: 13px;
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .contact-section {
+                padding: 45px 0;
             }
 
             .contact-grid {
                 grid-template-columns: 1fr;
             }
 
-            .social-section {
-                grid-template-columns: 1fr;
+            .contact-card,
+            .facebook-card {
+                padding: 28px;
             }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
         }
 
+        @media (max-width: 500px) {
 
-        /* =====================================================
-           RESPONSIVE HP
-        ===================================================== */
+            .nav-container {
+                flex-direction: column;
 
-        @media(max-width: 600px) {
-
-            .container {
-                width: min(100% - 30px, 1160px);
+                padding: 12px 0;
             }
 
-            .nav-inner {
-                min-height: 68px;
+            .nav-menu {
+                width: 100%;
+
+                justify-content: center;
+
+                flex-wrap: wrap;
             }
 
-            .logo {
-                font-size: 19px;
+            .hero {
+                padding-top: 45px;
             }
+        }
+    </style>
+</head>
 
-            .logo-icon {
-                width: 39px;
-                height: 39px;
+<body>
 
-                font-size: 20
+    <!-- ================================
+         NAVBAR
+    ================================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-icon">🌿</span>
+
+                <span>Desa Pusaka</span>
+
+            </a>
+
+            <nav>
+
+                <ul class="nav-menu">
+
+                    <li>
+                        <a href="index.html">
+                            Beranda
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="produk.html">
+                            Produk UMKM
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="kontak.html" class="active">
+                            Kontak
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <section class="hero">
+
+        <span class="hero-label">
+            📞 Hubungi Kami
+        </span>
+
+        <h1>Kontak Desa Pusaka</h1>
+
+        <p>
+            Temukan informasi dan media sosial Desa Pusaka
+            untuk mengetahui kegiatan, potensi, serta produk
+            UMKM masyarakat desa.
+        </p>
+
+    </section>
+
+
+    <!-- ================================
+         KONTAK
+    ================================= -->
+
+    <main>
+
+        <section class="contact-section">
+
+            <div class="container">
+
+                <div class="contact-grid">
+
+
+                    <!-- INFORMASI DESA -->
+
+                    <div class="contact-card">
+
+                        <div class="contact-icon">
+                            🏡
+                        </div>
+
+                        <h2>Informasi Desa</h2>
+
+                        <p>
+                            Silakan hubungi atau kunjungi Desa Pusaka
+                            untuk mendapatkan informasi mengenai
+                            desa dan kegiatan masyarakat.
+                        </p>
+
+                        <ul class="contact-info">
+
+                            <li>
+                                📍 <strong>Desa:</strong>
+                                Desa Pusaka
+                            </li>
+
+                            <li>
+                                🏘️ <strong>Wilayah:</strong>
+                                Kalimantan Barat
+                            </li>
+
+                            <li>
+                                🌿 <strong>Website:</strong>
+                                Desa Pusaka
+                            </li>
+
+                        </ul>
+
+                        <a href="index.html" class="back-button">
+                            ← Kembali ke Beranda
+                        </a>
+
+                    </div>
+
+
+                    <!-- FACEBOOK -->
+
+                    <div class="facebook-card">
+
+                        <div class="contact-icon">
+                            f
+                        </div>
+
+                        <h2>Facebook Desa Pusaka</h2>
+
+                        <p>
+                            Ikuti Facebook Desa Pusaka untuk
+                            mendapatkan informasi terbaru mengenai
+                            kegiatan masyarakat, budaya, UMKM,
+                            dan perkembangan desa.
+                        </p>
+
+                        <!-- GANTI LINK FACEBOOK DI BAWAH -->
+
+                        <a
+                            href="https://www.facebook.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="facebook-button"
+                        >
+                            <span>f</span>
+                            Kunjungi Facebook
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Desa Pusaka. Semua Hak Dilindungi.
+        </p>
+
+        <p>
+            Pesona Alam, Budaya & Masyarakat Desa Pusaka
+        </p>
+
+    </footer>
+
+</body>
+</html>
