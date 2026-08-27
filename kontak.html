@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Kontak | Desa Pusaka</title>
+
+    <meta name="description"
+          content="Kontak dan media sosial Desa Pusaka. Hubungi Desa Pusaka melalui Facebook, Instagram, WhatsApp, dan informasi kontak lainnya.">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        /* =====================================================
+           ROOT
+        ===================================================== */
+
+        :root {
+            --green: #123d27;
+            --green2: #23734a;
+            --green3: #dff0e2;
+
+            --light-green: #eaf7ec;
+
+            --gold: #e5bd61;
+
+            --cream: #f4fbf5;
+
+            --dark: #102119;
+            --text: #64736a;
+
+            --white: #ffffff;
+
+            --line: #dce9df;
+
+            --shadow: 0 20px 60px rgba(15,55,35,.12);
+
+            --radius: 25px;
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", Arial, sans-serif;
+
+            color: var(--dark);
+
+            background: var(--cream);
+
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+
+            color: inherit;
+        }
+
+        .container {
+            width: min(1160px, calc(100% - 40px));
+
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .navbar {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+            right: 0;
+
+            z-index: 1000;
+
+            background: rgba(255,255,255,.96);
+
+            backdrop-filter: blur(15px);
+
+            box-shadow: 0 5px 25px rgba(0,0,0,.08);
+        }
+
+        .nav-inner {
+            min-height: 75px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 23px;
+
+            font-weight: 800;
+
+            color: var(--green);
+        }
+
+        .logo-icon {
+            width: 43px;
+            height: 43px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 13px;
+
+            background: var(--green);
+
+            color: white;
+
+            font-size: 22px;
+        }
+
+        .nav-menu {
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: #405148;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--green2);
+        }
+
+        .nav-contact {
+            padding: 10px 18px;
+
+            border-radius: 10px;
+
+            background: var(--green);
+
+            color: white !important;
+        }
+
+        .nav-contact:hover {
+            background: var(--green2);
+        }
+
+
+        /* =====================================================
+           HERO KONTAK
+        ===================================================== */
+
+        .contact-hero {
+            min-height: 470px;
+
+            padding-top: 75px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(18,61,39,.96),
+                    rgba(35,115,74,.88)
+                );
+        }
+
+        .contact-hero-content {
+            max-width: 750px;
+
+            padding: 60px 0;
+        }
+
+        .hero-label {
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            margin-bottom: 18px;
+
+            border: 1px solid rgba(255,255,255,.25);
+
+            background: rgba(255,255,255,.10);
+
+            border-radius: 50px;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing: .08em;
+        }
+
+        .contact-hero h1 {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(42px, 7vw, 70px);
+
+            line-height: 1.05;
+
+            margin-bottom: 18px;
+        }
+
+        .contact-hero h1 span {
+            color: var(--gold);
+        }
+
+        .contact-hero p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: rgba(255,255,255,.88);
+
+            font-size: 17px;
+        }
+
+
+        /* =====================================================
+           KONTAK SECTION
+        ===================================================== */
+
+        .contact-section {
+            padding: 90px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 50px;
+        }
+
+        .section-label {
+            display: inline-block;
+
+            padding: 7px 14px;
+
+            background: var(--light-green);
+
+            color: var(--green2);
+
+            border-radius: 50px;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(32px, 5vw, 48px);
+
+            line-height: 1.15;
+
+            color: var(--green);
+
+            margin-bottom: 13px;
+        }
+
+        .section-heading p {
+            color: var(--text);
+        }
+
+
+        /* =====================================================
+           CONTACT GRID
+        ===================================================== */
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* =====================================================
+           CONTACT CARD
+        ===================================================== */
+
+        .contact-card {
+            padding: 32px;
+
+            background: white;
+
+            border: 1px solid var(--line);
+
+            border-radius: var(--radius);
+
+            box-shadow: 0 12px 35px rgba(15,55,35,.07);
+
+            transition: .3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow: var(--shadow);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+
+            display: grid;
+
+            place-items: center;
+
+            margin-bottom: 18px;
+
+            background: var(--light-green);
+
+            border-radius: 17px;
+
+            font-size: 27px;
+        }
+
+        .contact-card h3 {
+            color: var(--green);
+
+            font-size: 21px;
+
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            color: var(--text);
+
+            margin-bottom: 15px;
+        }
+
+        .contact-card strong {
+            color: var(--green2);
+        }
+
+
+        /* =====================================================
+           SOCIAL MEDIA
+        ===================================================== */
+
+        .social-section {
+            margin-top: 25px;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .social-card {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 22px;
+
+            background: white;
+
+            border: 1px solid var(--line);
+
+            border-radius: 20px;
+
+            box-shadow: 0 10px 30px rgba(15,55,35,.06);
+
+            transition: .3s;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+
+            border-color: #a9cfb2;
+
+            box-shadow: var(--shadow);
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 14px;
+
+            background: var(--light-green);
+
+            font-size: 25px;
+
+            flex-shrink: 0;
+        }
+
+        .social-info h3 {
+            color: var(--green);
+
+            font-size: 17px;
+
+            margin-bottom: 2px;
+        }
+
+        .social-info span {
+            color: var(--text);
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           TOMBOL
+        ===================================================== */
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            padding: 13px 20px;
+
+            border-radius: 12px;
+
+            font-weight: 800;
+
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: var(--green);
+
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--green2);
+
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--green);
+
+            color: var(--green);
+
+            background: white;
+        }
+
+        .btn-outline:hover {
+            background: var(--green);
+
+            color: white;
+        }
+
+
+        /* =====================================================
+           MAP / ALAMAT
+        ===================================================== */
+
+        .address-box {
+            margin-top: 25px;
+
+            padding: 35px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eaf7ec,
+                    #ffffff
+                );
+
+            border: 1px solid var(--line);
+
+            border-radius: var(--radius);
+
+            text-align: center;
+        }
+
+        .address-box h3 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 27px;
+
+            color: var(--green);
+
+            margin-bottom: 10px;
+        }
+
+        .address-box p {
+            max-width: 650px;
+
+            margin: 0 auto 20px;
+
+            color: var(--text);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            padding: 55px 0 20px;
+
+            background: #0d2819;
+
+            color: #c6d6ca;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns: 1.5fr 1fr 1fr;
+
+            gap: 40px;
+        }
+
+        .footer-title {
+            color: white;
+
+            font-weight: 900;
+
+            font-size: 18px;
+
+            margin-bottom: 10px;
+        }
+
+        .footer-text {
+            color: #aebfb3;
+
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: grid;
+
+            gap: 8px;
+        }
+
+        .footer-links a {
+            color: #c6d6ca;
+
+            transition: .2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+
+            transform: translateX(3px);
+        }
+
+        .footer-socials {
+            display: flex;
+
+            gap: 8px;
+
+            margin-top: 15px;
+        }
+
+        .footer-social {
+            width: 40px;
+            height: 40px;
+
+            display: grid;
+
+            place-items: center;
+
+            border: 1px solid rgba(255,255,255,.15);
+
+            border-radius: 11px;
+
+            transition: .2s;
+        }
+
+        .footer-social:hover {
+            background: rgba(255,255,255,.10);
+
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            margin-top: 40px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(255,255,255,.10);
+
+            text-align: center;
+
+            color: #8fa497;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE TABLET
+        ===================================================== */
+
+        @media(max-width: 800px) {
+
+            .nav-menu {
+                gap: 12px;
+            }
+
+            .nav-menu a {
+                font-size: 13px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-section {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE HP
+        ===================================================== */
+
+        @media(max-width: 600px) {
+
+            .container {
+                width: min(100% - 30px, 1160px);
+            }
+
+            .nav-inner {
+                min-height: 68px;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .logo-icon {
+                width: 39px;
+                height: 39px;
+
+                font-size: 20
