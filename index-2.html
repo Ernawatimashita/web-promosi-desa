@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desa Pusaka | Pesona Alam, Budaya & Masyarakat</title>
+<meta name="description" content="Website Desa Pusaka yang memperkenalkan sejarah, potensi, budaya, kegiatan, dan kehidupan masyarakat Desa Pusaka.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --green:#123d27;
+    --green2:#23734a;
+    --green3:#dff0e2;
+    --cream:#f4fbf5;
+    --dark:#102119;
+    --text:#64736a;
+    --white:#fff;
+    --line:#dce9df;
+    --gold:#e5bd61;
+    --shadow:0 20px 60px rgba(15,55,35,.12);
+    --radius:28px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    font-family:"DM Sans",Arial,sans-serif;
+    color:var(--dark);
+    background:#fff;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{width:100%;display:block}
+.container{width:min(1160px,calc(100% - 40px));margin:auto}
+section{scroll-margin-top:90px}
+
+/* NAVBAR */
+.navbar{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    padding:14px 0;transition:.3s ease;
+}
+.navbar.scrolled{
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(15px);
+    box-shadow:0 5px 30px rgba(10,50,30,.08);
+}
+.nav-inner{
+    min-height:64px;display:flex;align-items:center;
+    justify-content:space-between;gap:20px;
+}
+.logo{
+    display:flex;align-items:center;gap:10px;
+    color:#fff;font-family:"Playfair Display",serif;
+    font-size:23px;font-weight:800;white-space:nowrap;
+}
+.navbar.scrolled .logo{color:var(--green)}
+.logo-icon{
+    width:43px;height:43px;display:grid;place-items:center;
+    border-radius:13px;background:var(--green);color:#fff;font-size:21px;
+}
+.nav-menu{
+    display:flex;align-items:center;gap:6px;list-style:none;
+}
+.nav-menu a{
+    padding:10px 12px;border-radius:10px;color:#fff;
+    font-size:14px;font-weight:700;transition:.25s;
+}
+.navbar.scrolled .nav-menu a{color:#47564d}
+.nav-menu a:hover,.nav-menu a.active{
+    background:rgba(255,255,255,.14);color:#fff;
+}
+.navbar.scrolled .nav-menu a:hover,
+.navbar.scrolled .nav-menu a.active{
+    background:var(--green3);color:var(--green);
+}
+.nav-contact{
+    background:#fff!important;color:var(--green)!important;
+}
+.navbar.scrolled .nav-contact{
+    background:var(--green)!important;color:#fff!important;
+}
+.menu-toggle{
+    display:none;width:44px;height:44px;border:0;border-radius:12px;
+    background:var(--green);color:#fff;cursor:pointer;font-size:22px;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;display:flex;align-items:center;position:relative;
+    color:#fff;padding-top:100px;
+    background:
+      linear-gradient(90deg,rgba(7,42,23,.95),rgba(7,42,23,.72) 45%,rgba(7,42,23,.20)),
+      url("images/hero-desa.jpg") center/cover no-repeat;
+}
+.hero-content{max-width:720px;padding:80px 0}
+.hero-label{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:8px 15px;border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.10);border-radius:50px;
+    font-size:13px;font-weight:800;margin-bottom:20px;
+}
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(48px,7vw,82px);line-height:1;
+    letter-spacing:-.04em;margin-bottom:25px;
+}
+.hero h1 span{color:var(--gold)}
+.hero p{
+    max-width:650px;color:rgba(255,255,255,.88);
+    font-size:17px;margin-bottom:30px;
+}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:25px}
+.btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    min-height:48px;padding:12px 20px;border-radius:13px;
+    border:2px solid transparent;font-weight:800;cursor:pointer;
+    transition:.25s ease;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:var(--green);color:#fff}
+.btn-primary:hover{background:var(--green2)}
+.btn-light{background:#fff;color:var(--green)}
+.btn-light:hover{background:var(--green3)}
+.btn-outline-light{background:transparent;border-color:rgba(255,255,255,.45);color:#fff}
+.btn-outline-light:hover{background:#fff;color:var(--green)}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px}
+.hero-tag{
+    padding:7px 13px;border:1px solid rgba(255,255,255,.18);
+    background:rgba(0,0,0,.15);border-radius:50px;font-size:13px;
+}
+
+/* SECTION */
+.section{padding:100px 0}
+.section-soft{background:var(--cream)}
+.section-heading{max-width:760px;margin:0 auto 50px;text-align:center}
+.section-heading.left{text-align:left;margin-left:0}
+.section-label{
+    display:inline-block;color:var(--green2);
+    font-size:13px;font-weight:900;letter-spacing:.12em;
+    text-transform:uppercase;
+}
+.section-heading h2,.about-text h2{
+    margin:8px 0 15px;color:var(--green);
+    font-family:"Playfair Display",serif;
+    font-size:clamp(36px,5vw,58px);line-height:1.1;
+}
+.section-heading p,.about-text p{color:var(--text);font-size:17px}
+
+/* INTRO */
+.intro-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+}
+.about-image{
+    min-height:500px;border-radius:30px;overflow:hidden;
+    background:#e4eee6;box-shadow:var(--shadow);position:relative;
+}
+.about-image img{height:100%;min-height:500px;object-fit:cover}
+.image-badge{
+    position:absolute;right:25px;bottom:25px;
+    background:rgba(255,255,255,.94);color:var(--green);
+    padding:18px 25px;border-radius:20px;font-weight:800;
+    box-shadow:0 15px 40px rgba(0,0,0,.10);
+}
+.about-text p{margin-bottom:18px}
+.check-list{display:grid;gap:12px;margin:25px 0}
+.check-list div{display:flex;gap:10px;align-items:flex-start;font-weight:600}
+.check-list span{
+    width:27px;height:27px;flex:none;display:grid;place-items:center;
+    border-radius:50%;background:var(--green3);color:var(--green);
+}
+
+/* CARDS */
+.cards{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+}
+.card{
+    padding:30px;background:#fff;border:1px solid var(--line);
+    border-radius:24px;box-shadow:0 12px 35px rgba(15,55,35,.07);
+    transition:.3s ease;
+}
+.card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+.card-icon{
+    width:58px;height:58px;display:grid;place-items:center;
+    border-radius:17px;background:var(--green3);font-size:28px;
+    margin-bottom:20px;
+}
+.card h3{
+    color:var(--green);font-family:"Playfair Display",serif;
+    font-size:27px;margin-bottom:9px;
+}
+.card p{color:var(--text)}
+
+/* SEJARAH */
+.history{
+    display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center;
+}
+.history-number{
+    font-family:"Playfair Display",serif;font-size:clamp(80px,13vw,150px);
+    color:var(--green3);line-height:.8;font-weight:800;
+}
+.history h2{
+    color:var(--green);font-family:"Playfair Display",serif;
+    font-size:clamp(36px,5vw,55px);line-height:1.1;margin-bottom:18px;
+}
+.history p{color:var(--text);font-size:17px;margin-bottom:15px}
+
+/* POTENSI */
+.potential-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.potential-card{
+    min-height:390px;position:relative;overflow:hidden;border-radius:26px;
+    background:#dfe8e1;
+}
+.potential-card img{height:100%;object-fit:cover;position:absolute;inset:0}
+.potential-card::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,.78),rgba(0,0,0,.02) 65%);
+}
+.potential-content{position:absolute;left:25px;right:25px;bottom:25px;z-index:2;color:#fff}
+.potential-content h3{
+    font-family:"Playfair Display",serif;font-size:29px;margin-bottom:5px;
+}
+.potential-content p{color:rgba(255,255,255,.88)}
+
+/* BUDAYA */
+.culture-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:22px;
+}
+.culture-card{
+    padding:38px;background:#fff;border:1px solid var(--line);
+    border-radius:25px;
+}
+.culture-card h3{
+    font-family:"Playfair Display",serif;color:var(--green);
+    font-size:30px;margin-bottom:10px;
+}
+.culture-card p{color:var(--text)}
+
+/* KEGIATAN */
+.activity-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.activity-card{
+    position:relative;min-height:470px;overflow:hidden;border-radius:30px;
+    background:#dfe8e1;border:1px solid var(--line);
+}
+.activity-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.activity-card::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,.78),rgba(0,0,0,.02) 65%);
+}
+.activity-content{
+    position:absolute;left:35px;right:35px;bottom:30px;z-index:2;color:#fff;
+}
+.activity-content h3{
+    font-family:"Playfair Display",serif;font-size:32px;margin-bottom:7px;
+}
+.activity-content p{color:rgba(255,255,255,.88);font-size:16px}
+
+/* CTA */
+.cta{padding:100px 0;background:var(--green);color:#fff}
+.cta-inner{max-width:850px}
+.cta .section-label{color:#b9ddc2}
+.cta h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(38px,6vw,64px);line-height:1.05;margin:10px 0 18px;
+}
+.cta p{font-size:18px;color:rgba(255,255,255,.78);margin-bottom:28px}
+
+/* FOOTER */
+footer{background:#0b291a;color:#fff;padding:40px 0}
+.footer-inner{
+    display:flex;align-items:center;justify-content:space-between;gap:20px
+}
+.footer-logo{font-family:"Playfair Display",serif;font-size:23px;font-weight:800}
+.footer-text{color:rgba(255,255,255,.65);font-size:14px}
+.footer-social{display:flex;gap:8px}
+.footer-social a{
+    width:40px;height:40px;display:grid;place-items:center;
+    border-radius:10px;background:rgba(255,255,255,.10);font-weight:800;
+    transition:.25s;
+}
+.footer-social a:hover{background:#1877f2}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .menu-toggle{display:grid;place-items:center}
+    .nav-menu{
+        position:fixed;top:84px;left:20px;right:20px;display:none;
+        flex-direction:column;align-items:stretch;padding:15px;background:#fff;
+        border-radius:18px;box-shadow:var(--shadow);
+    }
+    .nav-menu.show{display:flex}
+    .nav-menu a{display:block;color:var(--dark)}
+    .nav-contact{background:var(--green)!important;color:#fff!important}
+    .intro-grid,.history,.culture-grid{grid-template-columns:1fr}
+    .cards,.potential-grid{grid-template-columns:1fr 1fr}
+    .about-image{min-height:420px}
+    .about-image img{min-height:420px}
+}
+@media(max-width:600px){
+    .container{width:calc(100% - 28px)}
+    .hero{min-height:760px}
+    .hero-content{padding:50px 0}
+    .hero h1{font-size:52px}
+    .section{padding:70px 0}
+    .cards,.potential-grid,.activity-grid{grid-template-columns:1fr}
+    .potential-card{min-height:400px}
+    .activity-card{min-height:450px}
+    .footer-inner{flex-direction:column;text-align:center}
+    .history-number{font-size:100px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar" id="navbar">
+    <div class="container nav-inner">
+        <a href="#beranda" class="logo">
+            <span class="logo-icon">🌿</span>
+            Desa Pusaka
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#beranda" class="active">Beranda</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#sejarah">Sejarah</a></li>
+            <li><a href="#potensi">Potensi</a></li>
+            <li><a href="#budaya">Budaya</a></li>
+            <li><a href="#kegiatan">Kegiatan</a></li>
+            <li><a href="kontak.html" class="nav-contact">Kontak</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+
+<section class="hero" id="beranda">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-label">🌿 SELAMAT DATANG DI DESA PUSAKA</div>
+
+            <h1>
+                Pesona <span>Desa</span><br>
+                yang Penuh Cerita.
+            </h1>
+
+            <p>
+                Mengenal lebih dekat Desa Pusaka melalui sejarah,
+                keindahan alam, budaya, kegiatan, dan kehidupan
+                masyarakat yang menjadi kekuatan desa.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#tentang" class="btn btn-light">Jelajahi Desa →</a>
+                <a href="kontak.html" class="btn btn-outline-light">Hubungi Kami</a>
+            </div>
+
+            <div class="hero-tags">
+                <span class="hero-tag">🌿 Alam Asri</span>
+                <span class="hero-tag">🤝 Gotong Royong</span>
+                <span class="hero-tag">🌾 Pertanian</span>
+                <span class="hero-tag">🏡 Masyarakat</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="tentang">
+    <div class="container">
+        <div class="intro-grid">
+            <div class="about-image">
+                <img src="images/hero-desa.jpg" alt="Pemandangan Desa Pusaka"
+                     onerror="this.src='images/teh-sappang.jpg'">
+                <div class="image-badge">🌿 Desa yang Asri</div>
+            </div>
+
+            <div class="about-text">
+                <span class="section-label">Tentang Desa</span>
+                <h2>Desa yang asri dan penuh kebersamaan.</h2>
+                <p>
+                    Desa Pusaka merupakan tempat tumbuhnya kehidupan
+                    masyarakat yang menjunjung kebersamaan, kepedulian,
+                    dan semangat membangun desa.
+                </p>
+                <p>
+                    Potensi alam dan kehidupan masyarakat menjadi bagian
+                    penting dari identitas Desa Pusaka yang terus dijaga
+                    untuk generasi mendatang.
+                </p>
+
+                <div class="check-list">
+                    <div><span>✓</span> Lingkungan desa yang asri</div>
+                    <div><span>✓</span> Semangat gotong royong</div>
+                    <div><span>✓</span> Potensi alam dan pertanian</div>
+                </div>
+
+                <a href="#sejarah" class="btn btn-primary">Kenali Sejarah Desa</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-soft">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-label">Nilai Desa</span>
+            <h2>Hal yang membuat Desa Pusaka istimewa.</h2>
+            <p>
+                Kehidupan desa dibangun dari alam yang terjaga,
+                kebersamaan masyarakat, dan semangat untuk terus berkembang.
+            </p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">🌿</div>
+                <h3>Lingkungan Asri</h3>
+                <p>Menjaga lingkungan dan alam sebagai bagian penting dari kehidupan masyarakat desa.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h3>Gotong Royong</h3>
+                <p>Kebersamaan warga menjadi kekuatan dalam menjaga dan membangun Desa Pusaka.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏡</div>
+                <h3>Kehidupan Desa</h3>
+                <p>Suasana kekeluargaan dan hubungan antarwarga menjadi bagian dari kehidupan sehari-hari.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="sejarah">
+    <div class="container">
+        <div class="history">
+            <div>
+                <span class="section-label">Sejarah</span>
+                <div class="history-number">1779</div>
+            </div>
+            <div>
+                <h2>Jejak sejarah Desa Pusaka.</h2>
+                <p>
+                    Konon, sekitar tahun 1779, dua orang pelaut dari Penghuluan
+                    berlayar menggunakan sampan dan singgah di kawasan hutan
+                    lebat dekat aliran sungai yang kini dikenal sebagai Sungai Sengobang.
+                </p>
+                <p>
+                    Mereka menemukan sebuah pohon besar dan berusaha menebangnya.
+                    Dalam peristiwa tersebut, tangkai beliung mereka patah dan
+                    hanya tersisa bagian ujung yang disebut “kuting”.
+                </p>
+                <p>
+                    Kisah tersebut menjadi bagian dari cerita yang diwariskan
+                    dan mengenalkan jejak awal sejarah kampung kepada generasi berikutnya.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-soft" id="potensi">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-label">Potensi Desa</span>
+            <h2>Potensi yang menjadi kekuatan Desa Pusaka.</h2>
+            <p>
+                Alam dan aktivitas masyarakat menjadi bagian dari
+                kekayaan Desa Pusaka.
+            </p>
+        </div>
+
+        <div class="potential-grid">
+            <div class="potential-card">
+                <img src="images/suasana-desa.jpg" alt="Suasana Desa Pusaka"
+                     onerror="this.style.display='none'">
+                <div class="potential-content">
+                    <h3>Suasana Desa</h3>
+                    <p>Lingkungan pedesaan Desa Pusaka yang tenang dan asri.</p>
+                </div>
+            </div>
+
+            <div class="potential-card">
+                <img src="images/keindahan-alam.jpg" alt="Keindahan Alam Desa Pusaka"
+                     onerror="this.style.display='none'">
+                <div class="potential-content">
+                    <h3>Keindahan Alam</h3>
+                    <p>Alam hijau dan suasana yang menjadi bagian dari kehidupan desa.</p>
+                </div>
+            </div>
+
+            <div class="potential-card">
+                <img src="images/pertanian-desa.jpg" alt="Pertanian Desa Pusaka"
+                     onerror="this.style.display='none'">
+                <div class="potential-content">
+                    <h3>Pertanian Desa</h3>
+                    <p>Aktivitas pertanian masyarakat sebagai salah satu potensi desa.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="budaya">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-label">Budaya & Masyarakat</span>
+            <h2>Kebersamaan yang menjadi kekuatan desa.</h2>
+            <p>
+                Kehidupan masyarakat Desa Pusaka dibangun dari hubungan
+                antarwarga dan kepedulian terhadap lingkungan sekitar.
+            </p>
+        </div>
+
+        <div class="culture-grid">
+            <div class="culture-card">
+                <div class="card-icon">🤝</div>
+                <h3>Gotong Royong</h3>
+                <p>
+                    Kegiatan bersama menjadi cara masyarakat menjaga
+                    kebersihan, membantu sesama, dan mempererat hubungan antarwarga.
+                </p>
+            </div>
+
+            <div class="culture-card">
+                <div class="card-icon">🌱</div>
+                <h3>Peduli Lingkungan</h3>
+                <p>
+                    Kepedulian terhadap alam dan lingkungan menjadi bagian
+                    penting dalam menjaga kenyamanan dan keasrian desa.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-soft" id="kegiatan">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-label">Kegiatan Warga</span>
+            <h2>Aktivitas masyarakat Desa Pusaka.</h2>
+            <p>
+                Berbagai kegiatan sederhana menjadi bagian dari kehidupan
+                dan kebersamaan masyarakat desa.
+            </p>
+        </div>
+
+        <div class="activity-grid">
+            <div class="activity-card">
+                <img src="images/gotong-royong.jpg" alt="Gotong Royong Desa Pusaka"
+                     onerror="this.style.display='none'">
+                <div class="activity-content">
+                    <h3>Gotong Royong</h3>
+                    <p>Kegiatan bersama untuk menjaga kebersihan dan lingkungan desa.</p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <img src="images/kegiatan-warga.jpg" alt="Kegiatan Warga Desa Pusaka"
+                     onerror="this.style.display='none'">
+                <div class="activity-content">
+                    <h3>Kegiatan Warga</h3>
+                    <p>Berbagai kegiatan masyarakat mempererat hubungan antarwarga.</p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <img src="images/pertanian-desa.jpg" alt="Aktivitas Pertanian Desa Pusaka"
+                     onerror="this.style.display='none'">
+                <div class="activity-content">
+                    <h3>Aktivitas Pertanian</h3>
+                    <p>Pertanian menjadi salah satu aktivitas penting masyarakat.</p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <img src="images/suasana-desa.jpg" alt="Suasana Desa Pusaka"
+                     onerror="this.style.display='none'">
+                <div class="activity-content">
+                    <h3>Suasana Desa</h3>
+                    <p>Lingkungan pedesaan yang menggambarkan kehidupan Desa Pusaka.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+        <div class="cta-inner">
+            <span class="section-label">Hubungi Kami</span>
+            <h2>Mari mengenal Desa Pusaka lebih dekat.</h2>
+            <p>
+                Untuk informasi lebih lanjut mengenai Desa Pusaka,
+                silakan kunjungi halaman kontak.
+            </p>
+            <a href="kontak.html" class="btn btn-light">Buka Halaman Kontak →</a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container footer-inner">
+        <div>
+            <div class="footer-logo">🌿 Desa Pusaka</div>
+            <div class="footer-text">Pesona Alam, Budaya & Masyarakat</div>
+        </div>
+
+        <div class="footer-text">© 2026 Desa Pusaka. Semua Hak Dilindungi.</div>
+
+        <div class="footer-social">
+            <a href="https://facebook.com/groups/416659202384009/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+const navbar = document.getElementById("navbar");
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+window.addEventListener("scroll", () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 40);
+});
+
+menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+});
+
+document.querySelectorAll(".nav-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("show");
+    });
+});
+
+const sections = document.querySelectorAll("section[id]");
+const links = document.querySelectorAll(".nav-menu a[href^='#']");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+        const top = section.offsetTop - 130;
+        if (window.scrollY >= top) current = section.id;
+    });
+
+    links.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
