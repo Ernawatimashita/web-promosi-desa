@@ -1363,4 +1363,2005 @@
             display: grid;
 
             grid-template-columns:
-                1fr
+                1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .contact-title .section-label {
+            color: #9bc5aa;
+        }
+
+        .contact-title h2 {
+            font-family:
+                "Playfair Display", serif;
+
+            font-size:
+                clamp(43px, 6vw, 70px);
+
+            line-height: 1.04;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 22px;
+        }
+
+        .contact-title p {
+            color: #c6d9ce;
+
+            font-size: 16px;
+        }
+
+        .contact-cards {
+            display: grid;
+
+            gap: 13px;
+        }
+
+        .contact-card {
+            display: flex;
+
+            align-items: center;
+
+            gap: 17px;
+
+            padding: 20px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255, 255, 255, 0.07);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.12);
+
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateX(6px);
+
+            background:
+                rgba(255, 255, 255, 0.12);
+        }
+
+        .contact-icon {
+            width: 47px;
+            height: 47px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255, 255, 255, 0.10);
+
+            font-size: 21px;
+        }
+
+        .contact-card h3 {
+            color: #f5dc80;
+
+            font-size: 14px;
+
+            margin-bottom: 2px;
+        }
+
+        .contact-card p,
+        .contact-card a {
+            color: white;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           SOCIAL MEDIA
+        ====================================================== */
+
+        .social-links {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 10px 15px;
+
+            border-radius: 50px;
+
+            color: white;
+
+            background:
+                rgba(255, 255, 255, 0.08);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.14);
+
+            font-size: 13px;
+
+            transition: 0.3s;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+
+            background:
+                rgba(255, 255, 255, 0.16);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+            background: #05291c;
+
+            color: white;
+
+            padding: 45px 25px;
+
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family:
+                "Playfair Display", serif;
+
+            font-size: 26px;
+
+            margin-bottom: 9px;
+        }
+
+        footer p {
+            color: #9db5a7;
+
+            font-size: 13px;
+
+            margin: 4px 0;
+        }
+
+
+        /* =====================================================
+           BACK TO TOP
+        ====================================================== */
+
+        .back-top {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 53px;
+            height: 53px;
+
+            border: none;
+
+            border-radius: 17px;
+
+            background: var(--green);
+
+            color: white;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            z-index: 999;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateY(20px);
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        .back-top.show {
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+        }
+
+        .back-top:hover {
+            transform: translateY(-5px);
+        }
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ====================================================== */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(35px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+           TABLET
+        ====================================================== */
+
+        @media (max-width: 950px) {
+
+            nav {
+                display: none;
+            }
+
+            .menu-btn {
+                display: flex;
+            }
+
+            .profil-grid {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+            }
+
+            .potensi-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .fasilitas-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .stats {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .stat:nth-child(-n+2) {
+                border-bottom:
+                    1px solid #e2ebe5;
+            }
+
+            .stat:nth-child(3) {
+                border-right:
+                    1px solid #e2ebe5;
+            }
+
+            .activity-content {
+                padding: 45px;
+            }
+
+        }
+
+
+        /* =====================================================
+           HP
+        ====================================================== */
+
+        @media (max-width: 600px) {
+
+            header {
+                height: 76px;
+            }
+
+            header.scrolled {
+                height: 68px;
+            }
+
+            .navbar {
+                width:
+                    calc(100% - 28px);
+            }
+
+            .logo {
+                gap: 9px;
+            }
+
+            .logo-icon {
+                width: 43px;
+                height: 43px;
+
+                border-radius: 13px;
+
+                font-size: 22px;
+            }
+
+            .logo-text {
+                font-size: 21px;
+            }
+
+            .menu-btn {
+                width: 44px;
+                height: 44px;
+
+                border-radius: 13px;
+            }
+
+            .mobile-menu {
+                top: 76px;
+            }
+
+
+            /* HERO */
+
+            .hero {
+                min-height: 780px;
+
+                padding:
+                    125px
+                    20px
+                    110px;
+
+                background-position:
+                    62% center;
+            }
+
+            .hero::after {
+                height: 110px;
+            }
+
+            .hero-small {
+                font-size: 9px;
+
+                letter-spacing: 1.2px;
+
+                padding: 8px 12px;
+
+                margin-bottom: 22px;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+            }
+
+            .hero h1 {
+                font-size: 54px;
+
+                line-height: 0.98;
+
+                letter-spacing: -2.5px;
+            }
+
+            .hero p {
+                font-size: 15px;
+
+                line-height: 1.7;
+            }
+
+            .hero-button {
+                padding:
+                    13px 18px
+                    13px 21px;
+
+                font-size: 14px;
+            }
+
+            .hero-button span {
+                width: 29px;
+                height: 29px;
+            }
+
+            .hero-tags {
+                margin-top: 28px;
+
+                gap: 8px;
+            }
+
+            .tag {
+                font-size: 11px;
+
+                padding:
+                    7px 10px;
+            }
+
+
+            /* STATS */
+
+            .stats-wrapper {
+                margin-top: -48px;
+
+                padding:
+                    0 14px;
+            }
+
+            .stats {
+                border-radius: 24px;
+            }
+
+            .stat {
+                min-height: 135px;
+
+                padding:
+                    15px 7px;
+            }
+
+            .stat-number {
+                font-size: 34px;
+            }
+
+            .stat-icon {
+                font-size: 35px;
+            }
+
+            .stat-label {
+                font-size: 11px;
+            }
+
+
+            /* SECTION */
+
+            section {
+                padding:
+                    78px 20px;
+            }
+
+            .section-heading {
+                margin-bottom: 36px;
+            }
+
+            .section-label {
+                font-size: 10px;
+            }
+
+            .section-heading h2 {
+                font-size: 40px;
+            }
+
+            .section-heading p {
+                font-size: 15px;
+            }
+
+
+            /* PROFIL */
+
+            .profil-grid {
+                gap: 30px;
+            }
+
+            .profil-text h3 {
+                font-size: 32px;
+            }
+
+            .info-card {
+                padding:
+                    20px;
+            }
+
+            .info-row {
+                padding:
+                    15px 0;
+            }
+
+            .info-row span,
+            .info-row strong {
+                font-size: 13px;
+            }
+
+
+            /* SEJARAH */
+
+            .sejarah-box {
+                padding: 35px 24px;
+                border-radius: 25px;
+            }
+
+            .sejarah-box::before {
+                left: 20px;
+
+                font-size: 75px;
+            }
+
+            .sejarah-box p {
+                font-size: 15px;
+            }
+
+
+            /* KEGIATAN */
+
+            .activity-card {
+                min-height: 350px;
+
+                border-radius: 25px;
+            }
+
+            .activity-content {
+                padding: 30px 25px;
+            }
+
+            .activity-content h3 {
+                font-size: 40px;
+            }
+
+            .activity-content p {
+                font-size: 14px;
+            }
+
+
+            /* POTENSI */
+
+            .potensi-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            /* FASILITAS */
+
+            .fasilitas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fasilitas-photo {
+                height: 230px;
+            }
+
+            .fasilitas-content h3 {
+                font-size: 24px;
+            }
+
+
+            /* GALERI */
+
+            .gallery {
+                grid-template-columns:
+                    1fr 1fr;
+
+                grid-auto-rows:
+                    165px;
+            }
+
+            .gallery-item:first-child {
+                grid-column:
+                    span 2;
+
+                grid-row:
+                    span 1;
+            }
+
+            .gallery-overlay {
+                font-size: 12px;
+            }
+
+
+            /* KONTAK */
+
+            .contact-wrapper {
+                gap: 35px;
+            }
+
+            .contact-title h2 {
+                font-size: 42px;
+            }
+
+
+            /* BACK TOP */
+
+            .back-top {
+                right: 18px;
+                bottom: 18px;
+
+                width: 48px;
+                height: 48px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header id="header">
+
+        <div class="navbar">
+
+            <a href="#beranda" class="logo">
+
+                <div class="logo-icon">
+                    🌿
+                </div>
+
+                <div class="logo-text">
+                    Desa Pusaka
+                </div>
+
+            </a>
+
+
+            <nav>
+
+                <a href="#beranda">
+                    Beranda
+                </a>
+
+                <a href="#profil">
+                    Profil
+                </a>
+
+                <a href="#sejarah">
+                    Sejarah
+                </a>
+
+                <a href="#kegiatan">
+                    Kegiatan
+                </a>
+
+                <a href="#fasilitas">
+                    Fasilitas
+                </a>
+
+                <a href="#potensi">
+                    Potensi
+                </a>
+
+                <a href="#kontak">
+                    Kontak
+                </a>
+
+            </nav>
+
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Buka menu">
+
+                <div class="menu-lines">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </button>
+
+        </div>
+
+
+        <!-- MOBILE MENU -->
+
+        <div class="mobile-menu" id="mobileMenu">
+
+            <a href="#beranda">
+                Beranda
+            </a>
+
+            <a href="#profil">
+                Profil
+            </a>
+
+            <a href="#sejarah">
+                Sejarah
+            </a>
+
+            <a href="#kegiatan">
+                Kegiatan
+            </a>
+
+            <a href="#fasilitas">
+                Fasilitas
+            </a>
+
+            <a href="#potensi">
+                Potensi
+            </a>
+
+            <a href="#kontak">
+                Kontak
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         BERANDA
+    ====================================================== -->
+
+    <main>
+
+        <section
+            class="hero"
+            id="beranda">
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <div class="hero-small">
+                        WEBSITE DESA PUSAKA
+                    </div>
+
+                    <h2>
+                        Selamat Datang di
+                    </h2>
+
+                    <h1>
+                        Desa Pusaka
+                    </h1>
+
+                    <p>
+                        Pesona alam, budaya, pertanian, kegiatan
+                        masyarakat, fasilitas desa, dan keramahan
+                        warga berpadu menjadi cerita indah
+                        Desa Pusaka.
+                    </p>
+
+
+                    <a
+                        href="#profil"
+                        class="hero-button">
+
+                        Kenali Desa
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <div class="hero-tags">
+
+                        <div class="tag">
+                            🌾 Pertanian
+                        </div>
+
+                        <div class="tag">
+                            🌿 Alam
+                        </div>
+
+                        <div class="tag">
+                            🤝 Masyarakat
+                        </div>
+
+                        <div class="tag">
+                            🏛️ Fasilitas
+                        </div>
+
+                        <div class="tag">
+                            🛍️ UMKM
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             STATISTIK
+        ================================================== -->
+
+        <div class="stats-wrapper">
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <div class="stat-icon">
+                        🏘️
+                    </div>
+
+                    <div class="stat-number">
+                        3
+                    </div>
+
+                    <div class="stat-label">
+                        Dusun
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-icon">
+                        🛍️
+                    </div>
+
+                    <div class="stat-number">
+                        25+
+                    </div>
+
+                    <div class="stat-label">
+                        UMKM Lokal
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-icon">
+                        🌿
+                    </div>
+
+                    <div class="stat-number">
+                        5+
+                    </div>
+
+                    <div class="stat-label">
+                        Potensi Desa
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-icon">
+                        🤝
+                    </div>
+
+                    <div class="stat-number">
+                        100%
+                    </div>
+
+                    <div class="stat-label">
+                        Gotong Royong
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PROFIL
+        ================================================== -->
+
+        <section
+            class="profil"
+            id="profil">
+
+            <div class="container">
+
+                <div class="profil-grid">
+
+
+                    <div class="profil-text reveal">
+
+                        <div class="section-label">
+                            PROFIL DESA
+                        </div>
+
+                        <h3>
+                            Pusaka dari alam,
+                            kuat karena masyarakat.
+                        </h3>
+
+                        <p>
+                            Desa Pusaka merupakan desa yang
+                            memiliki potensi alam, pertanian,
+                            budaya, dan kehidupan masyarakat
+                            yang terus berkembang.
+                        </p>
+
+                        <p>
+                            Website ini menjadi media untuk
+                            memperkenalkan Desa Pusaka kepada
+                            masyarakat luas.
+                        </p>
+
+                        <p>
+                            Dari lingkungan desa yang asri
+                            hingga kegiatan masyarakat,
+                            semuanya menjadi bagian dari
+                            kehidupan Desa Pusaka.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="info-card reveal">
+
+                        <div class="info-row">
+
+                            <span>
+                                Kecamatan
+                            </span>
+
+                            <strong>
+                                Tebas
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-row">
+
+                            <span>
+                                Kabupaten
+                            </span>
+
+                            <strong>
+                                Sambas
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-row">
+
+                            <span>
+                                Provinsi
+                            </span>
+
+                            <strong>
+                                Kalimantan Barat
+                            </strong>
+
+                        </div>
+
+
+                        <!-- SUDAH DIUBAH MENJADI 3 DUSUN -->
+
+                        <div class="info-row">
+
+                            <span>
+                                Jumlah Dusun
+                            </span>
+
+                            <strong>
+                                3 Dusun
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SEJARAH
+        ================================================== -->
+
+        <section
+            class="sejarah"
+            id="sejarah">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        SEJARAH
+                    </div>
+
+                    <h2>
+                        Awal Kisah Desa
+                    </h2>
+
+                    <p>
+                        Cerita yang diwariskan dari generasi
+                        ke generasi mengenai asal-usul
+                        Desa Pusaka.
+                    </p>
+
+                </div>
+
+
+                <div class="sejarah-box reveal">
+
+                    <p>
+                        Konon, sekitar tahun 1779, dua orang
+                        pelaut dari Penghuluan berlayar
+                        menggunakan sampan dan singgah di
+                        kawasan hutan lebat dekat aliran
+                        sungai yang kini dikenal sebagai
+                        Sungai Sengobang.
+                    </p>
+
+                    <p>
+                        Di tempat tersebut, mereka menemukan
+                        sebuah pohon besar yang sulit ditebang
+                        menggunakan peralatan sederhana seperti
+                        kapak, parang, dan beliung.
+                    </p>
+
+                    <p>
+                        Saat menebang pohon tersebut, tangkai
+                        beliung mereka patah dan hanya tersisa
+                        bagian ujungnya yang disebut
+                        "kuting".
+                    </p>
+
+                    <p>
+                        Dari peristiwa tersebut, cerita mengenai
+                        asal-usul nama kampung kemudian diwariskan
+                        secara turun-temurun oleh masyarakat.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             KEGIATAN
+        ================================================== -->
+
+        <section
+            class="kegiatan"
+            id="kegiatan">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        KEGIATAN
+                    </div>
+
+                    <h2>
+                        Kehidupan Masyarakat
+                    </h2>
+
+                    <p>
+                        Berbagai kegiatan menjadi bagian dari
+                        kehidupan masyarakat Desa Pusaka.
+                    </p>
+
+                </div>
+
+
+                <div class="activity-list">
+
+
+                    <div class="activity-card activity-1 reveal">
+
+                        <div class="activity-content">
+
+                            <div class="activity-number">
+                                KEGIATAN 01
+                            </div>
+
+                            <h3>
+                                Gotong Royong
+                            </h3>
+
+                            <p>
+                                Semangat gotong royong menjadi
+                                salah satu kekuatan masyarakat
+                                dalam menjaga lingkungan desa.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="activity-card activity-2 reveal">
+
+                        <div class="activity-content">
+
+                            <div class="activity-number">
+                                KEGIATAN 02
+                            </div>
+
+                            <h3>
+                                Kegiatan Warga
+                            </h3>
+
+                            <p>
+                                Berbagai kegiatan sosial dan
+                                kebersamaan terus dilakukan
+                                oleh masyarakat Desa Pusaka.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="activity-card activity-3 reveal">
+
+                        <div class="activity-content">
+
+                            <div class="activity-number">
+                                KEGIATAN 03
+                            </div>
+
+                            <h3>
+                                Pertanian
+                            </h3>
+
+                            <p>
+                                Pertanian menjadi salah satu
+                                kegiatan penting yang mendukung
+                                kehidupan masyarakat desa.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FASILITAS DESA
+        ================================================== -->
+
+        <section
+            class="fasilitas"
+            id="fasilitas">
+
+            <div class="container">
+
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        FASILITAS DESA
+                    </div>
+
+                    <h2>
+                        Fasilitas Desa Pusaka
+                    </h2>
+
+                    <p>
+                        Kenali berbagai fasilitas yang tersedia
+                        untuk mendukung kegiatan dan kebutuhan
+                        masyarakat Desa Pusaka.
+                    </p>
+
+                </div>
+
+
+
+                <div class="fasilitas-grid">
+
+
+                    <!-- FASILITAS 1 -->
+
+                    <article
+                        class="fasilitas-card reveal">
+
+                        <div class="fasilitas-photo">
+
+                            <img
+                                src="fasilitas-1.jpg"
+                                alt="Fasilitas Desa Pusaka"
+                                onerror="this.style.display='none'"
+                            >
+
+                        </div>
+
+                        <div class="fasilitas-content">
+
+                            <div class="fasilitas-icon">
+                                🏛️
+                            </div>
+
+                            <h3>
+                                Kantor Desa
+                            </h3>
+
+                            <p>
+                                Kantor Desa Pusaka menjadi pusat
+                                pelayanan administrasi dan
+                                kegiatan pemerintahan desa.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- FASILITAS 2 -->
+
+                    <article
+                        class="fasilitas-card reveal">
+
+                        <div class="fasilitas-photo">
+
+                            <img
+                                src="fasilitas-2.jpg"
+                                alt="Fasilitas masyarakat Desa Pusaka"
+                                onerror="this.style.display='none'"
+                            >
+
+                        </div>
+
+                        <div class="fasilitas-content">
+
+                            <div class="fasilitas-icon">
+                                🏥
+                            </div>
+
+                            <h3>
+                                Fasilitas Kesehatan
+                            </h3>
+
+                            <p>
+                                Fasilitas kesehatan mendukung
+                                kebutuhan masyarakat dalam
+                                mendapatkan pelayanan kesehatan.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- FASILITAS 3 -->
+
+                    <article
+                        class="fasilitas-card reveal">
+
+                        <div class="fasilitas-photo">
+
+                            <img
+                                src="fasilitas-3.jpg"
+                                alt="Fasilitas pendidikan Desa Pusaka"
+                                onerror="this.style.display='none'"
+                            >
+
+                        </div>
+
+                        <div class="fasilitas-content">
+
+                            <div class="fasilitas-icon">
+                                🏫
+                            </div>
+
+                            <h3>
+                                Fasilitas Pendidikan
+                            </h3>
+
+                            <p>
+                                Fasilitas pendidikan menjadi
+                                bagian penting dalam mendukung
+                                perkembangan generasi muda desa.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- FASILITAS 4 -->
+
+                    <article
+                        class="fasilitas-card reveal">
+
+                        <div class="fasilitas-photo">
+
+                            <img
+                                src="fasilitas-4.jpg"
+                                alt="Fasilitas umum Desa Pusaka"
+                                onerror="this.style.display='none'"
+                            >
+
+                        </div>
+
+                        <div class="fasilitas-content">
+
+                            <div class="fasilitas-icon">
+                                🏘️
+                            </div>
+
+                            <h3>
+                                Fasilitas Umum
+                            </h3>
+
+                            <p>
+                                Berbagai fasilitas umum digunakan
+                                masyarakat untuk mendukung
+                                aktivitas dan kehidupan sehari-hari.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             POTENSI
+        ================================================== -->
+
+        <section
+            class="potensi"
+            id="potensi">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        POTENSI DESA
+                    </div>
+
+                    <h2>
+                        Yang Membuat Desa Pusaka Istimewa
+                    </h2>
+
+                    <p>
+                        Dari jalan desa hingga hamparan sawah,
+                        semuanya menjadi bagian dari kehidupan
+                        masyarakat.
+                    </p>
+
+                </div>
+
+
+
+                <div class="potensi-grid">
+
+
+                    <article
+                        class="potensi-card reveal">
+
+                        <div class="potensi-icon">
+                            🛣️
+                        </div>
+
+                        <h3>
+                            Jalan Desa
+                        </h3>
+
+                        <p>
+                            Akses desa yang menghubungkan
+                            masyarakat dengan berbagai wilayah
+                            dan aktivitas lokal.
+                        </p>
+
+                    </article>
+
+
+
+                    <article
+                        class="potensi-card reveal">
+
+                        <div class="potensi-icon">
+                            🌾
+                        </div>
+
+                        <h3>
+                            Sawah & Pertanian
+                        </h3>
+
+                        <p>
+                            Hamparan hijau yang menjadi bagian
+                            penting dari kehidupan dan
+                            perekonomian masyarakat.
+                        </p>
+
+                    </article>
+
+
+
+                    <article
+                        class="potensi-card reveal">
+
+                        <div class="potensi-icon">
+                            🤝
+                        </div>
+
+                        <h3>
+                            Masyarakat
+                        </h3>
+
+                        <p>
+                            Masyarakat yang ramah dan memiliki
+                            semangat kebersamaan serta gotong
+                            royong.
+                        </p>
+
+                    </article>
+
+
+
+                    <article
+                        class="potensi-card reveal">
+
+                        <div class="potensi-icon">
+                            🌿
+                        </div>
+
+                        <h3>
+                            Alam
+                        </h3>
+
+                        <p>
+                            Lingkungan desa yang asri dan
+                            memiliki potensi untuk dikembangkan
+                            sebagai daya tarik desa.
+                        </p>
+
+                    </article>
+
+
+
+                    <article
+                        class="potensi-card reveal">
+
+                        <div class="potensi-icon">
+                            🛍️
+                        </div>
+
+                        <h3>
+                            UMKM
+                        </h3>
+
+                        <p>
+                            Produk lokal dan usaha masyarakat
+                            menjadi bagian dari potensi ekonomi
+                            Desa Pusaka.
+                        </p>
+
+                    </article>
+
+
+
+                    <article
+                        class="potensi-card reveal">
+
+                        <div class="potensi-icon">
+                            🎭
+                        </div>
+
+                        <h3>
+                            Budaya
+                        </h3>
+
+                        <p>
+                            Tradisi dan kehidupan masyarakat
+                            menjadi bagian penting dari identitas
+                            Desa Pusaka.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             GALERI
+        ================================================== -->
+
+        <section
+            class="galeri">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        GALERI DESA
+                    </div>
+
+                    <h2>
+                        Cerita Desa dalam Foto
+                    </h2>
+
+                    <p>
+                        Abadikan keindahan, fasilitas, kegiatan,
+                        dan kehidupan masyarakat Desa Pusaka.
+                    </p>
+
+                </div>
+
+
+
+                <div class="gallery">
+
+
+                    <div class="gallery-item reveal">
+
+                        <img
+                            src="kantor-desa.jpg"
+                            alt="Kantor Desa Pusaka"
+                        >
+
+                        <div class="gallery-overlay">
+                            🏛️ Kantor Desa
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="gallery-item reveal">
+
+                        <img
+                            src="jalan-desa.jpg"
+                            alt="Jalan Desa Pusaka"
+                        >
+
+                        <div class="gallery-overlay">
+                            🛣️ Jalan Desa
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="gallery-item reveal">
+
+                        <img
+                            src="sawah.jpg"
+                            alt="Sawah Desa Pusaka"
+                        >
+
+                        <div class="gallery-overlay">
+                            🌾 Sawah
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="gallery-item reveal">
+
+                        <img
+                            src="kegiatan.jpg"
+                            alt="Kegiatan Masyarakat"
+                        >
+
+                        <div class="gallery-overlay">
+                            🤝 Kegiatan
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="gallery-item reveal">
+
+                        <img
+                            src="wisata-1.jpg"
+                            alt="Wisata Desa Pusaka"
+                        >
+
+                        <div class="gallery-overlay">
+                            🏞️ Wisata Desa
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             KONTAK
+        ================================================== -->
+
+        <section
+            class="kontak"
+            id="kontak">
+
+            <div class="container">
+
+                <div class="contact-wrapper">
+
+
+                    <div class="contact-title reveal">
+
+                        <div class="section-label">
+                            HUBUNGI DESA
+                        </div>
+
+                        <h2>
+                            Mari Kenali
+                            Desa Pusaka
+                        </h2>
+
+                        <p>
+                            Dukung dan kenali lebih dekat
+                            potensi, fasilitas, kegiatan,
+                            serta kehidupan masyarakat
+                            Desa Pusaka.
+                        </p>
+
+
+                        <div class="social-links">
+
+                            <a
+                                href="#"
+                                class="https://facebook.com/groups/416659202384009/">
+
+                                📘 Facebook
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="contact-cards reveal">
+
+
+                        <div class="contact-card">
+
+                            <div class="contact-icon">
+                                📍
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    ALAMAT
+                                </h3>
+
+                                <p>
+                                    Desa Pusaka,
+                                    Kecamatan Tebas,
+                                    Kabupaten Sambas,
+                                    Kalimantan Barat
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="contact-card">
+
+                            <div class="contact-icon">
+                                ☎️
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    TELEPON
+                                </h3>
+
+                                <p>
+                                    Hubungi Pemerintah
+                                    Desa Pusaka
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="contact-card">
+
+                            <div class="contact-icon">
+                                ✉️
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    INFORMASI
+                                </h3>
+
+                                <p>
+                                    Informasi Desa Pusaka
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🌿 Desa Pusaka
+        </div>
+
+        <p>
+            Website Desa Pusaka
+        </p>
+
+        <p>
+            Kecamatan Tebas, Kabupaten Sambas,
+            Kalimantan Barat
+        </p>
+
+        <p>
+            © <span id="year"></span>
+            Desa Pusaka. Semua Hak Dilindungi.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         BACK TO TOP
+    ====================================================== -->
+
+    <button
+        class="back-top"
+        id="backTop"
+        aria-label="Kembali ke atas">
+
+        ↑
+
+    </button>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* =================================================
+           HEADER SCROLL
+        ================================================== */
+
+        const header =
+            document.getElementById("header");
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                if (window.scrollY > 30) {
+
+                    header.classList.add("scrolled");
+
+                } else {
+
+                    header.classList.remove("scrolled");
+
+                }
+
+            }
+        );
+
+
+
+        /* =================================================
+           MOBILE MENU
+        ================================================== */
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+
+        menuBtn.addEventListener(
+            "click",
+            function () {
+
+                mobileMenu.classList.toggle("active");
+
+            }
+        );
+
+
+        document
+            .querySelectorAll(".mobile-menu a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        mobileMenu.classList.remove("active");
+
+                    }
+                );
+
+            });
+
+
+
+        /* =================================================
+           SCROLL REVEAL
+        ================================================== */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target
+                                    .classList
+                                    .add("active");
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(
+            function (element) {
+
+                observer.observe(element);
+
+            }
+        );
+
+
+
+        /* =================================================
+           BACK TO TOP
+        ================================================== */
+
+        const backTop =
+            document.getElementById("backTop");
+
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                if (window.scrollY > 500) {
+
+                    backTop.classList.add("show");
+
+                } else {
+
+                    backTop.classList.remove("show");
+
+                }
+
+            }
+        );
+
+
+        backTop.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+
+
+        /* =================================================
+           TAHUN OTOMATIS
+        ================================================== */
+
+        document.getElementById("year")
+            .textContent =
+            new Date().getFullYear();
+
+    </script>
+
+
+</body>
+            </html>
