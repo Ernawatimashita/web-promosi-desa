@@ -3,2424 +3,2563 @@
 <head>
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Desa Pusaka | Profil Desa</title>
+    <title>Desa Pusaka | Kecamatan Tebas</title>
 
     <meta name="description"
-          content="Website Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas. Mengenal sejarah, budaya, kegiatan, potensi dan kehidupan masyarakat Desa Pusaka.">
+          content="Website Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas. Mengenal sejarah, potensi, kegiatan dan kehidupan masyarakat Desa Pusaka.">
 
-    <!-- =====================================================
-         GOOGLE FONT
-    ====================================================== -->
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
           rel="stylesheet">
 
+    <style>
 
-<style>
+        /* =====================================================
+           RESET
+        ====================================================== */
 
-/* =========================================================
-   RESET
-========================================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 105px;
-}
+        body {
+            font-family: "DM Sans", Arial, sans-serif;
+            background: #f5f8f5;
+            color: #173d2c;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-body {
-    font-family: "DM Sans", sans-serif;
-    background: #f4f8f4;
-    color: #103f2b;
-    overflow-x: hidden;
-}
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+        a {
+            text-decoration: none;
+        }
 
-button {
-    font-family: inherit;
-}
+        button {
+            font-family: inherit;
+        }
 
+        :root {
+            --green: #0c422b;
+            --green-dark: #062f20;
+            --green-light: #dcece2;
+            --green-soft: #edf5ef;
+            --green-bright: #3b8b61;
 
-/* =========================================================
-   WARNA
-========================================================= */
+            --cream: #f5f8f5;
+            --white: #ffffff;
 
-:root {
-    --green-dark: #0d422b;
-    --green: #125034;
-    --green-light: #dfece3;
-    --cream: #f4f8f4;
-    --white: #ffffff;
-    --gray: #69736f;
-}
+            --text: #173d2c;
+            --muted: #68766f;
 
+            --gold: #d8c16a;
 
-/* =========================================================
-   HEADER
-========================================================= */
+            --shadow: 0 25px 70px rgba(19, 59, 40, 0.10);
+        }
 
-.header {
-    width: 100%;
-    height: 105px;
 
-    background: rgba(255,255,255,0.98);
+        /* =====================================================
+           SCROLLBAR
+        ====================================================== */
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+        ::-webkit-scrollbar {
+            width: 9px;
+        }
 
-    padding: 0 38px;
+        ::-webkit-scrollbar-track {
+            background: #edf3ee;
+        }
 
-    position: sticky;
-    top: 0;
+        ::-webkit-scrollbar-thumb {
+            background: var(--green);
+            border-radius: 20px;
+        }
 
-    z-index: 1000;
 
-    box-shadow: 0 3px 20px rgba(0,0,0,0.06);
-}
+        /* =====================================================
+           HEADER
+        ====================================================== */
 
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
 
-/* =========================================================
-   LOGO
-========================================================= */
+            width: 100%;
+            height: 88px;
 
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-}
+            z-index: 9999;
 
-.logo-box {
-    width: 74px;
-    height: 74px;
+            background: rgba(255,255,255,0.86);
 
-    background: var(--green-dark);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
 
-    border-radius: 20px;
+            border-bottom: 1px solid rgba(12,66,43,0.07);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            transition: 0.3s ease;
+        }
 
-    font-size: 42px;
+        header.scrolled {
+            height: 76px;
 
-    box-shadow: 0 10px 25px rgba(13,66,43,0.15);
-}
+            background: rgba(255,255,255,0.96);
 
-.logo-text {
-    font-family: "Playfair Display", serif;
+            box-shadow: 0 8px 35px rgba(20,60,40,0.08);
+        }
 
-    font-size: 34px;
-    font-weight: 700;
+        .navbar {
+            width: min(1180px, calc(100% - 50px));
+            height: 100%;
+            margin: auto;
 
-    color: var(--green-dark);
-}
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
 
-/* =========================================================
-   MENU DESKTOP
-========================================================= */
+        /* =====================================================
+           LOGO
+        ====================================================== */
 
-.desktop-menu {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 13px;
 
-.desktop-menu a {
-    color: #284b3b;
+            color: var(--green);
+        }
 
-    font-size: 15px;
-    font-weight: 600;
+        .logo-icon {
+            width: 51px;
+            height: 51px;
 
-    transition: 0.3s;
-}
+            border-radius: 16px;
 
-.desktop-menu a:hover {
-    color: #0b7a45;
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
+            font-size: 27px;
 
-/* =========================================================
-   TOMBOL HAMBURGER
-========================================================= */
+            background:
+                linear-gradient(
+                    145deg,
+                    #0d5437,
+                    #082f20
+                );
 
-.menu-button {
-    width: 70px;
-    height: 70px;
+            box-shadow:
+                0 10px 25px rgba(8,55,36,0.18);
+        }
 
-    border: none;
-    border-radius: 18px;
+        .logo-text {
+            font-family: "Playfair Display", serif;
 
-    background: var(--green-dark);
+            font-size: 25px;
+            font-weight: 800;
 
-    cursor: pointer;
+            letter-spacing: -0.7px;
+        }
 
-    display: none;
 
-    align-items: center;
-    justify-content: center;
+        /* =====================================================
+           NAVIGATION
+        ====================================================== */
 
-    flex-direction: column;
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+        }
 
-    position: relative;
+        nav a {
+            position: relative;
 
-    z-index: 1001;
-}
+            color: #294b3a;
 
-.menu-button span {
-    width: 30px;
-    height: 3px;
+            font-size: 14px;
+            font-weight: 600;
 
-    background: white;
+            padding: 8px 0;
 
-    border-radius: 10px;
+            transition: 0.3s;
+        }
 
-    margin: 4px 0;
+        nav a::after {
+            content: "";
 
-    transition: 0.3s;
-}
+            position: absolute;
 
+            left: 0;
+            bottom: 0;
 
-/* =========================================================
-   HAMBURGER MENJADI X
-========================================================= */
+            width: 0;
+            height: 2px;
 
-.menu-button.active span:nth-child(1) {
-    transform: translateY(11px) rotate(45deg);
-}
+            background: var(--green-bright);
 
-.menu-button.active span:nth-child(2) {
-    opacity: 0;
-}
+            border-radius: 10px;
 
-.menu-button.active span:nth-child(3) {
-    transform: translateY(-11px) rotate(-45deg);
-}
+            transition: 0.3s;
+        }
 
+        nav a:hover {
+            color: var(--green-bright);
+        }
 
-/* =========================================================
-   MOBILE MENU
-========================================================= */
+        nav a:hover::after {
+            width: 100%;
+        }
 
-.mobile-menu {
-    position: fixed;
 
-    top: 105px;
-    right: 0;
+        /* =====================================================
+           MOBILE BUTTON
+        ====================================================== */
 
-    width: 300px;
-    height: calc(100vh - 105px);
+        .menu-btn {
+            width: 50px;
+            height: 50px;
 
-    background: white;
+            border: none;
+            border-radius: 15px;
 
-    padding: 25px;
+            background: var(--green);
 
-    transform: translateX(100%);
+            display: none;
 
-    transition: transform 0.35s ease;
+            align-items: center;
+            justify-content: center;
 
-    z-index: 999;
+            cursor: pointer;
 
-    box-shadow: -10px 10px 35px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 20px rgba(12,66,43,0.18);
+        }
 
-    overflow-y: auto;
-}
+        .menu-lines {
+            width: 24px;
+        }
 
-.mobile-menu.active {
-    transform: translateX(0);
-}
+        .menu-lines span {
+            display: block;
 
-.mobile-menu a {
-    display: block;
+            width: 100%;
+            height: 2.5px;
 
-    padding: 17px 15px;
+            background: white;
 
-    border-bottom: 1px solid #e6eee9;
+            margin: 5px 0;
 
-    color: var(--green-dark);
+            border-radius: 20px;
+        }
 
-    font-size: 17px;
-    font-weight: 600;
 
-    transition: 0.3s;
-}
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
 
-.mobile-menu a:hover {
-    background: #eff7f1;
-    padding-left: 23px;
-}
+        .mobile-menu {
+            position: fixed;
 
+            top: 88px;
+            left: 0;
 
-/* =========================================================
-   OVERLAY
-========================================================= */
+            width: 100%;
 
-.menu-overlay {
-    position: fixed;
+            padding: 14px 25px 20px;
 
-    inset: 0;
+            background: rgba(255,255,255,0.97);
 
-    background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(20px);
 
-    z-index: 998;
+            display: none;
 
-    opacity: 0;
-    visibility: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 
-    transition: 0.3s;
-}
+            z-index: 9998;
+        }
 
-.menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
+        .mobile-menu.active {
+            display: block;
+            animation: menuDown 0.3s ease;
+        }
 
+        @keyframes menuDown {
+            from {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
 
-/* =========================================================
-   HERO / BERANDA
-   FOTO: kantor-desa.jpg
-========================================================= */
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.hero {
+        .mobile-menu a {
+            display: block;
 
-    min-height: 680px;
+            padding: 14px 10px;
 
-    background:
-        linear-gradient(
-            120deg,
-            rgba(8,53,35,0.78),
-            rgba(8,53,35,0.28)
-        ),
+            color: var(--green);
 
-        url("kantor-desa.jpg");
+            font-weight: 700;
 
-    background-size: cover;
+            border-bottom: 1px solid #e8eee9;
+        }
 
-    background-position: center;
 
-    background-repeat: no-repeat;
+        /* =====================================================
+           HERO
+        ====================================================== */
 
-    display: flex;
+        .hero {
+            min-height: 100vh;
 
-    align-items: center;
+            position: relative;
 
-    padding: 100px 7%;
-}
+            display: flex;
+            align-items: center;
 
-.hero-content {
-    max-width: 780px;
-    color: white;
-}
+            padding: 150px 25px 130px;
 
-.hero-label {
+            color: white;
 
-    display: inline-block;
+            background-image:
+                linear-gradient(
+                    110deg,
+                    rgba(4,39,25,0.94) 0%,
+                    rgba(6,53,34,0.72) 48%,
+                    rgba(6,53,34,0.38) 100%
+                ),
+                url("./kantor-desa-pusaka.jpg");
 
-    border: 1px solid rgba(255,255,255,0.5);
+            background-size: cover;
+            background-position: center;
+        }
 
-    padding: 12px 22px;
+        .hero::before {
+            content: "";
 
-    border-radius: 50px;
+            position: absolute;
+            inset: 0;
 
-    font-size: 13px;
+            background:
+                radial-gradient(
+                    circle at 80% 25%,
+                    rgba(255,255,255,0.13),
+                    transparent 30%
+                );
+        }
 
-    font-weight: 700;
+        .hero::after {
+            content: "";
 
-    letter-spacing: 2px;
+            position: absolute;
 
-    margin-bottom: 25px;
+            left: 0;
+            bottom: -1px;
 
-    background: rgba(0,0,0,0.08);
-}
+            width: 100%;
+            height: 150px;
 
-.hero h1 {
+            background:
+                linear-gradient(
+                    transparent,
+                    var(--cream)
+                );
+        }
 
-    font-family: "Playfair Display", serif;
+        .hero-container {
+            width: min(1150px, 100%);
 
-    font-size: clamp(50px, 7vw, 90px);
+            margin: auto;
 
-    line-height: 1.02;
+            position: relative;
+            z-index: 2;
+        }
 
-    margin-bottom: 25px;
+        .hero-content {
+            max-width: 720px;
 
-    text-shadow: 0 3px 20px rgba(0,0,0,0.15);
-}
+            animation: heroUp 1s ease;
+        }
 
-.hero p {
+        @keyframes heroUp {
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
 
-    max-width: 650px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    font-size: 20px;
+        .hero-small {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
 
-    line-height: 1.7;
+            padding: 9px 15px;
 
-    color: rgba(255,255,255,0.94);
-}
+            border: 1px solid rgba(255,255,255,0.25);
 
-.hero-button {
+            background: rgba(255,255,255,0.08);
 
-    display: inline-block;
+            backdrop-filter: blur(10px);
 
-    margin-top: 35px;
+            border-radius: 50px;
 
-    padding: 17px 30px;
+            font-size: 11px;
 
-    background: white;
+            font-weight: 700;
 
-    color: var(--green-dark);
+            letter-spacing: 2px;
 
-    border-radius: 50px;
+            margin-bottom: 25px;
+        }
 
-    font-weight: 700;
+        .hero-small::before {
+            content: "";
 
-    transition: 0.3s;
-}
+            width: 7px;
+            height: 7px;
 
-.hero-button:hover {
+            border-radius: 50%;
 
-    transform: translateY(-4px);
+            background: #a8d9b9;
+        }
 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
+        .hero h2 {
+            font-size: 20px;
 
+            font-weight: 500;
 
-/* =========================================================
-   SECTION
-========================================================= */
+            color: #cce1d5;
 
-.section {
-    padding: 90px 5%;
-}
+            margin-bottom: 5px;
+        }
 
-.section-title {
+        .hero h1 {
+            font-family: "Playfair Display", serif;
 
-    text-align: center;
+            font-size: clamp(58px, 9vw, 105px);
 
-    margin-bottom: 50px;
-}
+            line-height: 0.98;
 
-.section-title small {
+            letter-spacing: -4px;
 
-    display: block;
+            margin-bottom: 25px;
+        }
 
-    color: #6b927c;
+        .hero p {
+            max-width: 620px;
 
-    font-size: 14px;
+            font-size: 17px;
 
-    font-weight: 700;
+            color: rgba(255,255,255,0.82);
 
-    letter-spacing: 3px;
+            margin-bottom: 32px;
+        }
 
-    margin-bottom: 12px;
-}
 
-.section-title h2 {
+        /* HERO BUTTON */
 
-    font-family: "Playfair Display", serif;
+        .hero-button {
+            display: inline-flex;
 
-    font-size: clamp(36px,5vw,55px);
+            align-items: center;
+            gap: 14px;
 
-    color: var(--green-dark);
-}
+            padding: 15px 22px 15px 25px;
 
+            background: white;
 
-/* =========================================================
-   CHIP
-========================================================= */
+            color: var(--green);
 
-.chips {
+            border-radius: 50px;
 
-    display: flex;
+            font-weight: 700;
 
-    justify-content: center;
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.18);
 
-    flex-wrap: wrap;
+            transition: 0.35s;
+        }
 
-    gap: 12px;
+        .hero-button span {
+            width: 32px;
+            height: 32px;
 
-    margin-bottom: 55px;
-}
+            border-radius: 50%;
 
-.chip {
+            background: var(--green);
 
-    padding: 13px 24px;
+            color: white;
 
-    border: 1px solid #c9d9cf;
+            display: flex;
 
-    border-radius: 50px;
+            align-items: center;
+            justify-content: center;
 
-    background: rgba(255,255,255,0.7);
+            transition: 0.35s;
+        }
 
-    color: #365b49;
+        .hero-button:hover {
+            transform: translateY(-5px);
+        }
 
-    font-size: 16px;
-}
+        .hero-button:hover span {
+            transform: translateX(4px);
+        }
 
 
-/* =========================================================
-   STATISTIK
-========================================================= */
+        /* HERO TAGS */
 
-.stats {
+        .hero-tags {
+            display: flex;
 
-    max-width: 1000px;
+            flex-wrap: wrap;
 
-    margin: auto;
+            gap: 10px;
 
-    background: white;
+            margin-top: 43px;
+        }
 
-    border-radius: 32px;
+        .tag {
+            padding: 9px 15px;
 
-    display: grid;
+            border-radius: 50px;
 
-    grid-template-columns: repeat(4,1fr);
+            background: rgba(255,255,255,0.09);
 
-    overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.16);
 
-    box-shadow: 0 20px 50px rgba(20,70,45,0.08);
-}
+            backdrop-filter: blur(10px);
 
-.stat {
+            font-size: 13px;
 
-    min-height: 190px;
+            color: #f7fff9;
+        }
 
-    display: flex;
 
-    flex-direction: column;
+        /* =====================================================
+           STATISTIK
+        ====================================================== */
 
-    justify-content: center;
+        .stats-wrapper {
+            position: relative;
 
-    align-items: center;
+            z-index: 20;
 
-    text-align: center;
+            margin-top: -70px;
 
-    padding: 25px;
+            padding: 0 25px;
+        }
 
-    border-right: 1px solid #dbe5df;
-}
+        .stats {
+            width: min(1080px, 100%);
 
-.stat:last-child {
-    border-right: none;
-}
+            margin: auto;
 
-.stat-number {
+            display: grid;
 
-    font-family: "Playfair Display", serif;
+            grid-template-columns: repeat(4, 1fr);
 
-    font-size: 43px;
+            background: rgba(255,255,255,0.97);
 
-    font-weight: 700;
+            border: 1px solid #e2ebe5;
 
-    color: var(--green-dark);
+            border-radius: 30px;
 
-    margin-bottom: 10px;
-}
+            overflow: hidden;
 
-.stat-label {
+            box-shadow: var(--shadow);
+        }
 
-    font-size: 16px;
+        .stat {
+            min-height: 160px;
 
-    color: #727c77;
-}
+            padding: 25px 15px;
 
+            display: flex;
 
-/* =========================================================
-   SEJARAH
-========================================================= */
+            flex-direction: column;
 
-.history-box {
+            align-items: center;
 
-    max-width: 900px;
+            justify-content: center;
 
-    margin: auto;
+            text-align: center;
 
-    background: white;
+            border-right: 1px solid #e4ebe6;
 
-    padding: 40px;
+        }
 
-    border-radius: 30px;
+        .stat:last-child {
+            border-right: none;
+        }
 
-    box-shadow: 0 15px 40px rgba(20,70,45,0.06);
+        .stat-number {
+            font-family: "Playfair Display", serif;
 
-    color: #66716b;
+            font-size: 43px;
 
-    font-size: 17px;
+            line-height: 1;
 
-    line-height: 1.9;
-}
+            font-weight: 800;
 
-.history-box p {
-    margin-bottom: 18px;
-}
+            color: var(--green);
 
-.history-box p:last-child {
-    margin-bottom: 0;
-}
+            margin-bottom: 10px;
+        }
 
-.history-box strong {
-    color: var(--green-dark);
-}
+        .stat-icon {
+            font-size: 43px;
 
+            line-height: 1;
 
-/* =========================================================
-   KEGIATAN
-========================================================= */
+            margin-bottom: 9px;
+        }
 
-.activities-section {
-    padding-top: 60px;
-}
+        .stat-label {
+            color: #77837d;
 
-.activities {
+            font-size: 14px;
 
-    max-width: 1100px;
+            font-weight: 500;
+        }
 
-    margin: auto;
 
-    display: grid;
+        /* =====================================================
+           SECTION
+        ====================================================== */
 
-    grid-template-columns: repeat(2,1fr);
+        section {
+            padding: 115px 25px;
+        }
 
-    gap: 28px;
-}
+        .container {
+            width: min(1100px, 100%);
 
-.activity-card {
+            margin: auto;
+        }
 
-    position: relative;
+        .section-heading {
+            margin-bottom: 55px;
+        }
 
-    min-height: 430px;
+        .section-label {
+            color: #6e9e7e;
 
-    border-radius: 34px;
+            font-size: 11px;
 
-    overflow: hidden;
+            font-weight: 800;
 
-    background: #dfe8e2;
+            letter-spacing: 3px;
 
-    box-shadow: 0 15px 40px rgba(20,50,35,0.08);
+            margin-bottom: 13px;
+        }
 
-    transition: 0.4s;
-}
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
 
-.activity-card:hover {
-    transform: translateY(-7px);
-}
+            color: var(--green);
 
-.activity-image {
+            font-size: clamp(42px, 6vw, 68px);
 
-    position: absolute;
+            line-height: 1.08;
 
-    inset: 0;
+            letter-spacing: -2px;
 
-    width: 100%;
+            margin-bottom: 17px;
+        }
 
-    height: 100%;
+        .section-heading p {
+            max-width: 680px;
 
-    object-fit: cover;
+            color: var(--muted);
 
-    transition: 0.5s;
-}
+            font-size: 17px;
+        }
 
-.activity-card:hover .activity-image {
-    transform: scale(1.05);
-}
 
-.activity-card::after {
+        /* =====================================================
+           PROFIL
+        ====================================================== */
 
-    content: "";
+        .profil {
+            background: var(--cream);
+        }
 
-    position: absolute;
+        .profil-grid {
+            display: grid;
 
-    inset: 0;
+            grid-template-columns: 1.1fr 0.9fr;
 
-    background:
-        linear-gradient(
-            to top,
-            rgba(10,15,13,0.97) 0%,
-            rgba(10,15,13,0.75) 32%,
-            rgba(10,15,13,0.15) 68%,
-            transparent 100%
-        );
+            gap: 75px;
 
-    pointer-events: none;
-}
+            align-items: center;
+        }
 
-.activity-content {
+        .profil-text h3 {
+            font-family: "Playfair Display", serif;
 
-    position: absolute;
+            color: var(--green);
 
-    left: 38px;
+            font-size: 40px;
 
-    right: 38px;
+            margin-bottom: 20px;
+        }
 
-    bottom: 35px;
+        .profil-text p {
+            color: #65736b;
 
-    z-index: 2;
+            font-size: 16px;
 
-    color: white;
-}
+            margin-bottom: 17px;
+        }
 
-.activity-number {
+        .info-card {
+            position: relative;
 
-    display: inline-block;
+            background: white;
 
-    padding: 10px 18px;
+            border-radius: 28px;
 
-    border: 1px solid rgba(255,255,255,0.45);
+            padding: 25px 30px;
 
-    border-radius: 50px;
+            box-shadow: var(--shadow);
 
-    background: rgba(255,255,255,0.08);
+            border: 1px solid #e6eee8;
+        }
 
-    font-size: 12px;
+        .info-card::before {
+            content: "";
 
-    font-weight: 700;
+            position: absolute;
 
-    letter-spacing: 1.5px;
+            top: 0;
+            left: 30px;
 
-    margin-bottom: 20px;
-}
+            width: 55px;
+            height: 4px;
 
-.activity-content h3 {
+            background: var(--green-bright);
 
-    font-family: "Playfair Display", serif;
+            border-radius: 0 0 10px 10px;
+        }
 
-    font-size: clamp(30px,4vw,48px);
+        .info-row {
+            display: flex;
 
-    line-height: 1.05;
+            align-items: center;
 
-    margin-bottom: 15px;
-}
+            justify-content: space-between;
 
-.activity-content p {
+            gap: 20px;
 
-    font-size: 16px;
+            padding: 17px 0;
 
-    line-height: 1.6;
+            border-bottom: 1px solid #e9efeb;
+        }
 
-    color: rgba(255,255,255,0.9);
-}
+        .info-row:last-child {
+            border-bottom: none;
+        }
 
+        .info-row span {
+            color: #7a857f;
 
-/* =========================================================
-   GALERI
-========================================================= */
+            font-size: 14px;
+        }
 
-.gallery-box {
+        .info-row strong {
+            color: var(--green);
 
-    max-width: 1000px;
+            text-align: right;
 
-    margin: auto;
+            font-size: 14px;
+        }
 
-    padding: 55px 30px;
 
-    background: #e3eee6;
+        /* =====================================================
+           SEJARAH
+        ====================================================== */
 
-    border-radius: 35px;
+        .sejarah {
+            background: white;
+        }
 
-    text-align: center;
-}
+        .sejarah-box {
+            position: relative;
 
-.gallery-icon {
+            max-width: 950px;
 
-    font-size: 60px;
+            margin: auto;
 
-    margin-bottom: 20px;
-}
+            padding: 55px;
 
-.gallery-box h3 {
+            background:
+                linear-gradient(
+                    135deg,
+                    #eaf3ed,
+                    #f5f9f6
+                );
 
-    font-family: "Playfair Display", serif;
+            border-radius: 35px;
 
-    font-size: 35px;
+            border: 1px solid #dce9e0;
 
-    color: var(--green-dark);
+            box-shadow:
+                0 20px 60px rgba(20,60,40,0.07);
+        }
 
-    margin-bottom: 15px;
-}
+        .sejarah-box::before {
+            content: "“";
 
-.gallery-box p {
+            position: absolute;
 
-    max-width: 650px;
+            top: 20px;
+            left: 35px;
 
-    margin: 0 auto 25px;
+            font-family: "Playfair Display", serif;
 
-    color: #68766e;
+            font-size: 95px;
 
-    line-height: 1.7;
-}
+            color: #c7dfcf;
 
-.gallery-button {
+            line-height: 1;
+        }
 
-    display: inline-block;
+        .sejarah-box p {
+            position: relative;
 
-    padding: 15px 25px;
+            color: #53655b;
 
-    background: var(--green-dark);
+            font-size: 16px;
 
-    color: white;
+            margin-bottom: 20px;
 
-    border-radius: 50px;
+            text-align: justify;
+        }
 
-    font-weight: 600;
+        .sejarah-box p:first-child {
+            padding-top: 30px;
+        }
 
-    cursor: pointer;
+        .sejarah-box p:last-child {
+            margin-bottom: 0;
+        }
 
-    transition: 0.3s;
-}
 
-.gallery-button:hover {
+        /* =====================================================
+           KEGIATAN
+        ====================================================== */
 
-    transform: translateY(-3px);
+        .kegiatan {
+            background: var(--cream);
+        }
 
-    background: #0b6c41;
-}
+        .kegiatan-intro {
+            margin-bottom: 50px;
+        }
 
-.gallery-input {
-    display: none;
-}
+        .activity-list {
+            display: flex;
 
-.gallery-preview {
+            flex-direction: column;
 
-    margin-top: 30px;
+            gap: 25px;
+        }
 
-    display: grid;
+        .activity-card {
+            position: relative;
 
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(180px,1fr)
-        );
+            min-height: 430px;
 
-    gap: 15px;
-}
+            overflow: hidden;
 
-.gallery-item {
-    position: relative;
-}
+            display: flex;
 
-.gallery-item img {
+            align-items: flex-end;
 
-    width: 100%;
+            border-radius: 35px;
 
-    height: 200px;
+            background-color: #dce7df;
 
-    object-fit: cover;
+            background-size: cover;
 
-    border-radius: 20px;
+            background-position: center;
 
-    display: block;
-}
+            isolation: isolate;
 
-.delete-gallery {
+            box-shadow:
+                0 15px 45px rgba(20,60,40,0.08);
 
-    position: absolute;
+            transition: 0.45s ease;
+        }
 
-    top: 8px;
+        .activity-card::before {
+            content: "";
 
-    right: 8px;
+            position: absolute;
 
-    width: 35px;
+            inset: 0;
 
-    height: 35px;
+            z-index: -1;
 
-    border: none;
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(4,18,11,0.95) 0%,
+                    rgba(4,18,11,0.65) 38%,
+                    rgba(4,18,11,0.05) 78%
+                );
+        }
 
-    border-radius: 50%;
+        .activity-card:hover {
+            transform: translateY(-8px);
 
-    background: var(--green-dark);
+            box-shadow:
+                0 30px 65px rgba(20,60,40,0.15);
+        }
 
-    color: white;
+        .activity-content {
+            width: 100%;
 
-    font-size: 20px;
+            padding: 50px 60px;
 
-    cursor: pointer;
-}
+            color: white;
+        }
 
+        .activity-number {
+            display: inline-block;
 
-/* =========================================================
-   HUBUNGI KAMI
-========================================================= */
+            padding: 8px 15px;
 
-.contact {
+            margin-bottom: 20px;
 
-    background: var(--green-dark);
+            border-radius: 50px;
 
-    color: white;
+            background: rgba(255,255,255,0.10);
 
-    padding: 100px 6%;
-}
+            border: 1px solid rgba(255,255,255,0.25);
 
-.contact-inner {
+            backdrop-filter: blur(8px);
 
-    max-width: 1150px;
+            font-size: 11px;
 
-    margin: auto;
+            font-weight: 700;
 
-    display: grid;
+            letter-spacing: 2px;
+        }
 
-    grid-template-columns: 1.3fr 1fr;
+        .activity-content h3 {
+            font-family: "Playfair Display", serif;
 
-    gap: 70px;
+            font-size: clamp(39px, 5vw, 64px);
 
-    align-items: center;
-}
+            line-height: 1;
 
-.contact-label {
+            letter-spacing: -2px;
 
-    color: #b4d7bf;
+            margin-bottom: 14px;
+        }
 
-    letter-spacing: 3px;
+        .activity-content p {
+            max-width: 650px;
 
-    font-size: 15px;
+            color: rgba(255,255,255,0.83);
 
-    font-weight: 700;
+            font-size: 17px;
+        }
 
-    margin-bottom: 20px;
-}
 
-.contact h2 {
+        /* GAMBAR */
 
-    font-family: "Playfair Display", serif;
+        .activity-1 {
+            background-image:
+                url("./gotong-royong.jpg");
+        }
 
-    font-size: clamp(45px,6vw,75px);
+        .activity-2 {
+            background-image:
+                url("./kegiatan-warga.jpg");
+        }
 
-    line-height: 1.05;
+        .activity-3 {
+            background-image:
+                url("./pertanian-desa.jpg");
+        }
 
-    margin-bottom: 25px;
-}
+        .activity-4 {
+            background-image:
+                url("./suasana-desa.jpg");
+        }
 
-.contact-description {
+        .activity-5 {
+            background-image:
+                url("./keindahan-alam.jpg");
+        }
 
-    font-size: 19px;
 
-    line-height: 1.8;
+        /* =====================================================
+           POTENSI
+        ====================================================== */
 
-    color: #d4e3da;
+        .potensi {
+            background: white;
+        }
 
-    margin-bottom: 25px;
-}
+        .potensi-grid {
+            display: grid;
 
-.contact-info {
+            grid-template-columns: repeat(3, 1fr);
 
-    background: rgba(255,255,255,0.08);
+            gap: 22px;
+        }
 
-    border: 1px solid rgba(255,255,255,0.15);
+        .potensi-card {
+            position: relative;
 
-    border-radius: 28px;
+            padding: 34px;
 
-    padding: 30px;
-}
+            background:
+                linear-gradient(
+                    145deg,
+                    #f5f9f6,
+                    #edf5ef
+                );
 
+            border-radius: 28px;
 
-/* =========================================================
-   CONTACT ITEM
-========================================================= */
+            border: 1px solid #dfeae2;
 
-.contact-item {
+            transition: 0.4s;
+        }
 
-    padding: 18px 0;
+        .potensi-card:hover {
+            transform: translateY(-9px);
 
-    border-bottom: 1px solid rgba(255,255,255,0.15);
+            box-shadow:
+                0 25px 55px rgba(20,60,40,0.10);
+        }
 
-    display: flex;
+        .potensi-icon {
+            width: 62px;
+            height: 62px;
 
-    gap: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    align-items: flex-start;
-}
+            margin-bottom: 23px;
 
-.contact-item:first-child {
-    padding-top: 0;
-}
+            border-radius: 19px;
 
-.contact-item:last-child {
+            background: white;
 
-    border-bottom: none;
+            font-size: 30px;
 
-    padding-bottom: 0;
-}
+            box-shadow:
+                0 10px 25px rgba(20,60,40,0.07);
+        }
 
-.contact-icon {
+        .potensi-card h3 {
+            font-family: "Playfair Display", serif;
 
-    width: 45px;
+            color: var(--green);
 
-    height: 45px;
+            font-size: 27px;
 
-    flex-shrink: 0;
+            margin-bottom: 10px;
+        }
 
-    background: white;
+        .potensi-card p {
+            color: #69776f;
 
-    color: var(--green-dark);
+            font-size: 15px;
+        }
 
-    border-radius: 50%;
 
-    display: flex;
+        /* =====================================================
+           KONTAK
+        ====================================================== */
 
-    align-items: center;
+        .kontak {
+            position: relative;
 
-    justify-content: center;
+            overflow: hidden;
 
-    font-size: 20px;
-}
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(255,255,255,0.09),
+                    transparent 25%
+                ),
+                var(--green);
 
-.contact-text {
-    flex: 1;
-}
+            color: white;
+        }
 
-.contact-text strong {
+        .kontak::before {
+            content: "";
 
-    display: block;
+            position: absolute;
 
-    margin-bottom: 5px;
+            width: 350px;
+            height: 350px;
 
-    color: white;
-}
+            border-radius: 50%;
 
-.contact-text span,
-.contact-text a {
+            border: 1px solid rgba(255,255,255,0.07);
 
-    color: #c7d9ce;
+            right: -120px;
+            bottom: -170px;
+        }
 
-    line-height: 1.6;
+        .contact-wrapper {
+            position: relative;
+            z-index: 2;
 
-    font-size: 15px;
-}
+            display: grid;
 
+            grid-template-columns: 1fr 1fr;
 
-/* =========================================================
-   ALAMAT BISA DIKLIK
-========================================================= */
+            gap: 70px;
 
-.location-link {
+            align-items: center;
+        }
 
-    display: inline-block;
+        .contact-title .section-label {
+            color: #9bc5aa;
+        }
 
-    color: #c7d9ce !important;
+        .contact-title h2 {
+            font-family: "Playfair Display", serif;
 
-    transition: 0.3s;
-}
+            font-size: clamp(43px, 6vw, 70px);
 
-.location-link:hover {
+            line-height: 1.04;
 
-    color: white !important;
+            letter-spacing: -2px;
 
-    text-decoration: underline;
-}
+            margin-bottom: 22px;
+        }
 
+        .contact-title p {
+            color: #c6d9ce;
 
-/* =========================================================
-   FACEBOOK
-========================================================= */
+            font-size: 16px;
+        }
 
-.facebook-link {
+        .contact-cards {
+            display: grid;
 
-    color: #c7d9ce !important;
+            gap: 13px;
+        }
 
-    transition: 0.3s;
-}
+        .contact-card {
+            display: flex;
 
-.facebook-link:hover {
+            align-items: center;
 
-    color: white !important;
+            gap: 17px;
 
-    text-decoration: underline;
-}
+            padding: 20px;
 
+            border-radius: 20px;
 
-/* =========================================================
-   WHATSAPP
-========================================================= */
+            background: rgba(255,255,255,0.07);
 
-.whatsapp-link {
+            border: 1px solid rgba(255,255,255,0.12);
 
-    color: #c7d9ce !important;
+            transition: 0.3s;
+        }
 
-    transition: 0.3s;
-}
+        .contact-card:hover {
+            transform: translateX(6px);
 
-.whatsapp-link:hover {
+            background: rgba(255,255,255,0.12);
+        }
 
-    color: white !important;
+        .contact-icon {
+            width: 47px;
+            height: 47px;
 
-    text-decoration: underline;
-}
+            flex-shrink: 0;
 
+            display: flex;
 
-/* =========================================================
-   FOOTER
-========================================================= */
+            align-items: center;
+            justify-content: center;
 
-footer {
+            border-radius: 14px;
 
-    background: #082f20;
+            background: rgba(255,255,255,0.10);
 
-    color: #bfd2c6;
+            font-size: 21px;
+        }
 
-    text-align: center;
+        .contact-card h3 {
+            color: #f5dc80;
 
-    padding: 30px 20px;
+            font-size: 14px;
 
-    font-size: 14px;
-}
+            margin-bottom: 2px;
+        }
 
-.footer-title {
+        .contact-card p,
+        .contact-card a {
+            color: white;
 
-    font-family: "Playfair Display", serif;
+            font-size: 14px;
+        }
 
-    color: white;
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
 
-    font-size: 24px;
 
-    margin-bottom: 8px;
-}
+        /* =====================================================
+           FOOTER
+        ====================================================== */
 
+        footer {
+            background: #05291c;
 
-/* =========================================================
-   BACK TO TOP
-========================================================= */
+            color: white;
 
-.back-top {
+            padding: 45px 25px;
 
-    position: fixed;
+            text-align: center;
+        }
 
-    right: 25px;
+        .footer-logo {
+            font-family: "Playfair Display", serif;
 
-    bottom: 25px;
+            font-size: 26px;
 
-    width: 60px;
+            margin-bottom: 9px;
+        }
 
-    height: 60px;
+        footer p {
+            color: #9db5a7;
 
-    border: none;
+            font-size: 13px;
 
-    border-radius: 18px;
+            margin: 4px 0;
+        }
 
-    background: var(--green-dark);
 
-    color: white;
+        /* =====================================================
+           BACK TOP
+        ====================================================== */
 
-    font-size: 26px;
+        .back-top {
+            position: fixed;
 
-    cursor: pointer;
+            right: 25px;
+            bottom: 25px;
 
-    z-index: 500;
+            width: 53px;
+            height: 53px;
 
-    opacity: 0;
+            border: none;
 
-    visibility: hidden;
+            border-radius: 17px;
 
-    transform: translateY(20px);
+            background: var(--green);
 
-    transition: 0.3s;
+            color: white;
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
+            font-size: 22px;
 
-.back-top.show {
+            cursor: pointer;
 
-    opacity: 1;
+            z-index: 999;
 
-    visibility: visible;
+            opacity: 0;
+            visibility: hidden;
 
-    transform: translateY(0);
-}
+            transform: translateY(20px);
 
-.back-top:hover {
+            transition: 0.3s;
 
-    transform: translateY(-4px);
-}
+            box-shadow:
+                0 12px 30px rgba(0,0,0,0.18);
+        }
 
+        .back-top.show {
+            opacity: 1;
+            visibility: visible;
 
-/* =========================================================
-   TABLET
-========================================================= */
+            transform: translateY(0);
+        }
 
-@media (max-width: 900px) {
+        .back-top:hover {
+            transform: translateY(-5px);
+        }
 
-    .desktop-menu {
-        display: none;
-    }
 
-    .menu-button {
-        display: flex;
-    }
+        /* =====================================================
+           ANIMATION SCROLL
+        ====================================================== */
 
-    .activities {
-        grid-template-columns: 1fr;
-    }
+        .reveal {
+            opacity: 0;
 
-    .stats {
-        grid-template-columns: repeat(2,1fr);
-    }
+            transform: translateY(35px);
 
-    .stat:nth-child(2) {
-        border-right: none;
-    }
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
 
-    .stat:nth-child(1),
-    .stat:nth-child(2) {
-        border-bottom: 1px solid #dbe5df;
-    }
+        .reveal.active {
+            opacity: 1;
 
-    .contact-inner {
-        grid-template-columns: 1fr;
-    }
-}
+            transform: translateY(0);
+        }
 
 
-/* =========================================================
-   HP
-========================================================= */
+        /* =====================================================
+           TABLET
+        ====================================================== */
 
-@media (max-width: 600px) {
+        @media (max-width: 900px) {
 
-    .header {
+            nav {
+                display: none;
+            }
 
-        height: 105px;
+            .menu-btn {
+                display: flex;
+            }
 
-        padding: 0 18px;
-    }
+            .navbar {
+                width: calc(100% - 40px);
+            }
 
-    .logo-area {
-        gap: 12px;
-    }
+            .profil-grid {
+                grid-template-columns: 1fr;
 
-    .logo-box {
+                gap: 40px;
+            }
 
-        width: 68px;
+            .contact-wrapper {
+                grid-template-columns: 1fr;
 
-        height: 68px;
+                gap: 40px;
+            }
 
-        border-radius: 18px;
+            .potensi-grid {
+                grid-template-columns: 1fr 1fr;
+            }
 
-        font-size: 37px;
-    }
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
 
-    .logo-text {
-        font-size: 26px;
-    }
+            .stat:nth-child(2) {
+                border-right: none;
+            }
 
-    .menu-button {
+            .stat:nth-child(-n+2) {
+                border-bottom: 1px solid #e2ebe5;
+            }
+        }
 
-        width: 68px;
 
-        height: 68px;
+        /* =====================================================
+           HP
+        ====================================================== */
 
-        border-radius: 18px;
-    }
+        @media (max-width: 600px) {
 
-    .mobile-menu {
+            header {
+                height: 78px;
+            }
 
-        top: 105px;
+            header.scrolled {
+                height: 70px;
+            }
 
-        width: 285px;
+            .navbar {
+                width: calc(100% - 30px);
+            }
 
-        height: calc(100vh - 105px);
-    }
+            .logo {
+                gap: 10px;
+            }
 
-    .hero {
+            .logo-icon {
+                width: 45px;
+                height: 45px;
 
-        min-height: 600px;
+                border-radius: 14px;
 
-        padding: 80px 25px;
+                font-size: 24px;
+            }
 
-        background-position: center;
-    }
+            .logo-text {
+                font-size: 22px;
+            }
 
-    .hero h1 {
-        font-size: 52px;
-    }
+            .menu-btn {
+                width: 45px;
+                height: 45px;
 
-    .hero p {
-        font-size: 17px;
-    }
+                border-radius: 14px;
+            }
 
-    .section {
-        padding: 65px 25px;
-    }
+            .mobile-menu {
+                top: 78px;
+            }
 
-    .section-title {
-        margin-bottom: 35px;
-    }
 
-    .stats {
-        border-radius: 28px;
-    }
+            /* HERO */
 
-    .stat {
+            .hero {
+                min-height: 850px;
 
-        min-height: 160px;
+                padding:
+                    135px
+                    22px
+                    120px;
 
-        padding: 15px;
-    }
+                background-position: 60% center;
+            }
 
-    .stat-number {
-        font-size: 36px;
-    }
+            .hero h2 {
+                font-size: 18px;
+            }
 
-    .stat-label {
-        font-size: 14px;
-    }
+            .hero h1 {
+                font-size: 58px;
 
-    .history-box {
+                letter-spacing: -2.5px;
+            }
 
-        padding: 28px 22px;
+            .hero p {
+                font-size: 15px;
+            }
 
-        font-size: 16px;
-    }
+            .hero-small {
+                font-size: 9px;
 
-    .activity-card {
+                letter-spacing: 1.5px;
+            }
 
-        min-height: 460px;
+            .hero-tags {
+                margin-top: 30px;
+            }
 
-        border-radius: 30px;
-    }
+            .tag {
+                font-size: 12px;
 
-    .activity-content {
+                padding: 8px 12px;
+            }
 
-        left: 25px;
 
-        right: 25px;
+            /* STATS */
 
-        bottom: 30px;
-    }
+            .stats-wrapper {
+                margin-top: -50px;
 
-    .activity-content h3 {
-        font-size: 37px;
-    }
+                padding: 0 15px;
+            }
 
-    .activity-content p {
-        font-size: 16px;
-    }
+            .stats {
+                border-radius: 25px;
+            }
 
-    .contact {
+            .stat {
+                min-height: 145px;
 
-        padding: 75px 25px;
-    }
+                padding: 15px 8px;
+            }
 
-    .contact h2 {
-        font-size: 48px;
-    }
+            .stat-number {
+                font-size: 35px;
+            }
 
-    .contact-description {
-        font-size: 17px;
-    }
+            .stat-icon {
+                font-size: 38px;
+            }
 
-    .contact-info {
-        padding: 22px;
-    }
+            .stat-label {
+                font-size: 12px;
+            }
 
-    .gallery-box {
-        padding: 40px 20px;
-    }
 
-    .gallery-box h3 {
-        font-size: 30px;
-    }
+            /* SECTION */
 
-    .back-top {
+            section {
+                padding: 80px 20px;
+            }
 
-        right: 20px;
+            .section-heading {
+                margin-bottom: 38px;
+            }
 
-        bottom: 20px;
-    }
-}
+            .section-heading h2 {
+                font-size: 42px;
 
+                letter-spacing: -1.5px;
+            }
 
-/* =========================================================
-   HP SANGAT KECIL
-========================================================= */
+            .section-heading p {
+                font-size: 15px;
+            }
 
-@media (max-width: 380px) {
 
-    .header {
-        padding: 0 14px;
-    }
+            /* PROFIL */
 
-    .logo-text {
-        font-size: 22px;
-    }
+            .profil-grid {
+                gap: 35px;
+            }
 
-    .logo-box {
+            .profil-text h3 {
+                font-size: 34px;
+            }
 
-        width: 62px;
+            .profil-text p {
+                font-size: 15px;
+            }
 
-        height: 62px;
-    }
+            .info-card {
+                padding: 22px;
+            }
 
-    .menu-button {
+            .info-row {
+                padding: 14px 0;
+            }
 
-        width: 62px;
 
-        height: 62px;
-    }
+            /* SEJARAH */
 
-    .activity-content h3 {
-        font-size: 32px;
-    }
-}
+            .sejarah-box {
+                padding: 35px 25px;
 
-</style>
+                border-radius: 27px;
+            }
+
+            .sejarah-box::before {
+                font-size: 75px;
+
+                left: 20px;
+            }
+
+            .sejarah-box p {
+                font-size: 14px;
+
+                text-align: left;
+            }
+
+
+            /* KEGIATAN */
+
+            .activity-card {
+                min-height: 440px;
+
+                border-radius: 29px;
+            }
+
+            .activity-content {
+                padding: 35px 28px;
+            }
+
+            .activity-content h3 {
+                font-size: 40px;
+            }
+
+            .activity-content p {
+                font-size: 15px;
+            }
+
+
+            /* POTENSI */
+
+            .potensi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .potensi-card {
+                padding: 28px;
+            }
+
+
+            /* CONTACT */
+
+            .contact-title h2 {
+                font-size: 44px;
+            }
+
+            .contact-title p {
+                font-size: 15px;
+            }
+
+            .contact-card {
+                padding: 17px;
+            }
+
+
+            /* FOOTER */
+
+            footer {
+                padding: 38px 20px;
+            }
+
+
+            /* BACK TOP */
+
+            .back-top {
+                right: 17px;
+                bottom: 17px;
+
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+
+        /* =====================================================
+           HP KECIL
+        ====================================================== */
+
+        @media (max-width: 380px) {
+
+            .logo-text {
+                font-size: 20px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .section-heading h2 {
+                font-size: 38px;
+            }
+
+            .activity-content h3 {
+                font-size: 35px;
+            }
+        }
+
+    </style>
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-<header class="header">
+    <header id="header">
 
-    <a href="#beranda"
-       class="logo-area">
+        <div class="navbar">
 
-        <div class="logo-box">
-            🌿
+            <a href="#beranda" class="logo">
+
+                <div class="logo-icon">
+                    🌿
+                </div>
+
+                <div class="logo-text">
+                    Desa Pusaka
+                </div>
+
+            </a>
+
+
+            <nav>
+
+                <a href="#beranda">Beranda</a>
+                <a href="#profil">Profil</a>
+                <a href="#sejarah">Sejarah</a>
+                <a href="#kegiatan">Kegiatan</a>
+                <a href="#potensi">Potensi</a>
+                <a href="#kontak">Kontak</a>
+
+            </nav>
+
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Buka menu">
+
+                <div class="menu-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </button>
+
         </div>
 
-        <div class="logo-text">
-            Desa Pusaka
+    </header>
+
+
+    <!-- =====================================================
+         MOBILE MENU
+    ====================================================== -->
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="#beranda">Beranda</a>
+        <a href="#profil">Profil</a>
+        <a href="#sejarah">Sejarah</a>
+        <a href="#kegiatan">Kegiatan</a>
+        <a href="#potensi">Potensi</a>
+        <a href="#kontak">Kontak</a>
+
+    </div>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero" id="beranda">
+
+        <div class="hero-container">
+
+            <div class="hero-content">
+
+                <div class="hero-small">
+                    KECAMATAN TEBAS • KABUPATEN SAMBAS
+                </div>
+
+                <h2>
+                    Selamat Datang di
+                </h2>
+
+                <h1>
+                    Desa Pusaka
+                </h1>
+
+                <p>
+                    Mengenal lebih dekat sejarah, potensi,
+                    kegiatan, budaya, dan kehidupan masyarakat
+                    Desa Pusaka.
+                </p>
+
+                <a href="#profil" class="hero-button">
+                    Jelajahi Desa
+                    <span>→</span>
+                </a>
+
+                <div class="hero-tags">
+
+                    <div class="tag">🌿 Alam Asri</div>
+                    <div class="tag">🤝 Gotong Royong</div>
+                    <div class="tag">🌾 Pertanian</div>
+                    <div class="tag">🏡 2 Dusun</div>
+
+                </div>
+
+            </div>
+
         </div>
 
-    </a>
+    </section>
 
 
-    <!-- MENU DESKTOP -->
+    <!-- =====================================================
+         STATISTIK
+    ====================================================== -->
 
-    <nav class="desktop-menu">
+    <div class="stats-wrapper">
 
-        <a href="#beranda">
-            Beranda
-        </a>
+        <div class="stats">
 
-        <a href="#profil">
-            Profil Desa
-        </a>
+            <div class="stat reveal">
 
-        <a href="#sejarah">
-            Sejarah
-        </a>
+                <div class="stat-number">
+                    1779
+                </div>
 
-        <a href="#kegiatan">
-            Kegiatan
-        </a>
+                <div class="stat-label">
+                    Awal Kisah
+                </div>
 
-        <a href="#galeri">
-            Galeri
-        </a>
-
-        <a href="#kontak">
-            Hubungi Kami
-        </a>
-
-    </nav>
+            </div>
 
 
-    <!-- TOMBOL HAMBURGER -->
+            <div class="stat reveal">
+
+                <div class="stat-number">
+                    3.031
+                </div>
+
+                <div class="stat-label">
+                    Jumlah Penduduk
+                </div>
+
+            </div>
+
+
+            <div class="stat reveal">
+
+                <div class="stat-number">
+                    3
+                </div>
+
+                <div class="stat-label">
+                    Jumlah Dusun
+                </div>
+
+            </div>
+
+
+            <div class="stat reveal">
+
+                <div class="stat-icon">
+                    🌿
+                </div>
+
+                <div class="stat-label">
+                    Alam Asri
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         PROFIL
+    ====================================================== -->
+
+    <section class="profil" id="profil">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <div class="section-label">
+                    TENTANG DESA
+                </div>
+
+                <h2>
+                    Mengenal Desa Pusaka
+                </h2>
+
+                <p>
+                    Desa yang menyimpan sejarah, potensi alam,
+                    serta kehidupan masyarakat yang penuh
+                    kebersamaan.
+                </p>
+
+            </div>
+
+
+            <div class="profil-grid">
+
+                <div class="profil-text reveal">
+
+                    <h3>
+                        Desa Pusaka
+                    </h3>
+
+                    <p>
+                        Desa Pusaka merupakan salah satu desa
+                        yang berada di Kecamatan Tebas,
+                        Kabupaten Sambas, Provinsi Kalimantan Barat.
+                    </p>
+
+                    <p>
+                        Website ini dibuat sebagai media informasi
+                        untuk memperkenalkan Desa Pusaka kepada
+                        masyarakat luas.
+                    </p>
+
+                    <p>
+                        Melalui website ini, masyarakat dapat
+                        mengetahui sejarah, potensi, kegiatan,
+                        serta berbagai informasi mengenai Desa Pusaka.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card reveal">
+
+                    <div class="info-row">
+                        <span>Nama Desa</span>
+                        <strong>Desa Pusaka</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Kecamatan</span>
+                        <strong>Tebas</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Kabupaten</span>
+                        <strong>Sambas</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Provinsi</span>
+                        <strong>Kalimantan Barat</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Jumlah Dusun</span>
+                        <strong>2 Dusun</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SEJARAH
+    ====================================================== -->
+
+    <section class="sejarah" id="sejarah">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <div class="section-label">
+                    SEJARAH
+                </div>
+
+                <h2>
+                    Awal Kisah Desa
+                </h2>
+
+                <p>
+                    Cerita yang diwariskan dari generasi ke generasi
+                    mengenai asal-usul Desa Pusaka.
+                </p>
+
+            </div>
+
+
+            <div class="sejarah-box reveal">
+
+                <p>
+                    Sekitar tahun 1779, dua orang pelaut
+                    dari Penghuluan berlayar menggunakan sampan
+                    dan singgah di kawasan hutan lebat dekat
+                    aliran sungai yang kini dikenal sebagai
+                    Sungai Sengobang.
+                </p>
+
+                <p>
+                    Di tempat tersebut, mereka menemukan sebuah
+                    pohon besar yang sulit ditebang dengan
+                    peralatan sederhana seperti kapak, parang,
+                    dan beliung.
+                </p>
+
+                <p>
+                    Saat menebang pohon tersebut, tangkai beliung
+                    mereka patah dan hanya tersisa bagian ujungnya
+                    yang disebut "kuting".
+                </p>
+
+                <p>
+                    Dari peristiwa tersebut kemudian berkembang
+                    cerita mengenai asal-usul nama kampung yang
+                    menjadi bagian dari sejarah masyarakat setempat.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         KEGIATAN
+    ====================================================== -->
+
+    <section class="kegiatan" id="kegiatan">
+
+        <div class="container">
+
+            <div class="kegiatan-intro">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        KEGIATAN DESA
+                    </div>
+
+                    <h2>
+                        Aktivitas<br>
+                        Masyarakat
+                    </h2>
+
+                    <p>
+                        Berbagai kegiatan masyarakat yang
+                        menggambarkan kehidupan dan semangat
+                        kebersamaan Desa Pusaka.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="activity-list">
+
+
+                <article class="activity-card activity-1 reveal">
+
+                    <div class="activity-content">
+
+                        <div class="activity-number">
+                            KEGIATAN 01
+                        </div>
+
+                        <h3>
+                            Gotong Royong
+                        </h3>
+
+                        <p>
+                            Kegiatan bersama untuk menjaga
+                            kebersihan dan lingkungan desa.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="activity-card activity-2 reveal">
+
+                    <div class="activity-content">
+
+                        <div class="activity-number">
+                            KEGIATAN 02
+                        </div>
+
+                        <h3>
+                            Kegiatan Warga
+                        </h3>
+
+                        <p>
+                            Berbagai kegiatan masyarakat
+                            mempererat hubungan antarwarga.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="activity-card activity-3 reveal">
+
+                    <div class="activity-content">
+
+                        <div class="activity-number">
+                            KEGIATAN 03
+                        </div>
+
+                        <h3>
+                            Aktivitas Pertanian
+                        </h3>
+
+                        <p>
+                            Pertanian menjadi salah satu
+                            aktivitas penting masyarakat.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="activity-card activity-4 reveal">
+
+                    <div class="activity-content">
+
+                        <div class="activity-number">
+                            KEGIATAN 04
+                        </div>
+
+                        <h3>
+                            Suasana Desa
+                        </h3>
+
+                        <p>
+                            Lingkungan pedesaan yang menggambarkan
+                            kehidupan Desa Pusaka.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="activity-card activity-5 reveal">
+
+                    <div class="activity-content">
+
+                        <div class="activity-number">
+                            KEGIATAN 05
+                        </div>
+
+                        <h3>
+                            Keindahan Alam
+                        </h3>
+
+                        <p>
+                            Alam hijau dan suasana yang asri
+                            menjadi bagian dari Desa Pusaka.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         POTENSI
+    ====================================================== -->
+
+    <section class="potensi" id="potensi">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <div class="section-label">
+                    POTENSI DESA
+                </div>
+
+                <h2>
+                    Kekayaan Desa Pusaka
+                </h2>
+
+                <p>
+                    Potensi alam dan masyarakat menjadi kekuatan
+                    dalam perkembangan Desa Pusaka.
+                </p>
+
+            </div>
+
+
+            <div class="potensi-grid">
+
+                <div class="potensi-card reveal">
+
+                    <div class="potensi-icon">
+                        🌿
+                    </div>
+
+                    <h3>
+                        Potensi Alam
+                    </h3>
+
+                    <p>
+                        Lingkungan yang hijau, asri, dan
+                        memiliki suasana pedesaan yang
+                        masih alami.
+                    </p>
+
+                </div>
+
+
+                <div class="potensi-card reveal">
+
+                    <div class="potensi-icon">
+                        🌾
+                    </div>
+
+                    <h3>
+                        Pertanian
+                    </h3>
+
+                    <p>
+                        Pertanian menjadi salah satu sektor
+                        penting dalam kehidupan masyarakat
+                        Desa Pusaka.
+                    </p>
+
+                </div>
+
+
+                <div class="potensi-card reveal">
+
+                    <div class="potensi-icon">
+                        🤝
+                    </div>
+
+                    <h3>
+                        Masyarakat
+                    </h3>
+
+                    <p>
+                        Semangat gotong royong dan kebersamaan
+                        menjadi kekuatan masyarakat desa.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         KONTAK
+    ====================================================== -->
+
+    <section class="kontak" id="kontak">
+
+        <div class="container">
+
+            <div class="contact-wrapper">
+
+                <div class="contact-title reveal">
+
+                    <div class="section-label">
+                        HUBUNGI KAMI
+                    </div>
+
+                    <h2>
+                        Mari mengenal Desa Pusaka lebih dekat.
+                    </h2>
+
+                    <p>
+                        Untuk informasi lebih lanjut mengenai
+                        Desa Pusaka, silakan hubungi melalui
+                        media sosial atau kontak pemerintah desa.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-cards">
+
+
+                    <div class="contact-card reveal">
+
+                        <div class="contact-icon">
+                            📍
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Alamat
+                            </h3>
+
+                            <p>
+                                Desa Pusaka, Kecamatan Tebas,
+                                Kabupaten Sambas
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-card reveal">
+
+                        <div class="contact-icon">
+                            📱
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                WhatsApp
+                            </h3>
+
+                            <a
+                                href="https://wa.me/628xxxxxxxxxx"
+                                target="_blank">
+
+                                Hubungi Pemerintah Desa
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-card reveal">
+
+                        <div class="contact-icon">
+                            📷
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Instagram
+                            </h3>
+
+                            <a
+                                href="#"
+                                target="_blank">
+
+                                @desapusaka
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-card reveal">
+
+                        <div class="contact-icon">
+                            f
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Facebook
+                            </h3>
+
+                            <a
+                                href="#"
+                                target="_blank">
+
+                                Desa Pusaka
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🌿 Desa Pusaka
+        </div>
+
+        <p>
+            Kecamatan Tebas, Kabupaten Sambas,
+            Kalimantan Barat
+        </p>
+
+        <p>
+            © 2026 Desa Pusaka. Semua Hak Dilindungi.
+        </p>
+
+    </footer>
+
+
+    <!-- =====================================================
+         BACK TO TOP
+    ====================================================== -->
 
     <button
-        class="menu-button"
-        id="menuButton"
-        aria-label="Buka menu"
-        aria-expanded="false">
+        class="back-top"
+        id="backTop"
+        aria-label="Kembali ke atas">
 
-        <span></span>
-        <span></span>
-        <span></span>
+        ↑
 
     </button>
 
-</header>
 
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
 
-<!-- =====================================================
-     OVERLAY
-===================================================== -->
+    <script>
 
-<div
-    class="menu-overlay"
-    id="menuOverlay">
-</div>
+        /* =========================================
+           MENU MOBILE
+        ========================================= */
 
+        const menuBtn =
+            document.getElementById("menuBtn");
 
-<!-- =====================================================
-     MENU MOBILE
-===================================================== -->
+        const mobileMenu =
+            document.getElementById("mobileMenu");
 
-<nav
-    class="mobile-menu"
-    id="mobileMenu">
+        menuBtn.addEventListener("click", function () {
 
-    <a href="#beranda">
-        🏠 &nbsp; Beranda
-    </a>
+            mobileMenu.classList.toggle("active");
 
-    <a href="#profil">
-        🌿 &nbsp; Profil Desa
-    </a>
-
-    <a href="#sejarah">
-        📜 &nbsp; Sejarah
-    </a>
-
-    <a href="#kegiatan">
-        🤝 &nbsp; Kegiatan
-    </a>
-
-    <a href="#galeri">
-        📷 &nbsp; Galeri
-    </a>
-
-    <a href="#kontak">
-        📞 &nbsp; Hubungi Kami
-    </a>
-
-</nav>
-
-
-<!-- =====================================================
-     HERO / BERANDA
-     FOTO KANTOR DESA
-===================================================== -->
-
-<section
-    class="hero"
-    id="beranda">
-
-    <div class="hero-content">
-
-        <div class="hero-label">
-            DESA PUSAKA
-        </div>
-
-        <h1>
-            Pesona Alam,<br>
-            Budaya &amp;<br>
-            Masyarakat
-        </h1>
-
-        <p>
-            Mengenal lebih dekat kehidupan,
-            sejarah, budaya dan potensi
-            Desa Pusaka.
-        </p>
-
-        <a
-            href="#profil"
-            class="hero-button">
-
-            Jelajahi Desa →
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PROFIL DESA
-===================================================== -->
-
-<section
-    class="section"
-    id="profil">
-
-    <div class="section-title">
-
-        <small>
-            PROFIL DESA
-        </small>
-
-        <h2>
-            Desa Pusaka
-        </h2>
-
-    </div>
-
-
-    <div class="chips">
-
-        <div class="chip">
-            🌴 Desa yang Asri
-        </div>
-
-        <div class="chip">
-            🤝 Masyarakat Bersatu
-        </div>
-
-        <div class="chip">
-            🌱 Potensi Desa
-        </div>
-
-        <div class="chip">
-            🏡 Kehidupan Pedesaan
-        </div>
-
-    </div>
-
-
-    <div class="stats">
-
-        <div class="stat">
-
-            <div class="stat-number">
-                1
-            </div>
-
-            <div class="stat-label">
-                Desa Pusaka
-            </div>
-
-        </div>
-
-
-        <div class="stat">
-
-            <div class="stat-number">
-                🌿
-            </div>
-
-            <div class="stat-label">
-                Alam yang Asri
-            </div>
-
-        </div>
-
-
-        <div class="stat">
-
-            <div class="stat-number">
-                🤝
-            </div>
-
-            <div class="stat-label">
-                Gotong Royong
-            </div>
-
-        </div>
-
-
-        <div class="stat">
-
-            <div class="stat-number">
-                ❤️
-            </div>
-
-            <div class="stat-label">
-                Masyarakat
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SEJARAH
-===================================================== -->
-
-<section
-    class="section"
-    id="sejarah">
-
-    <div class="section-title">
-
-        <small>
-            SEJARAH
-        </small>
-
-        <h2>
-            Asal Usul Desa Pusaka
-        </h2>
-
-    </div>
-
-
-    <div class="history-box">
-
-        <p>
-            Sekitar tahun <strong>1779</strong>,
-            dua orang pelaut dari Penghuluan berlayar
-            menggunakan sampan dan singgah di kawasan
-            hutan lebat dekat aliran sungai yang kini
-            dikenal sebagai <strong>Sungai Sengobang</strong>.
-        </p>
-
-        <p>
-            Di tempat tersebut, mereka menemukan sebuah
-            pohon besar yang sulit ditebang dengan
-            peralatan sederhana seperti kapak, parang
-            dan beliung.
-        </p>
-
-        <p>
-            Saat menebang pohon tersebut, tangkai beliung
-            mereka patah dan hanya tersisa bagian ujungnya
-            yang disebut <strong>"kuting"</strong>.
-            Dari peristiwa tersebut kemudian berkembang
-            cerita mengenai asal-usul nama kampung.
-        </p>
-
-        <p>
-            Kisah tersebut menjadi bagian dari sejarah
-            dan cerita turun-temurun masyarakat yang
-            terus dikenang hingga sekarang.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     KEGIATAN
-===================================================== -->
-
-<section
-    class="section activities-section"
-    id="kegiatan">
-
-    <div class="section-title">
-
-        <small>
-            KEGIATAN DESA
-        </small>
-
-        <h2>
-            Kehidupan Masyarakat
-        </h2>
-
-    </div>
-
-
-    <div class="activities">
-
-
-        <!-- KEGIATAN 1 -->
-
-        <article class="activity-card">
-
-            <img
-                class="activity-image"
-                src="kantor-desa.jpg"
-                alt="Kantor Desa Pusaka">
-
-            <div class="activity-content">
-
-                <div class="activity-number">
-                    KEGIATAN 01
-                </div>
-
-                <h3>
-                    Pelayanan Desa
-                </h3>
-
-                <p>
-                    Pemerintah Desa Pusaka memberikan
-                    pelayanan kepada masyarakat dan
-                    mendukung berbagai kebutuhan warga.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- KEGIATAN 2 -->
-
-        <article class="activity-card">
-
-            <div
-                class="activity-image"
-                style="
-                    background:
-                    linear-gradient(
-                        135deg,
-                        #397054,
-                        #0d422b
-                    );
-                ">
-            </div>
-
-            <div class="activity-content">
-
-                <div class="activity-number">
-                    KEGIATAN 02
-                </div>
-
-                <h3>
-                    Gotong Royong
-                </h3>
-
-                <p>
-                    Semangat kebersamaan dan gotong royong
-                    menjadi bagian penting dalam kehidupan
-                    masyarakat Desa Pusaka.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- KEGIATAN 3 -->
-
-        <article class="activity-card">
-
-            <div
-                class="activity-image"
-                style="
-                    background:
-                    linear-gradient(
-                        135deg,
-                        #739b7f,
-                        #204e37
-                    );
-                ">
-            </div>
-
-            <div class="activity-content">
-
-                <div class="activity-number">
-                    KEGIATAN 03
-                </div>
-
-                <h3>
-                    Kegiatan Masyarakat
-                </h3>
-
-                <p>
-                    Berbagai kegiatan masyarakat dilakukan
-                    untuk mempererat hubungan antarwarga
-                    dan membangun desa.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- KEGIATAN 4 -->
-
-        <article class="activity-card">
-
-            <div
-                class="activity-image"
-                style="
-                    background:
-                    linear-gradient(
-                        135deg,
-                        #8eaf91,
-                        #315c43
-                    );
-                ">
-            </div>
-
-            <div class="activity-content">
-
-                <div class="activity-number">
-                    KEGIATAN 04
-                </div>
-
-                <h3>
-                    Potensi Desa
-                </h3>
-
-                <p>
-                    Desa Pusaka memiliki potensi alam dan
-                    masyarakat yang dapat terus dikembangkan
-                    untuk kemajuan desa.
-                </p>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     GALERI
-===================================================== -->
-
-<section
-    class="section"
-    id="galeri">
-
-    <div class="section-title">
-
-        <small>
-            GALERI
-        </small>
-
-        <h2>
-            Dokumentasi Desa
-        </h2>
-
-    </div>
-
-
-    <div class="gallery-box">
-
-        <div class="gallery-icon">
-            📷
-        </div>
-
-        <h3>
-            Galeri Desa Pusaka
-        </h3>
-
-        <p>
-            Dokumentasikan berbagai kegiatan,
-            pemandangan, fasilitas dan kehidupan
-            masyarakat Desa Pusaka.
-        </p>
-
-
-        <label
-            for="galleryInput"
-            class="gallery-button">
-
-            + Tambahkan Foto
-
-        </label>
-
-        <input
-            type="file"
-            id="galleryInput"
-            class="gallery-input"
-            accept="image/*"
-            multiple>
-
-
-        <div
-            class="gallery-preview"
-            id="galleryPreview">
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     HUBUNGI KAMI
-===================================================== -->
-
-<section
-    class="contact"
-    id="kontak">
-
-    <div class="contact-inner">
-
-
-        <!-- BAGIAN KIRI -->
-
-        <div>
-
-            <div class="contact-label">
-                HUBUNGI KAMI
-            </div>
-
-            <h2>
-                Desa Pusaka
-            </h2>
-
-            <p class="contact-description">
-                Untuk mendapatkan informasi lebih lanjut
-                mengenai Desa Pusaka, silakan menghubungi
-                atau mengunjungi lokasi kantor desa.
-            </p>
-
-        </div>
-
-
-        <!-- BAGIAN KANAN -->
-
-        <div class="contact-info">
-
-
-            <!-- ALAMAT -->
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    📍
-                </div>
-
-                <div class="contact-text">
-
-                    <strong>
-                        Alamat
-                    </strong>
-
-                    <a
-                        class="location-link"
-                        href="https://www.google.com/maps/search/?api=1&query=Kantor+Desa+Pusaka+Kecamatan+Tebas+Kabupaten+Sambas"
-                        target="_blank"
-                        rel="noopener noreferrer">
-
-                        Kantor Desa Pusaka,
-                        Kecamatan Tebas,
-                        Kabupaten Sambas
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- WHATSAPP -->
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    📱
-                </div>
-
-                <div class="contact-text">
-
-                    <strong>
-                        WhatsApp
-                    </strong>
-
-                    <a
-                        class="whatsapp-link"
-                        href="https://wa.me/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-
-                        Hubungi melalui WhatsApp
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- FACEBOOK -->
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    f
-                </div>
-
-                <div class="contact-text">
-
-                    <strong>
-                        Facebook
-                    </strong>
-
-                    <a
-                        class="facebook-link"
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer">
-
-                        Facebook Desa Pusaka
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- INSTAGRAM -->
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    ◎
-                </div>
-
-                <div class="contact-text">
-
-                    <strong>
-                        Instagram
-                    </strong>
-
-                    <a
-                        class="facebook-link"
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer">
-
-                        Instagram Desa Pusaka
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    <div class="footer-title">
-        Desa Pusaka
-    </div>
-
-    <p>
-        Kecamatan Tebas, Kabupaten Sambas
-    </p>
-
-    <p style="margin-top:10px;">
-        © <span id="year"></span>
-        Desa Pusaka. Semua Hak Dilindungi.
-    </p>
-
-</footer>
-
-
-<!-- =====================================================
-     BACK TO TOP
-===================================================== -->
-
-<button
-    class="back-top"
-    id="backTop"
-    aria-label="Kembali ke atas">
-
-    ↑
-
-</button>
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script>
-
-/* =========================================================
-   MENU MOBILE
-========================================================= */
-
-const menuButton =
-    document.getElementById("menuButton");
-
-const mobileMenu =
-    document.getElementById("mobileMenu");
-
-const menuOverlay =
-    document.getElementById("menuOverlay");
-
-
-function openMenu() {
-
-    menuButton.classList.add("active");
-
-    mobileMenu.classList.add("active");
-
-    menuOverlay.classList.add("active");
-
-    menuButton.setAttribute(
-        "aria-expanded",
-        "true"
-    );
-
-}
-
-
-function closeMenu() {
-
-    menuButton.classList.remove("active");
-
-    mobileMenu.classList.remove("active");
-
-    menuOverlay.classList.remove("active");
-
-    menuButton.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
-}
-
-
-menuButton.addEventListener(
-    "click",
-    function() {
-
-        if (
-            mobileMenu.classList.contains("active")
-        ) {
-
-            closeMenu();
-
-        } else {
-
-            openMenu();
-
-        }
-
-    }
-);
-
-
-menuOverlay.addEventListener(
-    "click",
-    closeMenu
-);
-
-
-document
-    .querySelectorAll(".mobile-menu a")
-    .forEach(function(link) {
-
-        link.addEventListener(
-            "click",
-            closeMenu
-        );
-
-    });
-
-
-/* =========================================================
-   TUTUP MENU DENGAN ESC
-========================================================= */
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Escape") {
-
-            closeMenu();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-const backTop =
-    document.getElementById("backTop");
-
-
-window.addEventListener(
-    "scroll",
-    function() {
-
-        if (window.scrollY > 400) {
-
-            backTop.classList.add("show");
-
-        } else {
-
-            backTop.classList.remove("show");
-
-        }
-
-    }
-);
-
-
-backTop.addEventListener(
-    "click",
-    function() {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
         });
 
-    }
-);
+
+        /* =========================================
+           TUTUP MENU
+        ========================================= */
+
+        const mobileLinks =
+            document.querySelectorAll(".mobile-menu a");
+
+        mobileLinks.forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                mobileMenu.classList.remove("active");
+
+            });
+
+        });
 
 
-/* =========================================================
-   TAHUN FOOTER OTOMATIS
-========================================================= */
+        /* =========================================
+           HEADER SAAT SCROLL
+        ========================================= */
 
-document.getElementById("year").textContent =
-    new Date().getFullYear();
+        const header =
+            document.getElementById("header");
 
+        window.addEventListener("scroll", function() {
 
-/* =========================================================
-   GALERI - TAMBAH FOTO
-========================================================= */
+            if (window.scrollY > 50) {
 
-const galleryInput =
-    document.getElementById("galleryInput");
+                header.classList.add("scrolled");
 
-const galleryPreview =
-    document.getElementById("galleryPreview");
+            } else {
 
+                header.classList.remove("scrolled");
 
-galleryInput.addEventListener(
-    "change",
-    function(event) {
-
-        const files =
-            Array.from(event.target.files);
-
-        files.forEach(function(file) {
-
-            if (!file.type.startsWith("image/")) {
-                return;
             }
 
-            const reader =
-                new FileReader();
+        });
 
 
-            reader.onload =
-                function(e) {
+        /* =========================================
+           BACK TO TOP
+        ========================================= */
 
-                    const item =
-                        document.createElement("div");
+        const backTop =
+            document.getElementById("backTop");
 
-                    item.className =
-                        "gallery-item";
+        window.addEventListener("scroll", function() {
 
+            if (window.scrollY > 500) {
 
-                    const image =
-                        document.createElement("img");
+                backTop.classList.add("show");
 
-                    image.src =
-                        e.target.result;
+            } else {
 
-                    image.alt =
-                        "Foto Galeri Desa Pusaka";
+                backTop.classList.remove("show");
 
+            }
 
-                    const deleteButton =
-                        document.createElement("button");
-
-                    deleteButton.className =
-                        "delete-gallery";
-
-                    deleteButton.type =
-                        "button";
-
-                    deleteButton.innerHTML =
-                        "×";
-
-                    deleteButton.setAttribute(
-                        "aria-label",
-                        "Hapus foto"
-                    );
+        });
 
 
-                    deleteButton.addEventListener(
-                        "click",
-                        function() {
+        backTop.addEventListener("click", function() {
 
-                            item.remove();
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        });
+
+
+        /* =========================================
+           SCROLL REVEAL
+        ========================================= */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        const observer =
+            new IntersectionObserver(
+
+                function(entries) {
+
+                    entries.forEach(function(entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("active");
+
+                            observer.unobserve(entry.target);
 
                         }
-                    );
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
 
 
-                    item.appendChild(image);
+        revealElements.forEach(function(element) {
 
-                    item.appendChild(deleteButton);
-
-                    galleryPreview.appendChild(item);
-
-                };
-
-
-            reader.readAsDataURL(file);
+            observer.observe(element);
 
         });
 
-
-        galleryInput.value = "";
-
-    }
-);
-
-
-/* =========================================================
-   SMOOTH SCROLL MENU
-========================================================= */
-
-document
-    .querySelectorAll('a[href^="#"]')
-    .forEach(function(link) {
-
-        link.addEventListener(
-            "click",
-            function(event) {
-
-                const targetId =
-                    this.getAttribute("href");
-
-                if (
-                    targetId === "#" ||
-                    targetId === ""
-                ) {
-                    return;
-                }
-
-                const target =
-                    document.querySelector(targetId);
-
-                if (target) {
-
-                    event.preventDefault();
-
-                    target.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-
-                }
-
-            }
-        );
-
-    });
-
-</script>
-
+    </script>
 
 </body>
-            </html>
+</html>
