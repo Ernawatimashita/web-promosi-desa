@@ -3,6 +3,7 @@
 <head>
 
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Desa Pusaka | Kecamatan Tebas</title>
@@ -301,6 +302,7 @@
         }
 
         @keyframes menuDown {
+
             from {
                 opacity: 0;
                 transform: translateY(-15px);
@@ -310,6 +312,7 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+
         }
 
         .mobile-menu a {
@@ -326,7 +329,7 @@
 
 
         /* =====================================================
-           HERO
+           HERO / BERANDA
         ====================================================== */
 
         .hero {
@@ -341,16 +344,27 @@
 
             color: white;
 
+            /*
+             ===================================================
+             FOTO BERANDA
+             Nama file harus:
+             kantor-desa.jpg
+             ===================================================
+            */
+
             background-image:
+
                 linear-gradient(
                     110deg,
-                    rgba(4,39,25,0.94) 0%,
-                    rgba(6,53,34,0.72) 48%,
-                    rgba(6,53,34,0.38) 100%
+                    rgba(4,39,25,0.90) 0%,
+                    rgba(6,53,34,0.68) 45%,
+                    rgba(6,53,34,0.28) 100%
                 ),
-                url("./kantor-desa-pusaka.jpg");
+
+                url("./kantor-desa.jpg");
 
             background-size: cover;
+
             background-position: center;
         }
 
@@ -358,6 +372,7 @@
             content: "";
 
             position: absolute;
+
             inset: 0;
 
             background:
@@ -392,6 +407,7 @@
             margin: auto;
 
             position: relative;
+
             z-index: 2;
         }
 
@@ -402,6 +418,7 @@
         }
 
         @keyframes heroUp {
+
             from {
                 opacity: 0;
                 transform: translateY(35px);
@@ -411,11 +428,14 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+
         }
 
         .hero-small {
             display: inline-flex;
+
             align-items: center;
+
             gap: 9px;
 
             padding: 9px 15px;
@@ -475,18 +495,21 @@
 
             font-size: 17px;
 
-            color: rgba(255,255,255,0.82);
+            color: rgba(255,255,255,0.88);
 
             margin-bottom: 32px;
         }
 
 
-        /* HERO BUTTON */
+        /* =====================================================
+           HERO BUTTON
+        ====================================================== */
 
         .hero-button {
             display: inline-flex;
 
             align-items: center;
+
             gap: 14px;
 
             padding: 15px 22px 15px 25px;
@@ -532,7 +555,9 @@
         }
 
 
-        /* HERO TAGS */
+        /* =====================================================
+           HERO TAGS
+        ====================================================== */
 
         .hero-tags {
             display: flex;
@@ -611,7 +636,6 @@
             text-align: center;
 
             border-right: 1px solid #e4ebe6;
-
         }
 
         .stat:last-child {
@@ -758,9 +782,11 @@
             position: absolute;
 
             top: 0;
+
             left: 30px;
 
             width: 55px;
+
             height: 4px;
 
             background: var(--green-bright);
@@ -839,6 +865,7 @@
             position: absolute;
 
             top: 20px;
+
             left: 35px;
 
             font-family: "Playfair Display", serif;
@@ -994,7 +1021,9 @@
         }
 
 
-        /* GAMBAR */
+        /* =====================================================
+           GAMBAR KEGIATAN
+        ====================================================== */
 
         .activity-1 {
             background-image:
@@ -1069,6 +1098,7 @@
             height: 62px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
@@ -1139,6 +1169,7 @@
 
         .contact-wrapper {
             position: relative;
+
             z-index: 2;
 
             display: grid;
@@ -1299,6 +1330,7 @@
             z-index: 999;
 
             opacity: 0;
+
             visibility: hidden;
 
             transform: translateY(20px);
@@ -1311,6 +1343,7 @@
 
         .back-top.show {
             opacity: 1;
+
             visibility: visible;
 
             transform: translateY(0);
@@ -1387,6 +1420,7 @@
             .stat:nth-child(-n+2) {
                 border-bottom: 1px solid #e2ebe5;
             }
+
         }
 
 
@@ -1437,9 +1471,12 @@
             }
 
 
-            /* HERO */
+            /* =================================================
+               HERO HP
+            ================================================== */
 
             .hero {
+
                 min-height: 850px;
 
                 padding:
@@ -1447,7 +1484,7 @@
                     22px
                     120px;
 
-                background-position: 60% center;
+                background-position: 62% center;
             }
 
             .hero h2 {
@@ -1455,6 +1492,7 @@
             }
 
             .hero h1 {
+
                 font-size: 58px;
 
                 letter-spacing: -2.5px;
@@ -1475,15 +1513,19 @@
             }
 
             .tag {
+
                 font-size: 12px;
 
                 padding: 8px 12px;
             }
 
 
-            /* STATS */
+            /* =================================================
+               STATS
+            ================================================== */
 
             .stats-wrapper {
+
                 margin-top: -50px;
 
                 padding: 0 15px;
@@ -1494,6 +1536,7 @@
             }
 
             .stat {
+
                 min-height: 145px;
 
                 padding: 15px 8px;
@@ -1512,7 +1555,9 @@
             }
 
 
-            /* SECTION */
+            /* =================================================
+               SECTION
+            ================================================== */
 
             section {
                 padding: 80px 20px;
@@ -1523,6 +1568,7 @@
             }
 
             .section-heading h2 {
+
                 font-size: 42px;
 
                 letter-spacing: -1.5px;
@@ -1533,7 +1579,9 @@
             }
 
 
-            /* PROFIL */
+            /* =================================================
+               PROFIL
+            ================================================== */
 
             .profil-grid {
                 gap: 35px;
@@ -1556,40 +1604,50 @@
             }
 
 
-            /* SEJARAH */
+            /* =================================================
+               SEJARAH
+            ================================================== */
 
             .sejarah-box {
+
                 padding: 35px 25px;
 
                 border-radius: 27px;
             }
 
             .sejarah-box::before {
+
                 font-size: 75px;
 
                 left: 20px;
             }
 
             .sejarah-box p {
+
                 font-size: 14px;
 
                 text-align: left;
             }
 
 
-            /* KEGIATAN */
+            /* =================================================
+               KEGIATAN
+            ================================================== */
 
             .activity-card {
+
                 min-height: 440px;
 
                 border-radius: 29px;
             }
 
             .activity-content {
+
                 padding: 35px 28px;
             }
 
             .activity-content h3 {
+
                 font-size: 40px;
             }
 
@@ -1598,7 +1656,9 @@
             }
 
 
-            /* POTENSI */
+            /* =================================================
+               POTENSI
+            ================================================== */
 
             .potensi-grid {
                 grid-template-columns: 1fr;
@@ -1609,7 +1669,9 @@
             }
 
 
-            /* CONTACT */
+            /* =================================================
+               CONTACT
+            ================================================== */
 
             .contact-title h2 {
                 font-size: 44px;
@@ -1624,22 +1686,30 @@
             }
 
 
-            /* FOOTER */
+            /* =================================================
+               FOOTER
+            ================================================== */
 
             footer {
                 padding: 38px 20px;
             }
 
 
-            /* BACK TOP */
+            /* =================================================
+               BACK TOP
+            ================================================== */
 
             .back-top {
+
                 right: 17px;
+
                 bottom: 17px;
 
                 width: 50px;
+
                 height: 50px;
             }
+
         }
 
 
@@ -1664,9 +1734,11 @@
             .activity-content h3 {
                 font-size: 35px;
             }
+
         }
 
     </style>
+
 </head>
 
 
@@ -1697,10 +1769,15 @@
             <nav>
 
                 <a href="#beranda">Beranda</a>
+
                 <a href="#profil">Profil</a>
+
                 <a href="#sejarah">Sejarah</a>
+
                 <a href="#kegiatan">Kegiatan</a>
+
                 <a href="#potensi">Potensi</a>
+
                 <a href="#kontak">Kontak</a>
 
             </nav>
@@ -1712,9 +1789,13 @@
                 aria-label="Buka menu">
 
                 <div class="menu-lines">
+
                     <span></span>
+
                     <span></span>
+
                     <span></span>
+
                 </div>
 
             </button>
@@ -1730,18 +1811,35 @@
 
     <div class="mobile-menu" id="mobileMenu">
 
-        <a href="#beranda">Beranda</a>
-        <a href="#profil">Profil</a>
-        <a href="#sejarah">Sejarah</a>
-        <a href="#kegiatan">Kegiatan</a>
-        <a href="#potensi">Potensi</a>
-        <a href="#kontak">Kontak</a>
+        <a href="#beranda">
+            Beranda
+        </a>
+
+        <a href="#profil">
+            Profil
+        </a>
+
+        <a href="#sejarah">
+            Sejarah
+        </a>
+
+        <a href="#kegiatan">
+            Kegiatan
+        </a>
+
+        <a href="#potensi">
+            Potensi
+        </a>
+
+        <a href="#kontak">
+            Kontak
+        </a>
 
     </div>
 
 
     <!-- =====================================================
-         HERO
+         HERO / BERANDA
     ====================================================== -->
 
     <section class="hero" id="beranda">
@@ -1751,34 +1849,64 @@
             <div class="hero-content">
 
                 <div class="hero-small">
-                    KECAMATAN TEBAS • KABUPATEN SAMBAS
+
+                    KECAMATAN TEBAS
+                    •
+                    KABUPATEN SAMBAS
+
                 </div>
+
 
                 <h2>
                     Selamat Datang di
                 </h2>
 
+
                 <h1>
                     Desa Pusaka
                 </h1>
 
+
                 <p>
-                    Mengenal lebih dekat sejarah, potensi,
-                    kegiatan, budaya, dan kehidupan masyarakat
+
+                    Mengenal lebih dekat sejarah,
+                    potensi, kegiatan, budaya,
+                    dan kehidupan masyarakat
                     Desa Pusaka.
+
                 </p>
 
-                <a href="#profil" class="hero-button">
+
+                <a
+                    href="#profil"
+                    class="hero-button">
+
                     Jelajahi Desa
-                    <span>→</span>
+
+                    <span>
+                        →
+                    </span>
+
                 </a>
+
 
                 <div class="hero-tags">
 
-                    <div class="tag">🌿 Alam Asri</div>
-                    <div class="tag">🤝 Gotong Royong</div>
-                    <div class="tag">🌾 Pertanian</div>
-                    <div class="tag">🏡 2 Dusun</div>
+                    <div class="tag">
+                        🌿 Alam Asri
+                    </div>
+
+                    <div class="tag">
+                        🤝 Gotong Royong
+                    </div>
+
+                    <div class="tag">
+                        🌾 Pertanian
+                    </div>
+
+                    <div class="tag">
+                        🏡 2 Dusun
+                    </div>
 
                 </div>
 
@@ -1796,6 +1924,7 @@
     <div class="stats-wrapper">
 
         <div class="stats">
+
 
             <div class="stat reveal">
 
@@ -1826,7 +1955,7 @@
             <div class="stat reveal">
 
                 <div class="stat-number">
-                    3
+                    2
                 </div>
 
                 <div class="stat-label">
@@ -1848,6 +1977,7 @@
 
             </div>
 
+
         </div>
 
     </div>
@@ -1857,9 +1987,12 @@
          PROFIL
     ====================================================== -->
 
-    <section class="profil" id="profil">
+    <section
+        class="profil"
+        id="profil">
 
         <div class="container">
+
 
             <div class="section-heading reveal">
 
@@ -1872,15 +2005,18 @@
                 </h2>
 
                 <p>
-                    Desa yang menyimpan sejarah, potensi alam,
-                    serta kehidupan masyarakat yang penuh
-                    kebersamaan.
+
+                    Desa yang menyimpan sejarah,
+                    potensi alam, serta kehidupan
+                    masyarakat yang penuh kebersamaan.
+
                 </p>
 
             </div>
 
 
             <div class="profil-grid">
+
 
                 <div class="profil-text reveal">
 
@@ -1889,21 +2025,27 @@
                     </h3>
 
                     <p>
+
                         Desa Pusaka merupakan salah satu desa
                         yang berada di Kecamatan Tebas,
                         Kabupaten Sambas, Provinsi Kalimantan Barat.
+
                     </p>
 
                     <p>
+
                         Website ini dibuat sebagai media informasi
                         untuk memperkenalkan Desa Pusaka kepada
                         masyarakat luas.
+
                     </p>
 
                     <p>
+
                         Melalui website ini, masyarakat dapat
                         mengetahui sejarah, potensi, kegiatan,
                         serta berbagai informasi mengenai Desa Pusaka.
+
                     </p>
 
                 </div>
@@ -1911,30 +2053,71 @@
 
                 <div class="info-card reveal">
 
-                    <div class="info-row">
-                        <span>Nama Desa</span>
-                        <strong>Desa Pusaka</strong>
-                    </div>
 
                     <div class="info-row">
-                        <span>Kecamatan</span>
-                        <strong>Tebas</strong>
+
+                        <span>
+                            Nama Desa
+                        </span>
+
+                        <strong>
+                            Desa Pusaka
+                        </strong>
+
                     </div>
 
-                    <div class="info-row">
-                        <span>Kabupaten</span>
-                        <strong>Sambas</strong>
-                    </div>
 
                     <div class="info-row">
-                        <span>Provinsi</span>
-                        <strong>Kalimantan Barat</strong>
+
+                        <span>
+                            Kecamatan
+                        </span>
+
+                        <strong>
+                            Tebas
+                        </strong>
+
                     </div>
 
+
                     <div class="info-row">
-                        <span>Jumlah Dusun</span>
-                        <strong>2 Dusun</strong>
+
+                        <span>
+                            Kabupaten
+                        </span>
+
+                        <strong>
+                            Sambas
+                        </strong>
+
                     </div>
+
+
+                    <div class="info-row">
+
+                        <span>
+                            Provinsi
+                        </span>
+
+                        <strong>
+                            Kalimantan Barat
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>
+                            Jumlah Dusun
+                        </span>
+
+                        <strong>
+                            2 Dusun
+                        </strong>
+
+                    </div>
+
 
                 </div>
 
@@ -1949,9 +2132,12 @@
          SEJARAH
     ====================================================== -->
 
-    <section class="sejarah" id="sejarah">
+    <section
+        class="sejarah"
+        id="sejarah">
 
         <div class="container">
+
 
             <div class="section-heading reveal">
 
@@ -1964,8 +2150,10 @@
                 </h2>
 
                 <p>
-                    Cerita yang diwariskan dari generasi ke generasi
-                    mengenai asal-usul Desa Pusaka.
+
+                    Cerita yang diwariskan dari generasi
+                    ke generasi mengenai asal-usul Desa Pusaka.
+
                 </p>
 
             </div>
@@ -1973,32 +2161,45 @@
 
             <div class="sejarah-box reveal">
 
+
                 <p>
-                    Sekitar tahun 1779, dua orang pelaut
+
+                    Konon, sekitar tahun 1779, dua orang pelaut
                     dari Penghuluan berlayar menggunakan sampan
                     dan singgah di kawasan hutan lebat dekat
                     aliran sungai yang kini dikenal sebagai
                     Sungai Sengobang.
+
                 </p>
 
+
                 <p>
+
                     Di tempat tersebut, mereka menemukan sebuah
                     pohon besar yang sulit ditebang dengan
                     peralatan sederhana seperti kapak, parang,
                     dan beliung.
+
                 </p>
 
+
                 <p>
+
                     Saat menebang pohon tersebut, tangkai beliung
                     mereka patah dan hanya tersisa bagian ujungnya
                     yang disebut "kuting".
+
                 </p>
 
+
                 <p>
+
                     Dari peristiwa tersebut kemudian berkembang
                     cerita mengenai asal-usul nama kampung yang
                     menjadi bagian dari sejarah masyarakat setempat.
+
                 </p>
+
 
             </div>
 
@@ -2011,9 +2212,12 @@
          KEGIATAN
     ====================================================== -->
 
-    <section class="kegiatan" id="kegiatan">
+    <section
+        class="kegiatan"
+        id="kegiatan">
 
         <div class="container">
+
 
             <div class="kegiatan-intro">
 
@@ -2024,14 +2228,18 @@
                     </div>
 
                     <h2>
+
                         Aktivitas<br>
                         Masyarakat
+
                     </h2>
 
                     <p>
+
                         Berbagai kegiatan masyarakat yang
                         menggambarkan kehidupan dan semangat
                         kebersamaan Desa Pusaka.
+
                     </p>
 
                 </div>
@@ -2042,7 +2250,8 @@
             <div class="activity-list">
 
 
-                <article class="activity-card activity-1 reveal">
+                <article
+                    class="activity-card activity-1 reveal">
 
                     <div class="activity-content">
 
@@ -2055,8 +2264,10 @@
                         </h3>
 
                         <p>
+
                             Kegiatan bersama untuk menjaga
                             kebersihan dan lingkungan desa.
+
                         </p>
 
                     </div>
@@ -2064,7 +2275,8 @@
                 </article>
 
 
-                <article class="activity-card activity-2 reveal">
+                <article
+                    class="activity-card activity-2 reveal">
 
                     <div class="activity-content">
 
@@ -2077,8 +2289,10 @@
                         </h3>
 
                         <p>
+
                             Berbagai kegiatan masyarakat
                             mempererat hubungan antarwarga.
+
                         </p>
 
                     </div>
@@ -2086,7 +2300,8 @@
                 </article>
 
 
-                <article class="activity-card activity-3 reveal">
+                <article
+                    class="activity-card activity-3 reveal">
 
                     <div class="activity-content">
 
@@ -2099,8 +2314,10 @@
                         </h3>
 
                         <p>
+
                             Pertanian menjadi salah satu
                             aktivitas penting masyarakat.
+
                         </p>
 
                     </div>
@@ -2108,7 +2325,8 @@
                 </article>
 
 
-                <article class="activity-card activity-4 reveal">
+                <article
+                    class="activity-card activity-4 reveal">
 
                     <div class="activity-content">
 
@@ -2121,8 +2339,10 @@
                         </h3>
 
                         <p>
+
                             Lingkungan pedesaan yang menggambarkan
                             kehidupan Desa Pusaka.
+
                         </p>
 
                     </div>
@@ -2130,7 +2350,8 @@
                 </article>
 
 
-                <article class="activity-card activity-5 reveal">
+                <article
+                    class="activity-card activity-5 reveal">
 
                     <div class="activity-content">
 
@@ -2143,13 +2364,16 @@
                         </h3>
 
                         <p>
+
                             Alam hijau dan suasana yang asri
                             menjadi bagian dari Desa Pusaka.
+
                         </p>
 
                     </div>
 
                 </article>
+
 
             </div>
 
@@ -2162,9 +2386,12 @@
          POTENSI
     ====================================================== -->
 
-    <section class="potensi" id="potensi">
+    <section
+        class="potensi"
+        id="potensi">
 
         <div class="container">
+
 
             <div class="section-heading reveal">
 
@@ -2177,14 +2404,17 @@
                 </h2>
 
                 <p>
+
                     Potensi alam dan masyarakat menjadi kekuatan
                     dalam perkembangan Desa Pusaka.
+
                 </p>
 
             </div>
 
 
             <div class="potensi-grid">
+
 
                 <div class="potensi-card reveal">
 
@@ -2197,9 +2427,11 @@
                     </h3>
 
                     <p>
+
                         Lingkungan yang hijau, asri, dan
                         memiliki suasana pedesaan yang
                         masih alami.
+
                     </p>
 
                 </div>
@@ -2216,9 +2448,11 @@
                     </h3>
 
                     <p>
+
                         Pertanian menjadi salah satu sektor
                         penting dalam kehidupan masyarakat
                         Desa Pusaka.
+
                     </p>
 
                 </div>
@@ -2235,11 +2469,14 @@
                     </h3>
 
                     <p>
+
                         Semangat gotong royong dan kebersamaan
                         menjadi kekuatan masyarakat desa.
+
                     </p>
 
                 </div>
+
 
             </div>
 
@@ -2252,11 +2489,15 @@
          KONTAK
     ====================================================== -->
 
-    <section class="kontak" id="kontak">
+    <section
+        class="kontak"
+        id="kontak">
 
         <div class="container">
 
+
             <div class="contact-wrapper">
+
 
                 <div class="contact-title reveal">
 
@@ -2265,13 +2506,19 @@
                     </div>
 
                     <h2>
-                        Mari mengenal Desa Pusaka lebih dekat.
+
+                        Mari mengenal
+                        Desa Pusaka
+                        lebih dekat.
+
                     </h2>
 
                     <p>
+
                         Untuk informasi lebih lanjut mengenai
                         Desa Pusaka, silakan hubungi melalui
                         media sosial atau kontak pemerintah desa.
+
                     </p>
 
                 </div>
@@ -2293,8 +2540,11 @@
                             </h3>
 
                             <p>
-                                Desa Pusaka, Kecamatan Tebas,
+
+                                Desa Pusaka,
+                                Kecamatan Tebas,
                                 Kabupaten Sambas
+
                             </p>
 
                         </div>
@@ -2397,12 +2647,17 @@
         </div>
 
         <p>
+
             Kecamatan Tebas, Kabupaten Sambas,
             Kalimantan Barat
+
         </p>
 
         <p>
-            © 2026 Desa Pusaka. Semua Hak Dilindungi.
+
+            © 2026 Desa Pusaka.
+            Semua Hak Dilindungi.
+
         </p>
 
     </footer>
@@ -2428,6 +2683,7 @@
 
     <script>
 
+
         /* =========================================
            MENU MOBILE
         ========================================= */
@@ -2438,11 +2694,15 @@
         const mobileMenu =
             document.getElementById("mobileMenu");
 
-        menuBtn.addEventListener("click", function () {
 
-            mobileMenu.classList.toggle("active");
+        menuBtn.addEventListener(
+            "click",
+            function () {
 
-        });
+                mobileMenu.classList.toggle("active");
+
+            }
+        );
 
 
         /* =========================================
@@ -2450,17 +2710,27 @@
         ========================================= */
 
         const mobileLinks =
-            document.querySelectorAll(".mobile-menu a");
+            document.querySelectorAll(
+                ".mobile-menu a"
+            );
 
-        mobileLinks.forEach(function(link) {
 
-            link.addEventListener("click", function() {
+        mobileLinks.forEach(
+            function(link) {
 
-                mobileMenu.classList.remove("active");
+                link.addEventListener(
+                    "click",
+                    function() {
 
-            });
+                        mobileMenu.classList.remove(
+                            "active"
+                        );
 
-        });
+                    }
+                );
+
+            }
+        );
 
 
         /* =========================================
@@ -2470,19 +2740,27 @@
         const header =
             document.getElementById("header");
 
-        window.addEventListener("scroll", function() {
 
-            if (window.scrollY > 50) {
+        window.addEventListener(
+            "scroll",
+            function() {
 
-                header.classList.add("scrolled");
+                if (window.scrollY > 50) {
 
-            } else {
+                    header.classList.add(
+                        "scrolled"
+                    );
 
-                header.classList.remove("scrolled");
+                } else {
+
+                    header.classList.remove(
+                        "scrolled"
+                    );
+
+                }
 
             }
-
-        });
+        );
 
 
         /* =========================================
@@ -2492,32 +2770,43 @@
         const backTop =
             document.getElementById("backTop");
 
-        window.addEventListener("scroll", function() {
 
-            if (window.scrollY > 500) {
+        window.addEventListener(
+            "scroll",
+            function() {
 
-                backTop.classList.add("show");
+                if (window.scrollY > 500) {
 
-            } else {
+                    backTop.classList.add(
+                        "show"
+                    );
 
-                backTop.classList.remove("show");
+                } else {
+
+                    backTop.classList.remove(
+                        "show"
+                    );
+
+                }
 
             }
+        );
 
-        });
 
+        backTop.addEventListener(
+            "click",
+            function() {
 
-        backTop.addEventListener("click", function() {
+                window.scrollTo({
 
-            window.scrollTo({
+                    top: 0,
 
-                top: 0,
+                    behavior: "smooth"
 
-                behavior: "smooth"
+                });
 
-            });
-
-        });
+            }
+        );
 
 
         /* =========================================
@@ -2525,24 +2814,35 @@
         ========================================= */
 
         const revealElements =
-            document.querySelectorAll(".reveal");
+            document.querySelectorAll(
+                ".reveal"
+            );
+
 
         const observer =
             new IntersectionObserver(
 
                 function(entries) {
 
-                    entries.forEach(function(entry) {
+                    entries.forEach(
+                        function(entry) {
 
-                        if (entry.isIntersecting) {
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-                            entry.target.classList.add("active");
+                                entry.target.classList.add(
+                                    "active"
+                                );
 
-                            observer.unobserve(entry.target);
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
 
                         }
-
-                    });
+                    );
 
                 },
 
@@ -2553,13 +2853,18 @@
             );
 
 
-        revealElements.forEach(function(element) {
+        revealElements.forEach(
+            function(element) {
 
-            observer.observe(element);
+                observer.observe(
+                    element
+                );
 
-        });
+            }
+        );
+
 
     </script>
 
 </body>
-</html>
+    </html>
