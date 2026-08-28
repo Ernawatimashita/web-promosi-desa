@@ -990,4 +990,1125 @@ footer {
     }
 
     .hero h1 {
-       
+        font-size: 52px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .section {
+        padding: 65px 25px;
+    }
+
+    .stats {
+        border-radius: 28px;
+    }
+
+    .stat {
+        min-height: 165px;
+
+        padding: 15px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .stat-label {
+        font-size: 14px;
+    }
+
+    .activity-card {
+        min-height: 460px;
+
+        border-radius: 30px;
+    }
+
+    .activity-content {
+        left: 38px;
+
+        right: 25px;
+
+        bottom: 30px;
+    }
+
+    .activity-content h3 {
+        font-size: 37px;
+    }
+
+    .activity-content p {
+        font-size: 16px;
+    }
+
+    .upload-button {
+        opacity: 1;
+    }
+
+    .contact {
+        padding: 75px 25px;
+    }
+
+    .contact h2 {
+        font-size: 48px;
+    }
+
+    .contact p {
+        font-size: 17px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 300px;
+    }
+
+    .back-top {
+        right: 20px;
+
+        bottom: 20px;
+
+        width: 60px;
+
+        height: 60px;
+    }
+}
+
+/* =========================================================
+   HP SANGAT KECIL
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .header {
+        padding: 0 15px;
+    }
+
+    .logo-text {
+        font-size: 23px;
+    }
+
+    .logo-box {
+        width: 65px;
+
+        height: 65px;
+    }
+
+    .menu-button {
+        width: 65px;
+
+        height: 65px;
+    }
+
+    .activity-content h3 {
+        font-size: 32px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <a href="#beranda" class="logo-area">
+
+        <div class="logo-box">
+            🌿
+        </div>
+
+        <div class="logo-text">
+            Desa Pusaka
+        </div>
+
+    </a>
+
+
+    <!-- MENU DESKTOP -->
+
+    <nav class="desktop-menu">
+
+        <a href="#beranda">Beranda</a>
+
+        <a href="#profil">Profil Desa</a>
+
+        <a href="#sejarah">Sejarah</a>
+
+        <a href="#kegiatan">Kegiatan</a>
+
+        <a href="#galeri">Galeri</a>
+
+        <a href="#kontak">Hubungi Kami</a>
+
+    </nav>
+
+
+    <!-- HAMBURGER -->
+
+    <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Buka menu"
+        aria-expanded="false">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<nav class="mobile-menu" id="mobileMenu">
+
+    <a href="#beranda">🏠 Beranda</a>
+
+    <a href="#profil">🌿 Profil Desa</a>
+
+    <a href="#sejarah">📜 Sejarah Desa</a>
+
+    <a href="#kegiatan">🤝 Kegiatan</a>
+
+    <a href="#galeri">📷 Galeri</a>
+
+    <a href="#kontak">📍 Hubungi Kami</a>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="beranda">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            DESA PUSAKA
+        </div>
+
+        <h1>
+            Pesona Alam,<br>
+            Budaya &amp;<br>
+            Masyarakat
+        </h1>
+
+        <p>
+            Mengenal lebih dekat kehidupan,
+            sejarah, budaya dan potensi
+            Desa Pusaka.
+        </p>
+
+        <a href="#profil" class="hero-button">
+            Jelajahi Desa →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROFIL
+===================================================== -->
+
+<section class="section" id="profil">
+
+    <div class="section-title">
+
+        <small>TENTANG DESA</small>
+
+        <h2>
+            Desa Pusaka
+        </h2>
+
+    </div>
+
+
+    <!-- CHIP -->
+
+    <div class="chips">
+
+        <div class="chip">
+            🌿 Alam Asri
+        </div>
+
+        <div class="chip">
+            🤝 Gotong Royong
+        </div>
+
+        <div class="chip">
+            🌾 Pertanian
+        </div>
+
+        <div class="chip">
+            🏡 2 Dusun
+        </div>
+
+    </div>
+
+
+    <!-- STATISTIK -->
+
+    <div class="stats">
+
+        <div class="stat">
+
+            <div class="stat-number">
+                1779
+            </div>
+
+            <div class="stat-label">
+                Awal Kisah
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                3.031
+            </div>
+
+            <div class="stat-label">
+                Jumlah Penduduk
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                2
+            </div>
+
+            <div class="stat-label">
+                Jumlah Dusun
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                🌿
+            </div>
+
+            <div class="stat-label">
+                Alam Asri
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SEJARAH
+===================================================== -->
+
+<section class="section" id="sejarah">
+
+    <div class="section-title">
+
+        <small>SEJARAH</small>
+
+        <h2>
+            Kisah Desa Pusaka
+        </h2>
+
+    </div>
+
+    <div style="
+        max-width:900px;
+        margin:auto;
+        background:white;
+        padding:40px;
+        border-radius:30px;
+        box-shadow:0 15px 40px rgba(20,50,35,0.06);
+        line-height:1.9;
+        color:#69736f;
+        font-size:17px;
+    ">
+
+        <p>
+            Konon, sekitar tahun 1779, dua orang pelaut dari
+            Penghuluan berlayar menggunakan sampan dan singgah
+            di kawasan hutan lebat dekat aliran sungai yang kini
+            dikenal sebagai Sungai Sengobang.
+        </p>
+
+        <br>
+
+        <p>
+            Di tempat tersebut mereka menemukan sebuah pohon besar
+            yang sulit ditebang menggunakan peralatan sederhana
+            seperti kapak, parang dan beliung.
+        </p>
+
+        <br>
+
+        <p>
+            Saat menebang pohon tersebut, tangkai beliung mereka
+            patah dan hanya tersisa bagian ujung yang disebut
+            "kuting". Dari peristiwa tersebut kemudian berkembang
+            kisah mengenai asal-usul nama Kampung Pusaka.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     KEGIATAN
+===================================================== -->
+
+<section class="activities-section" id="kegiatan">
+
+    <div class="section-title">
+
+        <small>KEGIATAN DESA</small>
+
+        <h2>
+            Kehidupan Desa Pusaka
+        </h2>
+
+    </div>
+
+
+    <div class="activities">
+
+
+        <!-- CARD 01 -->
+
+        <article class="activity-card">
+
+            <img
+                id="image1"
+                class="activity-image"
+                src="images/gotong-royong.jpg"
+                alt="Gotong Royong">
+
+            <button
+                class="upload-button"
+                onclick="document.getElementById('file1').click()">
+
+                📷 Tambah Foto
+
+            </button>
+
+            <input
+                type="file"
+                id="file1"
+                class="file-input"
+                accept="image/*"
+                onchange="previewImage(event,'image1')">
+
+            <div class="activity-content">
+
+                <div class="activity-number">
+                    KEGIATAN 01
+                </div>
+
+                <h3>
+                    Gotong Royong
+                </h3>
+
+                <p>
+                    Kegiatan bersama untuk menjaga kebersihan
+                    dan lingkungan desa.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- CARD 02 -->
+
+        <article class="activity-card">
+
+            <img
+                id="image2"
+                class="activity-image"
+                src="images/kegiatan-warga.jpg"
+                alt="Kegiatan Warga">
+
+            <button
+                class="upload-button"
+                onclick="document.getElementById('file2').click()">
+
+                📷 Tambah Foto
+
+            </button>
+
+            <input
+                type="file"
+                id="file2"
+                class="file-input"
+                accept="image/*"
+                onchange="previewImage(event,'image2')">
+
+            <div class="activity-content">
+
+                <div class="activity-number">
+                    KEGIATAN 02
+                </div>
+
+                <h3>
+                    Kegiatan Warga
+                </h3>
+
+                <p>
+                    Berbagai kegiatan masyarakat mempererat
+                    hubungan antarwarga.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- CARD 03 -->
+
+        <article class="activity-card">
+
+            <img
+                id="image3"
+                class="activity-image"
+                src="images/pertanian.jpg"
+                alt="Aktivitas Pertanian">
+
+            <button
+                class="upload-button"
+                onclick="document.getElementById('file3').click()">
+
+                📷 Tambah Foto
+
+            </button>
+
+            <input
+                type="file"
+                id="file3"
+                class="file-input"
+                accept="image/*"
+                onchange="previewImage(event,'image3')">
+
+            <div class="activity-content">
+
+                <div class="activity-number">
+                    KEGIATAN 03
+                </div>
+
+                <h3>
+                    Aktivitas Pertanian
+                </h3>
+
+                <p>
+                    Pertanian menjadi salah satu aktivitas penting
+                    masyarakat.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- CARD 04 -->
+
+        <article class="activity-card">
+
+            <img
+                id="image4"
+                class="activity-image"
+                src="images/suasana-desa.jpg"
+                alt="Suasana Desa">
+
+            <button
+                class="upload-button"
+                onclick="document.getElementById('file4').click()">
+
+                📷 Tambah Foto
+
+            </button>
+
+            <input
+                type="file"
+                id="file4"
+                class="file-input"
+                accept="image/*"
+                onchange="previewImage(event,'image4')">
+
+            <div class="activity-content">
+
+                <div class="activity-number">
+                    KEGIATAN 04
+                </div>
+
+                <h3>
+                    Suasana Desa
+                </h3>
+
+                <p>
+                    Lingkungan pedesaan yang menggambarkan
+                    kehidupan Desa Pusaka.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- CARD 05 -->
+
+        <article class="activity-card">
+
+            <img
+                id="image5"
+                class="activity-image"
+                src="images/keindahan-alam.jpg"
+                alt="Keindahan Alam">
+
+            <button
+                class="upload-button"
+                onclick="document.getElementById('file5').click()">
+
+                📷 Tambah Foto
+
+            </button>
+
+            <input
+                type="file"
+                id="file5"
+                class="file-input"
+                accept="image/*"
+                onchange="previewImage(event,'image5')">
+
+            <div class="activity-content">
+
+                <div class="activity-number">
+                    KEGIATAN 05
+                </div>
+
+                <h3>
+                    Keindahan Alam
+                </h3>
+
+                <p>
+                    Alam hijau dan suasana Desa Pusaka
+                    yang masih asri.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- CARD 06 -->
+
+        <article class="activity-card">
+
+            <img
+                id="image6"
+                class="activity-image"
+                src="images/kegiatan-masyarakat.jpg"
+                alt="Kegiatan Masyarakat">
+
+            <button
+                class="upload-button"
+                onclick="document.getElementById('file6').click()">
+
+                📷 Tambah Foto
+
+            </button>
+
+            <input
+                type="file"
+                id="file6"
+                class="file-input"
+                accept="image/*"
+                onchange="previewImage(event,'image6')">
+
+            <div class="activity-content">
+
+                <div class="activity-number">
+                    KEGIATAN 06
+                </div>
+
+                <h3>
+                    Kegiatan Masyarakat
+                </h3>
+
+                <p>
+                    Kebersamaan masyarakat dalam membangun
+                    desa yang lebih baik.
+                </p>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALERI
+===================================================== -->
+
+<section class="section" id="galeri">
+
+    <div class="section-title">
+
+        <small>DOKUMENTASI</small>
+
+        <h2>
+            Galeri Desa
+        </h2>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img
+                src="images/galeri1.jpg"
+                alt="Galeri Desa Pusaka">
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="images/galeri2.jpg"
+                alt="Galeri Desa Pusaka">
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="images/galeri3.jpg"
+                alt="Galeri Desa Pusaka">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HUBUNGI KAMI
+===================================================== -->
+
+<section class="contact" id="kontak">
+
+    <div class="contact-inner">
+
+
+        <div>
+
+            <div class="contact-label">
+                HUBUNGI KAMI
+            </div>
+
+            <h2>
+                Mari mengenal Desa
+                Pusaka lebih dekat.
+            </h2>
+
+            <p>
+                Untuk informasi lebih lanjut mengenai Desa
+                Pusaka, silakan kunjungi halaman atau lokasi
+                Desa Pusaka.
+            </p>
+
+        </div>
+
+
+        <div class="contact-info">
+
+
+            <!-- ALAMAT -->
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+                <div>
+
+                    <strong>
+                        Alamat Desa
+                    </strong>
+
+                    <br>
+
+                    <a
+                        class="address-link"
+                        href="#"
+                        id="addressLink"
+                        target="_blank">
+
+                        Lihat lokasi Desa Pusaka →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMASI -->
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    🏡
+                </div>
+
+                <div>
+
+                    <strong>
+                        Desa Pusaka
+                    </strong>
+
+                    <br>
+
+                    <span>
+                        Lingkungan desa yang asri
+                        dan masyarakat yang kompak.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- DUSUN -->
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    🌿
+                </div>
+
+                <div>
+
+                    <strong>
+                        2 Dusun
+                    </strong>
+
+                    <br>
+
+                    <span>
+                        Bagian dari wilayah Desa Pusaka.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    © 2026 Desa Pusaka.
+    Semua hak dilindungi.
+
+</footer>
+
+
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
+
+<button
+    class="back-top"
+    id="backTop"
+    aria-label="Kembali ke atas">
+
+    ↑
+
+</button>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =========================================================
+   MENU HAMBURGER
+========================================================= */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const mobileMenu =
+    document.getElementById("mobileMenu");
+
+const menuOverlay =
+    document.getElementById("menuOverlay");
+
+
+function toggleMenu() {
+
+    const active =
+        mobileMenu.classList.toggle("active");
+
+    menuOverlay.classList.toggle(
+        "active",
+        active
+    );
+
+    menuButton.classList.toggle(
+        "active",
+        active
+    );
+
+    menuButton.setAttribute(
+        "aria-expanded",
+        active
+    );
+
+}
+
+
+/* KLIK HAMBURGER */
+
+menuButton.addEventListener(
+    "click",
+    toggleMenu
+);
+
+
+/* KLIK OVERLAY */
+
+menuOverlay.addEventListener(
+    "click",
+    toggleMenu
+);
+
+
+/* KLIK MENU */
+
+document.querySelectorAll(
+    ".mobile-menu a"
+).forEach(function(link) {
+
+    link.addEventListener(
+        "click",
+        function() {
+
+            mobileMenu.classList.remove(
+                "active"
+            );
+
+            menuOverlay.classList.remove(
+                "active"
+            );
+
+            menuButton.classList.remove(
+                "active"
+            );
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+const backTop =
+    document.getElementById("backTop");
+
+
+window.addEventListener(
+    "scroll",
+    function() {
+
+        if (window.scrollY > 400) {
+
+            backTop.classList.add("show");
+
+        } else {
+
+            backTop.classList.remove("show");
+
+        }
+
+    }
+);
+
+
+backTop.addEventListener(
+    "click",
+    function() {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+);
+
+
+/* =========================================================
+   UPLOAD FOTO
+========================================================= */
+
+function previewImage(event, imageId) {
+
+    const file =
+        event.target.files[0];
+
+    if (!file) {
+        return;
+    }
+
+    if (!file.type.startsWith("image/")) {
+
+        alert("Silakan pilih file gambar.");
+
+        return;
+    }
+
+    const image =
+        document.getElementById(imageId);
+
+    const reader =
+        new FileReader();
+
+    reader.onload =
+        function(e) {
+
+            image.src =
+                e.target.result;
+
+        };
+
+    reader.readAsDataURL(file);
+
+}
+
+
+/* =========================================================
+   LINK ALAMAT
+========================================================= */
+
+/*
+   Link dibuat menggunakan gabungan teks agar alamat
+   tetap bisa digunakan tanpa mengganggu tampilan kode.
+*/
+
+const addressLink =
+    document.getElementById("addressLink");
+
+const googleAddress =
+    "https://" +
+    "share.google/" +
+    "rjT0h2ePe2zzH2DYt";
+
+addressLink.href =
+    googleAddress;
+
+
+/* =========================================================
+   ANIMASI CARD SAAT MUNCUL
+========================================================= */
+
+const cards =
+    document.querySelectorAll(
+        ".activity-card"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+        function(entries) {
+
+            entries.forEach(
+                function(entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.style.opacity = "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+
+cards.forEach(
+    function(card) {
+
+        card.style.opacity = "0";
+
+        card.style.transform =
+            "translateY(30px)";
+
+        card.style.transition =
+            "opacity 0.7s ease, transform 0.7s ease";
+
+        observer.observe(card);
+
+    }
+);
+
+</script>
+
+</body>
+   </html>
