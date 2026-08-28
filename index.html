@@ -7,9 +7,8 @@
 <title>Desa Pusaka | Profil Desa</title>
 
 <meta name="description"
-content="Website Desa Pusaka yang menampilkan profil, sejarah, kegiatan, galeri dan informasi desa.">
+content="Website resmi Desa Pusaka yang menampilkan profil, sejarah, kegiatan, galeri dan informasi desa.">
 
-<!-- GOOGLE FONT -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -81,10 +80,12 @@ button {
 
     z-index: 1000;
 
-    box-shadow: 0 3px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 3px 20px rgba(0,0,0,0.04);
 }
 
-/* LOGO */
+/* =========================================================
+   LOGO
+========================================================= */
 
 .logo-area {
     display: flex;
@@ -101,8 +102,8 @@ button {
     border-radius: 20px;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     font-size: 40px;
 }
@@ -155,8 +156,6 @@ button {
 
     background: var(--green-dark);
 
-    color: white;
-
     cursor: pointer;
 
     display: none;
@@ -165,6 +164,8 @@ button {
     justify-content: center;
 
     flex-direction: column;
+
+    padding: 0;
 }
 
 .menu-button span {
@@ -182,7 +183,7 @@ button {
     transition: 0.3s;
 }
 
-/* ANIMASI HAMBURGER */
+/* Animasi hamburger */
 
 .menu-button.active span:nth-child(1) {
     transform: translateY(13px) rotate(45deg);
@@ -206,7 +207,7 @@ button {
     top: 105px;
     right: 0;
 
-    width: 280px;
+    width: 300px;
 
     min-height: calc(100vh - 105px);
 
@@ -220,7 +221,7 @@ button {
 
     z-index: 999;
 
-    box-shadow: -8px 10px 30px rgba(0,0,0,0.1);
+    box-shadow: -8px 10px 30px rgba(0,0,0,0.12);
 }
 
 .mobile-menu.active {
@@ -239,13 +240,19 @@ button {
     font-weight: 600;
 
     color: var(--green-dark);
+
+    transition: 0.3s;
 }
 
 .mobile-menu a:hover {
     background: #eff7f1;
+
+    padding-left: 22px;
 }
 
-/* OVERLAY */
+/* =========================================================
+   OVERLAY
+========================================================= */
 
 .menu-overlay {
     position: fixed;
@@ -418,7 +425,7 @@ button {
 
     border-radius: 50px;
 
-    background: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.5);
 
     font-size: 16px;
 
@@ -488,11 +495,39 @@ button {
 }
 
 /* =========================================================
+   SEJARAH
+========================================================= */
+
+.history-box {
+    max-width: 900px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 30px;
+
+    box-shadow: 0 15px 40px rgba(20,70,45,0.06);
+
+    line-height: 1.9;
+
+    color: #66716b;
+
+    font-size: 17px;
+}
+
+.history-box strong {
+    color: var(--green-dark);
+}
+
+/* =========================================================
    KEGIATAN
 ========================================================= */
 
 .activities-section {
-    padding: 80px 5% 100px;
+    padding-top: 60px;
 }
 
 .activities {
@@ -531,11 +566,11 @@ button {
 
 .activity-card:hover {
     transform: translateY(-7px);
-
-    box-shadow: 0 25px 55px rgba(20,50,35,0.16);
 }
 
-/* FOTO */
+/* =========================================================
+   GAMBAR CARD
+========================================================= */
 
 .activity-image {
     position: absolute;
@@ -548,15 +583,6 @@ button {
 
     object-fit: cover;
 
-    background:
-        linear-gradient(
-            180deg,
-            #dce4df 0%,
-            #dce4df 40%,
-            #bfc9c3 65%,
-            #252927 100%
-        );
-
     transition: 0.5s;
 }
 
@@ -564,7 +590,9 @@ button {
     transform: scale(1.04);
 }
 
-/* GRADASI */
+/* =========================================================
+   GRADASI GELAP
+========================================================= */
 
 .activity-card::after {
     content: "";
@@ -577,15 +605,17 @@ button {
         linear-gradient(
             to top,
             rgba(10,15,13,0.96) 0%,
-            rgba(10,15,13,0.72) 30%,
-            rgba(10,15,13,0.18) 65%,
+            rgba(10,15,13,0.68) 32%,
+            rgba(10,15,13,0.10) 68%,
             transparent 100%
         );
 
     pointer-events: none;
 }
 
-/* ISI CARD */
+/* =========================================================
+   ISI CARD
+========================================================= */
 
 .activity-content {
     position: absolute;
@@ -619,8 +649,6 @@ button {
     margin-bottom: 20px;
 
     background: rgba(255,255,255,0.08);
-
-    backdrop-filter: blur(5px);
 }
 
 .activity-content h3 {
@@ -638,11 +666,11 @@ button {
 
     line-height: 1.6;
 
-    color: rgba(255,255,255,0.9);
+    color: rgba(255,255,255,0.88);
 }
 
 /* =========================================================
-   TOMBOL TAMBAH FOTO
+   UPLOAD BUTTON
 ========================================================= */
 
 .upload-button {
@@ -654,7 +682,7 @@ button {
 
     z-index: 5;
 
-    background: rgba(13,66,43,0.95);
+    background: rgba(13,66,43,0.92);
 
     color: white;
 
@@ -691,36 +719,120 @@ button {
    GALERI
 ========================================================= */
 
-.gallery {
-    max-width: 1100px;
+.gallery-box {
+    max-width: 1000px;
 
     margin: auto;
 
+    background: #e3eee6;
+
+    border-radius: 35px;
+
+    padding: 50px 30px;
+
+    text-align: center;
+}
+
+.gallery-icon {
+    font-size: 60px;
+
+    margin-bottom: 20px;
+}
+
+.gallery-box h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 35px;
+
+    margin-bottom: 15px;
+
+    color: var(--green-dark);
+}
+
+.gallery-box p {
+    color: #68766e;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.gallery-button {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    background: var(--green-dark);
+
+    color: white;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.gallery-button:hover {
+    transform: translateY(-3px);
+
+    background: #0b6c41;
+}
+
+.gallery-input {
+    display: none;
+}
+
+.gallery-preview {
+    margin-top: 30px;
+
     display: grid;
 
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
 
-    gap: 20px;
+    gap: 15px;
 }
 
 .gallery-item {
-    height: 260px;
-
-    border-radius: 25px;
-
-    overflow: hidden;
-
-    background: #dfe8e2;
-
     position: relative;
 }
 
 .gallery-item img {
     width: 100%;
 
-    height: 100%;
+    height: 200px;
 
     object-fit: cover;
+
+    border-radius: 20px;
+
+    display: block;
+}
+
+.delete-gallery {
+    position: absolute;
+
+    top: 8px;
+
+    right: 8px;
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--green-dark);
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
 }
 
 /* =========================================================
@@ -789,6 +901,10 @@ button {
     padding: 30px;
 }
 
+/* =========================================================
+   CONTACT ITEM
+========================================================= */
+
 .contact-item {
     padding: 18px 0;
 
@@ -827,14 +943,30 @@ button {
     font-size: 20px;
 }
 
-.address-link {
-    color: white;
+/* LINK ALAMAT */
+
+.location-link {
+    color: #bfd2c6;
 
     transition: 0.3s;
 }
 
-.address-link:hover {
-    color: #bde2ca;
+.location-link:hover {
+    color: white;
+
+    text-decoration: underline;
+}
+
+/* FACEBOOK */
+
+.facebook-link {
+    color: #bfd2c6;
+
+    transition: 0.3s;
+}
+
+.facebook-link:hover {
+    color: white;
 
     text-decoration: underline;
 }
@@ -903,8 +1035,12 @@ footer {
     transform: translateY(0);
 }
 
+.back-top:hover {
+    transform: translateY(-4px);
+}
+
 /* =========================================================
-   RESPONSIVE TABLET
+   TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -937,14 +1073,10 @@ footer {
     .contact-inner {
         grid-template-columns: 1fr;
     }
-
-    .gallery {
-        grid-template-columns: repeat(2,1fr);
-    }
 }
 
 /* =========================================================
-   RESPONSIVE HP
+   HP
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -952,35 +1084,41 @@ footer {
     .header {
         height: 105px;
 
-        padding: 0 25px;
+        padding: 0 20px;
+    }
+
+    .logo-area {
+        gap: 12px;
     }
 
     .logo-box {
-        width: 74px;
+        width: 68px;
 
-        height: 74px;
+        height: 68px;
 
-        border-radius: 20px;
+        border-radius: 18px;
 
-        font-size: 38px;
+        font-size: 36px;
     }
 
     .logo-text {
-        font-size: 27px;
+        font-size: 26px;
     }
 
     .menu-button {
-        width: 80px;
+        width: 68px;
 
-        height: 80px;
+        height: 68px;
 
-        border-radius: 22px;
+        border-radius: 18px;
     }
 
     .mobile-menu {
         top: 105px;
 
-        width: 85%;
+        width: 285px;
+
+        min-height: calc(100vh - 105px);
     }
 
     .hero {
@@ -1019,6 +1157,12 @@ footer {
         font-size: 14px;
     }
 
+    .history-box {
+        padding: 28px 22px;
+
+        font-size: 16px;
+    }
+
     .activity-card {
         min-height: 460px;
 
@@ -1026,7 +1170,7 @@ footer {
     }
 
     .activity-content {
-        left: 38px;
+        left: 25px;
 
         right: 25px;
 
@@ -1057,12 +1201,12 @@ footer {
         font-size: 17px;
     }
 
-    .gallery {
-        grid-template-columns: 1fr;
+    .gallery-box {
+        padding: 40px 20px;
     }
 
-    .gallery-item {
-        height: 300px;
+    .gallery-box h3 {
+        font-size: 30px;
     }
 
     .back-top {
@@ -1087,19 +1231,19 @@ footer {
     }
 
     .logo-text {
-        font-size: 23px;
+        font-size: 22px;
     }
 
     .logo-box {
-        width: 65px;
+        width: 62px;
 
-        height: 65px;
+        height: 62px;
     }
 
     .menu-button {
-        width: 65px;
+        width: 62px;
 
-        height: 65px;
+        height: 62px;
     }
 
     .activity-content h3 {
@@ -1112,6 +1256,7 @@ footer {
 
 
 <body>
+
 
 <!-- =====================================================
      HEADER
@@ -1136,17 +1281,29 @@ footer {
 
     <nav class="desktop-menu">
 
-        <a href="#beranda">Beranda</a>
+        <a href="#beranda">
+            Beranda
+        </a>
 
-        <a href="#profil">Profil Desa</a>
+        <a href="#profil">
+            Profil Desa
+        </a>
 
-        <a href="#sejarah">Sejarah</a>
+        <a href="#sejarah">
+            Sejarah
+        </a>
 
-        <a href="#kegiatan">Kegiatan</a>
+        <a href="#kegiatan">
+            Kegiatan
+        </a>
 
-        <a href="#galeri">Galeri</a>
+        <a href="#galeri">
+            Galeri
+        </a>
 
-        <a href="#kontak">Hubungi Kami</a>
+        <a href="#kontak">
+            Hubungi Kami
+        </a>
 
     </nav>
 
@@ -1169,24 +1326,46 @@ footer {
 
 
 <!-- =====================================================
+     OVERLAY
+===================================================== -->
+
+<div
+    class="menu-overlay"
+    id="menuOverlay">
+</div>
+
+
+<!-- =====================================================
      MOBILE MENU
 ===================================================== -->
 
-<div class="menu-overlay" id="menuOverlay"></div>
+<nav
+    class="mobile-menu"
+    id="mobileMenu">
 
-<nav class="mobile-menu" id="mobileMenu">
+    <a href="#beranda">
+        🏠 &nbsp; Beranda
+    </a>
 
-    <a href="#beranda">🏠 Beranda</a>
+    <a href="#profil">
+        🌿 &nbsp; Profil Desa
+    </a>
 
-    <a href="#profil">🌿 Profil Desa</a>
+    <a href="#sejarah">
+        📜 &nbsp; Sejarah Desa
+    </a>
 
-    <a href="#sejarah">📜 Sejarah Desa</a>
+    <a href="#kegiatan">
+        🤝 &nbsp; Kegiatan
+    </a>
 
-    <a href="#kegiatan">🤝 Kegiatan</a>
+    <a href="#galeri">
+        📷 &nbsp; Galeri
+    </a>
 
-    <a href="#galeri">📷 Galeri</a>
-
-    <a href="#kontak">📍 Hubungi Kami</a>
+    <a href="#kontak">
+        📞 &nbsp; Hubungi Kami
+    </a>
 
 </nav>
 
@@ -1195,7 +1374,9 @@ footer {
      HERO
 ===================================================== -->
 
-<section class="hero" id="beranda">
+<section
+    class="hero"
+    id="beranda">
 
     <div class="hero-content">
 
@@ -1215,8 +1396,12 @@ footer {
             Desa Pusaka.
         </p>
 
-        <a href="#profil" class="hero-button">
+        <a
+            href="#profil"
+            class="hero-button">
+
             Jelajahi Desa →
+
         </a>
 
     </div>
@@ -1228,11 +1413,15 @@ footer {
      PROFIL
 ===================================================== -->
 
-<section class="section" id="profil">
+<section
+    class="section"
+    id="profil">
 
     <div class="section-title">
 
-        <small>TENTANG DESA</small>
+        <small>
+            TENTANG DESA
+        </small>
 
         <h2>
             Desa Pusaka
@@ -1328,52 +1517,63 @@ footer {
      SEJARAH
 ===================================================== -->
 
-<section class="section" id="sejarah">
+<section
+    class="section"
+    id="sejarah">
 
     <div class="section-title">
 
-        <small>SEJARAH</small>
+        <small>
+            SEJARAH
+        </small>
 
         <h2>
-            Kisah Desa Pusaka
+            Awal Kisah Desa Pusaka
         </h2>
 
     </div>
 
-    <div style="
-        max-width:900px;
-        margin:auto;
-        background:white;
-        padding:40px;
-        border-radius:30px;
-        box-shadow:0 15px 40px rgba(20,50,35,0.06);
-        line-height:1.9;
-        color:#69736f;
-        font-size:17px;
-    ">
+
+    <div class="history-box">
 
         <p>
-            Konon, sekitar tahun 1779, dua orang pelaut dari
-            Penghuluan berlayar menggunakan sampan dan singgah
-            di kawasan hutan lebat dekat aliran sungai yang kini
+
+            Konon, sekitar tahun
+
+            <strong>
+                1779
+            </strong>,
+
+            dua orang pelaut dari Penghuluan
+            berlayar menggunakan sampan dan
+            singgah di kawasan hutan lebat
+            dekat aliran sungai yang kini
             dikenal sebagai Sungai Sengobang.
+
+            Mereka menemukan sebuah pohon besar
+            dan berusaha menebangnya menggunakan
+            kapak, parang dan beliung.
+
+            Saat menebang pohon tersebut,
+            tangkai beliung mereka patah dan
+            hanya tersisa bagian ujungnya yang
+            disebut
+
+            <strong>
+                "kuting"
+            </strong>.
+
         </p>
 
         <br>
 
         <p>
-            Di tempat tersebut mereka menemukan sebuah pohon besar
-            yang sulit ditebang menggunakan peralatan sederhana
-            seperti kapak, parang dan beliung.
-        </p>
 
-        <br>
+            Dari peristiwa tersebut kemudian
+            berkembang cerita yang menjadi bagian
+            dari sejarah dan asal-usul nama
+            kampung.
 
-        <p>
-            Saat menebang pohon tersebut, tangkai beliung mereka
-            patah dan hanya tersisa bagian ujung yang disebut
-            "kuting". Dari peristiwa tersebut kemudian berkembang
-            kisah mengenai asal-usul nama Kampung Pusaka.
         </p>
 
     </div>
@@ -1385,14 +1585,18 @@ footer {
      KEGIATAN
 ===================================================== -->
 
-<section class="activities-section" id="kegiatan">
+<section
+    class="section activities-section"
+    id="kegiatan">
 
     <div class="section-title">
 
-        <small>KEGIATAN DESA</small>
+        <small>
+            KEGIATAN MASYARAKAT
+        </small>
 
         <h2>
-            Kehidupan Desa Pusaka
+            Kehidupan Desa
         </h2>
 
     </div>
@@ -1401,7 +1605,9 @@ footer {
     <div class="activities">
 
 
-        <!-- CARD 01 -->
+        <!-- =================================================
+             CARD 1
+        ================================================== -->
 
         <article class="activity-card">
 
@@ -1411,20 +1617,21 @@ footer {
                 src="images/gotong-royong.jpg"
                 alt="Gotong Royong">
 
-            <button
-                class="upload-button"
-                onclick="document.getElementById('file1').click()">
-
-                📷 Tambah Foto
-
-            </button>
-
             <input
                 type="file"
                 id="file1"
                 class="file-input"
-                accept="image/*"
-                onchange="previewImage(event,'image1')">
+                accept="image/*">
+
+
+            <button
+                class="upload-button"
+                onclick="document.getElementById('file1').click()">
+
+                📷 Ganti Foto
+
+            </button>
+
 
             <div class="activity-content">
 
@@ -1437,8 +1644,8 @@ footer {
                 </h3>
 
                 <p>
-                    Kegiatan bersama untuk menjaga kebersihan
-                    dan lingkungan desa.
+                    Kegiatan bersama untuk menjaga
+                    kebersihan dan lingkungan desa.
                 </p>
 
             </div>
@@ -1446,7 +1653,9 @@ footer {
         </article>
 
 
-        <!-- CARD 02 -->
+        <!-- =================================================
+             CARD 2
+        ================================================== -->
 
         <article class="activity-card">
 
@@ -1456,20 +1665,21 @@ footer {
                 src="images/kegiatan-warga.jpg"
                 alt="Kegiatan Warga">
 
-            <button
-                class="upload-button"
-                onclick="document.getElementById('file2').click()">
-
-                📷 Tambah Foto
-
-            </button>
-
             <input
                 type="file"
                 id="file2"
                 class="file-input"
-                accept="image/*"
-                onchange="previewImage(event,'image2')">
+                accept="image/*">
+
+
+            <button
+                class="upload-button"
+                onclick="document.getElementById('file2').click()">
+
+                📷 Ganti Foto
+
+            </button>
+
 
             <div class="activity-content">
 
@@ -1482,8 +1692,8 @@ footer {
                 </h3>
 
                 <p>
-                    Berbagai kegiatan masyarakat mempererat
-                    hubungan antarwarga.
+                    Berbagai kegiatan masyarakat
+                    mempererat hubungan antarwarga.
                 </p>
 
             </div>
@@ -1491,7 +1701,9 @@ footer {
         </article>
 
 
-        <!-- CARD 03 -->
+        <!-- =================================================
+             CARD 3
+        ================================================== -->
 
         <article class="activity-card">
 
@@ -1501,20 +1713,21 @@ footer {
                 src="images/pertanian.jpg"
                 alt="Aktivitas Pertanian">
 
-            <button
-                class="upload-button"
-                onclick="document.getElementById('file3').click()">
-
-                📷 Tambah Foto
-
-            </button>
-
             <input
                 type="file"
                 id="file3"
                 class="file-input"
-                accept="image/*"
-                onchange="previewImage(event,'image3')">
+                accept="image/*">
+
+
+            <button
+                class="upload-button"
+                onclick="document.getElementById('file3').click()">
+
+                📷 Ganti Foto
+
+            </button>
+
 
             <div class="activity-content">
 
@@ -1527,8 +1740,8 @@ footer {
                 </h3>
 
                 <p>
-                    Pertanian menjadi salah satu aktivitas penting
-                    masyarakat.
+                    Pertanian menjadi salah satu
+                    aktivitas penting masyarakat.
                 </p>
 
             </div>
@@ -1536,7 +1749,9 @@ footer {
         </article>
 
 
-        <!-- CARD 04 -->
+        <!-- =================================================
+             CARD 4
+        ================================================== -->
 
         <article class="activity-card">
 
@@ -1544,571 +1759,4 @@ footer {
                 id="image4"
                 class="activity-image"
                 src="images/suasana-desa.jpg"
-                alt="Suasana Desa">
-
-            <button
-                class="upload-button"
-                onclick="document.getElementById('file4').click()">
-
-                📷 Tambah Foto
-
-            </button>
-
-            <input
-                type="file"
-                id="file4"
-                class="file-input"
-                accept="image/*"
-                onchange="previewImage(event,'image4')">
-
-            <div class="activity-content">
-
-                <div class="activity-number">
-                    KEGIATAN 04
-                </div>
-
-                <h3>
-                    Suasana Desa
-                </h3>
-
-                <p>
-                    Lingkungan pedesaan yang menggambarkan
-                    kehidupan Desa Pusaka.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- CARD 05 -->
-
-        <article class="activity-card">
-
-            <img
-                id="image5"
-                class="activity-image"
-                src="images/keindahan-alam.jpg"
-                alt="Keindahan Alam">
-
-            <button
-                class="upload-button"
-                onclick="document.getElementById('file5').click()">
-
-                📷 Tambah Foto
-
-            </button>
-
-            <input
-                type="file"
-                id="file5"
-                class="file-input"
-                accept="image/*"
-                onchange="previewImage(event,'image5')">
-
-            <div class="activity-content">
-
-                <div class="activity-number">
-                    KEGIATAN 05
-                </div>
-
-                <h3>
-                    Keindahan Alam
-                </h3>
-
-                <p>
-                    Alam hijau dan suasana Desa Pusaka
-                    yang masih asri.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- CARD 06 -->
-
-        <article class="activity-card">
-
-            <img
-                id="image6"
-                class="activity-image"
-                src="images/kegiatan-masyarakat.jpg"
-                alt="Kegiatan Masyarakat">
-
-            <button
-                class="upload-button"
-                onclick="document.getElementById('file6').click()">
-
-                📷 Tambah Foto
-
-            </button>
-
-            <input
-                type="file"
-                id="file6"
-                class="file-input"
-                accept="image/*"
-                onchange="previewImage(event,'image6')">
-
-            <div class="activity-content">
-
-                <div class="activity-number">
-                    KEGIATAN 06
-                </div>
-
-                <h3>
-                    Kegiatan Masyarakat
-                </h3>
-
-                <p>
-                    Kebersamaan masyarakat dalam membangun
-                    desa yang lebih baik.
-                </p>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     GALERI
-===================================================== -->
-
-<section class="section" id="galeri">
-
-    <div class="section-title">
-
-        <small>DOKUMENTASI</small>
-
-        <h2>
-            Galeri Desa
-        </h2>
-
-    </div>
-
-
-    <div class="gallery">
-
-        <div class="gallery-item">
-            <img
-                src="images/galeri1.jpg"
-                alt="Galeri Desa Pusaka">
-        </div>
-
-        <div class="gallery-item">
-            <img
-                src="images/galeri2.jpg"
-                alt="Galeri Desa Pusaka">
-        </div>
-
-        <div class="gallery-item">
-            <img
-                src="images/galeri3.jpg"
-                alt="Galeri Desa Pusaka">
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     HUBUNGI KAMI
-===================================================== -->
-
-<section class="contact" id="kontak">
-
-    <div class="contact-inner">
-
-
-        <div>
-
-            <div class="contact-label">
-                HUBUNGI KAMI
-            </div>
-
-            <h2>
-                Mari mengenal Desa
-                Pusaka lebih dekat.
-            </h2>
-
-            <p>
-                Untuk informasi lebih lanjut mengenai Desa
-                Pusaka, silakan kunjungi halaman atau lokasi
-                Desa Pusaka.
-            </p>
-
-        </div>
-
-
-        <div class="contact-info">
-
-
-            <!-- ALAMAT -->
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    📍
-                </div>
-
-                <div>
-
-                    <strong>
-                        Alamat Desa
-                    </strong>
-
-                    <br>
-
-                    <a
-                        class="address-link"
-                        href="#"
-                        id="addressLink"
-                        target="_blank">
-
-                        Lihat lokasi Desa Pusaka →
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- INFORMASI -->
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    🏡
-                </div>
-
-                <div>
-
-                    <strong>
-                        Desa Pusaka
-                    </strong>
-
-                    <br>
-
-                    <span>
-                        Lingkungan desa yang asri
-                        dan masyarakat yang kompak.
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- DUSUN -->
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    🌿
-                </div>
-
-                <div>
-
-                    <strong>
-                        2 Dusun
-                    </strong>
-
-                    <br>
-
-                    <span>
-                        Bagian dari wilayah Desa Pusaka.
-                    </span>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    © 2026 Desa Pusaka.
-    Semua hak dilindungi.
-
-</footer>
-
-
-<!-- =====================================================
-     BACK TO TOP
-===================================================== -->
-
-<button
-    class="back-top"
-    id="backTop"
-    aria-label="Kembali ke atas">
-
-    ↑
-
-</button>
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script>
-
-/* =========================================================
-   MENU HAMBURGER
-========================================================= */
-
-const menuButton =
-    document.getElementById("menuButton");
-
-const mobileMenu =
-    document.getElementById("mobileMenu");
-
-const menuOverlay =
-    document.getElementById("menuOverlay");
-
-
-function toggleMenu() {
-
-    const active =
-        mobileMenu.classList.toggle("active");
-
-    menuOverlay.classList.toggle(
-        "active",
-        active
-    );
-
-    menuButton.classList.toggle(
-        "active",
-        active
-    );
-
-    menuButton.setAttribute(
-        "aria-expanded",
-        active
-    );
-
-}
-
-
-/* KLIK HAMBURGER */
-
-menuButton.addEventListener(
-    "click",
-    toggleMenu
-);
-
-
-/* KLIK OVERLAY */
-
-menuOverlay.addEventListener(
-    "click",
-    toggleMenu
-);
-
-
-/* KLIK MENU */
-
-document.querySelectorAll(
-    ".mobile-menu a"
-).forEach(function(link) {
-
-    link.addEventListener(
-        "click",
-        function() {
-
-            mobileMenu.classList.remove(
-                "active"
-            );
-
-            menuOverlay.classList.remove(
-                "active"
-            );
-
-            menuButton.classList.remove(
-                "active"
-            );
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        }
-    );
-
-});
-
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-const backTop =
-    document.getElementById("backTop");
-
-
-window.addEventListener(
-    "scroll",
-    function() {
-
-        if (window.scrollY > 400) {
-
-            backTop.classList.add("show");
-
-        } else {
-
-            backTop.classList.remove("show");
-
-        }
-
-    }
-);
-
-
-backTop.addEventListener(
-    "click",
-    function() {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    }
-);
-
-
-/* =========================================================
-   UPLOAD FOTO
-========================================================= */
-
-function previewImage(event, imageId) {
-
-    const file =
-        event.target.files[0];
-
-    if (!file) {
-        return;
-    }
-
-    if (!file.type.startsWith("image/")) {
-
-        alert("Silakan pilih file gambar.");
-
-        return;
-    }
-
-    const image =
-        document.getElementById(imageId);
-
-    const reader =
-        new FileReader();
-
-    reader.onload =
-        function(e) {
-
-            image.src =
-                e.target.result;
-
-        };
-
-    reader.readAsDataURL(file);
-
-}
-
-
-/* =========================================================
-   LINK ALAMAT
-========================================================= */
-
-/*
-   Link dibuat menggunakan gabungan teks agar alamat
-   tetap bisa digunakan tanpa mengganggu tampilan kode.
-*/
-
-const addressLink =
-    document.getElementById("addressLink");
-
-const googleAddress =
-    "https://" +
-    "share.google/" +
-    "rjT0h2ePe2zzH2DYt";
-
-addressLink.href =
-    googleAddress;
-
-
-/* =========================================================
-   ANIMASI CARD SAAT MUNCUL
-========================================================= */
-
-const cards =
-    document.querySelectorAll(
-        ".activity-card"
-    );
-
-
-const observer =
-    new IntersectionObserver(
-        function(entries) {
-
-            entries.forEach(
-                function(entry) {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.style.opacity = "1";
-
-                        entry.target.style.transform =
-                            "translateY(0)";
-
-                    }
-
-                }
-            );
-
-        },
-        {
-            threshold: 0.15
-        }
-    );
-
-
-cards.forEach(
-    function(card) {
-
-        card.style.opacity = "0";
-
-        card.style.transform =
-            "translateY(30px)";
-
-        card.style.transition =
-            "opacity 0.7s ease, transform 0.7s ease";
-
-        observer.observe(card);
-
-    }
-);
-
-</script>
-
-</body>
-   </html>
+               
