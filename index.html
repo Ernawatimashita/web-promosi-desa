@@ -1,1057 +1,1642 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Desa Pusaka | Kecamatan Tebas, Kabupaten Sambas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Desa Pusaka | Kecamatan Tebas</title>
+
+    <meta name="description"
+          content="Website Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas. Mengenal sejarah, potensi, kegiatan dan kehidupan masyarakat Desa Pusaka.">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
 
-<meta name="description"
-content="Website resmi Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat. Informasi profil, sejarah, kegiatan, potensi dan fasilitas desa.">
+    <style>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        /* =====================================================
+           RESET
+        ====================================================== */
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* =====================================================
-   RESET
-===================================================== */
+        body {
+            font-family: "DM Sans", Arial, sans-serif;
+            background: #f3f8f4;
+            color: #153f2c;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        a {
+            text-decoration: none;
+        }
 
-html{
-    scroll-behavior:smooth;
-}
+        :root {
+            --hijau: #0d442c;
+            --hijau-tua: #083b27;
+            --hijau-muda: #dcece2;
+            --hijau-terang: #2c8055;
+            --putih: #ffffff;
+            --abu: #68766f;
+            --cream: #f4f8f5;
+            --kuning: #d8c16a;
+        }
 
-body{
-    font-family:"DM Sans",Arial,sans-serif;
-    background:#f3f8f4;
-    color:#153f2c;
-    line-height:1.7;
-}
 
-img{
-    width:100%;
-    display:block;
-}
+        /* =====================================================
+           HEADER
+        ====================================================== */
 
-a{
-    text-decoration:none;
-}
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 105px;
+            z-index: 9999;
 
-button{
-    font-family:inherit;
-}
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
 
+            border-bottom: 1px solid rgba(13, 68, 44, 0.05);
+        }
 
-/* =====================================================
-   WARNA
-===================================================== */
+        .navbar {
+            width: min(1200px, calc(100% - 50px));
+            height: 100%;
+            margin: auto;
 
-:root{
-    --hijau:#0d442c;
-    --hijau-tua:#062f20;
-    --hijau-muda:#dcece2;
-    --hijau-terang:#2c8055;
-    --putih:#ffffff;
-    --abu:#68766f;
-    --cream:#f3f8f4;
-}
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
 
-/* =====================================================
-   HEADER
-===================================================== */
+        /* LOGO */
 
-header{
-    position:sticky;
-    top:0;
-    left:0;
-    width:100%;
-    height:85px;
-    z-index:1000;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 18px;
 
-    background:rgba(255,255,255,.96);
-    backdrop-filter:blur(15px);
+            color: var(--hijau);
+        }
 
-    border-bottom:1px solid #e3ebe5;
-}
+        .logo-icon {
+            width: 64px;
+            height: 64px;
 
-.navbar{
-    width:min(1150px,calc(100% - 40px));
-    height:100%;
-    margin:auto;
+            background: var(--hijau);
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
+            border-radius: 18px;
 
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-/* LOGO */
+            font-size: 34px;
 
-.logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    color:var(--hijau);
-}
+            box-shadow:
+                0 8px 20px rgba(13, 68, 44, 0.15);
+        }
 
-.logo-icon{
-    width:50px;
-    height:50px;
+        .logo-text {
+            font-family: "Playfair Display", serif;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
 
-    background:var(--hijau);
-    color:white;
 
-    border-radius:15px;
+        /* NAVIGASI */
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
 
-    font-size:27px;
+        nav a {
+            color: #214936;
+            font-size: 15px;
+            font-weight: 600;
 
-    box-shadow:0 8px 20px rgba(13,68,44,.15);
-}
+            transition: 0.3s;
+        }
 
-.logo-text{
-    font-family:"Playfair Display",serif;
-    font-size:25px;
-    font-weight:800;
-}
+        nav a:hover {
+            color: #2c8055;
+        }
 
 
-/* NAVIGATION */
+        /* HAMBURGER */
 
-nav{
-    display:flex;
-    align-items:center;
-    gap:23px;
-}
+        .menu-btn {
+            width: 64px;
+            height: 64px;
 
-nav a{
-    color:#214936;
-    font-size:14px;
-    font-weight:600;
-    transition:.3s;
-}
+            border: none;
+            border-radius: 18px;
 
-nav a:hover{
-    color:var(--hijau-terang);
-}
+            background: var(--hijau);
 
+            display: none;
 
-/* MOBILE MENU BUTTON */
+            align-items: center;
+            justify-content: center;
 
-.menu-btn{
-    display:none;
+            cursor: pointer;
 
-    width:45px;
-    height:45px;
+            box-shadow:
+                0 8px 20px rgba(13, 68, 44, 0.15);
+        }
 
-    border:none;
-    border-radius:12px;
+        .menu-btn span {
+            width: 29px;
+            height: 3px;
 
-    background:var(--hijau);
-    color:white;
+            background: white;
 
-    font-size:22px;
-    cursor:pointer;
-}
+            display: block;
 
+            margin: 4px 0;
 
-/* =====================================================
-   MOBILE NAV
-===================================================== */
+            border-radius: 10px;
 
-.mobile-nav{
-    display:none;
+            transition: 0.3s;
+        }
 
-    position:absolute;
-    top:85px;
-    left:0;
 
-    width:100%;
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
 
-    background:white;
+        .mobile-menu {
+            position: fixed;
 
-    border-bottom:1px solid #e3ebe5;
+            top: 105px;
+            left: 0;
 
-    padding:15px 20px;
+            width: 100%;
 
-    box-shadow:0 15px 30px rgba(0,0,0,.08);
-}
+            background: white;
 
-.mobile-nav.active{
-    display:block;
-}
+            padding: 20px 25px 25px;
 
-.mobile-nav a{
-    display:block;
+            display: none;
 
-    padding:12px 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 
-    color:var(--hijau);
-    font-weight:600;
+            z-index: 9998;
+        }
 
-    border-radius:10px;
-}
+        .mobile-menu.active {
+            display: block;
+        }
 
-.mobile-nav a:hover{
-    background:var(--hijau-muda);
-}
+        .mobile-menu a {
+            display: block;
 
+            padding: 15px 10px;
 
-/* =====================================================
-   HERO
-===================================================== */
+            color: var(--hijau);
 
-.hero{
-    min-height:680px;
+            font-weight: 700;
 
-    display:flex;
-    align-items:center;
+            border-bottom: 1px solid #edf1ee;
+        }
 
-    position:relative;
 
-    color:white;
+        /* =====================================================
+           HERO
+        ====================================================== */
 
-    background:
-    linear-gradient(
-        rgba(4,47,32,.72),
-        rgba(4,47,32,.72)
-    ),
-    url("images/kantor-desa.jpg") center/cover no-repeat;
-}
+        .hero {
+            min-height: 100vh;
 
-.hero-content{
-    width:min(1100px,100%);
+            padding: 150px 25px 100px;
 
-    margin:auto;
+            display: flex;
+            align-items: center;
 
-    padding:100px 25px;
-}
+            position: relative;
 
-.hero-label{
-    display:inline-block;
+            color: white;
 
-    padding:9px 18px;
+            background-image:
+                linear-gradient(
+                    90deg,
+                    rgba(6, 49, 31, 0.90),
+                    rgba(6, 49, 31, 0.58)
+                ),
+                url("./kantor-desa-pusaka.jpg");
 
-    border:1px solid rgba(255,255,255,.4);
-    border-radius:50px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
 
-    font-size:12px;
-    font-weight:700;
+        .hero::after {
+            content: "";
 
-    letter-spacing:2px;
+            position: absolute;
 
-    margin-bottom:22px;
-}
+            bottom: 0;
+            left: 0;
 
-.hero h1{
-    max-width:850px;
+            width: 100%;
+            height: 130px;
 
-    font-family:"Playfair Display",serif;
+            background: linear-gradient(
+                transparent,
+                #f3f8f4
+            );
+        }
 
-    font-size:clamp(48px,7vw,80px);
+        .hero-container {
+            width: min(1150px, 100%);
+            margin: auto;
 
-    line-height:1.08;
+            position: relative;
+            z-index: 2;
+        }
 
-    margin-bottom:22px;
-}
+        .hero-content {
+            max-width: 720px;
+        }
 
-.hero p{
-    max-width:700px;
+        .hero-small {
+            display: inline-block;
 
-    color:#dcece2;
+            padding: 10px 18px;
 
-    font-size:18px;
+            border: 1px solid rgba(255,255,255,0.45);
 
-    margin-bottom:32px;
-}
+            border-radius: 50px;
 
-.hero-buttons{
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
-}
+            font-size: 13px;
 
-.btn{
-    display:inline-flex;
+            font-weight: 700;
 
-    align-items:center;
-    justify-content:center;
+            letter-spacing: 2px;
 
-    padding:14px 23px;
+            margin-bottom: 22px;
+        }
 
-    border-radius:50px;
+        .hero h1 {
+            font-family: "Playfair Display", serif;
 
-    font-weight:700;
+            font-size: clamp(55px, 9vw, 100px);
 
-    transition:.3s;
-}
+            line-height: 1;
 
-.btn-primary{
-    background:white;
-    color:var(--hijau);
-}
+            margin-bottom: 25px;
 
-.btn-primary:hover{
-    transform:translateY(-3px);
-}
+            letter-spacing: -3px;
+        }
 
-.btn-secondary{
-    border:1px solid rgba(255,255,255,.5);
-    color:white;
-    background:rgba(255,255,255,.08);
-}
+        .hero h2 {
+            font-size: clamp(20px, 3vw, 28px);
 
-.btn-secondary:hover{
-    background:white;
-    color:var(--hijau);
-}
+            font-weight: 500;
 
+            margin-bottom: 20px;
 
-/* =====================================================
-   SECTION
-===================================================== */
+            color: #dcece2;
+        }
 
-section{
-    scroll-margin-top:90px;
-}
+        .hero p {
+            font-size: 18px;
 
-.container{
-    width:min(1100px,100%);
+            max-width: 650px;
 
-    margin:auto;
+            color: rgba(255,255,255,0.88);
 
-    padding:90px 25px;
-}
+            margin-bottom: 30px;
+        }
 
-.section-heading{
-    text-align:center;
 
-    max-width:700px;
+        /* BUTTON */
 
-    margin:0 auto 50px;
-}
+        .hero-button {
+            display: inline-flex;
 
-.section-label{
-    color:var(--hijau-terang);
+            align-items: center;
 
-    font-size:13px;
-    font-weight:800;
+            gap: 10px;
 
-    letter-spacing:2px;
+            background: white;
 
-    margin-bottom:10px;
-}
+            color: var(--hijau);
 
-.section-heading h2{
-    font-family:"Playfair Display",serif;
+            padding: 17px 28px;
 
-    color:var(--hijau);
+            border-radius: 50px;
 
-    font-size:clamp(34px,5vw,48px);
+            font-weight: 700;
 
-    line-height:1.15;
+            font-size: 16px;
 
-    margin-bottom:12px;
-}
+            transition: 0.3s;
 
-.section-heading p{
-    color:var(--abu);
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.15);
+        }
 
-    font-size:16px;
-}
+        .hero-button:hover {
+            transform: translateY(-4px);
 
+            background: #dcece2;
+        }
 
-/* =====================================================
-   PROFIL
-===================================================== */
 
-.profile-grid{
-    display:grid;
+        /* TAGS */
 
-    grid-template-columns:1.1fr .9fr;
+        .hero-tags {
+            margin-top: 55px;
 
-    gap:40px;
+            display: flex;
 
-    align-items:center;
-}
+            gap: 12px;
 
-.profile-content h3{
-    font-family:"Playfair Display",serif;
+            flex-wrap: wrap;
+        }
 
-    color:var(--hijau);
+        .tag {
+            padding: 10px 18px;
 
-    font-size:35px;
+            border: 1px solid rgba(255,255,255,0.2);
 
-    line-height:1.2;
+            background: rgba(255,255,255,0.08);
 
-    margin-bottom:18px;
-}
+            backdrop-filter: blur(10px);
 
-.profile-content p{
-    color:var(--abu);
+            border-radius: 50px;
 
-    margin-bottom:18px;
-}
+            color: white;
 
-.profile-box{
-    display:grid;
+            font-size: 14px;
+        }
 
-    grid-template-columns:1fr 1fr;
 
-    gap:15px;
-}
+        /* =====================================================
+           STATISTIK
+        ====================================================== */
 
-.info-card{
-    background:white;
+        .stats-wrapper {
+            position: relative;
 
-    border:1px solid #e0eae3;
+            z-index: 10;
 
-    border-radius:20px;
+            margin-top: -70px;
 
-    padding:22px;
+            padding: 0 25px;
+        }
 
-    box-shadow:0 10px 30px rgba(20,60,40,.06);
-}
+        .stats {
+            width: min(1100px, 100%);
 
-.info-icon{
-    font-size:30px;
+            margin: auto;
 
-    margin-bottom:8px;
-}
+            background: white;
 
-.info-card strong{
-    display:block;
+            border-radius: 35px;
 
-    color:var(--hijau);
+            overflow: hidden;
 
-    margin-bottom:3px;
-}
+            display: grid;
 
-.info-card span{
-    color:var(--abu);
+            grid-template-columns: repeat(4, 1fr);
 
-    font-size:14px;
-}
+            box-shadow:
+                0 25px 60px rgba(24, 55, 41, 0.10);
 
+            border: 1px solid #e1eae4;
+        }
 
-/* =====================================================
-   SEJARAH
-===================================================== */
+        .stat {
+            min-height: 190px;
 
-.history{
-    background:white;
-}
+            display: flex;
 
-.history-box{
-    background:#f3f8f4;
+            align-items: center;
 
-    border-radius:30px;
+            justify-content: center;
 
-    padding:45px;
+            flex-direction: column;
 
-    border:1px solid #dfeae2;
-}
+            padding: 25px;
 
-.history-box h3{
-    font-family:"Playfair Display",serif;
+            border-right: 1px solid #e1eae4;
 
-    color:var(--hijau);
+            text-align: center;
+        }
 
-    font-size:32px;
+        .stat:last-child {
+            border-right: none;
+        }
 
-    margin-bottom:18px;
-}
+        .stat-number {
+            font-family: "Playfair Display", serif;
 
-.history-box p{
-    color:var(--abu);
+            font-size: 48px;
 
-    margin-bottom:18px;
-}
+            font-weight: 800;
 
-.read-more{
-    display:inline-flex;
+            color: var(--hijau);
 
-    color:var(--hijau);
+            line-height: 1;
 
-    font-weight:800;
-}
+            margin-bottom: 14px;
+        }
 
-.read-more:hover{
-    color:var(--hijau-terang);
-}
+        .stat-icon {
+            font-size: 55px;
 
+            line-height: 1;
 
-/* =====================================================
-   KEGIATAN
-===================================================== */
+            margin-bottom: 12px;
+        }
 
-.activity-grid{
-    display:grid;
+        .stat-label {
+            color: #758078;
 
-    grid-template-columns:repeat(3,1fr);
+            font-size: 17px;
+        }
 
-    gap:25px;
-}
 
-.activity-card{
-    background:white;
+        /* =====================================================
+           SECTION
+        ====================================================== */
 
-    padding:32px;
+        section {
+            padding: 110px 25px;
+        }
 
-    border-radius:25px;
+        .container {
+            width: min(1100px, 100%);
+            margin: auto;
+        }
 
-    border:1px solid #e0eae3;
+        .section-heading {
+            margin-bottom: 55px;
+        }
 
-    box-shadow:0 12px 35px rgba(20,60,40,.06);
+        .section-label {
+            color: #76a487;
 
-    transition:.3s;
-}
+            font-size: 13px;
 
-.activity-card:hover{
-    transform:translateY(-6px);
+            font-weight: 800;
 
-    box-shadow:0 20px 40px rgba(20,60,40,.11);
-}
+            letter-spacing: 3px;
 
-.activity-icon{
-    width:60px;
-    height:60px;
+            text-transform: uppercase;
 
-    border-radius:18px;
+            margin-bottom: 12px;
+        }
 
-    background:var(--hijau-muda);
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+            color: var(--hijau);
 
-    font-size:30px;
+            font-size: clamp(40px, 6vw, 65px);
 
-    margin-bottom:20px;
-}
+            line-height: 1.1;
 
-.activity-card h3{
-    font-family:"Playfair Display",serif;
+            margin-bottom: 18px;
+        }
 
-    color:var(--hijau);
+        .section-heading p {
+            color: var(--abu);
 
-    font-size:25px;
+            font-size: 18px;
 
-    margin-bottom:10px;
-}
+            max-width: 700px;
+        }
 
-.activity-card p{
-    color:var(--abu);
 
-    font-size:15px;
-}
+        /* =====================================================
+           PROFIL
+        ====================================================== */
 
+        .profil {
+            background: #f3f8f4;
+        }
 
-/* =====================================================
-   POTENSI
-===================================================== */
+        .profil-grid {
+            display: grid;
 
-.potential{
-    background:#edf5ef;
-}
+            grid-template-columns: 1.1fr 0.9fr;
 
-.potential-grid{
-    display:grid;
+            gap: 70px;
 
-    grid-template-columns:repeat(4,1fr);
+            align-items: center;
+        }
 
-    gap:20px;
-}
+        .profil-text h3 {
+            font-family: "Playfair Display", serif;
 
-.potential-card{
-    background:white;
+            font-size: 42px;
 
-    padding:28px 22px;
+            color: var(--hijau);
 
-    text-align:center;
+            margin-bottom: 20px;
+        }
 
-    border-radius:24px;
+        .profil-text p {
+            color: #65736b;
 
-    border:1px solid #dfebe2;
+            font-size: 17px;
 
-    transition:.3s;
-}
+            margin-bottom: 18px;
+        }
 
-.potential-card:hover{
-    transform:translateY(-5px);
-}
+        .info-card {
+            background: white;
 
-.potential-icon{
-    font-size:45px;
+            border-radius: 30px;
 
-    margin-bottom:12px;
-}
+            padding: 35px;
 
-.potential-card h3{
-    font-family:"Playfair Display",serif;
+            box-shadow:
+                0 20px 50px rgba(25, 65, 44, 0.08);
+        }
 
-    color:var(--hijau);
+        .info-row {
+            display: flex;
 
-    font-size:23px;
+            justify-content: space-between;
 
-    margin-bottom:8px;
-}
+            gap: 20px;
 
-.potential-card p{
-    color:var(--abu);
+            padding: 17px 0;
 
-    font-size:14px;
-}
+            border-bottom: 1px solid #e7eee9;
+        }
 
+        .info-row:last-child {
+            border-bottom: none;
+        }
 
-/* =====================================================
-   FASILITAS
-===================================================== */
+        .info-row span:first-child {
+            color: #78847e;
+        }
 
-.facility-section{
-    background:white;
-}
+        .info-row strong {
+            color: var(--hijau);
 
-.facility-grid{
-    display:grid;
+            text-align: right;
+        }
 
-    grid-template-columns:repeat(4,1fr);
 
-    gap:20px;
-}
+        /* =====================================================
+           SEJARAH
+        ====================================================== */
 
-.facility-card{
-    background:white;
+        .sejarah {
+            background: white;
+        }
 
-    overflow:hidden;
+        .sejarah-box {
+            background: #e7f1ea;
 
-    border-radius:22px;
+            border-radius: 35px;
 
-    border:1px solid #e0eae3;
+            padding: 50px;
 
-    box-shadow:0 10px 30px rgba(20,60,40,.07);
+            max-width: 950px;
 
-    transition:.35s;
-}
+            margin: auto;
+        }
 
-.facility-card:hover{
-    transform:translateY(-7px);
+        .sejarah-box p {
+            color: #52645a;
 
-    box-shadow:0 18px 40px rgba(20,60,40,.13);
-}
+            font-size: 17px;
 
-.facility-image{
-    height:190px;
+            margin-bottom: 20px;
 
-    overflow:hidden;
+            text-align: justify;
+        }
 
-    background:#dcece2;
-}
+        .sejarah-box p:last-child {
+            margin-bottom: 0;
+        }
 
-.facility-image img{
-    width:100%;
-    height:100%;
 
-    object-fit:cover;
+        /* =====================================================
+           KEGIATAN / DOKUMENTASI
+        ====================================================== */
 
-    transition:.4s;
-}
+        .kegiatan {
+            background: #f3f8f4;
+        }
 
-.facility-card:hover .facility-image img{
-    transform:scale(1.06);
-}
+        .kegiatan-intro {
+            display: flex;
 
-.facility-body{
-    padding:22px;
-}
+            justify-content: space-between;
 
-.facility-body h3{
-    font-family:"Playfair Display",serif;
+            align-items: flex-end;
 
-    color:var(--hijau);
+            gap: 30px;
 
-    font-size:22px;
+            margin-bottom: 55px;
+        }
 
-    margin-bottom:8px;
-}
+        .kegiatan-intro .section-heading {
+            margin-bottom: 0;
+        }
 
-.facility-body p{
-    color:var(--abu);
 
-    font-size:14px;
+        /* GRID DOKUMENTASI */
 
-    line-height:1.6;
+        .activity-list {
+            display: flex;
 
-    margin-bottom:17px;
-}
+            flex-direction: column;
 
-.facility-link{
-    display:inline-flex;
+            gap: 28px;
+        }
 
-    color:var(--hijau);
+        .activity-card {
+            min-height: 390px;
 
-    font-weight:800;
+            border-radius: 38px;
 
-    font-size:14px;
-}
+            overflow: hidden;
 
-.facility-link:hover{
-    color:var(--hijau-terang);
-}
+            position: relative;
 
-.facility-button{
-    text-align:center;
+            background-color: #dce5df;
 
-    margin-top:40px;
-}
+            background-size: cover;
 
+            background-position: center;
 
-/* =====================================================
-   CTA
-===================================================== */
+            display: flex;
 
-.cta{
-    background:
-    linear-gradient(
-        135deg,
-        #0d442c,
-        #176443
-    );
+            align-items: flex-end;
 
-    color:white;
+            isolation: isolate;
 
-    text-align:center;
-}
+            box-shadow:
+                0 15px 40px rgba(24, 55, 41, 0.08);
 
-.cta-content{
-    max-width:750px;
+            transition: 0.4s ease;
+        }
 
-    margin:auto;
-}
+        .activity-card:hover {
+            transform: translateY(-6px);
 
-.cta h2{
-    font-family:"Playfair Display",serif;
+            box-shadow:
+                0 25px 50px rgba(24, 55, 41, 0.15);
+        }
 
-    font-size:45px;
 
-    line-height:1.15;
+        /* OVERLAY */
 
-    margin-bottom:15px;
-}
+        .activity-card::before {
+            content: "";
 
-.cta p{
-    color:#dcece2;
+            position: absolute;
 
-    margin-bottom:28px;
-}
+            inset: 0;
 
+            z-index: -1;
 
-/* =====================================================
-   KONTAK
-===================================================== */
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(9, 18, 13, 0.92) 0%,
+                    rgba(9, 18, 13, 0.55) 35%,
+                    rgba(9, 18, 13, 0.05) 75%
+                );
+        }
 
-.contact-grid{
-    display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+        /* KONTEN CARD */
 
-    gap:25px;
-}
+        .activity-content {
+            width: 100%;
 
-.contact-card{
-    background:white;
+            padding: 50px 60px;
 
-    padding:30px;
+            color: white;
+        }
 
-    border-radius:25px;
+        .activity-number {
+            display: inline-block;
 
-    text-align:center;
+            padding: 9px 19px;
 
-    border:1px solid #e0eae3;
+            border-radius: 50px;
 
-    box-shadow:0 10px 30px rgba(20,60,40,.06);
-}
+            border: 1px solid rgba(255,255,255,0.35);
 
-.contact-icon{
-    font-size:38px;
+            background: rgba(255,255,255,0.10);
 
-    margin-bottom:12px;
-}
+            backdrop-filter: blur(8px);
 
-.contact-card h3{
-    font-family:"Playfair Display",serif;
+            font-size: 13px;
 
-    color:var(--hijau);
+            font-weight: 700;
 
-    font-size:23px;
+            letter-spacing: 2px;
 
-    margin-bottom:8px;
-}
+            margin-bottom: 25px;
+        }
 
-.contact-card p{
-    color:var(--abu);
+        .activity-content h3 {
+            font-family: "Playfair Display", serif;
 
-    font-size:14px;
-}
+            font-size: clamp(38px, 5vw, 62px);
 
+            line-height: 1.05;
 
-/* =====================================================
-   FOOTER
-===================================================== */
+            margin-bottom: 15px;
+        }
 
-footer{
-    background:var(--hijau-tua);
+        .activity-content p {
+            max-width: 650px;
 
-    color:white;
+            font-size: 20px;
 
-    padding:55px 25px 25px;
-}
+            color: rgba(255,255,255,0.86);
+        }
 
-.footer-container{
-    width:min(1100px,100%);
 
-    margin:auto;
+        /* =====================================================
+           GAMBAR DOKUMENTASI
+        ====================================================== */
 
-    display:grid;
+        .activity-1 {
+            background-image:
+                url("./gotong-royong.jpg");
+        }
 
-    grid-template-columns:1.5fr 1fr 1fr;
+        .activity-2 {
+            background-image:
+                url("./kegiatan-warga.jpg");
+        }
 
-    gap:40px;
+        .activity-3 {
+            background-image:
+                url("./pertanian-desa.jpg");
+        }
 
-    padding-bottom:35px;
-}
+        .activity-4 {
+            background-image:
+                url("./suasana-desa.jpg");
+        }
 
-.footer-logo{
-    font-family:"Playfair Display",serif;
+        .activity-5 {
+            background-image:
+                url("./keindahan-alam.jpg");
+        }
 
-    font-size:28px;
+        /* FOTO PETERNAKAN BARU */
 
-    margin-bottom:10px;
-}
+        .activity-6 {
+            background-image:
+                url("./peternakan.jpg");
+        }
 
-.footer-about p{
-    color:#a9c0b3;
 
-    font-size:14px;
+        /* =====================================================
+           POTENSI
+        ====================================================== */
 
-    max-width:400px;
-}
+        .potensi {
+            background: white;
+        }
 
-.footer-column h3{
-    font-family:"Playfair Display",serif;
+        .potensi-grid {
+            display: grid;
 
-    font-size:20px;
+            grid-template-columns: repeat(3, 1fr);
 
-    margin-bottom:14px;
-}
+            gap: 25px;
+        }
 
-.footer-column a{
-    display:block;
+        .potensi-card {
+            background: #f3f8f4;
 
-    color:#a9c0b3;
+            border-radius: 30px;
 
-    font-size:14px;
+            padding: 35px;
 
-    margin:7px 0;
+            border: 1px solid #e0eae3;
 
-    transition:.3s;
-}
+            transition: 0.3s;
+        }
 
-.footer-column a:hover{
-    color:white;
-}
+        .potensi-card:hover {
+            transform: translateY(-7px);
 
-.footer-bottom{
-    width:min(1100px,100%);
+            box-shadow:
+                0 20px 40px rgba(20, 60, 40, 0.09);
+        }
 
-    margin:auto;
+        .potensi-icon {
+            width: 65px;
+            height: 65px;
 
-    padding-top:22px;
+            border-radius: 20px;
 
-    border-top:1px solid rgba(255,255,255,.12);
+            background: #dcece2;
 
-    text-align:center;
+            display: flex;
 
-    color:#a9c0b3;
+            align-items: center;
 
-    font-size:13px;
-}
+            justify-content: center;
 
+            font-size: 32px;
 
-/* =====================================================
-   BACK TO TOP
-===================================================== */
+            margin-bottom: 25px;
+        }
 
-.back-top{
-    position:fixed;
+        .potensi-card h3 {
+            font-family: "Playfair Display", serif;
 
-    right:20px;
-    bottom:20px;
+            font-size: 27px;
 
-    width:45px;
-    height:45px;
+            color: var(--hijau);
 
-    border:none;
+            margin-bottom: 12px;
+        }
 
-    border-radius:50%;
+        .potensi-card p {
+            color: #68766f;
+        }
 
-    background:var(--hijau);
 
-    color:white;
+        /* =====================================================
+           KONTAK
+        ====================================================== */
 
-    font-size:20px;
+        .kontak {
+            background: var(--hijau);
 
-    cursor:pointer;
+            color: white;
+        }
 
-    box-shadow:0 8px 25px rgba(0,0,0,.2);
+        .contact-wrapper {
+            display: grid;
 
-    z-index:100;
-}
+            grid-template-columns: 1fr 1fr;
 
+            gap: 70px;
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+            align-items: center;
+        }
 
-@media(max-width:950px){
+        .contact-title .section-label {
+            color: #9fc5ad;
+        }
 
-    nav{
-        display:none;
-    }
+        .contact-title h2 {
+            font-family: "Playfair Display", serif;
 
-    .menu-btn{
-        display:block;
-    }
+            font-size: clamp(43px, 6vw, 70px);
 
-    .profile-grid{
-        grid-template-columns:1fr;
-    }
+            line-height: 1.05;
 
-    .facility-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+            margin-bottom: 25px;
+        }
 
-    .potential-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+        .contact-title p {
+            color: #c6d9ce;
 
-    .footer-container{
-        grid-template-columns:1fr 1fr;
-    }
-}
+            font-size: 18px;
+        }
 
+        .contact-cards {
+            display: grid;
 
-@media(max-width:700px){
+            gap: 15px;
+        }
 
-    .hero{
-        min-height:600px;
-    }
+        .contact-card {
+            background: rgba(255,255,255,0.08);
 
-    .hero-content{
-        padding:80px 20px;
-    }
+            border: 1px solid rgba(255,255,255,0.13);
 
-    .hero h1{
-        font-size:48px;
-    }
+            padding: 24px;
 
-    .hero p{
-        font-size:16px;
-    }
+            border-radius: 22px;
 
-    .container{
-        padding:70px 20px;
-    }
+            display: flex;
 
-    .profile-box{
-        grid-template-columns:1fr;
-    }
+            align-items: center;
 
-    .activity-grid{
-        grid-template-columns:1fr;
-    }
+            gap: 18px;
 
-    .potential-grid{
-        grid-template-columns:1fr 1fr;
-    }
+            transition: 0.3s;
+        }
 
-    .facility-grid{
-        grid-template-columns:1fr;
-    }
+        .contact-card:hover {
+            background: rgba(255,255,255,0.13);
+        }
 
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
+        .contact-icon {
+            width: 50px;
+            height: 50px;
 
-    .history-box{
-        padding:30px 25px;
-    }
+            border-radius: 15px;
 
-    .cta h2{
-        font-size:35px;
-    }
+            background: rgba(255,255,255,0.12);
 
-    .footer-container{
-        grid-template-columns:1fr;
-    }
+            display: flex;
 
-}
+            align-items: center;
 
+            justify-content: center;
 
-@media(max-width:420px){
+            font-size: 23px;
 
-    .navbar{
-        width:calc(100% - 25px);
-    }
+            flex-shrink: 0;
+        }
 
-    .logo-text{
-        font-size:21px;
-    }
+        .contact-card h3 {
+            color: #ffe789;
 
-    .logo-icon{
-        width:45px;
-        height:45px;
-    }
+            margin-bottom: 3px;
 
-    .hero h1{
-        font-size:41px;
-    }
+            font-size: 17px;
+        }
 
-    .potential-grid{
-        grid-template-columns:1fr;
-    }
+        .contact-card p,
+        .contact-card a {
+            color: white;
 
-    .hero-buttons{
-        flex-direction:column;
-    }
+            font-size: 15px;
+        }
 
-    .btn{
-        width:100%;
-    }
-}
 
-</style>
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+            background: #062f20;
+
+            color: white;
+
+            padding: 45px 25px;
+
+            text-align: center;
+        }
+
+        footer .footer-logo {
+            font-family: "Playfair Display", serif;
+
+            font-size: 28px;
+
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #a9c0b3;
+
+            font-size: 14px;
+
+            margin: 4px 0;
+        }
+
+
+        /* =====================================================
+           BACK TO TOP
+        ====================================================== */
+
+        .back-top {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 58px;
+            height: 58px;
+
+            border: none;
+
+            border-radius: 18px;
+
+            background: var(--hijau);
+
+            color: white;
+
+            font-size: 25px;
+
+            cursor: pointer;
+
+            z-index: 999;
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.18);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateY(20px);
+
+            transition: 0.3s;
+        }
+
+        .back-top.show {
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE TABLET
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            nav {
+                display: none;
+            }
+
+            .menu-btn {
+                display: flex;
+            }
+
+            .navbar {
+                width: calc(100% - 40px);
+            }
+
+            .profil-grid {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+            .potensi-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .stat:nth-child(-n+2) {
+                border-bottom: 1px solid #e1eae4;
+            }
+
+            .kegiatan-intro {
+                display: block;
+            }
+        }
+
+
+        /* =====================================================
+           RESPONSIVE HP
+        ====================================================== */
+
+        @media (max-width: 600px) {
+
+            header {
+                height: 105px;
+            }
+
+            .navbar {
+                width: calc(100% - 50px);
+            }
+
+            .logo {
+                gap: 15px;
+            }
+
+            .logo-icon {
+                width: 64px;
+                height: 64px;
+
+                border-radius: 18px;
+
+                font-size: 32px;
+            }
+
+            .logo-text {
+                font-size: 27px;
+            }
+
+            .menu-btn {
+                width: 64px;
+                height: 64px;
+            }
+
+            .mobile-menu {
+                top: 105px;
+            }
+
+
+            /* HERO */
+
+            .hero {
+                min-height: 850px;
+
+                padding:
+                    150px
+                    25px
+                    120px;
+
+                background-position: center;
+            }
+
+            .hero h1 {
+                font-size: 60px;
+
+                letter-spacing: -2px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-tags {
+                margin-top: 35px;
+            }
+
+            .tag {
+                font-size: 13px;
+
+                padding: 9px 15px;
+            }
+
+
+            /* STATISTIK */
+
+            .stats-wrapper {
+                margin-top: -50px;
+
+                padding: 0 25px;
+            }
+
+            .stats {
+                border-radius: 30px;
+
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stat {
+                min-height: 170px;
+
+                padding: 20px 10px;
+            }
+
+            .stat-number {
+                font-size: 39px;
+            }
+
+            .stat-label {
+                font-size: 14px;
+            }
+
+            .stat-icon {
+                font-size: 45px;
+            }
+
+
+            /* SECTION */
+
+            section {
+                padding: 80px 25px;
+            }
+
+            .section-heading {
+                margin-bottom: 40px;
+            }
+
+            .section-heading h2 {
+                font-size: 43px;
+            }
+
+            .section-heading p {
+                font-size: 16px;
+            }
+
+
+            /* SEJARAH */
+
+            .sejarah-box {
+                padding: 30px 24px;
+
+                border-radius: 28px;
+            }
+
+            .sejarah-box p {
+                font-size: 15px;
+
+                text-align: left;
+            }
+
+
+            /* KEGIATAN */
+
+            .activity-list {
+                gap: 25px;
+            }
+
+            .activity-card {
+                min-height: 460px;
+
+                border-radius: 35px;
+            }
+
+            .activity-content {
+                padding: 35px 38px;
+            }
+
+            .activity-number {
+                font-size: 12px;
+
+                margin-bottom: 20px;
+            }
+
+            .activity-content h3 {
+                font-size: 39px;
+            }
+
+            .activity-content p {
+                font-size: 17px;
+            }
+
+
+            /* POTENSI */
+
+            .potensi-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            /* KONTAK */
+
+            .contact-title h2 {
+                font-size: 46px;
+            }
+
+            .contact-title p {
+                font-size: 16px;
+            }
+
+
+            /* FOOTER */
+
+            footer {
+                padding: 40px 20px;
+            }
+
+
+            /* TOP */
+
+            .back-top {
+                right: 20px;
+
+                bottom: 20px;
+
+                width: 55px;
+
+                height: 55px;
+            }
+        }
+
+
+        /* =====================================================
+           HP KECIL
+        ====================================================== */
+
+        @media (max-width: 380px) {
+
+            .logo-text {
+                font-size: 23px;
+            }
+
+            .logo-icon,
+            .menu-btn {
+                width: 58px;
+                height: 58px;
+            }
+
+            .hero h1 {
+                font-size: 51px;
+            }
+
+            .activity-content h3 {
+                font-size: 34px;
+            }
+
+            .stats-wrapper {
+                padding: 0 15px;
+            }
+
+            .stat-number {
+                font-size: 34px;
+            }
+        }
+
+    </style>
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-<header>
+    <header>
+
+        <div class="navbar">
+
+            <a href="#beranda" class="logo">
+
+                <div class="logo-icon">
+                    🌿
+                </div>
+
+                <div class="logo-text">
+                    Desa Pusaka
+                </div>
+
+            </a>
+
+
+            <!-- DESKTOP NAV -->
+
+            <nav>
+
+                <a href="#beranda">
+                    Beranda
+                </a>
+
+                <a href="#profil">
+                    Profil
+                </a>
+
+                <a href="#sejarah">
+                    Sejarah
+                </a>
+
+                <a href="#kegiatan">
+                    Dokumentasi
+                </a>
+
+                <a href="#potensi">
+                    Potensi
+                </a>
+
+                <a href="#kontak">
+                    Kontak
+                </a>
+
+            </nav>
+
+
+            <!-- MOBILE BUTTON -->
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Buka menu">
+
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MOBILE MENU
+    ====================================================== -->
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="#beranda">
+            Beranda
+        </a>
+
+        <a href="#profil">
+            Profil
+        </a>
+
+        <a href="#sejarah">
+            Sejarah
+        </a>
+
+        <a href="#kegiatan">
+            Dokumentasi
+        </a>
+
+        <a href="#potensi">
+            Potensi
+        </a>
+
+        <a href="#kontak">
+            Kontak
+        </a>
+
+    </div>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero" id="beranda">
+
+        <div class="hero-container">
+
+            <div class="hero-content">
+
+                <div class="hero-small">
+                    KECAMATAN TEBAS • KABUPATEN SAMBAS
+                </div>
+
+                <h2>
+                    Selamat Datang di
+                </h2>
+
+                <h1>
+                    Desa Pusaka
+                </h1>
+
+                <p>
+                    Mengenal lebih dekat sejarah, potensi,
+                    kegiatan, budaya, dan kehidupan masyarakat
+                    Desa Pusaka.
+                </p>
+
+                <a href="#profil" class="hero-button">
+                    Jelajahi Desa
+                    <span>→</span>
+                </a>
+
+                <div class="hero-tags">
+
+                    <div class="tag">
+                        🌿 Alam Asri
+                    </div>
+
+                    <div class="tag">
+                        🤝 Gotong Royong
+                    </div>
+
+                    <div class="tag">
+                        🌾 Pertanian
+                    </div>
+
+                    <div class="tag">
+                        🐄 Peternakan
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STATISTIK
+    ====================================================== -->
+
+    <div class="stats-wrapper">
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    1779
+                </div>
+
+                <div class="stat-label">
+                    Awal Kisah
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    3.031
+                </div>
+
+                <div class="stat-label">
+                    Jumlah Penduduk
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    2
+                </div>
+
+                <div class="stat-label">
+                    Jumlah Dusun
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-icon">
+                    🌿
+                </div>
+
+                <div class="stat-label">
+                    Alam Asri
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         PROFIL
+    ====================================================== -->
+
+    <section class="profil" id="profil">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div class="section-label">
+                    TENTANG DESA
+                </div>
+
+                <h2>
+                    Mengenal Desa Pusaka
+                </h2>
+
+                <p>
+                    Desa yang menyimpan sejarah, potensi alam,
+                    serta kehidupan masyarakat yang penuh
+                    kebersamaan.
+                </p>
+
+            </div>
+
+
+            <
