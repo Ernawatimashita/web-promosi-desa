@@ -1,0 +1,1944 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fasilitas Desa Pusaka</title>
+
+<meta name="description"
+content="Informasi fasilitas Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",Arial,sans-serif;
+    background:#f3f8f4;
+    color:#153f2c;
+    line-height:1.7;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+button,
+input,
+textarea{
+    font-family:inherit;
+}
+
+
+/* =====================================================
+   WARNA
+===================================================== */
+
+:root{
+    --hijau:#0d442c;
+    --hijau-tua:#062f20;
+    --hijau-muda:#dcece2;
+    --hijau-terang:#2c8055;
+    --putih:#ffffff;
+    --abu:#68766f;
+    --cream:#f3f8f4;
+    --merah:#c93636;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+    position:sticky;
+    top:0;
+    left:0;
+    width:100%;
+    height:90px;
+    z-index:1000;
+
+    background:rgba(255,255,255,.96);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid #e3ebe5;
+}
+
+.navbar{
+    width:min(1150px,calc(100% - 40px));
+    height:100%;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    text-decoration:none;
+
+    color:var(--hijau);
+}
+
+.logo-icon{
+    width:55px;
+    height:55px;
+
+    background:var(--hijau);
+
+    border-radius:16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:29px;
+
+    box-shadow:
+    0 8px 20px rgba(13,68,44,.15);
+}
+
+.logo-text{
+    font-family:"Playfair Display",serif;
+
+    font-size:27px;
+
+    font-weight:800;
+}
+
+
+/* NAV */
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+
+    color:#214936;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--hijau-terang);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:
+    linear-gradient(
+        135deg,
+        #0d442c,
+        #176443
+    );
+
+    color:white;
+
+    padding:90px 25px 110px;
+
+    text-align:center;
+}
+
+.hero-content{
+    width:min(900px,100%);
+
+    margin:auto;
+}
+
+.hero-label{
+    display:inline-block;
+
+    padding:9px 18px;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    border-radius:50px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(45px,7vw,75px);
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:700px;
+
+    margin:auto;
+
+    color:#dcece2;
+
+    font-size:18px;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:min(1100px,100%);
+
+    margin:auto;
+
+    padding:80px 25px;
+}
+
+
+/* =====================================================
+   TOP AREA
+===================================================== */
+
+.section-top{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-family:"Playfair Display",serif;
+
+    font-size:42px;
+
+    color:var(--hijau);
+
+    line-height:1.1;
+
+    margin-bottom:8px;
+}
+
+.section-title p{
+    color:var(--abu);
+
+    font-size:16px;
+}
+
+
+/* =====================================================
+   BUTTON TAMBAH
+===================================================== */
+
+.btn-add{
+    border:none;
+
+    background:var(--hijau);
+
+    color:white;
+
+    padding:15px 23px;
+
+    border-radius:50px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    white-space:nowrap;
+
+    box-shadow:
+    0 10px 25px rgba(13,68,44,.18);
+
+    transition:.3s;
+}
+
+.btn-add:hover{
+    background:var(--hijau-terang);
+
+    transform:translateY(-3px);
+}
+
+
+/* =====================================================
+   GRID FASILITAS
+===================================================== */
+
+.fasilitas-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.fasilitas-card{
+    background:white;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    border:1px solid #e0eae3;
+
+    box-shadow:
+    0 12px 35px rgba(20,60,40,.07);
+
+    transition:.35s;
+
+    position:relative;
+}
+
+.fasilitas-card:hover{
+    transform:translateY(-7px);
+
+    box-shadow:
+    0 20px 45px rgba(20,60,40,.13);
+}
+
+
+/* FOTO */
+
+.fasilitas-image{
+    height:220px;
+
+    background:#dcece2;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.fasilitas-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+
+/* ICON DEFAULT */
+
+.no-image{
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:70px;
+}
+
+
+/* ISI */
+
+.fasilitas-body{
+    padding:28px;
+}
+
+.fasilitas-body h3{
+    font-family:"Playfair Display",serif;
+
+    color:var(--hijau);
+
+    font-size:27px;
+
+    line-height:1.2;
+
+    margin-bottom:12px;
+}
+
+.fasilitas-body p{
+    color:var(--abu);
+
+    font-size:15px;
+
+    line-height:1.7;
+
+    margin-bottom:22px;
+}
+
+
+/* =====================================================
+   BUTTON CARD
+===================================================== */
+
+.card-actions{
+    display:flex;
+
+    gap:10px;
+}
+
+.btn-edit,
+.btn-delete{
+    border:none;
+
+    padding:10px 16px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    font-size:13px;
+
+    transition:.3s;
+}
+
+.btn-edit{
+    background:#e3f0e7;
+
+    color:var(--hijau);
+}
+
+.btn-edit:hover{
+    background:#cfe5d7;
+}
+
+.btn-delete{
+    background:#fde8e8;
+
+    color:var(--merah);
+}
+
+.btn-delete:hover{
+    background:#f8d1d1;
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.empty{
+    grid-column:1/-1;
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:70px 25px;
+
+    text-align:center;
+
+    border:2px dashed #d5e2d9;
+}
+
+.empty-icon{
+    font-size:65px;
+
+    margin-bottom:15px;
+}
+
+.empty h3{
+    font-family:"Playfair Display",serif;
+
+    font-size:28px;
+
+    color:var(--hijau);
+
+    margin-bottom:8px;
+}
+
+.empty p{
+    color:var(--abu);
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    z-index:5000;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    width:min(600px,100%);
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:35px;
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.25);
+
+    animation:modalIn .3s ease;
+}
+
+@keyframes modalIn{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.modal-header{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-bottom:25px;
+}
+
+.modal-header h2{
+    font-family:"Playfair Display",serif;
+
+    color:var(--hijau);
+
+    font-size:32px;
+}
+
+.close-btn{
+    width:42px;
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#edf3ef;
+
+    color:var(--hijau);
+
+    font-size:22px;
+
+    cursor:pointer;
+}
+
+.close-btn:hover{
+    background:#dcece2;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+
+    color:var(--hijau);
+
+    font-weight:700;
+
+    font-size:14px;
+
+    margin-bottom:8px;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+
+    border:1px solid #d7e2db;
+
+    border-radius:15px;
+
+    padding:14px 16px;
+
+    outline:none;
+
+    color:#244535;
+
+    background:#fbfdfb;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color:var(--hijau-terang);
+
+    box-shadow:
+    0 0 0 4px rgba(44,128,85,.10);
+}
+
+.form-group textarea{
+    min-height:130px;
+
+    resize:vertical;
+}
+
+
+/* FILE */
+
+.file-box{
+    border:2px dashed #cbdcd1;
+
+    background:#f7faf8;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.file-box:hover{
+    border-color:var(--hijau-terang);
+
+    background:#f0f7f2;
+}
+
+.file-box input{
+    display:none;
+}
+
+.file-icon{
+    font-size:40px;
+
+    margin-bottom:5px;
+}
+
+.file-box strong{
+    display:block;
+
+    color:var(--hijau);
+
+    margin-bottom:3px;
+}
+
+.file-box span{
+    color:#7b8881;
+
+    font-size:13px;
+}
+
+
+/* PREVIEW */
+
+.preview{
+    display:none;
+
+    margin-top:15px;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    max-height:230px;
+}
+
+.preview img{
+    width:100%;
+    height:230px;
+
+    object-fit:cover;
+}
+
+
+/* FORM BUTTON */
+
+.form-actions{
+    display:flex;
+
+    gap:12px;
+
+    justify-content:flex-end;
+
+    margin-top:25px;
+}
+
+.btn-cancel{
+    border:none;
+
+    background:#edf3ef;
+
+    color:var(--hijau);
+
+    padding:13px 20px;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.btn-save{
+    border:none;
+
+    background:var(--hijau);
+
+    color:white;
+
+    padding:13px 25px;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.btn-save:hover{
+    background:var(--hijau-terang);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:var(--hijau-tua);
+
+    color:white;
+
+    text-align:center;
+
+    padding:45px 25px;
+}
+
+.footer-logo{
+    font-family:"Playfair Display",serif;
+
+    font-size:28px;
+
+    margin-bottom:8px;
+}
+
+footer p{
+    color:#a9c0b3;
+
+    font-size:14px;
+
+    margin:4px 0;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px){
+
+    .fasilitas-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    nav{
+        gap:15px;
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    header{
+        height:75px;
+    }
+
+    .navbar{
+        width:calc(100% - 30px);
+    }
+
+    .logo-icon{
+        width:48px;
+        height:48px;
+
+        border-radius:14px;
+
+        font-size:25px;
+    }
+
+    .logo-text{
+        font-size:23px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        padding:70px 20px 80px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .container{
+        padding:65px 20px;
+    }
+
+    .section-top{
+        align-items:flex-start;
+
+        flex-direction:column;
+    }
+
+    .section-title h2{
+        font-size:37px;
+    }
+
+    .btn-add{
+        width:100%;
+
+        justify-content:center;
+    }
+
+    .fasilitas-grid{
+        grid-template-columns:1fr;
+
+        gap:20px;
+    }
+
+    .fasilitas-image{
+        height:220px;
+    }
+
+    .modal-box{
+        padding:25px;
+
+        border-radius:25px;
+    }
+
+    .modal-header h2{
+        font-size:27px;
+    }
+
+    .form-actions{
+        flex-direction:column;
+    }
+
+    .btn-cancel,
+    .btn-save{
+        width:100%;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL HP
+===================================================== */
+
+@media(max-width:380px){
+
+    .logo-text{
+        font-size:20px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .fasilitas-body{
+        padding:23px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="navbar">
+
+<a href="index.html" class="logo">
+
+<div class="logo-icon">
+🌿
+</div>
+
+<div class="logo-text">
+Desa Pusaka
+</div>
+
+</a>
+
+
+<nav>
+
+<a href="index.html">Beranda</a>
+
+<a href="index.html#profil">Profil</a>
+
+<a href="index.html#sejarah">Sejarah</a>
+
+<a href="index.html#kegiatan">Kegiatan</a>
+
+<a href="index.html#potensi">Potensi</a>
+
+<a href="fasilitas.html">Fasilitas</a>
+
+<a href="index.html#kontak">Kontak</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-label">
+DESA PUSAKA • KECAMATAN TEBAS
+</div>
+
+<h1>
+Fasilitas Desa
+</h1>
+
+<p>
+Berbagai fasilitas yang tersedia untuk
+mendukung kebutuhan, pelayanan, pendidikan,
+kesehatan, olahraga, dan aktivitas masyarakat
+Desa Pusaka.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     DAFTAR FASILITAS
+===================================================== -->
+
+<main class="container">
+
+<div class="section-top">
+
+<div class="section-title">
+
+<h2>
+Fasilitas Desa Pusaka
+</h2>
+
+<p>
+Kelola informasi fasilitas desa dengan mudah.
+</p>
+
+</div>
+
+
+<button
+class="btn-add"
+id="openModal">
+
+<span>＋</span>
+
+Tambah Fasilitas
+
+</button>
+
+</div>
+
+
+<div
+class="fasilitas-grid"
+id="fasilitasGrid">
+</div>
+
+</main>
+
+
+<!-- =====================================================
+     MODAL TAMBAH / EDIT
+===================================================== -->
+
+<div
+class="modal"
+id="modal">
+
+<div class="modal-box">
+
+
+<div class="modal-header">
+
+<h2 id="modalTitle">
+Tambah Fasilitas
+</h2>
+
+<button
+class="close-btn"
+id="closeModal"
+type="button">
+
+×
+
+</button>
+
+</div>
+
+
+<form id="fasilitasForm">
+
+
+<!-- NAMA -->
+
+<div class="form-group">
+
+<label for="nama">
+Nama Fasilitas
+</label>
+
+<input
+type="text"
+id="nama"
+placeholder="Contoh: Kantor Desa"
+required>
+
+</div>
+
+
+<!-- FOTO -->
+
+<div class="form-group">
+
+<label>
+Foto Fasilitas
+</label>
+
+<label class="file-box">
+
+<input
+type="file"
+id="foto"
+accept="image/*">
+
+<div class="file-icon">
+📷
+</div>
+
+<strong>
+Pilih Foto
+</strong>
+
+<span>
+JPG, PNG atau WEBP
+</span>
+
+</label>
+
+
+<div
+class="preview"
+id="preview">
+
+<img
+id="previewImage"
+src=""
+alt="Preview foto">
+
+</div>
+
+</div>
+
+
+<!-- DESKRIPSI -->
+
+<div class="form-group">
+
+<label for="deskripsi">
+Deskripsi
+</label>
+
+<textarea
+id="deskripsi"
+placeholder="Tuliskan deskripsi fasilitas..."
+required></textarea>
+
+</div>
+
+
+<!-- BUTTON -->
+
+<div class="form-actions">
+
+<button
+type="button"
+class="btn-cancel"
+id="cancelBtn">
+
+Batal
+
+</button>
+
+
+<button
+type="submit"
+class="btn-save">
+
+Simpan Fasilitas
+
+</button>
+
+</div>
+
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="footer-logo">
+🌿 Desa Pusaka
+</div>
+
+<p>
+Kecamatan Tebas, Kabupaten Sambas,
+Kalimantan Barat
+</p>
+
+<p>
+© 2026 Desa Pusaka. Semua Hak Dilindungi.
+</p>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   DATA
+===================================================== */
+
+const STORAGE_KEY = "fasilitasDesaPusaka";
+
+
+let fasilitas = JSON.parse(
+    localStorage.getItem(STORAGE_KEY)
+) || [];
+
+
+let editIndex = -1;
+
+
+/* =====================================================
+   ELEMENT
+===================================================== */
+
+const grid =
+document.getElementById("fasilitasGrid");
+
+const modal =
+document.getElementById("modal");
+
+const openModal =
+document.getElementById("openModal");
+
+const closeModal =
+document.getElementById("closeModal");
+
+const cancelBtn =
+document.getElementById("cancelBtn");
+
+const form =
+document.getElementById("fasilitasForm");
+
+const modalTitle =
+document.getElementById("modalTitle");
+
+const nama =
+document.getElementById("nama");
+
+const foto =
+document.getElementById("foto");
+
+const deskripsi =
+document.getElementById("deskripsi");
+
+const preview =
+document.getElementById("preview");
+
+const previewImage =
+document.getElementById("previewImage");
+
+
+/* =====================================================
+   DATA DEFAULT
+===================================================== */
+
+function dataDefault(){
+
+    return [
+
+        {
+            nama:"Kantor Desa",
+            foto:"",
+            deskripsi:
+            "Kantor Desa Pusaka menjadi pusat pelayanan administrasi dan pemerintahan desa bagi masyarakat."
+        },
+
+        {
+            nama:"Tempat Ibadah",
+            foto:"",
+            deskripsi:
+            "Tempat ibadah menjadi sarana masyarakat untuk menjalankan kegiatan keagamaan dan mempererat kebersamaan."
+        },
+
+        {
+            nama:"Pendidikan",
+            foto:"",
+            deskripsi:
+            "Fasilitas pendidikan mendukung kegiatan belajar dan perkembangan anak-anak di Desa Pusaka."
+        },
+
+        {
+            nama:"Kesehatan",
+            foto:"",
+            deskripsi:
+            "Sarana kesehatan membantu masyarakat mendapatkan pelayanan dan informasi kesehatan."
+        },
+
+        {
+            nama:"Lapangan Desa",
+            foto:"",
+            deskripsi:
+            "Lapangan desa dapat digunakan untuk kegiatan olahraga, perlombaan, dan berbagai kegiatan masyarakat."
+        },
+
+        {
+            nama:"Jalan Desa",
+            foto:"",
+            deskripsi:
+            "Jalan desa menjadi sarana penting yang menghubungkan permukiman dan mendukung aktivitas masyarakat sehari-hari."
+        }
+
+    ];
+
+}
+
+
+/* =====================================================
+   MASUKKAN DATA DEFAULT
+===================================================== */
+
+if(
+    !localStorage.getItem(STORAGE_KEY)
+){
+
+    fasilitas = dataDefault();
+
+    saveData();
+
+}
+
+
+/* =====================================================
+   SIMPAN DATA
+===================================================== */
+
+function saveData(){
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(fasilitas)
+    );
+
+}
+
+
+/* =====================================================
+   TAMPILKAN FASILITAS
+===================================================== */
+
+function render(){
+
+    grid.innerHTML = "";
+
+
+    if(fasilitas.length === 0){
+
+        grid.innerHTML = `
+
+        <div class="empty">
+
+            <div class="empty-icon">
+                🏛️
+            </div>
+
+            <h3>
+                Belum Ada Fasilitas
+            </h3>
+
+            <p>
+                Klik tombol "+ Tambah Fasilitas"
+                untuk menambahkan fasilitas desa.
+            </p>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    fasilitas.forEach(
+        function(item,index){
+
+            const card =
+            document.createElement("article");
+
+            card.className =
+            "fasilitas-card";
+
+
+            let imageHTML = "";
+
+            if(item.foto){
+
+                imageHTML = `
+
+                <img
+                src="${item.foto}"
+                alt="${escapeHTML(item.nama)}">
+
+                `;
+
+            }else{
+
+                imageHTML = `
+
+                <div class="no-image">
+                    🏛️
+                </div>
+
+                `;
+
+            }
+
+
+            card.innerHTML = `
+
+            <div class="fasilitas-image">
+
+                ${imageHTML}
+
+            </div>
+
+
+            <div class="fasilitas-body">
+
+                <h3>
+                    ${escapeHTML(item.nama)}
+                </h3>
+
+                <p>
+                    ${escapeHTML(item.deskripsi)}
+                </p>
+
+
+                <div class="card-actions">
+
+                    <button
+                    class="btn-edit"
+                    onclick="editFasilitas(${index})">
+
+                    ✏️ Edit
+
+                    </button>
+
+
+                    <button
+                    class="btn-delete"
+                    onclick="hapusFasilitas(${index})">
+
+                    🗑️ Hapus
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            `;
+
+
+            grid.appendChild(card);
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(text){
+
+    const div =
+    document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
+
+
+/* =====================================================
+   BUKA MODAL
+===================================================== */
+
+openModal.addEventListener(
+    "click",
+    function(){
+
+        editIndex = -1;
+
+        modalTitle.textContent =
+        "Tambah Fasilitas";
+
+        form.reset();
+
+        preview.style.display =
+        "none";
+
+        previewImage.src = "";
+
+        modal.classList.add("active");
+
+        nama.focus();
+
+    }
+);
+
+
+/* =====================================================
+   TUTUP MODAL
+===================================================== */
+
+function closeModalFunction(){
+
+    modal.classList.remove(
+        "active"
+    );
+
+    form.reset();
+
+    preview.style.display =
+    "none";
+
+    previewImage.src = "";
+
+    editIndex = -1;
+
+}
+
+
+closeModal.addEventListener(
+    "click",
+    closeModalFunction
+);
+
+
+cancelBtn.addEventListener(
+    "click",
+    closeModalFunction
+);
+
+
+/* =====================================================
+   KLIK LUAR MODAL
+===================================================== */
+
+modal.addEventListener(
+    "click",
+    function(e){
+
+        if(e.target === modal){
+
+            closeModalFunction();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   PREVIEW FOTO
+===================================================== */
+
+foto.addEventListener(
+    "change",
+    function(){
+
+        const file =
+        this.files[0];
+
+
+        if(!file){
+
+            preview.style.display =
+            "none";
+
+            return;
+
+        }
+
+
+        if(!file.type.startsWith("image/")){
+
+            alert(
+                "File yang dipilih harus berupa gambar."
+            );
+
+            this.value = "";
+
+            return;
+
+        }
+
+
+        const reader =
+        new FileReader();
+
+
+        reader.onload =
+        function(e){
+
+            previewImage.src =
+            e.target.result;
+
+            preview.style.display =
+            "block";
+
+        };
+
+
+        reader.readAsDataURL(file);
+
+    }
+);
+
+
+/* =====================================================
+   SUBMIT FORM
+===================================================== */
+
+form.addEventListener(
+    "submit",
+    function(e){
+
+        e.preventDefault();
+
+
+        const namaValue =
+        nama.value.trim();
+
+        const deskripsiValue =
+        deskripsi.value.trim();
+
+
+        if(!namaValue){
+
+            alert(
+                "Nama fasilitas wajib diisi."
+            );
+
+            return;
+
+        }
+
+
+        if(!deskripsiValue){
+
+            alert(
+                "Deskripsi fasilitas wajib diisi."
+            );
+
+            return;
+
+        }
+
+
+        /* EDIT */
+
+        if(editIndex !== -1){
+
+            const oldFoto =
+            fasilitas[editIndex].foto;
+
+
+            const file =
+            foto.files[0];
+
+
+            if(file){
+
+                const reader =
+                new FileReader();
+
+
+                reader.onload =
+                function(e){
+
+                    fasilitas[editIndex] = {
+
+                        nama:namaValue,
+
+                        foto:e.target.result,
+
+                        deskripsi:deskripsiValue
+
+                    };
+
+
+                    saveData();
+
+                    render();
+
+                    closeModalFunction();
+
+                };
+
+
+                reader.readAsDataURL(file);
+
+            }else{
+
+                fasilitas[editIndex] = {
+
+                    nama:namaValue,
+
+                    foto:oldFoto,
+
+                    deskripsi:deskripsiValue
+
+                };
+
+
+                saveData();
+
+                render();
+
+                closeModalFunction();
+
+            }
+
+
+            return;
+
+        }
+
+
+        /* TAMBAH */
+
+        const file =
+        foto.files[0];
+
+
+        if(file){
+
+            const reader =
+            new FileReader();
+
+
+            reader.onload =
+            function(e){
+
+                fasilitas.push({
+
+                    nama:namaValue,
+
+                    foto:e.target.result,
+
+                    deskripsi:deskripsiValue
+
+                });
+
+
+                saveData();
+
+                render();
+
+                closeModalFunction();
+
+            };
+
+
+            reader.readAsDataURL(file);
+
+        }else{
+
+            fasilitas.push({
+
+                nama:namaValue,
+
+                foto:"",
+
+                deskripsi:deskripsiValue
+
+            });
+
+
+            saveData();
+
+            render();
+
+            closeModalFunction();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   EDIT
+===================================================== */
+
+function editFasilitas(index){
+
+    const item =
+    fasilitas[index];
+
+
+    editIndex = index;
+
+
+    modalTitle.textContent =
+    "Edit Fasilitas";
+
+
+    nama.value =
+    item.nama;
+
+
+    deskripsi.value =
+    item.deskripsi;
+
+
+    foto.value = "";
+
+
+    if(item.foto){
+
+        previewImage.src =
+        item.foto;
+
+        preview.style.display =
+        "block";
+
+    }else{
+
+        preview.style.display =
+        "none";
+
+    }
+
+
+    modal.classList.add(
+        "active"
+    );
+
+}
+
+
+/* =====================================================
+   HAPUS
+===================================================== */
+
+function hapusFasilitas(index){
+
+    const item =
+    fasilitas[index];
+
+
+    const yakin =
+    confirm(
+        'Hapus fasilitas "' +
+        item.nama +
+        '"?'
+    );
+
+
+    if(!yakin){
+
+        return;
+
+    }
+
+
+    fasilitas.splice(
+        index,
+        1
+    );
+
+
+    saveData();
+
+    render();
+
+}
+
+
+/* =====================================================
+   ESC KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(
+            e.key === "Escape" &&
+            modal.classList.contains("active")
+        ){
+
+            closeModalFunction();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   LOAD
+===================================================== */
+
+render();
+
+</script>
+
+</body>
+</html>
