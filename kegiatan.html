@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berita & Kegiatan | Desa Pusaka</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="header">
+    <div class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">
+                Desa Pusaka
+                <small>Kab. Sambas</small>
+            </div>
+        </a>
+
+        <div class="nav-container" id="navContainer">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li>
+                        <a href="profil.html">Profil ▾</a>
+                        <div class="dropdown">
+                            <a href="profil.html">Tentang Desa</a>
+                            <a href="sejarah.html">Sejarah Nama Kampung</a>
+                            <a href="dusun.html">Wilayah Dusun</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#layanan">Layanan</a></li>
+                    <li><a href="fasilitas.html">Fasilitas</a></li>
+                    <li><a href="index.html#transparansi">APBD Desa</a></li>
+                    <li class="active"><a href="kegiatan.html">Berita & Kegiatan</a></li>
+                    <li><a href="index.html#umkm">UMKM</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+            <a href="index.html#layanan" class="btn-nav-cta">Layanan Mandiri</a>
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+    </div>
+</header>
+
+<div class="page-header">
+    <div class="container">
+        <h1>Berita & Kegiatan</h1>
+        <p>Kabar terbaru dan dokumentasi agenda kegiatan Pemerintah Desa Pusaka.</p>
+    </div>
+</div>
+
+<section id="berita">
+    <div class="container">
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="news-img" style="background: url('gotong-royong.jpg') center/cover;">
+                    <span class="news-date">12 Agustus 2026</span>
+                </div>
+                <div class="news-body">
+                    <h3>Kegiatan Gotong Royong Massal Bersama Warga Dusun Puting</h3>
+                    <p>Masyarakat antusias membersihkan saluran irigasi guna mengantisipasi musim penghujan dan menjaga kelancaran air sawah.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-img" style="background: url('pertanian-desaa.jpg') center/cover;">
+                    <span class="news-date">05 Agustus 2026</span>
+                </div>
+                <div class="news-body">
+                    <h3>Pelatihan Pertanian Modern & Pembuatan Pupuk Organik</h3>
+                    <p>Program pemberdayaan petani lokal untuk meningkatkan hasil panen jeruk limau tanpa bahan kimia berlebih.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-img" style="background: url('kegiatan-warga.jpg') center/cover;">
+                    <span class="news-date">28 Juli 2026</span>
+                </div>
+                <div class="news-body">
+                    <h3>Musyawarah Perencanaan Pembangunan Desa (Musrenbangdes)</h3>
+                    <p>Diskusi terbuka bersama jajaran perangkat dan tokoh masyarakat dalam merumuskan prioritas anggaran tahun depan.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-bottom">
+            <p>© 2026 Pemerintah Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas. Semua Hak Dilindungi Undang-Undang.</p>
+        </div>
+    </div>
+</footer>
+
+<button class="back-to-top" id="backToTop">↑</button>
+<script src="script.js"></script>
+</body>
+</html>
