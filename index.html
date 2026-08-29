@@ -101,6 +101,13 @@ section { padding: 90px 20px; }
 .sejarah-wrapper { background: var(--surface); border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow-soft); border-left: 5px solid var(--primary); }
 .sejarah-wrapper p { margin-bottom: 15px; color: var(--text-muted); text-align: justify; }
 
+/* DUSUN DESA */
+.dusun-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.dusun-card { background: var(--surface); border-radius: var(--radius-md); padding: 30px; box-shadow: var(--shadow-soft); border-top: 4px solid var(--primary); transition: 0.3s; }
+.dusun-card:hover { transform: translateY(-5px); }
+.dusun-card h3 { font-size: 22px; color: var(--primary-dark); font-family: "Playfair Display", serif; margin-bottom: 12px; }
+.dusun-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
 /* KONTAK & FOOTER */
 .kontak { background: var(--primary-dark); color: white; }
 .kontak .section-title h2 { color: white; }
@@ -132,6 +139,7 @@ footer { background: #031c13; color: #8ba398; text-align: center; padding: 30px 
             <a href="#profil">Profil</a>
             <a href="#fasilitas">Fasilitas</a>
             <a href="#sejarah">Sejarah</a>
+            <a href="#dusun">Dusun</a>
             <a href="#kegiatan">Kegiatan</a>
             <a href="#kontak">Kontak</a>
         </nav>
@@ -240,8 +248,32 @@ footer { background: #031c13; color: #8ba398; text-align: center; padding: 30px 
     </div>
 </section>
 
+<!-- WILAYAH DUSUN -->
+<section style="background: #ebf2ee;" id="dusun">
+    <div class="container">
+        <div class="section-title">
+            <span>Wilayah Desa</span>
+            <h2>Dusun di Desa Pusaka</h2>
+        </div>
+        <div class="dusun-grid">
+            <div class="dusun-card">
+                <h3>Dusun Puting</h3>
+                <p>Dusun Puting merupakan salah satu wilayah di Desa Pusaka yang memiliki masyarakat dengan semangat kebersamaan yang kuat. Kehidupan masyarakatnya terus berkembang dengan berbagai kegiatan sosial dan ekonomi.</p>
+            </div>
+            <div class="dusun-card">
+                <h3>Dusun Beliung</h3>
+                <p>Dusun Beliung merupakan bagian dari wilayah Desa Pusaka yang memiliki masyarakat yang ramah dan menjunjung tinggi nilai gotong royong. Berbagai aktivitas masyarakat menjadi bagian penting dalam perkembangan dusun.</p>
+            </div>
+            <div class="dusun-card">
+                <h3>Dusun Sekadim</h3>
+                <p>Dusun Sekadim merupakan salah satu dusun di Desa Pusaka yang turut memiliki peran penting dalam kehidupan masyarakat desa. Dengan semangat kebersamaan, masyarakat Dusun Sekadim terus menjaga lingkungan dan membangun wilayahnya menjadi lebih baik.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- KEGIATAN & POTENSI -->
-<section style="background: #ebf2ee;" id="kegiatan">
+<section id="kegiatan">
     <div class="container">
         <div class="section-title">
             <span>Aktivitas Warga</span>
