@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fasilitas Desa | Desa Pusaka</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="header">
+    <div class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">
+                Desa Pusaka
+                <small>Kab. Sambas</small>
+            </div>
+        </a>
+
+        <div class="nav-container" id="navContainer">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li>
+                        <a href="profil.html">Profil ▾</a>
+                        <div class="dropdown">
+                            <a href="profil.html">Tentang Desa</a>
+                            <a href="sejarah.html">Sejarah Nama Kampung</a>
+                            <a href="dusun.html">Wilayah Dusun</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#layanan">Layanan</a></li>
+                    <li class="active"><a href="fasilitas.html">Fasilitas</a></li>
+                    <li><a href="index.html#transparansi">APBD Desa</a></li>
+                    <li><a href="kegiatan.html">Berita & Kegiatan</a></li>
+                    <li><a href="index.html#umkm">UMKM</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+            <a href="index.html#layanan" class="btn-nav-cta">Layanan Mandiri</a>
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+    </div>
+</header>
+
+<div class="page-header">
+    <div class="container">
+        <h1>Fasilitas & Infrastruktur</h1>
+        <p>Sarana ibadah, pendidikan, dan lanskap alam di Desa Pusaka.</p>
+    </div>
+</div>
+
+<section id="fasilitas">
+    <div class="container">
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterGallery('all', event)">Semua Tampilan</button>
+            <button class="filter-btn" onclick="filterGallery('pendidikan', event)">Pendidikan</button>
+            <button class="filter-btn" onclick="filterGallery('ibadah', event)">Tempat Ibadah</button>
+            <button class="filter-btn" onclick="filterGallery('pertanian', event)">Pertanian & Alam</button>
+        </div>
+
+        <div class="grid-gallery">
+            <div class="card-place" data-category="ibadah">
+                <div class="card-place-img">
+                    <span class="card-tag">Ibadah</span>
+                    <img src="masjid.jpg?v=2" alt="Masjid Desa Pusaka" loading="lazy">
+                </div>
+                <div class="card-place-body">
+                    <h3>Masjid Desa</h3>
+                    <p>Pusat kegiatan keagamaan dan pembinaan kerohanian masyarakat Desa Pusaka.</p>
+                </div>
+            </div>
+
+            <div class="card-place" data-category="pendidikan">
+                <div class="card-place-img">
+                    <span class="card-tag">Pendidikan</span>
+                    <img src="paud-mawar.jpg" alt="PAUD Mawar" loading="lazy">
+                </div>
+                <div class="card-place-body">
+                    <h3>PAUD Mawar</h3>
+                    <p>Fasilitas pendidikan usia dini untuk mencetak generasi muda desa yang cerdas.</p>
+                </div>
+            </div>
+
+            <div class="card-place" data-category="pendidikan">
+                <div class="card-place-img">
+                    <span class="card-tag">Pendidikan</span>
+                    <img src="sd07.jpg" alt="SDN 07 Puting Beliung" loading="lazy">
+                </div>
+                <div class="card-place-body">
+                    <h3>SDN 07 Puting Beliung</h3>
+                    <p>Fasilitas pendidikan dasar utama bagi anak-anak di lingkungan desa.</p>
+                </div>
+            </div>
+
+            <div class="card-place" data-category="pendidikan">
+                <div class="card-place-img">
+                    <span class="card-tag">Pendidikan</span>
+                    <img src="smpn03.jpg" alt="SMPN 03 Tebas" loading="lazy">
+                </div>
+                <div class="card-place-body">
+                    <h3>SMPN 03 Tebas</h3>
+                    <p>Fasilitas pendidikan tingkat menengah pertama yang terletak di Dusun Sekadim.</p>
+                </div>
+            </div>
+
+            <div class="card-place" data-category="pertanian">
+                <div class="card-place-img">
+                    <span class="card-tag">Pertanian</span>
+                    <img src="perkebunan.jpg?v=1" alt="Perkebunan Limau" loading="lazy">
+                </div>
+                <div class="card-place-body">
+                    <h3>Perkebunan Limau & Padi</h3>
+                    <p>Sektor pertanian unggulan komoditas jeruk limau dan persawahan hijau masyarakat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-bottom">
+            <p>© 2026 Pemerintah Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas. Semua Hak Dilindungi Undang-Undang.</p>
+        </div>
+    </div>
+</footer>
+
+<button class="back-to-top" id="backToTop">↑</button>
+<script src="script.js"></script>
+</body>
+</html>
