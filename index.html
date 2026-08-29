@@ -6,7 +6,6 @@
 <title>Desa Pusaka | Kecamatan Tebas</title>
 <meta name="description" content="Website Resmi Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat. Mengenal sejarah, fasilitas, potensi, dan kegiatan masyarakat.">
 
-<!-- GOOGLE FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
@@ -117,17 +116,48 @@ section { padding: 90px 20px; }
 
 footer { background: #031c13; color: #8ba398; text-align: center; padding: 30px 20px; font-size: 13px; }
 
+/* TOMBOL BACK TO TOP */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    color: var(--primary-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 800;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background: #f0cf6d;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
     nav { display: none; }
     .menu-btn { display: block; }
     .profil-grid, .contact-grid { grid-template-columns: 1fr; }
+    .back-to-top { bottom: 20px; right: 20px; width: 42px; height: 42px; font-size: 18px; }
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header id="header">
     <div class="navbar">
         <a href="#beranda" class="logo">
@@ -147,7 +177,6 @@ footer { background: #031c13; color: #8ba398; text-align: center; padding: 30px 
     </div>
 </header>
 
-<!-- BERANDA -->
 <section class="hero" id="beranda">
     <div class="hero-content">
         <div class="hero-badge">KECAMATAN TEBAS • KABUPATEN SAMBAS</div>
@@ -157,7 +186,6 @@ footer { background: #031c13; color: #8ba398; text-align: center; padding: 30px 
     </div>
 </section>
 
-<!-- STATISTIK -->
 <div class="stats-container">
     <div class="stat-card"><h3>1779</h3><p>Tahun Awal Kisah</p></div>
     <div class="stat-card"><h3>3.031</h3><p>Jumlah Penduduk</p></div>
@@ -165,7 +193,6 @@ footer { background: #031c13; color: #8ba398; text-align: center; padding: 30px 
     <div class="stat-card"><h3>🌿</h3><p>Alam Asri & Subur</p></div>
 </div>
 
-<!-- PROFIL & KANTOR DESA -->
 <section class="profil" id="profil">
     <div class="container">
         <div class="section-title">
@@ -190,7 +217,6 @@ footer { background: #031c13; color: #8ba398; text-align: center; padding: 30px 
     </div>
 </section>
 
-<!-- FASILITAS & SARANA DESA -->
 <section style="background: #ebf2ee;" id="fasilitas">
     <div class="container">
         <div class="section-title">
@@ -253,7 +279,6 @@ footer { background: #031c13; color: #8ba398; text-align: center; padding: 30px 
     </div>
 </section>
 
-<!-- SEJARAH NAMA KAMPUNG -->
 <section id="sejarah">
     <div class="container">
         <div class="section-title">
@@ -269,7 +294,6 @@ footer { background: #031c13; color: #8ba398; text-align: center; padding: 30px 
     </div>
 </section>
 
-<!-- WILAYAH DUSUN -->
 <section style="background: #ebf2ee;" id="dusun">
     <div class="container">
         <div class="section-title">
@@ -293,7 +317,6 @@ footer { background: #031c13; color: #8ba398; text-align: center; padding: 30px 
     </div>
 </section>
 
-<!-- KEGIATAN & POTENSI -->
 <section id="kegiatan">
     <div class="container">
         <div class="section-title">
@@ -333,7 +356,6 @@ footer { background: #031c13; color: #8ba398; text-align: center; padding: 30px 
     </div>
 </section>
 
-<!-- KONTAK & LOKASI -->
 <section class="kontak" id="kontak">
     <div class="container">
         <div class="section-title">
@@ -354,16 +376,17 @@ footer { background: #031c13; color: #8ba398; text-align: center; padding: 30px 
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <p>© 2026 Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas. Semua Hak Dilindungi.</p>
 </footer>
 
-<!-- JAVASCRIPT UNTUK MENU HAMBURGER & INTERAKSI -->
+<a href="#beranda" class="back-to-top" id="backToTop" aria-label="Kembali ke Atas">↑</a>
+
 <script>
     const menuBtn = document.querySelector('.menu-btn');
     const navMenu = document.querySelector('nav');
     const header = document.getElementById('header');
+    const backToTopBtn = document.getElementById('backToTop');
 
     // 1. Toggle Menu Navigation di Mobile
     menuBtn.addEventListener('click', () => {
@@ -391,12 +414,20 @@ footer { background: #031c13; color: #8ba398; text-align: center; padding: 30px 
         });
     });
 
-    // 3. Efek Bayangan Header Saat Di-scroll
+    // 3. Kontrol Efek Header & Kemunculan Tombol Back to Top Saat Di-scroll
     window.addEventListener('scroll', () => {
+        // Header Effect
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
+        }
+
+        // Back To Top Button Effect (Muncul setelah scroll melebihi 300px)
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
         }
     });
 </script>
