@@ -1,348 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Desa Pusaka | Kecamatan Tebas - Portal Resmi Terpadu</title>
-<meta name="description" content="Portal Resmi Terpadu Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat. Layanan publik mandiri, transparansi anggaran, statistik, dan potensi desa.">
+<title>Desa Pusaka | Portal Resmi Terpadu</title>
+<meta name="description" content="Portal Resmi Terpadu Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-
-<style>
-/* ==========================================================================
-   1. VARIABEL DESAIN (THEMING)
-   ========================================================================== */
-:root {
-    --primary: #0d5437;
-    --primary-dark: #062f20;
-    --primary-light: #2d8a5f;
-    --accent: #e5c158;
-    --accent-hover: #f0cf6d;
-    --bg-light: #f4f8f5;
-    --bg-alt: #ebf2ee;
-    --surface: #ffffff;
-    --text-main: #142e23;
-    --text-muted: #5a6e65;
-    --border-color: #edf2ef;
-    --header-bg: rgba(255, 255, 255, 0.88);
-    --header-scrolled: rgba(255, 255, 255, 0.98);
-    --radius-lg: 24px;
-    --radius-md: 16px;
-    --radius-sm: 8px;
-    --shadow-soft: 0 20px 40px rgba(13, 84, 55, 0.08);
-    --shadow-hard: 0 10px 30px rgba(0, 0, 0, 0.12);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-body.dark-mode {
-    --primary: #2d8a5f;
-    --primary-dark: #0a1410;
-    --primary-light: #48b480;
-    --accent: #e5c158;
-    --accent-hover: #f0cf6d;
-    --bg-light: #0f1713;
-    --bg-alt: #16221c;
-    --surface: #1a2821;
-    --text-main: #e4ebe7;
-    --text-muted: #a0b3aa;
-    --border-color: #273b31;
-    --header-bg: rgba(26, 40, 33, 0.88);
-    --header-scrolled: rgba(26, 40, 33, 0.98);
-    --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.35);
-    --shadow-hard: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* ==========================================================================
-   2. RESET & NORMALIZE
-   ========================================================================== */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-body { 
-    font-family: "Plus Jakarta Sans", sans-serif; 
-    background: var(--bg-light); 
-    color: var(--text-main); 
-    line-height: 1.6; 
-    overflow-x: hidden; 
-    transition: background-color 0.3s ease, color 0.3s ease; 
-}
-img { width: 100%; height: auto; display: block; object-fit: cover; }
-a { text-decoration: none; color: inherit; transition: var(--transition); }
-button, input, select, textarea { font-family: inherit; font-size: inherit; outline: none; }
-ul { list-style: none; }
-
-/* ==========================================================================
-   3. HEADER & NAVIGASI EXPANDED
-   ========================================================================== */
-header {
-    position: fixed; top: 0; left: 0; width: 100%; height: 90px; z-index: 1000;
-    background: var(--header-bg); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(13, 84, 55, 0.1); transition: var(--transition);
-}
-header.scrolled { height: 75px; background: var(--header-scrolled); box-shadow: 0 4px 25px rgba(0,0,0,0.12); }
-.navbar { width: min(1280px, calc(100% - 40px)); height: 100%; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
-
-.logo { display: flex; align-items: center; gap: 12px; color: var(--primary); font-family: "Playfair Display", serif; font-size: 22px; font-weight: 800; }
-.logo-icon { width: 44px; height: 44px; background: var(--primary); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; box-shadow: 0 4px 12px rgba(13, 84, 55, 0.2); }
-.logo-text small { display: block; font-family: "Plus Jakarta Sans", sans-serif; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
-
-.nav-container { display: flex; align-items: center; gap: 20px; }
-nav ul { display: flex; gap: 20px; align-items: center; }
-nav li { position: relative; }
-nav a { font-size: 14px; font-weight: 600; color: var(--text-main); padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; gap: 4px; }
-nav a:hover, nav li.active > a { color: var(--primary-light); background: rgba(45, 138, 95, 0.08); }
-
-/* Dropdown Menu */
-.dropdown {
-    position: absolute; top: 100%; left: 0; min-width: 220px; background: var(--surface);
-    border-radius: var(--radius-md); box-shadow: var(--shadow-hard); border: 1px solid var(--border-color);
-    padding: 10px; opacity: 0; visibility: hidden; transform: translateY(10px); transition: var(--transition);
-    display: flex; flex-direction: column; gap: 4px; z-index: 1100;
-}
-nav li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-.dropdown a { font-size: 13px; padding: 10px 14px; border-radius: 6px; }
-.dropdown a:hover { background: var(--bg-alt); }
-
-.nav-actions { display: flex; align-items: center; gap: 12px; }
-
-.theme-toggle {
-    background: var(--surface); border: 1px solid var(--border-color); color: var(--text-main);
-    width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
-    font-size: 18px; cursor: pointer; transition: var(--transition); box-shadow: var(--shadow-soft);
-}
-.theme-toggle:hover { transform: scale(1.05); color: var(--accent); }
-
-.btn-nav-cta {
-    padding: 10px 20px; background: var(--primary); color: white !important; font-size: 13px; font-weight: 700;
-    border-radius: 50px; box-shadow: 0 4px 15px rgba(13, 84, 55, 0.2); transition: var(--transition);
-}
-.btn-nav-cta:hover { background: var(--primary-light); transform: translateY(-2px); }
-
-.menu-btn { display: none; background: var(--primary); border: none; width: 42px; height: 42px; border-radius: 10px; color: white; font-size: 20px; cursor: pointer; }
-
-/* ==========================================================================
-   4. HERO SECTION
-   ========================================================================== */
-.hero {
-    min-height: 92vh; position: relative; display: flex; align-items: center; padding: 160px 20px 100px; color: white;
-    background: linear-gradient(180deg, rgba(6, 47, 32, 0.82) 0%, rgba(6, 47, 32, 0.90) 100%), url('masjid.jpg?v=2') center/cover no-repeat;
-}
-.hero-content { max-width: 850px; margin: auto; text-align: center; position: relative; z-index: 2; }
-.hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px); border-radius: 50px; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 24px; text-transform: uppercase; }
-.hero h1 { font-family: "Playfair Display", serif; font-size: clamp(42px, 6vw, 76px); line-height: 1.12; margin-bottom: 24px; font-weight: 800; }
-.hero p { font-size: clamp(16px, 2vw, 20px); color: rgba(255, 255, 255, 0.9); margin-bottom: 36px; max-width: 700px; margin-left: auto; margin-right: auto; }
-.hero-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-
-.btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; background: var(--accent); color: #062f20; font-weight: 700; border-radius: 50px; transition: var(--transition); box-shadow: 0 10px 25px rgba(229, 193, 88, 0.35); border: none; cursor: pointer; }
-.btn-primary:hover { transform: translateY(-3px); background: var(--accent-hover); box-shadow: 0 15px 30px rgba(229, 193, 88, 0.45); }
-
-.btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; background: rgba(255,255,255,0.15); color: white; font-weight: 700; border-radius: 50px; transition: var(--transition); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); }
-.btn-secondary:hover { background: rgba(255,255,255,0.25); transform: translateY(-3px); }
-
-/* ==========================================================================
-   5. QUICK ACCESS & STATISTIK
-   ========================================================================== */
-.stats-container { width: min(1200px, calc(100% - 40px)); margin: -60px auto 0; position: relative; z-index: 10; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-.stat-card { background: var(--surface); padding: 28px 24px; border-radius: var(--radius-md); text-align: center; box-shadow: var(--shadow-soft); border: 1px solid var(--border-color); transition: var(--transition); }
-.stat-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hard); }
-.stat-card .icon { font-size: 32px; margin-bottom: 10px; display: block; }
-.stat-card h3 { font-size: 38px; font-family: "Playfair Display", serif; color: var(--primary); margin-bottom: 4px; font-weight: 800; }
-.stat-card p { font-size: 13px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-
-/* ==========================================================================
-   6. COMMON SECTION STYLES
-   ========================================================================== */
-section { padding: 100px 20px; position: relative; }
-.container { width: min(1200px, 100%); margin: auto; }
-.section-title { text-align: center; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto; }
-.section-title span { color: var(--primary-light); font-size: 12px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; display: block; margin-bottom: 8px; }
-.section-title h2 { font-family: "Playfair Display", serif; font-size: clamp(32px, 4vw, 48px); color: var(--text-main); font-weight: 800; line-height: 1.2; }
-.section-title p { color: var(--text-muted); font-size: 15px; margin-top: 12px; }
-
-/* ==========================================================================
-   7. LAYANAN PUBLIK MANDIRI (BARU)
-   ========================================================================== */
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-.service-card {
-    background: var(--surface); padding: 32px 24px; border-radius: var(--radius-md); border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-soft); transition: var(--transition); position: relative; overflow: hidden;
-}
-.service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--primary); transition: var(--transition); }
-.service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hard); }
-.service-card:hover::before { height: 6px; background: var(--accent); }
-.service-icon { width: 60px; height: 60px; background: var(--bg-alt); color: var(--primary); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px; }
-.service-card h3 { font-size: 20px; color: var(--text-main); margin-bottom: 12px; font-weight: 700; }
-.service-card p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
-.service-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--primary); }
-.service-btn:hover { color: var(--primary-light); gap: 10px; }
-
-/* ==========================================================================
-   8. PROFIL & KANTOR DESA
-   ========================================================================== */
-.profil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-.profil-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-hard); position: relative; }
-.profil-img::after { content: ''; position: absolute; inset: 0; border: 2px solid var(--accent); border-radius: var(--radius-lg); pointer-events: none; margin: 12px; opacity: 0.5; }
-.info-box { background: var(--surface); border-radius: var(--radius-md); padding: 24px; box-shadow: var(--shadow-soft); margin-top: 24px; border: 1px solid var(--border-color); }
-.info-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border-color); font-size: 14px; }
-.info-item:last-child { border: none; }
-
-/* ==========================================================================
-   9. SEJARAH EXPANDED TIMELINE
-   ========================================================================== */
-.timeline { position: relative; max-width: 900px; margin: auto; padding: 20px 0; }
-.timeline::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: var(--border-color); transform: translateX(-50%); }
-.timeline-item { position: relative; margin-bottom: 40px; width: 50%; padding: 0 30px; }
-.timeline-item:nth-child(odd) { left: 0; text-align: right; }
-.timeline-item:nth-child(even) { left: 50%; text-align: left; }
-.timeline-dot { position: absolute; top: 0; width: 20px; height: 20px; background: var(--accent); border: 4px solid var(--surface); border-radius: 50%; z-index: 2; }
-.timeline-item:nth-child(odd) .timeline-dot { right: -10px; }
-.timeline-item:nth-child(even) .timeline-dot { left: -10px; }
-.timeline-content { background: var(--surface); padding: 28px; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-soft); }
-.timeline-date { font-weight: 800; color: var(--primary); font-size: 18px; margin-bottom: 8px; display: block; }
-.timeline-content h4 { font-size: 18px; margin-bottom: 10px; font-family: "Playfair Display", serif; }
-.timeline-content p { font-size: 14px; color: var(--text-muted); text-align: justify; }
-
-/* ==========================================================================
-   10. GALERI FASILITAS (FILTERABLE)
-   ========================================================================== */
-.filter-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
-.filter-btn { padding: 10px 22px; background: var(--surface); border: 1px solid var(--border-color); border-radius: 50px; font-size: 13px; font-weight: 600; color: var(--text-main); cursor: pointer; transition: var(--transition); }
-.filter-btn.active, .filter-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
-
-.grid-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px; }
-.card-place { background: var(--surface); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-soft); transition: var(--transition); border: 1px solid var(--border-color); display: flex; flex-direction: column; }
-.card-place:hover { transform: translateY(-8px); box-shadow: var(--shadow-hard); }
-.card-place-img { position: relative; height: 220px; overflow: hidden; }
-.card-place-img img { height: 100%; transition: var(--transition); }
-.card-place:hover .card-place-img img { transform: scale(1.08); }
-.card-tag { position: absolute; top: 15px; left: 15px; background: rgba(13, 84, 55, 0.85); backdrop-filter: blur(5px); color: white; padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
-.card-place-body { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-.card-place-body h3 { font-size: 20px; color: var(--text-main); margin-bottom: 10px; font-family: "Playfair Display", serif; }
-.card-place-body p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
-
-/* ==========================================================================
-   11. DUSUN & PETA WILAYAH
-   ========================================================================== */
-.dusun-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
-.dusun-card { background: var(--surface); border-radius: var(--radius-md); padding: 36px 28px; box-shadow: var(--shadow-soft); border-top: 5px solid var(--primary); border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); transition: var(--transition); }
-.dusun-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hard); }
-.dusun-card h3 { font-size: 24px; color: var(--text-main); font-family: "Playfair Display", serif; margin-bottom: 14px; }
-.dusun-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; }
-.dusun-stats { display: flex; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 15px; font-size: 13px; font-weight: 700; color: var(--primary); }
-
-/* ==========================================================================
-   12. APBD & TRANSPARANSI ANGGARAN (BARU)
-   ========================================================================== */
-.budget-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-.budget-card { background: var(--surface); padding: 28px; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-soft); }
-.budget-card h4 { font-size: 16px; color: var(--text-muted); margin-bottom: 8px; }
-.budget-card .amount { font-size: 28px; font-weight: 800; color: var(--primary); font-family: "Playfair Display", serif; margin-bottom: 16px; }
-.progress-bar { width: 100%; height: 10px; background: var(--bg-alt); border-radius: 50px; overflow: hidden; }
-.progress-fill { height: 100%; background: var(--accent); border-radius: 50px; }
-
-/* ==========================================================================
-   13. BERITA & AGENDA KEGIATAN (BARU)
-   ========================================================================== */
-.news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
-.news-card { background: var(--surface); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-soft); transition: var(--transition); }
-.news-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hard); }
-.news-img { height: 200px; position: relative; }
-.news-date { position: absolute; bottom: 15px; left: 15px; background: var(--primary); color: white; padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; }
-.news-body { padding: 24px; }
-.news-body h3 { font-size: 18px; margin-bottom: 12px; line-height: 1.4; }
-.news-body p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
-
-/* ==========================================================================
-   14. SEKTOR PERTANIAN & UMKM (BARU)
-   ========================================================================== */
-.umkm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-.umkm-card { background: var(--surface); border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-color); text-align: center; box-shadow: var(--shadow-soft); }
-.umkm-img { height: 180px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 16px; }
-.umkm-card h4 { font-size: 18px; margin-bottom: 6px; }
-.umkm-card .price { font-weight: 800; color: var(--primary); font-size: 16px; margin-bottom: 12px; }
-
-/* ==========================================================================
-   15. KONTAK & PENGADUAN
-   ========================================================================== */
-.kontak { background: var(--primary-dark); color: white; position: relative; }
-.kontak .section-title h2, .kontak .section-title span { color: white; }
-.kontak .section-title p { color: rgba(255,255,255,0.7); }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-.contact-info-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 24px; border-radius: var(--radius-md); margin-bottom: 20px; backdrop-filter: blur(10px); }
-.contact-info-card h4 { font-size: 18px; margin-bottom: 8px; color: var(--accent); }
-
-.contact-form { background: var(--surface); color: var(--text-main); padding: 36px; border-radius: var(--radius-lg); box-shadow: var(--shadow-hard); }
-.contact-form h3 { font-size: 22px; margin-bottom: 20px; font-family: "Playfair Display", serif; }
-.form-group { margin-bottom: 18px; }
-.form-group label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
-.form-control { width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main); transition: var(--transition); }
-.form-control:focus { border-color: var(--primary); background: var(--surface); }
-
-/* ==========================================================================
-   16. FOOTER EXPANDED
-   ========================================================================== */
-footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.05); }
-.footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 40px; margin-bottom: 60px; }
-.footer-brand h3 { font-family: "Playfair Display", serif; color: white; font-size: 24px; margin-bottom: 16px; }
-.footer-brand p { font-size: 14px; line-height: 1.7; opacity: 0.8; }
-.footer-links h4 { color: white; font-size: 16px; margin-bottom: 20px; font-weight: 700; }
-.footer-links ul li { margin-bottom: 10px; }
-.footer-links a { opacity: 0.8; }
-.footer-links a:hover { opacity: 1; color: var(--accent); }
-.footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 13px; opacity: 0.7; }
-
-/* ==========================================================================
-   17. MODAL LAYANAN
-   ========================================================================== */
-.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center; z-index: 2000; opacity: 0; visibility: hidden; transition: var(--transition); padding: 20px; }
-.modal.active { opacity: 1; visibility: visible; }
-.modal-content { background: var(--surface); width: min(600px, 100%); padding: 36px; border-radius: var(--radius-lg); position: relative; box-shadow: var(--shadow-hard); max-height: 90vh; overflow-y: auto; }
-.close-modal { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--text-muted); }
-
-/* ==========================================================================
-   18. BACK TO TOP BUTTON
-   ========================================================================== */
-.back-to-top {
-    position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
-    background: var(--accent); color: #062f20; border-radius: 50%; display: flex;
-    align-items: center; justify-content: center; font-size: 22px; font-weight: 800;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25); cursor: pointer; opacity: 0; visibility: hidden;
-    transition: var(--transition); z-index: 999; border: none;
-}
-.back-to-top.show { opacity: 1; visibility: visible; }
-.back-to-top:hover { transform: translateY(-5px); background: var(--accent-hover); }
-
-/* ==========================================================================
-   19. RESPONSIVE DESIGN
-   ========================================================================== */
-@media (max-width: 992px) {
-    .profil-grid, .contact-grid { grid-template-columns: 1fr; }
-    .timeline::before { left: 20px; }
-    .timeline-item { width: 100%; padding-left: 50px; padding-right: 0; text-align: left !important; }
-    .timeline-item:nth-child(even) { left: 0; }
-    .timeline-dot { left: 10px !important; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-}
-
-@media (max-width: 768px) {
-    .nav-container { display: none; }
-    .menu-btn { display: block; }
-    .footer-grid { grid-template-columns: 1fr; }
-    .hero { min-height: 80vh; padding-top: 140px; }
-    .hero-btns { flex-direction: column; }
-    .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ==========================================================================
-   HEADER & NAVBAR
-   ========================================================================== -->
 <header id="header">
     <div class="navbar">
-        <a href="#beranda" class="logo">
+        <a href="index.html" class="logo">
             <div class="logo-icon">🌿</div>
             <div class="logo-text">
                 Desa Pusaka
@@ -353,29 +27,28 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
         <div class="nav-container" id="navContainer">
             <nav>
                 <ul>
-                    <li class="active"><a href="#beranda">Beranda</a></li>
+                    <li class="active"><a href="index.html">Beranda</a></li>
                     <li>
-                        <a href="#profil">Profil ▾</a>
+                        <a href="profil.html">Profil ▾</a>
                         <div class="dropdown">
-                            <a href="#profil">Tentang Desa</a>
-                            <a href="#sejarah">Sejarah Nama Kampung</a>
-                            <a href="#perangkat">Perangkat Desa</a>
-                            <a href="#dusun">Wilayah Dusun</a>
+                            <a href="profil.html">Tentang Desa</a>
+                            <a href="sejarah.html">Sejarah Nama Kampung</a>
+                            <a href="dusun.html">Wilayah Dusun</a>
                         </div>
                     </li>
                     <li>
-                        <a href="#layanan">Layanan ▾</a>
+                        <a href="index.html#layanan">Layanan ▾</a>
                         <div class="dropdown">
-                            <a href="#layanan">Surat Pengantar</a>
-                            <a href="#layanan">Surat Keterangan Usaha</a>
-                            <a href="#layanan">Pengaduan Warga</a>
+                            <a href="javascript:void(0)" onclick="openModal('Surat Pengantar KTP / KK')">Surat Pengantar</a>
+                            <a href="javascript:void(0)" onclick="openModal('Surat Keterangan Usaha')">Surat Keterangan Usaha</a>
+                            <a href="kontak.html">Pengaduan Warga</a>
                         </div>
                     </li>
-                    <li><a href="#fasilitas">Fasilitas</a></li>
-                    <li><a href="#transparansi">APBD Desa</a></li>
-                    <li><a href="#berita">Berita</a></li>
-                    <li><a href="#umkm">UMKM</a></li>
-                    <li><a href="#kontak">Kontak</a></li>
+                    <li><a href="fasilitas.html">Fasilitas</a></li>
+                    <li><a href="index.html#transparansi">APBD Desa</a></li>
+                    <li><a href="kegiatan.html">Berita & Kegiatan</a></li>
+                    <li><a href="index.html#umkm">UMKM</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
                 </ul>
             </nav>
         </div>
@@ -388,9 +61,6 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
     </div>
 </header>
 
-<!-- ==========================================================================
-   HERO SECTION
-   ========================================================================== -->
 <section class="hero" id="beranda">
     <div class="hero-content">
         <div class="hero-badge">📍 KECAMATAN TEBAS • KABUPATEN SAMBAS</div>
@@ -398,14 +68,11 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
         <p>Mewujudkan tata kelola pemerintahan desa yang transparan, religius, mandiri, dan berdaya saing tinggi berbasis potensi lokal.</p>
         <div class="hero-btns">
             <a href="#layanan" class="btn-primary"><span>📄</span> Ajukan Layanan Surat</a>
-            <a href="#profil" class="btn-secondary"><span>🌿</span> Jelajahi Profil Desa</a>
+            <a href="profil.html" class="btn-secondary"><span>🌿</span> Jelajahi Profil Desa</a>
         </div>
     </div>
 </section>
 
-<!-- ==========================================================================
-   QUICK STATISTIK
-   ========================================================================== -->
 <div class="stats-container">
     <div class="stat-card">
         <span class="icon">🏛️</span>
@@ -429,9 +96,6 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
     </div>
 </div>
 
-<!-- ==========================================================================
-   SECTION LAYANAN PUBLIK MANDIRI (BARU)
-   ========================================================================== -->
 <section id="layanan">
     <div class="container">
         <div class="section-title">
@@ -445,7 +109,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
                 <div class="service-icon">📝</div>
                 <h3>Surat Pengantar KTP / KK</h3>
                 <p>Permohonan pengantar untuk penerbitan Kartu Tanda Penduduk atau Kartu Keluarga baru maupun pembaruan data.</p>
-                <a href="javascript:void(0)" class="service-btn" onclick="openModal('Surat Pengantar KTP')">Ajukan Sekarang →</a>
+                <a href="javascript:void(0)" class="service-btn" onclick="openModal('Surat Pengantar KTP / KK')">Ajukan Sekarang →</a>
             </div>
 
             <div class="service-card">
@@ -472,206 +136,6 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
     </div>
 </section>
 
-<!-- ==========================================================================
-   PROFIL DESA
-   ========================================================================== -->
-<section class="profil" id="profil" style="background: var(--bg-alt);">
-    <div class="container">
-        <div class="section-title">
-            <span>Tentang Kami</span>
-            <h2>Profil Singkat Desa Pusaka</h2>
-        </div>
-        <div class="profil-grid">
-            <div>
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 16px;">Pusat Pelayanan & Kehidupan Warga</h3>
-                <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.8;">Desa Pusaka terletak di Kecamatan Tebas, Kabupaten Sambas. Desa ini mengedepankan pelayanan publik yang ramah, kerukunan antarwarga, serta optimasi pengelolaan potensi pertanian dan perkebunan lokal.</p>
-                
-                <div class="info-box">
-                    <div class="info-item"><span>Nama Resmi</span><strong>Desa Pusaka</strong></div>
-                    <div class="info-item"><span>Kecamatan</span><strong>Tebas</strong></div>
-                    <div class="info-item"><span>Kabupaten</span><strong>Sambas</strong></div>
-                    <div class="info-item"><span>Provinsi</span><strong>Kalimantan Barat</strong></div>
-                    <div class="info-item"><span>Kode Pos</span><strong>79461</strong></div>
-                </div>
-            </div>
-            <div class="profil-img">
-                <img src="kantor-desa-pusaka.jpg" alt="Kantor Desa Pusaka" loading="lazy">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==========================================================================
-   SEJARAH TIMELINE
-   ========================================================================== -->
-<section id="sejarah">
-    <div class="container">
-        <div class="section-title">
-            <span>Asal Usul & Rekam Jejak</span>
-            <h2>Sejarah Nama Kampung</h2>
-            <p>Perjalanan bersejarah terbentuknya wilayah Desa Pusaka dari masa ke masa.</p>
-        </div>
-
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Tahun 1779</span>
-                    <h4>Awal Kedatangan Pelaut</h4>
-                    <p>Dua pelaut dari Penghuluan berlayar dan beristirahat di tepi sungai di tengah kawasan hutan lebat yang kini dikenal sebagai Sungai Sengobang.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Peristiwa Beliung Patah</span>
-                    <h4>Lahirnya Asal Nama "Puting Beliung"</h4>
-                    <p>Saat menebang pohon raksasa, tangkai beliung patah dan tersisa bagian ujungnya (kuting). Dari peristiwa ini tempat tersebut dinamakan Puting Beliung.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Tahun 1800-an</span>
-                    <h4>Perkembangan Adat & Tradisi</h4>
-                    <p>Masyarakat terus bertambah, menetap, serta menjalankan adat istiadat setempat yang dilestarikan hingga kini, salah satunya tradisi **Tapong Tawar**.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Era Modern</span>
-                    <h4>Penyempurnaan Nama Desa Pusaka</h4>
-                    <p>Pemerintahan desa berkembang menjadi struktur modern dengan pembagian 3 wilayah Dusun utama: Puting, Beliung, dan Sekadim.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==========================================================================
-   FASILITAS & GALERI (WITH FILTER)
-   ========================================================================== -->
-<section style="background: var(--bg-alt);" id="fasilitas">
-    <div class="container">
-        <div class="section-title">
-            <span>Sarana & Infra</span>
-            <h2>Fasilitas & Suasana Desa</h2>
-        </div>
-
-        <div class="filter-container">
-            <button class="filter-btn active" onclick="filterGallery('all')">Semua Tampilan</button>
-            <button class="filter-btn" onclick="filterGallery('pendidikan')">Pendidikan</button>
-            <button class="filter-btn" onclick="filterGallery('ibadah')">Tempat Ibadah</button>
-            <button class="filter-btn" onclick="filterGallery('pertanian')">Pertanian & Alam</button>
-        </div>
-
-        <div class="grid-gallery">
-            <div class="card-place" data-category="ibadah">
-                <div class="card-place-img">
-                    <span class="card-tag">Ibadah</span>
-                    <img src="masjid.jpg?v=2" alt="Masjid Desa Pusaka" loading="lazy">
-                </div>
-                <div class="card-place-body">
-                    <h3>Masjid Desa</h3>
-                    <p>Pusat kegiatan keagamaan dan pembinaan kerohanian masyarakat Desa Pusaka.</p>
-                </div>
-            </div>
-
-            <div class="card-place" data-category="pendidikan">
-                <div class="card-place-img">
-                    <span class="card-tag">Pendidikan</span>
-                    <img src="paud-mawar.jpg" alt="PAUD Mawar" loading="lazy">
-                </div>
-                <div class="card-place-body">
-                    <h3>PAUD Mawar</h3>
-                    <p>Fasilitas pendidikan usia dini untuk mencetak generasi muda desa yang cerdas.</p>
-                </div>
-            </div>
-
-            <div class="card-place" data-category="pendidikan">
-                <div class="card-place-img">
-                    <span class="card-tag">Pendidikan</span>
-                    <img src="sd07.jpg" alt="SDN 07 Puting Beliung" loading="lazy">
-                </div>
-                <div class="card-place-body">
-                    <h3>SDN 07 Puting Beliung</h3>
-                    <p>Fasilitas pendidikan dasar utama bagi anak-anak di lingkungan desa.</p>
-                </div>
-            </div>
-
-            <div class="card-place" data-category="pendidikan">
-                <div class="card-place-img">
-                    <span class="card-tag">Pendidikan</span>
-                    <img src="smpn03.jpg" alt="SMPN 03 Tebas" loading="lazy">
-                </div>
-                <div class="card-place-body">
-                    <h3>SMPN 03 Tebas</h3>
-                    <p>Fasilitas pendidikan tingkat menengah pertama yang terletak di Dusun Sekadim.</p>
-                </div>
-            </div>
-
-            <div class="card-place" data-category="pertanian">
-                <div class="card-place-img">
-                    <span class="card-tag">Pertanian</span>
-                    <img src="perkebunan.jpg?v=1" alt="Perkebunan Limau" loading="lazy">
-                </div>
-                <div class="card-place-body">
-                    <h3>Perkebunan Limau & Padi</h3>
-                    <p>Sektor pertanian unggulan komoditas jeruk limau dan persawahan hijau masyarakat.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==========================================================================
-   DUSUN DESA
-   ========================================================================== -->
-<section id="dusun">
-    <div class="container">
-        <div class="section-title">
-            <span>Wilayah Administratif</span>
-            <h2>Dusun di Desa Pusaka</h2>
-        </div>
-
-        <div class="dusun-grid">
-            <div class="dusun-card">
-                <h3>Dusun Puting</h3>
-                <p>Dusun Puting merupakan wilayah pusat kebudayaan dengan semangat gotong royong tinggi yang terus berkembang aktif.</p>
-                <div class="dusun-stats">
-                    <span>👥 ~1.000+ Jiwa</span>
-                    <span>📍 Wilayah Barat</span>
-                </div>
-            </div>
-
-            <div class="dusun-card">
-                <h3>Dusun Beliung</h3>
-                <p>Wilayah strategis yang ditopang oleh pertanian subur serta kerukunan antarwarga yang hangat.</p>
-                <div class="dusun-stats">
-                    <span>👥 ~950+ Jiwa</span>
-                    <span>📍 Wilayah Tengah</span>
-                </div>
-            </div>
-
-            <div class="dusun-card">
-                <h3>Dusun Sekadim</h3>
-                <p>Dusun tempat berdirinya fasilitas sekolah SMPN 03 Tebas serta area persawahan yang membentang luas.</p>
-                <div class="dusun-stats">
-                    <span>👥 ~1.080+ Jiwa</span>
-                    <span>📍 Wilayah Timur</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==========================================================================
-   TRANSPARANSI ANGGARAN APBD (BARU)
-   ========================================================================== -->
 <section style="background: var(--bg-alt);" id="transparansi">
     <div class="container">
         <div class="section-title">
@@ -708,54 +172,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
     </div>
 </section>
 
-<!-- ==========================================================================
-   BERITA & AGENDA DESA (BARU)
-   ========================================================================== -->
-<section id="berita">
-    <div class="container">
-        <div class="section-title">
-            <span>Kabar Terbaru</span>
-            <h2>Berita & Kegiatan Desa</h2>
-        </div>
-
-        <div class="news-grid">
-            <div class="news-card">
-                <div class="news-img" style="background: url('gotong-royong.jpg') center/cover;">
-                    <span class="news-date">12 Agustus 2026</span>
-                </div>
-                <div class="news-body">
-                    <h3>Kegiatan Gotong Royong Massal Bersama Warga Dusun Puting</h3>
-                    <p>Masyarakat antusias membersihkan saluran irigasi guna mengantisipasi musim penghujan dan menjaga kelancaran air sawah.</p>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <div class="news-img" style="background: url('pertanian-desaa.jpg') center/cover;">
-                    <span class="news-date">05 Agustus 2026</span>
-                </div>
-                <div class="news-body">
-                    <h3>Pelatihan Pertanian Modern & Pembuatan Pupuk Organik</h3>
-                    <p>Program pemberdayaan petani lokal untuk meningkatkan hasil panen jeruk limau tanpa bahan kimia berlebih.</p>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <div class="news-img" style="background: url('kegiatan-warga.jpg') center/cover;">
-                    <span class="news-date">28 Juli 2026</span>
-                </div>
-                <div class="news-body">
-                    <h3>Musyawarah Perencanaan Pembangunan Desa (Musrenbangdes)</h3>
-                    <p>Diskusi terbuka bersama jajaran perangkat dan tokoh masyarakat dalam merumuskan prioritas anggaran tahun depan.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==========================================================================
-   UMKM & POTENSI DESA (BARU)
-   ========================================================================== -->
-<section style="background: var(--bg-alt);" id="umkm">
+<section id="umkm">
     <div class="container">
         <div class="section-title">
             <span>Ekonomi Lokal</span>
@@ -781,76 +198,6 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
     </div>
 </section>
 
-<!-- ==========================================================================
-   KONTAK & PENGADUAN
-   ========================================================================== -->
-<section class="kontak" id="kontak">
-    <div class="container">
-        <div class="section-title">
-            <span>Hubungi Kami</span>
-            <h2>Lokasi & Layanan Pengaduan</h2>
-            <p>Silakan tinggalkan pesan atau kirimkan aduan untuk perbaikan pelayanan desa kami.</p>
-        </div>
-
-        <div class="contact-grid">
-            <div>
-                <div class="contact-info-card">
-                    <h4>📍 Alamat Kantor Desa</h4>
-                    <p>Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat (79461)</p>
-                </div>
-
-                <div class="contact-info-card">
-                    <h4>📞 Telepon / WhatsApp Kontak</h4>
-                    <p>+62 812-3456-7890 (Kantor Desa)</p>
-                </div>
-
-                <div class="contact-info-card">
-                    <h4>✉️ Email Resmi</h4>
-                    <p>pemdes@desapusaka.desa.id</p>
-                </div>
-
-                <div style="border-radius: var(--radius-md); overflow: hidden; height: 220px; border: 1px solid rgba(255,255,255,0.2);">
-                    <iframe src="https://www.google.com/maps?q=Desa%20Pusaka,%20Kecamatan%20Tebas,%20Kabupaten%20Sambas,%20Kalimantan%20Barat&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="contact-form">
-                <h3>Kirim Pesan / Pengaduan</h3>
-                <form onsubmit="handleFormSubmit(event)">
-                    <div class="form-group">
-                        <label>Nama Lengkap</label>
-                        <input type="text" class="form-control" placeholder="Masukkan nama Anda" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Nomor WhatsApp</label>
-                        <input type="tel" class="form-control" placeholder="08xxxxxxxxxx" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Kategori</label>
-                        <select class="form-control">
-                            <option>Pengaduan Pelayanan</option>
-                            <option>Saran & Masukan</option>
-                            <option>Pertanyaan Umum</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Pesan Anda</label>
-                        <textarea class="form-control" rows="4" placeholder="Tuliskan detail pesan Anda di sini..." required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Kirimkan Pesan</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==========================================================================
-   FOOTER EXPANDED
-   ========================================================================== -->
 <footer>
     <div class="container">
         <div class="footer-grid">
@@ -862,10 +209,10 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
             <div class="footer-links">
                 <h4>Navigasi Cepat</h4>
                 <ul>
-                    <li><a href="#beranda">Beranda</a></li>
-                    <li><a href="#profil">Profil Desa</a></li>
-                    <li><a href="#sejarah">Sejarah Nama Kampung</a></li>
-                    <li><a href="#fasilitas">Fasilitas Desa</a></li>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil Desa</a></li>
+                    <li><a href="sejarah.html">Sejarah Nama Kampung</a></li>
+                    <li><a href="fasilitas.html">Fasilitas Desa</a></li>
                 </ul>
             </div>
 
@@ -882,9 +229,9 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
             <div class="footer-links">
                 <h4>Wilayah Dusun</h4>
                 <ul>
-                    <li><a href="#dusun">Dusun Puting</a></li>
-                    <li><a href="#dusun">Dusun Beliung</a></li>
-                    <li><a href="#dusun">Dusun Sekadim</a></li>
+                    <li><a href="dusun.html">Dusun Puting</a></li>
+                    <li><a href="dusun.html">Dusun Beliung</a></li>
+                    <li><a href="dusun.html">Dusun Sekadim</a></li>
                 </ul>
             </div>
         </div>
@@ -895,9 +242,6 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
     </div>
 </footer>
 
-<!-- ==========================================================================
-   MODAL LAYANAN POPUP
-   ========================================================================== -->
 <div class="modal" id="serviceModal">
     <div class="modal-content">
         <button class="close-modal" onclick="closeModal()">&times;</button>
@@ -934,135 +278,8 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
     </div>
 </div>
 
-<!-- ==========================================================================
-   TOMBOL BACK TO TOP
-   ========================================================================== -->
 <button class="back-to-top" id="backToTop" aria-label="Kembali ke Atas">↑</button>
 
-<!-- ==========================================================================
-   JAVASCRIPT INTERAKTIF & MANAJEMEN STATE
-   ========================================================================== -->
-<script>
-    // 1. Dark Mode / Light Mode State
-    const themeToggleBtn = document.getElementById('themeToggle');
-    const currentTheme = localStorage.getItem('theme');
-
-    if (currentTheme === 'dark') {
-        document.body.classList.add('dark-mode');
-        themeToggleBtn.textContent = '☀️';
-    }
-
-    themeToggleBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        let theme = 'light';
-        if (document.body.classList.contains('dark-mode')) {
-            theme = 'dark';
-            themeToggleBtn.textContent = '☀️';
-        } else {
-            themeToggleBtn.textContent = '🌙';
-        }
-        localStorage.setItem('theme', theme);
-    });
-
-    // 2. Mobile Menu Navigation
-    const menuBtn = document.getElementById('menuBtn');
-    const navContainer = document.getElementById('navContainer');
-
-    menuBtn.addEventListener('click', () => {
-        if (navContainer.style.display === 'block') {
-            navContainer.style.display = 'none';
-        } else {
-            navContainer.style.display = 'block';
-            navContainer.style.position = 'absolute';
-            navContainer.style.top = '75px';
-            navContainer.style.left = '0';
-            navContainer.style.width = '100%';
-            navContainer.style.background = 'var(--surface)';
-            navContainer.style.padding = '20px';
-            navContainer.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
-        }
-    });
-
-    // Otomatis menutup nav mobile saat link diklik
-    document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                navContainer.style.display = 'none';
-            }
-        });
-    });
-
-    // 3. Header Scroll State & Back To Top Button
-    const header = document.getElementById('header');
-    const backToTopBtn = document.getElementById('backToTop');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 60) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-
-        if (window.scrollY > 400) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
-        }
-    });
-
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // 4. Modal System (Layanan Surat)
-    const modal = document.getElementById('serviceModal');
-    const modalTitle = document.getElementById('modalTitle');
-
-    function openModal(serviceName) {
-        modalTitle.textContent = 'Pengajuan ' + serviceName;
-        modal.classList.add('active');
-    }
-
-    function closeModal() {
-        modal.classList.remove('active');
-    }
-
-    // Modal close when clicking outside
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-
-    function handleModalSubmit(e) {
-        e.preventDefault();
-        alert('Pengajuan Anda berhasil terkirim! Petugas desa kami akan segera menghubungi nomor WhatsApp Anda.');
-        closeModal();
-    }
-
-    function handleFormSubmit(e) {
-        e.preventDefault();
-        alert('Terima kasih! Pesan atau pengaduan Anda telah berhasil terkirim.');
-        e.target.reset();
-    }
-
-    // 5. Filter Galeri Fasilitas
-    function filterGallery(category) {
-        const items = document.querySelectorAll('.card-place');
-        const buttons = document.querySelectorAll('.filter-btn');
-
-        buttons.forEach(btn => btn.classList.remove('active'));
-        event.target.classList.add('active');
-
-        items.forEach(item => {
-            if (category === 'all' || item.getAttribute('data-category') === category) {
-                item.style.display = 'flex';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    }
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
