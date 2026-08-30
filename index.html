@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Desa Pusaka | Kecamatan Tebas</title>
-<meta name="description" content="Informasi statistik, sejarah, fasilitas, dan potensi Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat.">
+<meta name="description" content="Informasi statistik, sejarah lengkap, fasilitas, dan potensi Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,7 +73,7 @@ button, input, select, textarea { font-family: inherit; font-size: inherit; outl
 ul { list-style: none; }
 
 /* ==========================================================================
-   3. HEADER & NAVIGASI EXPANDED
+   3. HEADER & NAVIGASI
    ========================================================================== */
 header {
     position: fixed; top: 0; left: 0; width: 100%; height: 90px; z-index: 1000;
@@ -93,7 +93,6 @@ nav li { position: relative; }
 nav a { font-size: 14px; font-weight: 600; color: var(--text-main); padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; gap: 4px; }
 nav a:hover, nav li.active > a { color: var(--primary-light); background: rgba(45, 138, 95, 0.08); }
 
-/* Dropdown Menu */
 .dropdown {
     position: absolute; top: 100%; left: 0; min-width: 220px; background: var(--surface);
     border-radius: var(--radius-md); box-shadow: var(--shadow-hard); border: 1px solid var(--border-color);
@@ -112,7 +111,6 @@ nav li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(
     font-size: 18px; cursor: pointer; transition: var(--transition); box-shadow: var(--shadow-soft);
 }
 .theme-toggle:hover { transform: scale(1.05); color: var(--accent); }
-
 .menu-btn { display: none; background: var(--primary); border: none; width: 42px; height: 42px; border-radius: 10px; color: white; font-size: 20px; cursor: pointer; }
 
 /* ==========================================================================
@@ -132,7 +130,7 @@ nav li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(
 .btn-primary:hover { transform: translateY(-3px); background: var(--accent-hover); box-shadow: 0 15px 30px rgba(229, 193, 88, 0.45); }
 
 /* ==========================================================================
-   5. QUICK ACCESS & STATISTIK
+   5. QUICK STATISTIK
    ========================================================================== */
 .stats-container { width: min(1200px, calc(100% - 40px)); margin: -60px auto 0; position: relative; z-index: 10; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
 .stat-card { background: var(--surface); padding: 28px 24px; border-radius: var(--radius-md); text-align: center; box-shadow: var(--shadow-soft); border: 1px solid var(--border-color); transition: var(--transition); }
@@ -152,7 +150,7 @@ section { padding: 100px 20px; position: relative; }
 .section-title p { color: var(--text-muted); font-size: 15px; margin-top: 12px; }
 
 /* ==========================================================================
-   7. PROFIL & KANTOR DESA
+   7. PROFIL DESA
    ========================================================================== */
 .profil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
 .profil-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-hard); position: relative; }
@@ -162,23 +160,17 @@ section { padding: 100px 20px; position: relative; }
 .info-item:last-child { border: none; }
 
 /* ==========================================================================
-   8. SEJARAH EXPANDED TIMELINE
+   8. HALAMAN SEJARAH LENGKAP & TIMELINE
    ========================================================================== */
-.timeline { position: relative; max-width: 900px; margin: auto; padding: 20px 0; }
-.timeline::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: var(--border-color); transform: translateX(-50%); }
-.timeline-item { position: relative; margin-bottom: 40px; width: 50%; padding: 0 30px; }
-.timeline-item:nth-child(odd) { left: 0; text-align: right; }
-.timeline-item:nth-child(even) { left: 50%; text-align: left; }
-.timeline-dot { position: absolute; top: 0; width: 20px; height: 20px; background: var(--accent); border: 4px solid var(--surface); border-radius: 50%; z-index: 2; }
-.timeline-item:nth-child(odd) .timeline-dot { right: -10px; }
-.timeline-item:nth-child(even) .timeline-dot { left: -10px; }
-.timeline-content { background: var(--surface); padding: 28px; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-soft); }
-.timeline-date { font-weight: 800; color: var(--primary); font-size: 18px; margin-bottom: 8px; display: block; }
-.timeline-content h4 { font-size: 18px; margin-bottom: 10px; font-family: "Playfair Display", serif; }
-.timeline-content p { font-size: 14px; color: var(--text-muted); text-align: justify; }
+.sejarah-narasi { background: var(--surface); padding: 32px; border-radius: 16px; border: 1px solid var(--border-color); margin-bottom: 50px; line-height: 1.8; color: var(--text-main); }
+.timeline { position: relative; max-width: 800px; margin: auto; }
+.timeline-item { position: relative; margin-bottom: 30px; padding-left: 30px; border-left: 3px solid var(--primary); }
+.timeline-item span { font-weight: 800; color: var(--primary); font-size: 16px; }
+.timeline-item h4 { font-family: "Playfair Display", serif; font-size: 18px; margin: 4px 0 8px; }
+.timeline-item p { font-size: 14px; color: var(--text-muted); }
 
 /* ==========================================================================
-   9. GALERI FASILITAS (FILTERABLE)
+   9. GALERI FASILITAS
    ========================================================================== */
 .filter-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
 .filter-btn { padding: 10px 22px; background: var(--surface); border: 1px solid var(--border-color); border-radius: 50px; font-size: 13px; font-weight: 600; color: var(--text-main); cursor: pointer; transition: var(--transition); }
@@ -196,7 +188,7 @@ section { padding: 100px 20px; position: relative; }
 .card-place-body p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
 /* ==========================================================================
-   10. DUSUN & PETA WILAYAH
+   10. DUSUN DESA
    ========================================================================== */
 .dusun-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
 .dusun-card { background: var(--surface); border-radius: var(--radius-md); padding: 36px 28px; box-shadow: var(--shadow-soft); border-top: 5px solid var(--primary); border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); transition: var(--transition); }
@@ -206,7 +198,7 @@ section { padding: 100px 20px; position: relative; }
 .dusun-stats { display: flex; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 15px; font-size: 13px; font-weight: 700; color: var(--primary); }
 
 /* ==========================================================================
-   11. BERITA & AGENDA KEGIATAN
+   11. BERITA DESA
    ========================================================================== */
 .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
 .news-card { background: var(--surface); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-soft); transition: var(--transition); }
@@ -218,7 +210,7 @@ section { padding: 100px 20px; position: relative; }
 .news-body p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
 
 /* ==========================================================================
-   12. SEKTOR PERTANIAN & UMKM
+   12. UMKM & POTENSI
    ========================================================================== */
 .umkm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
 .umkm-card { background: var(--surface); border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-color); text-align: center; box-shadow: var(--shadow-soft); }
@@ -237,7 +229,7 @@ section { padding: 100px 20px; position: relative; }
 .contact-info-card h4 { font-size: 18px; margin-bottom: 8px; color: var(--accent); }
 
 /* ==========================================================================
-   14. FOOTER EXPANDED
+   14. FOOTER
    ========================================================================== */
 footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.05); }
 .footer-grid { display: grid; grid-template-columns: 2fr repeat(2, 1fr); gap: 40px; margin-bottom: 60px; }
@@ -250,7 +242,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 13px; opacity: 0.7; }
 
 /* ==========================================================================
-   15. BACK TO TOP BUTTON
+   15. BACK TO TOP
    ========================================================================== */
 .back-to-top {
     position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
@@ -267,10 +259,6 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
    ========================================================================== */
 @media (max-width: 992px) {
     .profil-grid { grid-template-columns: 1fr; }
-    .timeline::before { left: 20px; }
-    .timeline-item { width: 100%; padding-left: 50px; padding-right: 0; text-align: left !important; }
-    .timeline-item:nth-child(even) { left: 0; }
-    .timeline-dot { left: 10px !important; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
@@ -307,7 +295,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
                         <a href="#profil">Profil ▾</a>
                         <div class="dropdown">
                             <a href="#profil">Tentang Desa</a>
-                            <a href="#sejarah">Sejarah Nama Kampung</a>
+                            <a href="#sejarah-lengkap">Sejarah Nama Kampung</a>
                             <a href="#dusun">Wilayah Dusun</a>
                         </div>
                     </li>
@@ -389,65 +377,69 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
                 </div>
             </div>
             <div class="profil-img">
-                <img src="kantor-desa-pusaka.jpg" alt="Bangunan utama Kantor Desa Pusaka yang melayani kebutuhan administrasi warga" loading="lazy">
+                <img src="kantor-desa-pusaka.jpg" alt="Kantor Desa Pusaka" loading="lazy">
             </div>
         </div>
     </div>
 </section>
 
 <!-- ==========================================================================
-   SEJARAH TIMELINE
+   HALAMAN / SECTION SEJARAH LENGKAP
    ========================================================================== -->
-<section id="sejarah" style="background: var(--bg-alt);">
-    <div class="container">
+<section id="sejarah-lengkap" style="background: var(--bg-alt);">
+    <div class="container" style="max-width: 1000px;">
+        
         <div class="section-title">
-            <span>Asal Usul & Rekam Jejak</span>
-            <h2>Sejarah Nama Kampung</h2>
-            <p>Perjalanan bersejarah terbentuknya wilayah Desa Pusaka dari masa ke masa.</p>
+            <span>Rekam Jejak & Asal Usul</span>
+            <h2>Sejarah & Asal-Usul Desa Pusaka</h2>
+            <p>Mengenal perjalanan panjang pembentukan pemukiman, asal nama "Puting Beliung", hingga perkembangan era modern di Kecamatan Tebas.</p>
         </div>
 
+        <div class="sejarah-narasi">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: var(--primary); margin-bottom: 12px;">Kisah Awal Perjalanan (1779)</h3>
+            <p style="margin-bottom: 16px;">
+                Kisah berdirinya Desa Pusaka berakar dari cerita rakyat dan catatan sejarah lokal pada sekitar tahun 1779. Berdasarkan riwayat yang diturunkan secara lisan dari generasi ke generasi, wilayah ini awalnya merupakan hutan belantara yang berada di sepanjang aliran Sungai Sengobang.
+            </p>
+            <p>
+                Dua pelaut pemberani yang berasal dari wilayah Penghuluan menjadi rombongan awal yang menyusuri alur sungai tersebut. Mereka menjadikan kawasan ini sebagai tempat peristirahatan dan pangkalan singgah sebelum akhirnya memutuskan untuk membuka lahan baru sebagai permukiman tetap.
+            </p>
+        </div>
+
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; text-align: center; margin-bottom: 30px;">Garis Waktu Peristiwa Historis</h3>
+        
         <div class="timeline">
+            
             <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Tahun 1779</span>
-                    <h4>Awal Kedatangan Pelaut</h4>
-                    <p>Dua pelaut dari Penghuluan berlayar dan beristirahat di tepi sungai di tengah kawasan hutan lebat yang kini dikenal sebagai Sungai Sengobang.</p>
-                </div>
+                <span>Tahun 1779</span>
+                <h4>Kedatangan Rombongan Pelaut</h4>
+                <p>Rombongan pelaut dari Penghuluan mendarat dan mendirikan pemukiman awal di sekitar tepi Sungai Sengobang.</p>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Peristiwa Beliung Patah</span>
-                    <h4>Lahirnya Asal Nama "Puting Beliung"</h4>
-                    <p>Saat menebang pohon raksasa, tangkai beliung patah dan tersisa bagian ujungnya (kuting). Dari peristiwa ini tempat tersebut dinamakan Puting Beliung.</p>
-                </div>
+                <span>Peristiwa Legenda</span>
+                <h4>Asal Nama "Puting Beliung"</h4>
+                <p>Ketika warga bergotong royong menebang pohon raksasa, gagang/tangkai alat pemotong (beliung) patah dan meninggalkan bagian ujungnya yang disebut <em>kuting/puting</em>. Kejadian ini menjadi dasar penamaan kawasan "Puting Beliung".</p>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Tahun 1800-an</span>
-                    <h4>Perkembangan Adat & Tradisi</h4>
-                    <p>Masyarakat terus bertambah, menetap, serta menjalankan adat istiadat setempat yang dilestarikan hingga kini, salah satunya tradisi Tapong Tawar.</p>
-                </div>
+                <span>Abad ke-19</span>
+                <h4>Pelestarian Tradisi Adat</h4>
+                <p>Masyarakat mulai menetap secara permanen dan mempraktikkan berbagai ritual adat Melayu Sambas, termasuk tradisi <em>Tapong Tawar</em> sebagai simbol keselamatan dan rasa syukur.</p>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Era Modern</span>
-                    <h4>Penyempurnaan Nama Desa Pusaka</h4>
-                    <p>Pemerintahan desa berkembang menjadi struktur modern dengan pembagian 3 wilayah Dusun utama: Puting, Beliung, dan Sekadim.</p>
-                </div>
+                <span>Era Modern</span>
+                <h4>Penggalangan Nama "Desa Pusaka"</h4>
+                <p>Wilayah ini diresmikan secara administratif menjadi Desa Pusaka yang menaungi 3 dusun utama: Dusun Puting, Dusun Beliung, dan Dusun Sekadim.</p>
             </div>
+
         </div>
+
     </div>
 </section>
 
 <!-- ==========================================================================
-   FASILITAS & GALERI (WITH FILTER)
+   FASILITAS & GALERI
    ========================================================================== -->
 <section id="fasilitas">
     <div class="container">
@@ -468,7 +460,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
             <div class="card-place" data-category="ibadah">
                 <div class="card-place-img">
                     <span class="card-tag">Ibadah</span>
-                    <img src="masjid.jpg?v=2" alt="Masjid megah Desa Pusaka dengan arsitektur hijau yang teduh" loading="lazy">
+                    <img src="masjid.jpg?v=2" alt="Masjid Desa Pusaka" loading="lazy">
                 </div>
                 <div class="card-place-body">
                     <h3>Masjid Desa Pusaka</h3>
@@ -479,7 +471,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
             <div class="card-place" data-category="pendidikan">
                 <div class="card-place-img">
                     <span class="card-tag">Pendidikan</span>
-                    <img src="paud-mawar.jpg" alt="Bangunan PAUD Mawar Desa Pusaka yang ceria dan aman untuk anak-anak" loading="lazy">
+                    <img src="paud-mawar.jpg" alt="PAUD Mawar" loading="lazy">
                 </div>
                 <div class="card-place-body">
                     <h3>PAUD Mawar</h3>
@@ -490,7 +482,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
             <div class="card-place" data-category="pendidikan">
                 <div class="card-place-img">
                     <span class="card-tag">Pendidikan</span>
-                    <img src="sd07.jpg" alt="Gedung SDN 07 Puting Beliung tempat menimba ilmu siswa Sekolah Dasar" loading="lazy">
+                    <img src="sd07.jpg" alt="SDN 07 Puting Beliung" loading="lazy">
                 </div>
                 <div class="card-place-body">
                     <h3>SDN 07 Puting Beliung</h3>
@@ -501,7 +493,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
             <div class="card-place" data-category="pendidikan">
                 <div class="card-place-img">
                     <span class="card-tag">Pendidikan</span>
-                    <img src="smpn03.jpg" alt="Suasana halaman SMPN 03 Tebas di Dusun Sekadim" loading="lazy">
+                    <img src="smpn03.jpg" alt="SMPN 03 Tebas" loading="lazy">
                 </div>
                 <div class="card-place-body">
                     <h3>SMPN 03 Tebas</h3>
@@ -512,7 +504,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
             <div class="card-place" data-category="pertanian">
                 <div class="card-place-img">
                     <span class="card-tag">Pertanian</span>
-                    <img src="perkebunan.jpg" alt="Hamparan perkebunan jeruk limau Tebas yang hijau dan subur" loading="lazy">
+                    <img src="perkebunan.jpg" alt="Perkebunan Limau" loading="lazy">
                 </div>
                 <div class="card-place-body">
                     <h3>Perkebunan Limau</h3>
@@ -535,41 +527,27 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
         </div>
 
         <div class="dusun-grid">
-            <!-- Dusun Puting -->
             <div class="dusun-card">
                 <h3>Dusun Puting</h3>
-                <p>
-                    Dusun Puting merupakan kawasan pemukiman yang syarat akan sejarah asal-usul Desa Pusaka. 
-                    Masyarakat di dusun ini dikenal memiliki semangat gotong royong yang sangat tinggi dalam menjaga kelestarian tradisi adat lokal. 
-                    Selain menjadi pusat kegiatan sosial kebudayaan warga, Dusun Puting juga didukung oleh sektor perkebunan rakyat yang produktif.
-                </p>
+                <p>Dusun Puting merupakan kawasan pemukiman yang syarat akan sejarah asal-usul Desa Pusaka. Masyarakat di dusun ini dikenal memiliki semangat gotong royong yang sangat tinggi dalam menjaga kelestarian tradisi adat lokal. Selain menjadi pusat kegiatan sosial kebudayaan warga, Dusun Puting juga didukung oleh sektor perkebunan rakyat yang produktif.</p>
                 <div class="dusun-stats">
                     <span>👥 ~1.000+ Jiwa</span>
                     <span>📍 Wilayah Barat</span>
                 </div>
             </div>
 
-            <!-- Dusun Beliung -->
             <div class="dusun-card">
                 <h3>Dusun Beliung</h3>
-                <p>
-                    Dusun Beliung terletak di wilayah yang sangat strategis dan menjadi jantung aktivitas perekonomian warga. 
-                    Sebagian besar wilayah dusun ini didominasi oleh lahan pertanian subur dan perkebunan jeruk limau khas Tebas. 
-                    Kerukunan antarwarga serta partisipasi aktif dalam pembangunan desa menjadi ciri khas utama masyarakat Dusun Beliung.
-                </p>
+                <p>Dusun Beliung terletak di wilayah yang sangat strategis dan menjadi jantung aktivitas perekonomian warga. Sebagian besar wilayah dusun ini didominasi oleh lahan pertanian subur dan perkebunan jeruk limau khas Tebas. Kerukunan antarwarga serta partisipasi aktif dalam pembangunan desa menjadi ciri khas utama masyarakat Dusun Beliung.</p>
                 <div class="dusun-stats">
                     <span>👥 ~950+ Jiwa</span>
                     <span>📍 Wilayah Tengah</span>
                 </div>
             </div>
 
-            <!-- Dusun Sekadim -->
             <div class="dusun-card">
                 <h3>Dusun Sekadim</h3>
-                <p>
-                    Dusun Sekadim berlokasi di bagian timur desa dan berperan penting sebagai pusat pendidikan menengah melalui hadirnya SMPN 03 Tebas. 
-                    Wilayah ini dikelilingi oleh bentangan persawahan hijau yang luas, menjadikannya lumbung pangan utama penyokong kebutuhan beras lokal warga Desa Pusaka.
-                </p>
+                <p>Dusun Sekadim berlokasi di bagian timur desa dan berperan penting sebagai pusat pendidikan menengah melalui hadirnya SMPN 03 Tebas. Wilayah ini dikelilingi oleh bentangan persawahan hijau yang luas, menjadikannya lumbung pangan utama penyokong kebutuhan beras lokal warga Desa Pusaka.</p>
                 <div class="dusun-stats">
                     <span>👥 ~1.080+ Jiwa</span>
                     <span>📍 Wilayah Timur</span>
@@ -580,7 +558,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 </section>
 
 <!-- ==========================================================================
-   BERITA & AGENDA KEGIATAN
+   BERITA DESA
    ========================================================================== -->
 <section id="berita">
     <div class="container">
@@ -591,17 +569,17 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 
         <div class="news-grid">
             <div class="news-card">
-                <div class="news-img" style="background: url('gotong-royong.jpg') center/cover;" role="img" aria-label="Warga Desa Pusaka bahu-membahu dalam aksi gotong royong saluran air">
+                <div class="news-img" style="background: url('gotong-royong.jpg') center/cover;">
                     <span class="news-date">12 Agustus 2026</span>
                 </div>
                 <div class="news-body">
-                    <h3>Kegiatan Gotong Royong Massal Bersama Warga Dusun Puting</h3>
+                    <h3>Kegiatan Gotong Royong Massal Warga Dusun Puting</h3>
                     <p>Semangat kebersamaan yang tak pernah padam. Warga antusias membersihkan saluran irigasi demi memastikan kelancaran pengairan persawahan.</p>
                 </div>
             </div>
 
             <div class="news-card">
-                <div class="news-img" style="background: url('pertanian-desaa.jpg') center/cover;" role="img" aria-label="Petani sedang mengikuti pelatihan pengolahan pupuk organik di kebun">
+                <div class="news-img" style="background: url('pertanian-desaa.jpg') center/cover;">
                     <span class="news-date">05 Agustus 2026</span>
                 </div>
                 <div class="news-body">
@@ -611,7 +589,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
             </div>
 
             <div class="news-card">
-                <div class="news-img" style="background: url('kegiatan-warga.jpg') center/cover;" role="img" aria-label="Suasana musyawarah perencanaan pembangunan desa di balai desa">
+                <div class="news-img" style="background: url('kegiatan-warga.jpg') center/cover;">
                     <span class="news-date">28 Juli 2026</span>
                 </div>
                 <div class="news-body">
@@ -624,7 +602,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 </section>
 
 <!-- ==========================================================================
-   UMKM & POTENSI DESA
+   UMKM & POTENSI
    ========================================================================== -->
 <section id="umkm" style="background: var(--bg-alt);">
     <div class="container">
@@ -636,7 +614,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 
         <div class="umkm-grid">
             <div class="umkm-card">
-                <div class="umkm-img" style="background: url('perkebunan.jpg') center/cover;" role="img" aria-label="Jeruk limau Tebas segar dipetik langsung dari pohon"></div>
+                <div class="umkm-img" style="background: url('perkebunan.jpg') center/cover;"></div>
                 <h4>Jeruk Limau Tebas Segar</h4>
                 <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Dipetik langsung dari kebun warga, kaya akan rasa segar alami dan kandungan Vitamin C.</p>
                 <div class="price">Rp 12.000 / kg</div>
@@ -644,7 +622,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
             </div>
 
             <div class="umkm-card">
-                <div class="umkm-img" style="background: url('pertanian-desaa.jpg') center/cover;" role="img" aria-label="Beras padi kualitas unggul hasil panen sawah Desa Pusaka"></div>
+                <div class="umkm-img" style="background: url('pertanian-desaa.jpg') center/cover;"></div>
                 <h4>Beras Padi Lokal Musim Panen</h4>
                 <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Hasil panen persawahan subur Desa Pusaka dengan tekstur pulen dan bebas bahan pengawet.</p>
                 <div class="price">Rp 14.000 / kg</div>
@@ -652,7 +630,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
             </div>
 
             <div class="umkm-card">
-                <div class="umkm-img" style="background: url('tehsappang.jpg') center/cover;" role="img" aria-label="Kemasan Teh Sappang herbal alami khas tradisi lokal"></div>
+                <div class="umkm-img" style="background: url('tehsappang.jpg') center/cover;"></div>
                 <h4>Teh Sappang Herbal Khas Desa</h4>
                 <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Minuman herbal kayu secang alami berkhasiat tinggi yang diolah secara tradisional oleh warga.</p>
                 <div class="price">Rp 15.000 / bungkus</div>
@@ -686,7 +664,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 </section>
 
 <!-- ==========================================================================
-   FOOTER EXPANDED
+   FOOTER
    ========================================================================== -->
 <footer>
     <div class="container">
@@ -701,7 +679,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
                 <ul>
                     <li><a href="#beranda">Beranda</a></li>
                     <li><a href="#profil">Profil Desa</a></li>
-                    <li><a href="#sejarah">Sejarah Nama Kampung</a></li>
+                    <li><a href="#sejarah-lengkap">Sejarah Nama Kampung</a></li>
                     <li><a href="#fasilitas">Fasilitas Desa</a></li>
                 </ul>
             </div>
@@ -723,15 +701,15 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 </footer>
 
 <!-- ==========================================================================
-   TOMBOL BACK TO TOP
+   BACK TO TOP BUTTON
    ========================================================================== -->
 <button class="back-to-top" id="backToTop" aria-label="Kembali ke Atas">↑</button>
 
 <!-- ==========================================================================
-   JAVASCRIPT INTERAKTIF & MANAJEMEN STATE
+   JAVASCRIPT INTERAKTIF
    ========================================================================== -->
 <script>
-    // 1. Dark Mode / Light Mode State
+    // 1. Dark Mode / Light Mode
     const themeToggleBtn = document.getElementById('themeToggle');
     const currentTheme = localStorage.getItem('theme');
 
@@ -752,7 +730,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
         localStorage.setItem('theme', theme);
     });
 
-    // 2. Mobile Menu Navigation
+    // 2. Mobile Nav Toggle
     const menuBtn = document.getElementById('menuBtn');
     const navContainer = document.getElementById('navContainer');
 
@@ -771,7 +749,6 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
         }
     });
 
-    // Otomatis menutup nav mobile saat link diklik
     document.querySelectorAll('nav a').forEach(link => {
         link.addEventListener('click', () => {
             if (window.innerWidth <= 768) {
@@ -780,7 +757,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
         });
     });
 
-    // 3. Header Scroll State & Back To Top Button
+    // 3. Header Scroll & Back to Top
     const header = document.getElementById('header');
     const backToTopBtn = document.getElementById('backToTop');
 
@@ -802,7 +779,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // 4. Filter Galeri Fasilitas
+    // 4. Gallery Filter
     function filterGallery(category) {
         const items = document.querySelectorAll('.card-place');
         const buttons = document.querySelectorAll('.filter-btn');
