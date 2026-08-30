@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Desa Pusaka | Kecamatan Tebas</title>
-<meta name="description" content="Informasi statistik, sejarah lengkap, fasilitas, dan potensi Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat.">
+<meta name="description" content="Informasi statistik, sejarah lengkap, fasilitas, pelayanan surat, dan potensi Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -170,7 +170,19 @@ section { padding: 100px 20px; position: relative; }
 .timeline-item p { font-size: 14px; color: var(--text-muted); }
 
 /* ==========================================================================
-   9. GALERI FASILITAS
+   9. PELAYANAN SURAT
+   ========================================================================== */
+.layanan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.layanan-card { background: var(--surface); border-radius: var(--radius-md); padding: 28px 24px; border: 1px solid var(--border-color); box-shadow: var(--shadow-soft); transition: var(--transition); display: flex; flex-direction: column; justify-content: space-between; }
+.layanan-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hard); }
+.layanan-icon { font-size: 36px; margin-bottom: 16px; }
+.layanan-card h3 { font-family: "Playfair Display", serif; font-size: 20px; color: var(--text-main); margin-bottom: 8px; }
+.layanan-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+.syarat-list { margin-bottom: 20px; padding-left: 18px; font-size: 13px; color: var(--text-muted); }
+.syarat-list li { list-style-type: disc; margin-bottom: 4px; }
+
+/* ==========================================================================
+   10. GALERI FASILITAS
    ========================================================================== */
 .filter-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
 .filter-btn { padding: 10px 22px; background: var(--surface); border: 1px solid var(--border-color); border-radius: 50px; font-size: 13px; font-weight: 600; color: var(--text-main); cursor: pointer; transition: var(--transition); }
@@ -188,7 +200,7 @@ section { padding: 100px 20px; position: relative; }
 .card-place-body p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
 /* ==========================================================================
-   10. DUSUN DESA
+   11. DUSUN DESA
    ========================================================================== */
 .dusun-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
 .dusun-card { background: var(--surface); border-radius: var(--radius-md); padding: 36px 28px; box-shadow: var(--shadow-soft); border-top: 5px solid var(--primary); border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); transition: var(--transition); }
@@ -198,7 +210,7 @@ section { padding: 100px 20px; position: relative; }
 .dusun-stats { display: flex; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 15px; font-size: 13px; font-weight: 700; color: var(--primary); }
 
 /* ==========================================================================
-   11. BERITA DESA
+   12. BERITA DESA
    ========================================================================== */
 .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
 .news-card { background: var(--surface); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-soft); transition: var(--transition); }
@@ -210,7 +222,7 @@ section { padding: 100px 20px; position: relative; }
 .news-body p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
 
 /* ==========================================================================
-   12. UMKM & POTENSI
+   13. UMKM & POTENSI
    ========================================================================== */
 .umkm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
 .umkm-card { background: var(--surface); border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-color); text-align: center; box-shadow: var(--shadow-soft); }
@@ -219,7 +231,7 @@ section { padding: 100px 20px; position: relative; }
 .umkm-card .price { font-weight: 800; color: var(--primary); font-size: 16px; margin-bottom: 12px; }
 
 /* ==========================================================================
-   13. KONTAK & LOKASI
+   14. KONTAK & LOKASI
    ========================================================================== */
 .kontak { background: var(--primary-dark); color: white; position: relative; }
 .kontak .section-title h2, .kontak .section-title span { color: white; }
@@ -229,7 +241,7 @@ section { padding: 100px 20px; position: relative; }
 .contact-info-card h4 { font-size: 18px; margin-bottom: 8px; color: var(--accent); }
 
 /* ==========================================================================
-   14. FOOTER
+   15. FOOTER
    ========================================================================== */
 footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.05); }
 .footer-grid { display: grid; grid-template-columns: 2fr repeat(2, 1fr); gap: 40px; margin-bottom: 60px; }
@@ -242,7 +254,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 13px; opacity: 0.7; }
 
 /* ==========================================================================
-   15. BACK TO TOP
+   16. BACK TO TOP
    ========================================================================== */
 .back-to-top {
     position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
@@ -255,7 +267,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 .back-to-top:hover { transform: translateY(-5px); background: var(--accent-hover); }
 
 /* ==========================================================================
-   16. RESPONSIVE DESIGN
+   17. RESPONSIVE DESIGN
    ========================================================================== */
 @media (max-width: 992px) {
     .profil-grid { grid-template-columns: 1fr; }
@@ -299,6 +311,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
                             <a href="#dusun">Wilayah Dusun</a>
                         </div>
                     </li>
+                    <li><a href="#layanan">Pelayanan Surat</a></li>
                     <li><a href="#fasilitas">Fasilitas</a></li>
                     <li><a href="#berita">Berita</a></li>
                     <li><a href="#umkm">UMKM</a></li>
@@ -439,9 +452,80 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 </section>
 
 <!-- ==========================================================================
+   PELAYANAN SURAT
+   ========================================================================== -->
+<section id="layanan">
+    <div class="container">
+        <div class="section-title">
+            <span>Administrasi Desa</span>
+            <h2>Pelayanan Surat & Dokumen</h2>
+            <p>Informasi persyaratan pengurusan dokumen dan surat keterangan bagi warga Desa Pusaka.</p>
+        </div>
+
+        <div class="layanan-grid">
+            <div class="layanan-card">
+                <div>
+                    <div class="layanan-icon">📄</div>
+                    <h3>Surat Keterangan Usaha (SKU)</h3>
+                    <p>Digunakan untuk keperluan pengajuan bantuan UMKM, izin operasional usaha, atau administrasi bank.</p>
+                    <ul class="syarat-list">
+                        <li>Fotokopi KTP & KK</li>
+                        <li>Surat Pengantar RT/RW</li>
+                        <li>Foto lokasi usaha</li>
+                    </ul>
+                </div>
+                <button class="btn-primary" style="padding: 10px 18px; font-size: 13px; width: 100%; justify-content: center;" onclick="alert('Silakan bawa persyaratan ke Kantor Desa Pusaka pada jam kerja (08.00 - 15.00 WIB).')">Cek Prosedur</button>
+            </div>
+
+            <div class="layanan-card">
+                <div>
+                    <div class="layanan-icon">🏠</div>
+                    <h3>Surat Keterangan Domisili</h3>
+                    <p>Surat bukti tempat tinggal resmi bagi warga baru atau pendatang di wilayah Desa Pusaka.</p>
+                    <ul class="syarat-list">
+                        <li>Fotokopi KTP & KK</li>
+                        <li>Surat Pengantar RT/RW setempat</li>
+                        <li>Pass foto 3x4 (2 lembar)</li>
+                    </ul>
+                </div>
+                <button class="btn-primary" style="padding: 10px 18px; font-size: 13px; width: 100%; justify-content: center;" onclick="alert('Silakan bawa persyaratan ke Kantor Desa Pusaka pada jam kerja (08.00 - 15.00 WIB).')">Cek Prosedur</button>
+            </div>
+
+            <div class="layanan-card">
+                <div>
+                    <div class="layanan-icon">🤝</div>
+                    <h3>Surat Keterangan Tidak Mampu (SKTM)</h3>
+                    <p>Persyaratan untuk pengajuan beasiswa pendidikan, keringanan biaya medis, atau bantuan sosial.</p>
+                    <ul class="syarat-list">
+                        <li>Fotokopi KTP & KK</li>
+                        <li>Surat Pengantar RT/RW</li>
+                        <li>Kartu PKH/KKS (jika ada)</li>
+                    </ul>
+                </div>
+                <button class="btn-primary" style="padding: 10px 18px; font-size: 13px; width: 100%; justify-content: center;" onclick="alert('Silakan bawa persyaratan ke Kantor Desa Pusaka pada jam kerja (08.00 - 15.00 WIB).')">Cek Prosedur</button>
+            </div>
+
+            <div class="layanan-card">
+                <div>
+                    <div class="layanan-icon">📋</div>
+                    <h3>Pengantar SKCK & KTP-el</h3>
+                    <p>Surat pengantar administrasi dari desa untuk pengurusan SKCK di kepolisian atau pembuatan KTP-el di Disdukcapil.</p>
+                    <ul class="syarat-list">
+                        <li>Fotokopi KK terbaru</li>
+                        <li>Surat Pengantar RT/RW</li>
+                        <li>Pas foto 4x6 latar merah/biru</li>
+                    </ul>
+                </div>
+                <button class="btn-primary" style="padding: 10px 18px; font-size: 13px; width: 100%; justify-content: center;" onclick="alert('Silakan bawa persyaratan ke Kantor Desa Pusaka pada jam kerja (08.00 - 15.00 WIB).')">Cek Prosedur</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
    FASILITAS & GALERI
    ========================================================================== -->
-<section id="fasilitas">
+<section id="fasilitas" style="background: var(--bg-alt);">
     <div class="container">
         <div class="section-title">
             <span>Sarana & Infra</span>
@@ -518,7 +602,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 <!-- ==========================================================================
    DUSUN DESA
    ========================================================================== -->
-<section id="dusun" style="background: var(--bg-alt);">
+<section id="dusun">
     <div class="container">
         <div class="section-title">
             <span>Wilayah Administratif</span>
@@ -560,7 +644,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 <!-- ==========================================================================
    BERITA DESA
    ========================================================================== -->
-<section id="berita">
+<section id="berita" style="background: var(--bg-alt);">
     <div class="container">
         <div class="section-title">
             <span>Kabar Terbaru</span>
@@ -604,7 +688,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 <!-- ==========================================================================
    UMKM & POTENSI
    ========================================================================== -->
-<section id="umkm" style="background: var(--bg-alt);">
+<section id="umkm">
     <div class="container">
         <div class="section-title">
             <span>Ekonomi Lokal</span>
@@ -679,6 +763,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
                 <ul>
                     <li><a href="#beranda">Beranda</a></li>
                     <li><a href="#profil">Profil Desa</a></li>
+                    <li><a href="#layanan">Pelayanan Surat</a></li>
                     <li><a href="#sejarah-lengkap">Sejarah Nama Kampung</a></li>
                     <li><a href="#fasilitas">Fasilitas Desa</a></li>
                 </ul>
