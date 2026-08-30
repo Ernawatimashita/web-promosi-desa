@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Desa Pusaka | Kecamatan Tebas - Portal Resmi Terpadu</title>
-<meta name="description" content="Portal Resmi Terpadu Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat. Layanan publik mandiri, statistik, dan potensi desa.">
+<meta name="description" content="Portal Resmi Terpadu Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat. Informasi statistik, sejarah, fasilitas, dan potensi desa.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,12 +113,6 @@ nav li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(
 }
 .theme-toggle:hover { transform: scale(1.05); color: var(--accent); }
 
-.btn-nav-cta {
-    padding: 10px 20px; background: var(--primary); color: white !important; font-size: 13px; font-weight: 700;
-    border-radius: 50px; box-shadow: 0 4px 15px rgba(13, 84, 55, 0.2); transition: var(--transition);
-}
-.btn-nav-cta:hover { background: var(--primary-light); transform: translateY(-2px); }
-
 .menu-btn { display: none; background: var(--primary); border: none; width: 42px; height: 42px; border-radius: 10px; color: white; font-size: 20px; cursor: pointer; }
 
 /* ==========================================================================
@@ -136,9 +130,6 @@ nav li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(
 
 .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; background: var(--accent); color: #062f20; font-weight: 700; border-radius: 50px; transition: var(--transition); box-shadow: 0 10px 25px rgba(229, 193, 88, 0.35); border: none; cursor: pointer; }
 .btn-primary:hover { transform: translateY(-3px); background: var(--accent-hover); box-shadow: 0 15px 30px rgba(229, 193, 88, 0.45); }
-
-.btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; background: rgba(255,255,255,0.15); color: white; font-weight: 700; border-radius: 50px; transition: var(--transition); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); }
-.btn-secondary:hover { background: rgba(255,255,255,0.25); transform: translateY(-3px); }
 
 /* ==========================================================================
    5. QUICK ACCESS & STATISTIK
@@ -161,24 +152,7 @@ section { padding: 100px 20px; position: relative; }
 .section-title p { color: var(--text-muted); font-size: 15px; margin-top: 12px; }
 
 /* ==========================================================================
-   7. LAYANAN PUBLIK MANDIRI
-   ========================================================================== */
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-.service-card {
-    background: var(--surface); padding: 32px 24px; border-radius: var(--radius-md); border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-soft); transition: var(--transition); position: relative; overflow: hidden;
-}
-.service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--primary); transition: var(--transition); }
-.service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hard); }
-.service-card:hover::before { height: 6px; background: var(--accent); }
-.service-icon { width: 60px; height: 60px; background: var(--bg-alt); color: var(--primary); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px; }
-.service-card h3 { font-size: 20px; color: var(--text-main); margin-bottom: 12px; font-weight: 700; }
-.service-card p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
-.service-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--primary); }
-.service-btn:hover { color: var(--primary-light); gap: 10px; }
-
-/* ==========================================================================
-   8. PROFIL & KANTOR DESA
+   7. PROFIL & KANTOR DESA
    ========================================================================== */
 .profil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
 .profil-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-hard); position: relative; }
@@ -188,7 +162,7 @@ section { padding: 100px 20px; position: relative; }
 .info-item:last-child { border: none; }
 
 /* ==========================================================================
-   9. SEJARAH EXPANDED TIMELINE
+   8. SEJARAH EXPANDED TIMELINE
    ========================================================================== */
 .timeline { position: relative; max-width: 900px; margin: auto; padding: 20px 0; }
 .timeline::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: var(--border-color); transform: translateX(-50%); }
@@ -204,7 +178,7 @@ section { padding: 100px 20px; position: relative; }
 .timeline-content p { font-size: 14px; color: var(--text-muted); text-align: justify; }
 
 /* ==========================================================================
-   10. GALERI FASILITAS (FILTERABLE)
+   9. GALERI FASILITAS (FILTERABLE)
    ========================================================================== */
 .filter-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
 .filter-btn { padding: 10px 22px; background: var(--surface); border: 1px solid var(--border-color); border-radius: 50px; font-size: 13px; font-weight: 600; color: var(--text-main); cursor: pointer; transition: var(--transition); }
@@ -222,7 +196,7 @@ section { padding: 100px 20px; position: relative; }
 .card-place-body p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
 /* ==========================================================================
-   11. DUSUN & PETA WILAYAH
+   10. DUSUN & PETA WILAYAH
    ========================================================================== */
 .dusun-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
 .dusun-card { background: var(--surface); border-radius: var(--radius-md); padding: 36px 28px; box-shadow: var(--shadow-soft); border-top: 5px solid var(--primary); border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); transition: var(--transition); }
@@ -232,7 +206,7 @@ section { padding: 100px 20px; position: relative; }
 .dusun-stats { display: flex; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 15px; font-size: 13px; font-weight: 700; color: var(--primary); }
 
 /* ==========================================================================
-   12. BERITA & AGENDA KEGIATAN
+   11. BERITA & AGENDA KEGIATAN
    ========================================================================== */
 .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
 .news-card { background: var(--surface); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-soft); transition: var(--transition); }
@@ -244,7 +218,7 @@ section { padding: 100px 20px; position: relative; }
 .news-body p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
 
 /* ==========================================================================
-   13. SEKTOR PERTANIAN & UMKM
+   12. SEKTOR PERTANIAN & UMKM
    ========================================================================== */
 .umkm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
 .umkm-card { background: var(--surface); border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-color); text-align: center; box-shadow: var(--shadow-soft); }
@@ -253,7 +227,7 @@ section { padding: 100px 20px; position: relative; }
 .umkm-card .price { font-weight: 800; color: var(--primary); font-size: 16px; margin-bottom: 12px; }
 
 /* ==========================================================================
-   14. KONTAK & PENGADUAN
+   13. KONTAK & PENGADUAN
    ========================================================================== */
 .kontak { background: var(--primary-dark); color: white; position: relative; }
 .kontak .section-title h2, .kontak .section-title span { color: white; }
@@ -270,10 +244,10 @@ section { padding: 100px 20px; position: relative; }
 .form-control:focus { border-color: var(--primary); background: var(--surface); }
 
 /* ==========================================================================
-   15. FOOTER EXPANDED
+   14. FOOTER EXPANDED
    ========================================================================== */
 footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.05); }
-.footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 40px; margin-bottom: 60px; }
+.footer-grid { display: grid; grid-template-columns: 2fr repeat(2, 1fr); gap: 40px; margin-bottom: 60px; }
 .footer-brand h3 { font-family: "Playfair Display", serif; color: white; font-size: 24px; margin-bottom: 16px; }
 .footer-brand p { font-size: 14px; line-height: 1.7; opacity: 0.8; }
 .footer-links h4 { color: white; font-size: 16px; margin-bottom: 20px; font-weight: 700; }
@@ -283,15 +257,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 13px; opacity: 0.7; }
 
 /* ==========================================================================
-   16. MODAL LAYANAN
-   ========================================================================== */
-.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center; z-index: 2000; opacity: 0; visibility: hidden; transition: var(--transition); padding: 20px; }
-.modal.active { opacity: 1; visibility: visible; }
-.modal-content { background: var(--surface); width: min(600px, 100%); padding: 36px; border-radius: var(--radius-lg); position: relative; box-shadow: var(--shadow-hard); max-height: 90vh; overflow-y: auto; }
-.close-modal { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--text-muted); }
-
-/* ==========================================================================
-   17. BACK TO TOP BUTTON
+   15. BACK TO TOP BUTTON
    ========================================================================== */
 .back-to-top {
     position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
@@ -304,7 +270,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 .back-to-top:hover { transform: translateY(-5px); background: var(--accent-hover); }
 
 /* ==========================================================================
-   18. RESPONSIVE DESIGN
+   16. RESPONSIVE DESIGN
    ========================================================================== */
 @media (max-width: 992px) {
     .profil-grid, .contact-grid { grid-template-columns: 1fr; }
@@ -321,7 +287,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
     .footer-grid { grid-template-columns: 1fr; }
     .hero { min-height: 80vh; padding-top: 140px; }
     .hero-btns { flex-direction: column; }
-    .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+    .btn-primary { width: 100%; justify-content: center; }
 }
 </style>
 </head>
@@ -349,16 +315,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
                         <div class="dropdown">
                             <a href="#profil">Tentang Desa</a>
                             <a href="#sejarah">Sejarah Nama Kampung</a>
-                            <a href="#perangkat">Perangkat Desa</a>
                             <a href="#dusun">Wilayah Dusun</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#layanan">Layanan ▾</a>
-                        <div class="dropdown">
-                            <a href="#layanan">Surat Pengantar</a>
-                            <a href="#layanan">Surat Keterangan Usaha</a>
-                            <a href="#layanan">Pengaduan Warga</a>
                         </div>
                     </li>
                     <li><a href="#fasilitas">Fasilitas</a></li>
@@ -371,7 +328,6 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 
         <div class="nav-actions">
             <button class="theme-toggle" id="themeToggle" aria-label="Ubah Mode Tampilan">🌙</button>
-            <a href="#layanan" class="btn-nav-cta">Layanan Mandiri</a>
             <button class="menu-btn" id="menuBtn" aria-label="Menu Mobile">☰</button>
         </div>
     </div>
@@ -386,8 +342,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
         <h1>Selamat Datang di Portal Resmi Desa Pusaka</h1>
         <p>Mewujudkan tata kelola pemerintahan desa yang transparan, religius, mandiri, dan berdaya saing tinggi berbasis potensi lokal.</p>
         <div class="hero-btns">
-            <a href="#layanan" class="btn-primary"><span>📄</span> Ajukan Layanan Surat</a>
-            <a href="#profil" class="btn-secondary"><span>🌿</span> Jelajahi Profil Desa</a>
+            <a href="#profil" class="btn-primary"><span>🌿</span> Jelajahi Profil Desa</a>
         </div>
     </div>
 </section>
@@ -419,52 +374,9 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 </div>
 
 <!-- ==========================================================================
-   SECTION LAYANAN PUBLIK MANDIRI
-   ========================================================================== -->
-<section id="layanan">
-    <div class="container">
-        <div class="section-title">
-            <span>Pelayanan Administrasi</span>
-            <h2>Layanan Publik Mandiri</h2>
-            <p>Akses pembuat surat dan dokumen kependudukan secara efisien dan cepat tanpa perlu antre lama di kantor desa.</p>
-        </div>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">📝</div>
-                <h3>Surat Pengantar KTP / KK</h3>
-                <p>Permohonan pengantar untuk penerbitan Kartu Tanda Penduduk atau Kartu Keluarga baru maupun pembaruan data.</p>
-                <a href="javascript:void(0)" class="service-btn" onclick="openModal('Surat Pengantar KTP')">Ajukan Sekarang →</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🏪</div>
-                <h3>Surat Keterangan Usaha (SKU)</h3>
-                <p>Surat resmi untuk keperluan legalitas usaha mikro dan kecil warga serta kelengkapan pengajuan bantuan/kredit.</p>
-                <a href="javascript:void(0)" class="service-btn" onclick="openModal('Surat Keterangan Usaha')">Ajukan Sekarang →</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">📜</div>
-                <h3>Surat Keterangan Tidak Mampu</h3>
-                <p>Pelayanan surat keterangan tidak mampu (SKTM) untuk keperluan beasiswa, beasiswa sekolah, atau bantuan medis.</p>
-                <a href="javascript:void(0)" class="service-btn" onclick="openModal('Surat SKTM')">Ajukan Sekarang →</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🏠</div>
-                <h3>Surat Keterangan Domisili</h3>
-                <p>Surat resmi yang menerangkan status tempat tinggal atau domisili perorangan maupun badan usaha di wilayah Desa Pusaka.</p>
-                <a href="javascript:void(0)" class="service-btn" onclick="openModal('Surat Keterangan Domisili')">Ajukan Sekarang →</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==========================================================================
    PROFIL DESA
    ========================================================================== -->
-<section class="profil" id="profil" style="background: var(--bg-alt);">
+<section class="profil" id="profil">
     <div class="container">
         <div class="section-title">
             <span>Tentang Kami</span>
@@ -493,7 +405,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 <!-- ==========================================================================
    SEJARAH TIMELINE
    ========================================================================== -->
-<section id="sejarah">
+<section id="sejarah" style="background: var(--bg-alt);">
     <div class="container">
         <div class="section-title">
             <span>Asal Usul & Rekam Jejak</span>
@@ -544,7 +456,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 <!-- ==========================================================================
    FASILITAS & GALERI (WITH FILTER)
    ========================================================================== -->
-<section style="background: var(--bg-alt);" id="fasilitas">
+<section id="fasilitas">
     <div class="container">
         <div class="section-title">
             <span>Sarana & Infra</span>
@@ -620,7 +532,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 <!-- ==========================================================================
    DUSUN DESA
    ========================================================================== -->
-<section id="dusun">
+<section id="dusun" style="background: var(--bg-alt);">
     <div class="container">
         <div class="section-title">
             <span>Wilayah Administratif</span>
@@ -661,7 +573,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 <!-- ==========================================================================
    BERITA & AGENDA DESA
    ========================================================================== -->
-<section id="berita" style="background: var(--bg-alt);">
+<section id="berita">
     <div class="container">
         <div class="section-title">
             <span>Kabar Terbaru</span>
@@ -705,7 +617,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
 <!-- ==========================================================================
    UMKM & POTENSI DESA
    ========================================================================== -->
-<section id="umkm">
+<section id="umkm" style="background: var(--bg-alt);">
     <div class="container">
         <div class="section-title">
             <span>Ekonomi Lokal</span>
@@ -810,15 +722,6 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
             </div>
 
             <div class="footer-links">
-                <h4>Layanan Warga</h4>
-                <ul>
-                    <li><a href="#layanan">Pembuatan SKU</a></li>
-                    <li><a href="#layanan">Pengantar KTP/KK</a></li>
-                    <li><a href="#layanan">Pengantar SKTM</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-links">
                 <h4>Wilayah Dusun</h4>
                 <ul>
                     <li><a href="#dusun">Dusun Puting</a></li>
@@ -833,45 +736,6 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
         </div>
     </div>
 </footer>
-
-<!-- ==========================================================================
-   MODAL LAYANAN POPUP
-   ========================================================================== -->
-<div class="modal" id="serviceModal">
-    <div class="modal-content">
-        <button class="close-modal" onclick="closeModal()">&times;</button>
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 10px;" id="modalTitle">Form Layanan</h3>
-        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">Lengkapi formulir di bawah ini untuk memulai proses pembuatan dokumen.</p>
-
-        <form onsubmit="handleModalSubmit(event)">
-            <div class="form-group">
-                <label>NIK (Nomor Induk Kependudukan)</label>
-                <input type="text" class="form-control" maxlength="16" placeholder="16 Digit NIK sesuai KTP" required>
-            </div>
-
-            <div class="form-group">
-                <label>Nama Lengkap</label>
-                <input type="text" class="form-control" placeholder="Nama Lengkap" required>
-            </div>
-
-            <div class="form-group">
-                <label>Dusun Asal</label>
-                <select class="form-control">
-                    <option>Dusun Puting</option>
-                    <option>Dusun Beliung</option>
-                    <option>Dusun Sekadim</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Nomor Telepon / WhatsApp Aktif</label>
-                <input type="tel" class="form-control" placeholder="Masukkan nomor kontak Anda" required>
-            </div>
-
-            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">Kirim Pengajuan</button>
-        </form>
-    </div>
-</div>
 
 <!-- ==========================================================================
    TOMBOL BACK TO TOP
@@ -953,32 +817,7 @@ footer { background: #031c13; color: #8ba398; padding: 80px 20px 30px; font-size
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // 4. Modal System (Layanan Surat)
-    const modal = document.getElementById('serviceModal');
-    const modalTitle = document.getElementById('modalTitle');
-
-    function openModal(serviceName) {
-        modalTitle.textContent = 'Pengajuan ' + serviceName;
-        modal.classList.add('active');
-    }
-
-    function closeModal() {
-        modal.classList.remove('active');
-    }
-
-    // Modal close when clicking outside
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-
-    function handleModalSubmit(e) {
-        e.preventDefault();
-        alert('Pengajuan Anda berhasil terkirim! Petugas desa kami akan segera menghubungi nomor telepon Anda.');
-        closeModal();
-    }
-
+    // 4. Form Submit Handler
     function handleFormSubmit(e) {
         e.preventDefault();
         alert('Terima kasih! Pesan atau pengaduan Anda telah berhasil terkirim.');
