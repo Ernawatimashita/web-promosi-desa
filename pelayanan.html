@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desa Pusaka | Pelayanan Surat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0d5437; --primary-light: #2d8a5f; --accent: #e5c158; --bg-light: #f4f8f5; --surface: #ffffff; --text-main: #142e23; --text-muted: #5a6e65; --border-color: #edf2ef; --header-bg: rgba(255, 255, 255, 0.88); }
+        body.dark-mode { --bg-light: #0f1713; --surface: #1a2821; --text-main: #e4ebe7; --text-muted: #a0b3aa; --border-color: #273b31; --header-bg: rgba(26, 40, 33, 0.88); }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Plus Jakarta Sans", sans-serif; background: var(--bg-light); color: var(--text-main); line-height: 1.6; padding-top: 110px; }
+        a { text-decoration: none; color: inherit; }
+        header { position: fixed; top: 0; left: 0; width: 100%; height: 90px; background: var(--header-bg); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(13, 84, 55, 0.1); z-index: 1000; }
+        .navbar { width: min(1280px, calc(100% - 40px)); height: 100%; margin: auto; display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 12px; color: var(--primary); font-family: "Playfair Display", serif; font-size: 22px; font-weight: 800; }
+        .logo-icon { width: 44px; height: 44px; background: var(--primary); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+        nav ul { display: flex; gap: 15px; list-style: none; }
+        nav a { font-size: 14px; font-weight: 600; padding: 8px 12px; border-radius: 8px; }
+        nav li.active a { color: var(--primary-light); background: rgba(45, 138, 95, 0.08); }
+        .container { width: min(1200px, calc(100% - 40px)); margin: auto; padding: 40px 0; }
+        .layanan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 30px; }
+        .layanan-card { background: var(--surface); border-radius: 16px; padding: 28px; border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between; }
+        .btn-primary { padding: 10px 18px; background: var(--accent); color: #062f20; font-weight: 700; border-radius: 50px; border: none; cursor: pointer; text-align: center; }
+        footer { background: #031c13; color: #8ba398; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    </style>
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">Desa Pusaka</div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="profil.html">Profil Desa</a></li>
+                <li class="active"><a href="pelayanan.html">Pelayanan Surat</a></li>
+                <li><a href="fasilitas.html">Fasilitas</a></li>
+                <li><a href="potensi.html">UMKM & Potensi</a></li>
+            </ul>
+        </nav>
+        <button id="themeToggle" style="background:none; border:none; cursor:pointer; font-size:18px;">🌙</button>
+    </div>
+</header>
+<div class="container">
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 42px; text-align: center;">Pelayanan Surat & Administrasi</h1>
+    <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Persyaratan dan panduan pengurusan dokumen resmi warga Desa Pusaka.</p>
+
+    <div class="layanan-grid">
+        <div class="layanan-card">
+            <div>
+                <div style="font-size: 36px; margin-bottom: 12px;">📄</div>
+                <h3>Surat Keterangan Usaha (SKU)</h3>
+                <p style="color:var(--text-muted); font-size: 14px; margin-bottom: 16px;">Untuk bantuan UMKM, izin operasional, atau pengajuan bank.</p>
+                <ul style="padding-left: 20px; font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">
+                    <li>Fotokopi KTP & KK</li>
+                    <li>Surat Pengantar RT/RW</li>
+                    <li>Foto lokasi usaha</li>
+                </ul>
+            </div>
+            <button class="btn-primary" onclick="alert('Bawa berkas ke Kantor Desa Pusaka pada jam kerja (08.00 - 15.00 WIB).')">Cek Prosedur</button>
+        </div>
+
+        <div class="layanan-card">
+            <div>
+                <div style="font-size: 36px; margin-bottom: 12px;">🏠</div>
+                <h3>Surat Keterangan Domisili</h3>
+                <p style="color:var(--text-muted); font-size: 14px; margin-bottom: 16px;">Bukti tempat tinggal bagi warga baru/pendatang.</p>
+                <ul style="padding-left: 20px; font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">
+                    <li>Fotokopi KTP & KK</li>
+                    <li>Surat Pengantar RT/RW</li>
+                    <li>Pas foto 3x4 (2 lembar)</li>
+                </ul>
+            </div>
+            <button class="btn-primary" onclick="alert('Bawa berkas ke Kantor Desa Pusaka pada jam kerja (08.00 - 15.00 WIB).')">Cek Prosedur</button>
+        </div>
+
+        <div class="layanan-card">
+            <div>
+                <div style="font-size: 36px; margin-bottom: 12px;">🤝</div>
+                <h3>Surat Keterangan Tidak Mampu (SKTM)</h3>
+                <p style="color:var(--text-muted); font-size: 14px; margin-bottom: 16px;">Untuk pengajuan beasiswa, pengobatan, atau bantuan sosial.</p>
+                <ul style="padding-left: 20px; font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">
+                    <li>Fotokopi KTP & KK</li>
+                    <li>Surat Pengantar RT/RW</li>
+                    <li>Kartu KKS/PKH (jika ada)</li>
+                </ul>
+            </div>
+            <button class="btn-primary" onclick="alert('Bawa berkas ke Kantor Desa Pusaka pada jam kerja (08.00 - 15.00 WIB).')">Cek Prosedur</button>
+        </div>
+
+        <div class="layanan-card">
+            <div>
+                <div style="font-size: 36px; margin-bottom: 12px;">📋</div>
+                <h3>Pengantar SKCK & KTP-el</h3>
+                <p style="color:var(--text-muted); font-size: 14px; margin-bottom: 16px;">Surat pengantar untuk kepolisian atau Disdukcapil.</p>
+                <ul style="padding-left: 20px; font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">
+                    <li>Fotokopi KK Terbaru</li>
+                    <li>Surat Pengantar RT/RW</li>
+                    <li>Pas foto 4x6 latar merah/biru</li>
+                </ul>
+            </div>
+            <button class="btn-primary" onclick="alert('Bawa berkas ke Kantor Desa Pusaka pada jam kerja (08.00 - 15.00 WIB).')">Cek Prosedur</button>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>© 2026 Pemerintah Desa Pusaka. All Rights Reserved.</p>
+</footer>
+<script>
+    const themeToggleBtn = document.getElementById('themeToggle');
+    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
+    themeToggleBtn.addEventListener('click', () => { document.body.classList.toggle('dark-mode'); localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light'); });
+</script>
+</body>
+</html>
