@@ -9,58 +9,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <style>
 
-        :root {
-            --primary: #0d5437;
-            --primary-dark: #062f20;
-            --primary-light: #2d8a5f;
-            --accent: #e5c158;
-            --accent-hover: #f0cf6d;
-
-            --bg-light: #f4f8f5;
-            --bg-alt: #ebf2ee;
-            --surface: #ffffff;
-
-            --text-main: #142e23;
-            --text-muted: #5a6e65;
-
-            --border-color: #edf2ef;
-
-            --header-bg: rgba(255, 255, 255, 0.88);
-            --header-scrolled: rgba(255, 255, 255, 0.98);
-
-            --radius-lg: 24px;
-            --radius-md: 16px;
-
-            --shadow-soft: 0 20px 40px rgba(13, 84, 55, 0.08);
-            --shadow-hard: 0 10px 30px rgba(0, 0, 0, 0.12);
-
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        body.dark-mode {
-            --primary: #2d8a5f;
-            --primary-dark: #0a1410;
-            --primary-light: #48b480;
-
-            --bg-light: #0f1713;
-            --bg-alt: #16221c;
-            --surface: #1a2821;
-
-            --text-main: #e4ebe7;
-            --text-muted: #a0b3aa;
-
-            --border-color: #273b31;
-
-            --header-bg: rgba(26, 40, 33, 0.88);
-            --header-scrolled: rgba(26, 40, 33, 0.98);
-
-            --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.35);
-            --shadow-hard: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
+        /* =========================
+           RESET
+        ========================= */
 
         * {
             margin: 0;
@@ -73,10 +28,11 @@
         }
 
         body {
-            font-family: "Plus Jakarta Sans", sans-serif;
-            background: var(--bg-light);
-            color: var(--text-main);
+            font-family: "DM Sans", sans-serif;
+            background: #f8faf8;
+            color: #1f2937;
             line-height: 1.6;
+            transition: 0.3s;
         }
 
         a {
@@ -84,356 +40,442 @@
             color: inherit;
         }
 
-        /* ================= HEADER ================= */
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* =========================
+           COLOR
+        ========================= */
+
+        :root {
+            --primary: #0d5437;
+            --primary-dark: #062f20;
+            --primary-light: #2d8a5f;
+            --accent: #e5c158;
+            --white: #ffffff;
+            --light: #f5f7f5;
+            --text: #1f2937;
+            --gray: #6b7280;
+            --border: #e5e7eb;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 90px;
-            z-index: 1000;
-
-            background: var(--header-bg);
-            backdrop-filter: blur(15px);
-
-            border-bottom: 1px solid rgba(13, 84, 55, 0.1);
-
-            transition: var(--transition);
+            z-index: 999;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: 0.3s;
         }
 
         header.scrolled {
-            height: 75px;
-            background: var(--header-scrolled);
-            box-shadow: 0 4px 25px rgba(0,0,0,0.12);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
         }
 
         .navbar {
-            width: min(1280px, calc(100% - 40px));
-            height: 100%;
-            margin: auto;
-
+            min-height: 75px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 20px;
         }
 
         .logo {
             display: flex;
             align-items: center;
             gap: 12px;
-
+            font-weight: 700;
             color: var(--primary);
-
-            font-family: "Playfair Display", serif;
-            font-size: 22px;
-            font-weight: 800;
+            font-size: 20px;
         }
 
         .logo-icon {
-            width: 44px;
-            height: 44px;
-
+            width: 45px;
+            height: 45px;
             background: var(--primary);
             color: white;
-
-            border-radius: 12px;
-
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-
-            font-size: 22px;
+            font-size: 21px;
         }
 
-        .logo-text small {
-            display: block;
-
-            font-family: "Plus Jakarta Sans", sans-serif;
-            font-size: 10px;
-            font-weight: 600;
-
-            text-transform: uppercase;
-
-            color: var(--text-muted);
-        }
-
-        .nav-container {
+        .nav-menu {
             display: flex;
             align-items: center;
-            gap: 20px;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 15px;
+            gap: 25px;
             list-style: none;
         }
 
-        nav a {
+        .nav-menu a {
             font-size: 14px;
             font-weight: 600;
-
-            color: var(--text-main);
-
-            padding: 8px 12px;
-            border-radius: 8px;
-
-            transition: var(--transition);
+            color: #374151;
+            transition: 0.3s;
         }
 
-        nav a:hover,
-        nav li.active > a {
+        .nav-menu a:hover {
             color: var(--primary-light);
-            background: rgba(45, 138, 95, 0.08);
         }
 
         .nav-actions {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
-        .theme-toggle {
-            background: var(--surface);
-
-            border: 1px solid var(--border-color);
-
-            color: var(--text-main);
-
-            width: 42px;
-            height: 42px;
-
-            border-radius: 12px;
-
+        .theme-btn {
+            border: none;
+            background: #eef3ef;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             cursor: pointer;
-
             font-size: 18px;
         }
 
-        /* ================= HERO ================= */
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            min-height: 90vh;
-
+            min-height: 650px;
+            padding-top: 75px;
             display: flex;
             align-items: center;
-
-            padding: 160px 20px 100px;
-
-            color: white;
-
+            position: relative;
             background:
                 linear-gradient(
-                    180deg,
-                    rgba(6, 47, 32, 0.82) 0%,
-                    rgba(6, 47, 32, 0.90) 100%
+                    rgba(6,47,32,0.65),
+                    rgba(6,47,32,0.72)
                 ),
-                url('masjid.jpg') center/cover no-repeat;
-
-            text-align: center;
+                url("masjid.jpg") center/cover no-repeat;
         }
 
         .hero-content {
-            max-width: 850px;
-            margin: auto;
+            max-width: 750px;
+            color: white;
         }
 
         .hero-badge {
             display: inline-block;
-
-            padding: 8px 18px;
-
+            padding: 8px 15px;
+            border-radius: 30px;
             background: rgba(255,255,255,0.15);
-
-            border-radius: 50px;
-
-            font-size: 12px;
-            font-weight: 700;
-
-            margin-bottom: 24px;
-
-            text-transform: uppercase;
+            border: 1px solid rgba(255,255,255,0.25);
+            margin-bottom: 20px;
+            font-size: 14px;
         }
 
         .hero h1 {
             font-family: "Playfair Display", serif;
-
-            font-size: clamp(42px, 6vw, 76px);
-
-            margin-bottom: 24px;
+            font-size: clamp(42px, 7vw, 75px);
+            line-height: 1.1;
+            margin-bottom: 20px;
         }
 
         .hero p {
-            max-width: 700px;
-            margin: 0 auto 30px;
+            font-size: 18px;
+            max-width: 650px;
+            color: #eef6f0;
+            margin-bottom: 30px;
+        }
 
-            font-size: 16px;
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: 0.3s;
         }
 
         .btn-primary {
-            display: inline-flex;
-
-            align-items: center;
-            gap: 8px;
-
-            padding: 16px 36px;
-
             background: var(--accent);
-            color: #062f20;
-
-            font-weight: 700;
-
-            border-radius: 50px;
-
-            transition: var(--transition);
+            color: #173f2c;
         }
 
         .btn-primary:hover {
-            background: var(--accent-hover);
             transform: translateY(-3px);
         }
 
-        /* ================= STATS ================= */
-
-        .stats-container {
-            width: min(1200px, calc(100% - 40px));
-
-            margin: -60px auto 60px;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(220px, 1fr));
-
-            gap: 20px;
-
-            position: relative;
-
-            z-index: 10;
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.6);
+            color: white;
         }
 
-        .stat-card {
-            background: var(--surface);
-
-            padding: 28px 24px;
-
-            border-radius: var(--radius-md);
-
-            text-align: center;
-
-            border: 1px solid var(--border-color);
-
-            box-shadow: var(--shadow-soft);
-        }
-
-        .stat-card .icon {
-            font-size: 28px;
-        }
-
-        .stat-card h3 {
-            font-size: 38px;
-
-            font-family: "Playfair Display", serif;
-
+        .btn-outline:hover {
+            background: white;
             color: var(--primary);
         }
 
-        /* ================= SECTION ================= */
+        /* =========================
+           STATS
+        ========================= */
 
-        section {
-            padding: 60px 20px;
+        .stats {
+            margin-top: -55px;
+            position: relative;
+            z-index: 5;
         }
 
-        .container {
-            width: min(1200px, 100%);
-            margin: auto;
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .stat {
+            padding: 30px 20px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat h3 {
+            color: var(--primary);
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .stat p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            padding: 90px 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+
+        .section-title span {
+            color: var(--primary-light);
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .section-title h2 {
             font-family: "Playfair Display", serif;
-
-            font-size: 36px;
-
-            margin-bottom: 10px;
+            font-size: 38px;
+            color: var(--primary-dark);
+            margin: 8px 0 12px;
         }
 
         .section-title p {
-            color: var(--text-muted);
+            color: var(--gray);
         }
 
-        /* ================= NEWS ================= */
+        /* =========================
+           PROFIL
+        ========================= */
 
-        .news-grid {
+        .profile {
+            background: white;
+        }
+
+        .profile-grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(300px, 1fr));
-
-            gap: 28px;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
         }
 
-        .news-card {
-            background: var(--surface);
-
-            border-radius: var(--radius-md);
-
+        .profile-image {
+            border-radius: 20px;
             overflow: hidden;
-
-            border: 1px solid var(--border-color);
-
-            box-shadow: var(--shadow-soft);
-
-            transition: var(--transition);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
         }
 
-        .news-card:hover {
+        .profile-image img {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .profile-content h2 {
+            font-family: "Playfair Display", serif;
+            color: var(--primary-dark);
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .profile-content p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .value-box {
+            padding: 18px;
+            background: #f3f8f4;
+            border-radius: 12px;
+        }
+
+        .value-box strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .value-box small {
+            color: var(--gray);
+        }
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        .card:hover {
             transform: translateY(-6px);
-            box-shadow: var(--shadow-hard);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
-        .news-img {
-            height: 200px;
+        .card-image {
+            height: 220px;
+            overflow: hidden;
         }
 
-        .news-body {
-            padding: 20px;
+        .card-image img {
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
         }
 
-        .news-body h3 {
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 22px;
+        }
+
+        .card-content h3 {
+            color: var(--primary-dark);
             margin-bottom: 10px;
         }
 
-        .news-body p {
-            color: var(--text-muted);
+        .card-content p {
+            color: var(--gray);
             font-size: 14px;
         }
 
-        /* ================= DATABASE FORM ================= */
+        /* =========================
+           PELAYANAN
+        ========================= */
+
+        .services {
+            background: #eef5ef;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-box {
+            background: white;
+            padding: 28px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: #e5f2e9;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 23px;
+            margin-bottom: 18px;
+        }
+
+        .service-box h3 {
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+        }
+
+        .service-box p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* =========================
+           FORM DATABASE
+        ========================= */
 
         .database-section {
-            background: var(--bg-alt);
+            background: white;
         }
 
         .form-container {
-            max-width: 750px;
-
+            max-width: 700px;
             margin: auto;
-
-            background: var(--surface);
-
+            background: #f7faf7;
             padding: 35px;
-
-            border-radius: var(--radius-lg);
-
-            border: 1px solid var(--border-color);
-
-            box-shadow: var(--shadow-soft);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.05);
         }
 
         .form-group {
@@ -442,275 +484,298 @@
 
         .form-group label {
             display: block;
-
             margin-bottom: 8px;
-
-            font-size: 14px;
-
             font-weight: 700;
+            color: var(--primary-dark);
         }
 
         .form-group input,
-        .form-group select,
         .form-group textarea {
             width: 100%;
-
-            padding: 14px 16px;
-
-            border: 1px solid var(--border-color);
-
-            border-radius: 12px;
-
-            background: var(--bg-light);
-
-            color: var(--text-main);
-
-            font-family: inherit;
-
-            font-size: 14px;
-
+            border: 1px solid #d7ded9;
+            background: white;
+            padding: 14px 15px;
+            border-radius: 10px;
             outline: none;
-
-            transition: var(--transition);
+            font-family: inherit;
+            font-size: 15px;
+            transition: 0.3s;
         }
 
         .form-group input:focus,
-        .form-group select:focus,
         .form-group textarea:focus {
             border-color: var(--primary-light);
-
-            box-shadow:
-                0 0 0 3px rgba(45, 138, 95, 0.12);
+            box-shadow: 0 0 0 3px rgba(45,138,95,0.1);
         }
 
         .form-group textarea {
             min-height: 130px;
-
             resize: vertical;
         }
 
         .submit-btn {
             width: 100%;
-
-            padding: 15px;
-
             border: none;
-
-            border-radius: 50px;
-
+            padding: 15px;
+            border-radius: 10px;
             background: var(--primary);
-
             color: white;
-
+            font-size: 16px;
             font-family: inherit;
-
-            font-size: 15px;
-
             font-weight: 700;
-
             cursor: pointer;
-
-            transition: var(--transition);
+            transition: 0.3s;
         }
 
         .submit-btn:hover {
             background: var(--primary-light);
-
             transform: translateY(-2px);
         }
 
         .submit-btn:disabled {
             opacity: 0.6;
-
             cursor: not-allowed;
-
             transform: none;
         }
 
         .status-message {
-            margin-top: 18px;
-
-            padding: 12px 15px;
-
-            border-radius: 10px;
-
-            display: none;
-
-            font-size: 14px;
-
             text-align: center;
+            margin-top: 15px;
+            min-height: 24px;
+            font-size: 14px;
+            font-weight: 600;
         }
 
         .status-success {
-            display: block;
-
-            background: #dff5e8;
-
-            color: #146c43;
+            color: #15803d;
         }
 
         .status-error {
-            display: block;
-
-            background: #fde2e2;
-
-            color: #a12626;
+            color: #dc2626;
         }
 
-        /* ================= FOOTER ================= */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            background: #031c13;
-
-            color: #8ba398;
-
-            padding: 60px 20px 30px;
-
-            font-size: 14px;
+            background: var(--primary-dark);
+            color: white;
+            padding: 60px 0 25px;
         }
 
         .footer-grid {
             display: grid;
-
-            grid-template-columns:
-                2fr repeat(2, 1fr);
-
+            grid-template-columns: 2fr 1fr 1fr;
             gap: 40px;
-
-            width: min(1200px, 100%);
-
-            margin: 0 auto 40px;
+            margin-bottom: 40px;
         }
 
-        .footer-bottom {
-            text-align: center;
+        .footer h3 {
+            margin-bottom: 15px;
+        }
 
-            border-top:
-                1px solid rgba(255,255,255,0.08);
+        .footer p {
+            color: #cbd8d0;
+            font-size: 14px;
+        }
 
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer li {
+            margin-bottom: 8px;
+            color: #cbd8d0;
+            font-size: 14px;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 20px;
+            text-align: center;
+            color: #aebdb5;
+            font-size: 13px;
         }
 
-        /* ================= BACK TO TOP ================= */
+        /* =========================
+           BACK TO TOP
+        ========================= */
 
-        .back-to-top {
+        #backTop {
             position: fixed;
-
-            bottom: 30px;
-            right: 30px;
-
-            width: 50px;
-            height: 50px;
-
-            background: var(--accent);
-
-            color: #062f20;
-
-            border-radius: 50%;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            font-size: 22px;
-
-            cursor: pointer;
-
+            right: 20px;
+            bottom: 20px;
+            width: 45px;
+            height: 45px;
             border: none;
-
-            opacity: 0;
-
-            transition: var(--transition);
-
-            z-index: 999;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            display: none;
+            z-index: 99;
+            font-size: 18px;
         }
 
-        .back-to-top.show {
-            opacity: 1;
+        /* =========================
+           DARK MODE
+        ========================= */
+
+        body.dark {
+            background: #101714;
+            color: #e7eee9;
         }
 
-        /* ================= RESPONSIVE ================= */
+        body.dark header {
+            background: rgba(16,23,20,0.95);
+        }
+
+        body.dark .nav-menu a {
+            color: #e5eee8;
+        }
+
+        body.dark .theme-btn {
+            background: #26332c;
+            color: white;
+        }
+
+        body.dark .stats-grid,
+        body.dark .card,
+        body.dark .service-box,
+        body.dark .form-container {
+            background: #18211c;
+            border-color: #29372f;
+        }
+
+        body.dark .profile {
+            background: #101714;
+        }
+
+        body.dark .database-section {
+            background: #101714;
+        }
+
+        body.dark .services {
+            background: #142019;
+        }
+
+        body.dark .section-title h2,
+        body.dark .profile-content h2,
+        body.dark .card-content h3,
+        body.dark .service-box h3,
+        body.dark .form-group label {
+            color: #e9f2ec;
+        }
+
+        body.dark .value-box {
+            background: #1d2a22;
+        }
+
+        body.dark .form-group input,
+        body.dark .form-group textarea {
+            background: #111814;
+            color: white;
+            border-color: #35443b;
+        }
+
+        body.dark .stat {
+            border-color: #29372f;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
 
         @media (max-width: 900px) {
 
-            .navbar {
-                width: calc(100% - 25px);
+            .nav-menu {
+                display: none;
             }
 
-            nav ul {
-                gap: 5px;
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            nav a {
-                font-size: 12px;
-                padding: 7px;
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards,
+            .service-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .section-title h2 {
+                font-size: 31px;
+            }
+
+            .stats {
+                margin-top: -35px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stat {
+                padding: 22px 10px;
+            }
+
+            .stat h3 {
+                font-size: 25px;
+            }
+
+            .cards,
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                padding: 22px;
             }
 
             .footer-grid {
                 grid-template-columns: 1fr;
             }
-        }
 
-        @media (max-width: 700px) {
-
-            header {
-                height: auto;
-
-                min-height: 75px;
-            }
-
-            .navbar {
-                flex-wrap: wrap;
-
-                padding: 12px 0;
-
-                gap: 10px;
-            }
-
-            .nav-container {
-                order: 3;
-
-                width: 100%;
-
-                overflow-x: auto;
-            }
-
-            nav ul {
-                width: max-content;
-            }
-
-            .hero {
-                padding-top: 150px;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .stats-container {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .form-container {
-                padding: 25px 20px;
-            }
-        }
-
-        @media (max-width: 450px) {
-
-            .stats-container {
-                grid-template-columns: 1fr;
-            }
-
-            .logo {
-                font-size: 18px;
-            }
-
-            .logo-icon {
-                width: 38px;
-                height: 38px;
+            .profile-image img {
+                height: 280px;
             }
         }
 
@@ -719,873 +784,1217 @@
 
 <body>
 
-<!-- ================= HEADER ================= -->
+    <!-- =========================
+         HEADER
+    ========================= -->
 
-<header id="header">
+    <header id="header">
 
-    <div class="navbar">
+        <div class="container navbar">
 
-        <a href="index.html" class="logo">
+            <a href="#beranda" class="logo">
 
-            <div class="logo-icon">
-                🌿
-            </div>
-
-            <div class="logo-text">
-
-                Desa Pusaka
-
-                <small>
-                    Kab. Sambas
-                </small>
-
-            </div>
-
-        </a>
-
-
-        <div class="nav-container">
-
-            <nav>
-
-                <ul>
-
-                    <li class="active">
-                        <a href="index.html">
-                            Beranda
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="profil.html">
-                            Profil Desa
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="pelayanan.html">
-                            Pelayanan Surat
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="fasilitas.html">
-                            Fasilitas
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="potensi.html">
-                            UMKM & Potensi
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#pesan">
-                            Kirim Pesan
-                        </a>
-                    </li>
-
-                </ul>
-
-            </nav>
-
-        </div>
-
-
-        <div class="nav-actions">
-
-            <button
-                class="theme-toggle"
-                id="themeToggle"
-                aria-label="Ganti tema">
-
-                🌙
-
-            </button>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div class="hero-badge">
-
-            📍 KECAMATAN TEBAS • KABUPATEN SAMBAS
-
-        </div>
-
-
-        <h1>
-            Selamat Datang di Desa Pusaka
-        </h1>
-
-
-        <p>
-
-            Mewujudkan tata kelola pemerintahan desa yang
-            transparan, religius, mandiri, dan berdaya saing
-            tinggi berbasis potensi lokal.
-
-        </p>
-
-
-        <a
-            href="profil.html"
-            class="btn-primary">
-
-            🌿 Jelajahi Profil Desa
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ================= STATISTIK ================= -->
-
-<div class="stats-container">
-
-    <div class="stat-card">
-
-        <span class="icon">
-            🏛️
-        </span>
-
-        <h3>
-            1779
-        </h3>
-
-        <p>
-            Tahun Awal Kisah
-        </p>
-
-    </div>
-
-
-    <div class="stat-card">
-
-        <span class="icon">
-            👥
-        </span>
-
-        <h3>
-            3.031
-        </h3>
-
-        <p>
-            Jumlah Penduduk
-        </p>
-
-    </div>
-
-
-    <div class="stat-card">
-
-        <span class="icon">
-            🏡
-        </span>
-
-        <h3>
-            3
-        </h3>
-
-        <p>
-            Wilayah Dusun
-        </p>
-
-    </div>
-
-
-    <div class="stat-card">
-
-        <span class="icon">
-            🌾
-        </span>
-
-        <h3>
-            120+
-        </h3>
-
-        <p>
-            Hektar Pertanian
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- ================= BERITA ================= -->
-
-<section>
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <h2>
-                Kabar Terbaru & Berita Desa
-            </h2>
-
-            <p>
-                Informasi dan kegiatan terbaru masyarakat Desa Pusaka
-            </p>
-
-        </div>
-
-
-        <div class="news-grid">
-
-
-            <div class="news-card">
-
-                <div
-                    class="news-img"
-                    style="
-                        background:
-                        url('gotong-royong.jpg')
-                        center/cover;
-                    ">
+                <div class="logo-icon">
+                    🏡
                 </div>
 
-                <div class="news-body">
+                <span>Desa Pusaka</span>
 
-                    <h3>
-                        Kegiatan Gotong Royong Massal Warga Dusun Puting
-                    </h3>
+            </a>
 
-                    <p>
-                        Semangat kebersamaan yang tak pernah padam.
-                        Warga antusias membersihkan saluran irigasi.
-                    </p>
+            <ul class="nav-menu">
 
-                </div>
+                <li>
+                    <a href="#beranda">Beranda</a>
+                </li>
 
-            </div>
+                <li>
+                    <a href="#profil">Profil Desa</a>
+                </li>
 
+                <li>
+                    <a href="#pelayanan">Pelayanan Surat</a>
+                </li>
 
+                <li>
+                    <a href="#fasilitas">Fasilitas</a>
+                </li>
 
-            <div class="news-card">
+                <li>
+                    <a href="#potensi">UMKM & Potensi</a>
+                </li>
 
-                <div
-                    class="news-img"
-                    style="
-                        background:
-                        url('pertanian-desaa.jpg')
-                        center/cover;
-                    ">
-                </div>
+            </ul>
 
-                <div class="news-body">
-
-                    <h3>
-                        Pelatihan Pertanian Modern & Pembuatan Pupuk Organik
-                    </h3>
-
-                    <p>
-                        Inovasi untuk hasil bumi yang lebih sehat
-                        dan berkualitas tinggi.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="news-card">
-
-                <div
-                    class="news-img"
-                    style="
-                        background:
-                        url('kegiatan-warga.jpg')
-                        center/cover;
-                    ">
-                </div>
-
-                <div class="news-body">
-
-                    <h3>
-                        Musyawarah Perencanaan Pembangunan Desa
-                    </h3>
-
-                    <p>
-                        Wujud transparansi dan demokrasi desa
-                        merumuskan arah pembangunan.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ===================================================== -->
-<!-- FORM DATABASE DESA PUSAKA -->
-<!-- ===================================================== -->
-
-<section
-    class="database-section"
-    id="pesan">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <h2>
-                Sampaikan Pesan kepada Desa Pusaka
-            </h2>
-
-            <p>
-                Silakan isi formulir berikut.
-                Data akan tersimpan otomatis ke database Desa Pusaka.
-            </p>
-
-        </div>
-
-
-        <div class="form-container">
-
-
-            <form id="pesanForm">
-
-
-                <!-- NAMA -->
-
-                <div class="form-group">
-
-                    <label for="nama">
-                        Nama Lengkap
-                    </label>
-
-                    <input
-                        type="text"
-                        id="nama"
-                        name="Nama Lengkap"
-                        placeholder="Masukkan nama lengkap"
-                        required>
-
-                </div>
-
-
-                <!-- NOMOR WA -->
-
-                <div class="form-group">
-
-                    <label for="wa">
-                        Nomor WhatsApp
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="wa"
-                        name="Nomor WA"
-                        placeholder="Contoh: 083896895383"
-                        required>
-
-                </div>
-
-
-                <!-- DUSUN -->
-
-                <div class="form-group">
-
-                    <label for="dusun">
-                        Dusun / RT
-                    </label>
-
-                    <input
-                        type="text"
-                        id="dusun"
-                        name="Dusun/RT"
-                        placeholder="Contoh: Dusun Puting / RT 01"
-                        required>
-
-                </div>
-
-
-                <!-- PESAN -->
-
-                <div class="form-group">
-
-                    <label for="pesan">
-                        Keperluan / Pesan
-                    </label>
-
-                    <textarea
-                        id="pesan"
-                        name="Keperluan/Pesan"
-                        placeholder="Tuliskan keperluan atau pesan Anda..."
-                        required></textarea>
-
-                </div>
-
-
-                <!-- BUTTON -->
+            <div class="nav-actions">
 
                 <button
-                    type="submit"
-                    class="submit-btn"
-                    id="submitBtn">
-
-                    📩 Kirim Pesan
-
+                    class="theme-btn"
+                    id="themeBtn"
+                    type="button"
+                    aria-label="Mode gelap">
+                    🌙
                 </button>
 
+            </div>
 
-                <!-- STATUS -->
+        </div>
 
-                <div
-                    id="statusMessage"
-                    class="status-message">
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero" id="beranda">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+                    Kecamatan Tebas • Kabupaten Sambas
+                </span>
+
+                <h1>
+                    Selamat Datang di Desa Pusaka
+                </h1>
+
+                <p>
+                    Desa yang asri, penuh kebersamaan,
+                    memiliki potensi alam dan pertanian
+                    serta semangat masyarakat untuk terus berkembang.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#profil" class="btn btn-primary">
+                        Jelajahi Desa
+                    </a>
+
+                    <a href="#pesan" class="btn btn-outline">
+                        Sampaikan Pesan
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         STATISTIK
+    ========================= -->
+
+    <div class="stats">
+
+        <div class="container">
+
+            <div class="stats-grid">
+
+                <div class="stat">
+                    <h3>1779</h3>
+                    <p>Sejarah Desa</p>
+                </div>
+
+                <div class="stat">
+                    <h3>3.031</h3>
+                    <p>Jumlah Penduduk</p>
+                </div>
+
+                <div class="stat">
+                    <h3>3</h3>
+                    <p>Dusun</p>
+                </div>
+
+                <div class="stat">
+                    <h3>120+</h3>
+                    <p>Hektare Lahan</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         PROFIL DESA
+    ========================= -->
+
+    <section class="profile" id="profil">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Tentang Desa</span>
+
+                <h2>Mengenal Desa Pusaka</h2>
+
+                <p>
+                    Desa Pusaka merupakan desa yang memiliki
+                    kekayaan alam, budaya dan semangat gotong royong.
+                </p>
+
+            </div>
+
+
+            <div class="profile-grid">
+
+                <div class="profile-image">
+
+                    <img
+                        src="kantor-desa-pusaka.jpg"
+                        alt="Kantor Desa Pusaka"
+                        onerror="this.src='kantor-desa.jpg'">
+
                 </div>
 
 
-            </form>
+                <div class="profile-content">
+
+                    <h2>
+                        Desa yang Asri dan Penuh Kebersamaan
+                    </h2>
+
+                    <p>
+                        Desa Pusaka merupakan salah satu desa
+                        yang berada di Kecamatan Tebas,
+                        Kabupaten Sambas, Kalimantan Barat.
+                    </p>
+
+                    <p>
+                        Kehidupan desa dibangun dari alam yang
+                        terjaga, kebersamaan masyarakat,
+                        serta semangat untuk terus berkembang.
+                    </p>
+
+                    <p>
+                        Sebagian masyarakat Desa Pusaka
+                        memanfaatkan lahan untuk menanam padi
+                        dan limau sebagai salah satu potensi
+                        pertanian desa.
+                    </p>
+
+
+                    <div class="values">
+
+                        <div class="value-box">
+
+                            <strong>
+                                🌳 Lingkungan Asri
+                            </strong>
+
+                            <small>
+                                Lingkungan desa yang hijau
+                                dan nyaman.
+                            </small>
+
+                        </div>
+
+
+                        <div class="value-box">
+
+                            <strong>
+                                🤝 Gotong Royong
+                            </strong>
+
+                            <small>
+                                Masyarakat menjaga kebersamaan.
+                            </small>
+
+                        </div>
+
+
+                        <div class="value-box">
+
+                            <strong>
+                                🌾 Pertanian
+                            </strong>
+
+                            <small>
+                                Potensi padi dan limau.
+                            </small>
+
+                        </div>
+
+
+                        <div class="value-box">
+
+                            <strong>
+                                🌱 Berkembang
+                            </strong>
+
+                            <small>
+                                Bersama membangun desa.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- ================= FOOTER ================= -->
+    <!-- =========================
+         POTENSI
+    ========================= -->
 
-<footer>
+    <section id="potensi">
 
-    <div class="footer-grid">
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Potensi Desa</span>
+
+                <h2>Potensi Desa Pusaka</h2>
+
+                <p>
+                    Potensi alam dan kegiatan masyarakat
+                    menjadi bagian penting dari kehidupan Desa Pusaka.
+                </p>
+
+            </div>
 
 
-        <div>
+            <div class="cards">
 
-            <h3
-                style="
-                    color: white;
-                    font-family: 'Playfair Display', serif;
-                    margin-bottom: 12px;
-                ">
+                <div class="card">
 
-                🌿 Desa Pusaka
+                    <div class="card-image">
 
-            </h3>
+                        <img
+                            src="pertanian-desaa.jpg"
+                            alt="Pertanian Desa"
+                            onerror="this.src='sawah.jpg'">
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>
+                            🌾 Pertanian Padi
+                        </h3>
+
+                        <p>
+                            Sebagian masyarakat Desa Pusaka
+                            menanam padi sebagai salah satu
+                            sumber kehidupan dan potensi pertanian desa.
+                        </p>
+
+                    </div>
+
+                </div>
 
 
-            <p>
+                <div class="card">
 
-                Website Resmi Pemerintah Desa Pusaka,
-                Kecamatan Tebas, Kabupaten Sambas,
-                Kalimantan Barat.
+                    <div class="card-image">
 
-            </p>
+                        <img
+                            src="limau.jpg"
+                            alt="Tanaman Limau"
+                            onerror="this.src='sawah.jpg'">
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>
+                            🍊 Tanaman Limau
+                        </h3>
+
+                        <p>
+                            Tanaman limau menjadi salah satu
+                            tanaman yang banyak dikembangkan
+                            oleh masyarakat Desa Pusaka.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-image">
+
+                        <img
+                            src="kegiatan-warga.jpg"
+                            alt="Kegiatan Warga">
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>
+                            🤝 Kegiatan Masyarakat
+                        </h3>
+
+                        <p>
+                            Semangat kebersamaan terlihat dari
+                            berbagai kegiatan dan gotong royong
+                            masyarakat desa.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
+    </section>
 
 
-        <div>
+    <!-- =========================
+         PELAYANAN SURAT
+    ========================= -->
 
-            <h4
-                style="
-                    color: white;
-                    margin-bottom: 12px;
-                ">
+    <section class="services" id="pelayanan">
 
-                Navigasi
+        <div class="container">
 
-            </h4>
+            <div class="section-title">
 
+                <span>Pelayanan Desa</span>
 
-            <p>
-                <a
-                    href="index.html"
-                    style="color:#8ba398;">
+                <h2>Pelayanan Surat</h2>
 
-                    Beranda
+                <p>
+                    Informasi beberapa pelayanan administrasi
+                    yang dapat dilakukan oleh masyarakat.
+                </p>
 
-                </a>
-            </p>
+            </div>
 
 
-            <p>
-                <a
-                    href="profil.html"
-                    style="color:#8ba398;">
+            <div class="service-grid">
 
-                    Profil Desa
+                <div class="service-box">
 
-                </a>
-            </p>
+                    <div class="service-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        Surat Keterangan Domisili
+                    </h3>
+
+                    <p>
+                        Pelayanan surat keterangan domisili
+                        bagi masyarakat Desa Pusaka.
+                    </p>
+
+                </div>
 
 
-            <p>
-                <a
-                    href="pelayanan.html"
-                    style="color:#8ba398;">
+                <div class="service-box">
 
-                    Pelayanan Surat
+                    <div class="service-icon">
+                        🏠
+                    </div>
 
-                </a>
-            </p>
+                    <h3>
+                        Surat Keterangan Usaha
+                    </h3>
 
+                    <p>
+                        Pelayanan administrasi untuk
+                        masyarakat yang memiliki usaha.
+                    </p>
+
+                </div>
+
+
+                <div class="service-box">
+
+                    <div class="service-icon">
+                        📝
+                    </div>
+
+                    <h3>
+                        Surat Keterangan
+                    </h3>
+
+                    <p>
+                        Berbagai kebutuhan surat keterangan
+                        administrasi masyarakat desa.
+                    </p>
+
+                </div>
+
+            </div>
 
         </div>
 
+    </section>
 
 
-        <div>
+    <!-- =========================
+         FASILITAS
+    ========================= -->
 
-            <h4
-                style="
-                    color: white;
-                    margin-bottom: 12px;
-                ">
+    <section id="fasilitas">
 
-                Kontak
+        <div class="container">
 
-            </h4>
+            <div class="section-title">
+
+                <span>Fasilitas Desa</span>
+
+                <h2>Fasilitas di Desa Pusaka</h2>
+
+                <p>
+                    Berbagai fasilitas yang mendukung
+                    kegiatan masyarakat.
+                </p>
+
+            </div>
 
 
-            <p>
+            <div class="cards">
 
-                Kecamatan Tebas,
-                Kab. Sambas,
-                Kalbar (79461)
+                <div class="card">
 
-            </p>
+                    <div class="card-image">
+
+                        <img
+                            src="kantor-desa-pusaka.jpg"
+                            alt="Kantor Desa"
+                            onerror="this.src='kantor-desa.jpg'">
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>
+                            🏢 Kantor Desa
+                        </h3>
+
+                        <p>
+                            Pusat pelayanan administrasi
+                            dan pemerintahan Desa Pusaka.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-image">
+
+                        <img
+                            src="jalan-desa.jpg"
+                            alt="Jalan Desa">
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>
+                            🛣️ Jalan Desa
+                        </h3>
+
+                        <p>
+                            Jalan yang digunakan masyarakat
+                            untuk mendukung aktivitas sehari-hari.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-image">
+
+                        <img
+                            src="kegiatan-warga.jpg"
+                            alt="Kegiatan Warga">
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>
+                            👥 Kegiatan Warga
+                        </h3>
+
+                        <p>
+                            Tempat dan kegiatan yang mendukung
+                            interaksi serta kebersamaan masyarakat.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
+    </section>
 
-    </div>
 
+    <!-- =========================
+         KEGIATAN
+    ========================= -->
 
-    <div class="footer-bottom">
+    <section class="services">
 
-        <p>
+        <div class="container">
 
-            © 2026 Pemerintah Desa Pusaka.
-            All Rights Reserved.
+            <div class="section-title">
 
-        </p>
+                <span>Kabar Desa</span>
 
-    </div>
+                <h2>Kegiatan Masyarakat</h2>
 
-</footer>
+                <p>
+                    Berbagai kegiatan yang dilakukan
+                    masyarakat Desa Pusaka.
+                </p>
 
+            </div>
 
-<!-- ================= BACK TO TOP ================= -->
 
-<button
-    class="back-to-top"
-    id="backToTop">
+            <div class="cards">
 
-    ↑
+                <div class="card">
 
-</button>
+                    <div class="card-image">
 
+                        <img
+                            src="gotong-royong.jpg"
+                            alt="Gotong Royong">
 
-<!-- ===================================================== -->
-<!-- JAVASCRIPT -->
-<!-- ===================================================== -->
+                    </div>
 
-<script>
+                    <div class="card-content">
 
+                        <h3>
+                            🤝 Gotong Royong
+                        </h3>
 
-    /* ===================================================
-       DATABASE SHEETDB DESA PUSAKA
-       =================================================== */
+                        <p>
+                            Masyarakat bersama-sama menjaga
+                            kebersihan dan lingkungan desa.
+                        </p>
 
-    const SHEETDB_URL =
-        "https://sheetdb.io/api/v1/wdiapwaud3dcz";
+                    </div>
 
+                </div>
 
-    /* ===================================================
-       FORM DATABASE
-       =================================================== */
 
-    const pesanForm =
-        document.getElementById("pesanForm");
+                <div class="card">
 
+                    <div class="card-image">
 
-    const submitBtn =
-        document.getElementById("submitBtn");
+                        <img
+                            src="kegiatan-warga.jpg"
+                            alt="Kegiatan Warga">
 
+                    </div>
 
-    const statusMessage =
-        document.getElementById("statusMessage");
+                    <div class="card-content">
 
+                        <h3>
+                            👨‍👩‍👧‍👦 Kegiatan Warga
+                        </h3>
 
-    pesanForm.addEventListener("submit", async function(event) {
+                        <p>
+                            Kegiatan masyarakat menjadi
+                            bagian dari kehidupan sosial desa.
+                        </p>
 
-        event.preventDefault();
+                    </div>
 
+                </div>
 
-        /* Ambil data dari form */
 
-        const nama =
-            document.getElementById("nama").value.trim();
+                <div class="card">
 
+                    <div class="card-image">
 
-        const wa =
-            document.getElementById("wa").value.trim();
+                        <img
+                            src="sawah.jpg"
+                            alt="Panen Padi">
 
+                    </div>
 
-        const dusun =
-            document.getElementById("dusun").value.trim();
+                    <div class="card-content">
 
+                        <h3>
+                            🌾 Panen Padi
+                        </h3>
 
-        const pesan =
-            document.getElementById("pesan").value.trim();
+                        <p>
+                            Hasil panen padi menjadi salah satu
+                            potensi pertanian masyarakat desa.
+                        </p>
 
+                    </div>
 
-        /* Validasi */
+                </div>
 
-        if (!nama || !wa || !dusun || !pesan) {
+            </div>
 
-            statusMessage.textContent =
-                "⚠️ Semua kolom wajib diisi.";
+        </div>
 
-            statusMessage.className =
-                "status-message status-error";
+    </section>
 
-            return;
-        }
 
+    <!-- =========================
+         FORM DATABASE SHEETDB
+    ========================= -->
 
-        /* Ubah tombol */
+    <section class="database-section" id="pesan">
 
-        submitBtn.disabled = true;
+        <div class="container">
 
-        submitBtn.textContent =
-            "⏳ Mengirim data...";
+            <div class="section-title">
 
+                <span>Database Desa</span>
 
-        statusMessage.className =
-            "status-message";
+                <h2>
+                    Sampaikan Pesan kepada Desa Pusaka
+                </h2>
 
-        statusMessage.textContent =
-            "";
+                <p>
+                    Silakan isi formulir berikut.
+                    Data akan tersimpan otomatis
+                    ke database Desa Pusaka.
+                </p>
 
+            </div>
 
-        try {
 
+            <div class="form-container">
 
-            /* Kirim data ke SheetDB */
+                <form id="pesanForm">
 
-            const response =
-                await fetch(SHEETDB_URL, {
+                    <!-- NAMA -->
 
-                    method: "POST",
+                    <div class="form-group">
 
-                    headers: {
+                        <label for="nama">
+                            Nama Lengkap
+                        </label>
 
-                        "Content-Type":
-                            "application/json"
+                        <input
+                            type="text"
+                            id="nama"
+                            placeholder="Masukkan nama lengkap"
+                            required>
 
-                    },
+                    </div>
 
-                    body: JSON.stringify({
 
-                        data: {
+                    <!-- WHATSAPP -->
 
-                            "Nama Lengkap": nama,
+                    <div class="form-group">
 
-                            "Nomor WA": wa,
+                        <label for="wa">
+                            Nomor WhatsApp
+                        </label>
 
-                            "Dusun/RT": dusun,
+                        <input
+                            type="tel"
+                            id="wa"
+                            placeholder="Contoh: 083896895383"
+                            required>
 
-                            "Keperluan/Pesan": pesan
+                    </div>
 
-                        }
 
-                    })
+                    <!-- DUSUN -->
 
-                });
+                    <div class="form-group">
 
+                        <label for="dusun">
+                            Dusun / RT
+                        </label>
 
-            /* Cek hasil */
+                        <input
+                            type="text"
+                            id="dusun"
+                            placeholder="Contoh: Dusun Puting / RT 01"
+                            required>
 
-            if (!response.ok) {
+                    </div>
 
-                throw new Error(
-                    "Gagal mengirim data"
-                );
 
-            }
+                    <!-- PESAN -->
 
+                    <div class="form-group">
 
-            /* Berhasil */
+                        <label for="pesanInput">
+                            Keperluan / Pesan
+                        </label>
 
-            statusMessage.textContent =
-                "✅ Pesan berhasil dikirim! Data sudah tersimpan di database Desa Pusaka.";
+                        <textarea
+                            id="pesanInput"
+                            placeholder="Tuliskan keperluan atau pesan Anda..."
+                            required></textarea>
 
+                    </div>
 
-            statusMessage.className =
-                "status-message status-success";
 
+                    <!-- BUTTON -->
 
-            /* Kosongkan form */
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                        id="submitBtn">
 
-            pesanForm.reset();
+                        📩 Kirim Pesan
 
+                    </button>
 
-        }
 
-        catch (error) {
+                    <!-- STATUS -->
 
-            console.error(error);
+                    <div
+                        id="statusMessage"
+                        class="status-message">
+                    </div>
 
+                </form>
 
-            statusMessage.textContent =
-                "❌ Pesan gagal dikirim. Silakan coba lagi.";
+            </div>
 
+        </div>
 
-            statusMessage.className =
-                "status-message status-error";
+    </section>
 
-        }
 
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
-        finally {
+    <footer>
 
-            submitBtn.disabled = false;
+        <div class="container">
 
-            submitBtn.textContent =
-                "📩 Kirim Pesan";
+            <div class="footer-grid">
 
-        }
+                <div>
 
-    });
+                    <h3>
+                        🏡 Desa Pusaka
+                    </h3>
 
+                    <p>
+                        Desa Pusaka merupakan desa
+                        yang berada di Kecamatan Tebas,
+                        Kabupaten Sambas, Kalimantan Barat.
+                    </p>
 
+                </div>
 
-    /* ===================================================
-       DARK MODE
-       =================================================== */
 
-    const themeToggleBtn =
-        document.getElementById("themeToggle");
+                <div>
 
+                    <h3>
+                        Navigasi
+                    </h3>
 
-    if (
-        localStorage.getItem("theme")
-        === "dark"
-    ) {
+                    <ul>
 
-        document.body.classList.add(
-            "dark-mode"
-        );
+                        <li>
+                            <a href="#beranda">
+                                Beranda
+                            </a>
+                        </li>
 
-        themeToggleBtn.textContent =
-            "☀️";
+                        <li>
+                            <a href="#profil">
+                                Profil Desa
+                            </a>
+                        </li>
 
-    }
+                        <li>
+                            <a href="#pelayanan">
+                                Pelayanan
+                            </a>
+                        </li>
 
+                        <li>
+                            <a href="#pesan">
+                                Sampaikan Pesan
+                            </a>
+                        </li>
 
-    themeToggleBtn.addEventListener(
-        "click",
-        () => {
+                    </ul>
 
-            document.body.classList.toggle(
-                "dark-mode"
-            );
+                </div>
 
 
-            const isDark =
-                document.body.classList.contains(
-                    "dark-mode"
-                );
+                <div>
 
+                    <h3>
+                        Kontak
+                    </h3>
 
-            themeToggleBtn.textContent =
-                isDark
-                    ? "☀️"
-                    : "🌙";
+                    <ul>
 
+                        <li>
+                            📍 Desa Pusaka
+                        </li>
 
-            localStorage.setItem(
-                "theme",
-                isDark
-                    ? "dark"
-                    : "light"
-            );
+                        <li>
+                            Kecamatan Tebas
+                        </li>
 
-        }
-    );
+                        <li>
+                            Kabupaten Sambas
+                        </li>
 
+                        <li>
+                            Kalimantan Barat
+                        </li>
 
+                    </ul>
 
-    /* ===================================================
-       HEADER SCROLL
-       =================================================== */
+                </div>
 
-    const header =
-        document.getElementById("header");
+            </div>
 
 
-    const backToTopBtn =
-        document.getElementById("backToTop");
+            <div class="copyright">
 
+                © 2026 Desa Pusaka.
+                Website Promosi Desa.
 
-    window.addEventListener(
-        "scroll",
-        () => {
+            </div>
 
-            header.classList.toggle(
-                "scrolled",
-                window.scrollY > 60
-            );
+        </div>
 
+    </footer>
 
-            backToTopBtn.classList.toggle(
-                "show",
-                window.scrollY > 400
-            );
 
-        }
-    );
+    <!-- =========================
+         BACK TO TOP
+    ========================= -->
 
+    <button
+        id="backTop"
+        type="button"
+        aria-label="Kembali ke atas">
 
+        ↑
 
-    /* ===================================================
-       BACK TO TOP
-       =================================================== */
+    </button>
 
-    backToTopBtn.addEventListener(
-        "click",
-        () => {
 
-            window.scrollTo({
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
-                top: 0,
+    <script>
 
-                behavior: "smooth"
+        document.addEventListener("DOMContentLoaded", function () {
+
+            /* =========================
+               SHEETDB
+            ========================= */
+
+            const SHEETDB_URL =
+                "https://sheetdb.io/api/v1/wdiapwaud3dcz";
+
+
+            const form =
+                document.getElementById("pesanForm");
+
+
+            const tombol =
+                document.getElementById("submitBtn");
+
+
+            const status =
+                document.getElementById("statusMessage");
+
+
+            /* =========================
+               FORM SUBMIT
+            ========================= */
+
+            form.addEventListener("submit", async function (e) {
+
+                e.preventDefault();
+
+
+                const nama =
+                    document.getElementById("nama").value.trim();
+
+
+                const wa =
+                    document.getElementById("wa").value.trim();
+
+
+                const dusun =
+                    document.getElementById("dusun").value.trim();
+
+
+                const pesan =
+                    document.getElementById("pesanInput").value.trim();
+
+
+                /* CEK DATA */
+
+                if (
+                    nama === "" ||
+                    wa === "" ||
+                    dusun === "" ||
+                    pesan === ""
+                ) {
+
+                    status.innerHTML =
+                        "⚠️ Semua kolom harus diisi.";
+
+                    status.className =
+                        "status-message status-error";
+
+                    return;
+
+                }
+
+
+                /* TOMBOL LOADING */
+
+                tombol.disabled = true;
+
+                tombol.innerHTML =
+                    "⏳ Mengirim...";
+
+
+                status.innerHTML =
+                    "Sedang mengirim data...";
+
+                status.className =
+                    "status-message";
+
+
+                try {
+
+                    /* KIRIM KE SHEETDB */
+
+                    const response =
+                        await fetch(
+                            SHEETDB_URL,
+                            {
+                                method: "POST",
+
+                                headers: {
+                                    "Content-Type":
+                                        "application/json"
+                                },
+
+                                body: JSON.stringify({
+
+                                    data: {
+
+                                        /*
+                                         * NAMA KOLOM HARUS
+                                         * SAMA DENGAN GOOGLE SHEET
+                                         */
+
+                                        "Nama Lengkap": nama,
+
+                                        "Nomor Wa": wa,
+
+                                        "Dusun/Rt": dusun,
+
+                                        "Keperluan/Pesan": pesan
+
+                                    }
+
+                                })
+
+                            }
+                        );
+
+
+                    /* AMBIL RESPONSE */
+
+                    const hasil =
+                        await response.json();
+
+
+                    console.log(
+                        "Response SheetDB:",
+                        hasil
+                    );
+
+
+                    /* CEK RESPONSE */
+
+                    if (!response.ok) {
+
+                        throw new Error(
+                            "Gagal mengirim data"
+                        );
+
+                    }
+
+
+                    /* BERHASIL */
+
+                    status.innerHTML =
+                        "✅ Pesan berhasil dikirim ke database Desa Pusaka!";
+
+                    status.className =
+                        "status-message status-success";
+
+
+                    /* KOSONGKAN FORM */
+
+                    form.reset();
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Error:",
+                        error
+                    );
+
+
+                    status.innerHTML =
+                        "❌ Gagal mengirim pesan. Silakan coba lagi.";
+
+                    status.className =
+                        "status-message status-error";
+
+                }
+
+
+                /* KEMBALIKAN BUTTON */
+
+                tombol.disabled = false;
+
+                tombol.innerHTML =
+                    "📩 Kirim Pesan";
 
             });
 
-        }
-    );
+
+            /* =========================
+               DARK MODE
+            ========================= */
+
+            const themeBtn =
+                document.getElementById("themeBtn");
 
 
-</script>
+            themeBtn.addEventListener(
+                "click",
+                function () {
+
+                    document.body.classList.toggle("dark");
+
+
+                    if (
+                        document.body.classList.contains("dark")
+                    ) {
+
+                        themeBtn.innerHTML = "☀️";
+
+                    } else {
+
+                        themeBtn.innerHTML = "🌙";
+
+                    }
+
+                }
+            );
+
+
+            /* =========================
+               HEADER SCROLL
+            ========================= */
+
+            const header =
+                document.getElementById("header");
+
+
+            window.addEventListener(
+                "scroll",
+                function () {
+
+                    if (window.scrollY > 50) {
+
+                        header.classList.add("scrolled");
+
+                    } else {
+
+                        header.classList.remove("scrolled");
+
+                    }
+
+                }
+            );
+
+
+            /* =========================
+               BACK TO TOP
+            ========================= */
+
+            const backTop =
+                document.getElementById("backTop");
+
+
+            window.addEventListener(
+                "scroll",
+                function () {
+
+                    if (window.scrollY > 400) {
+
+                        backTop.style.display = "block";
+
+                    } else {
+
+                        backTop.style.display = "none";
+
+                    }
+
+                }
+            );
+
+
+            backTop.addEventListener(
+                "click",
+                function () {
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+                }
+            );
+
+        });
+
+    </script>
 
 </body>
 </html>
