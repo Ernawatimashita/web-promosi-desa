@@ -93,9 +93,24 @@
             margin-bottom: 20px;
         }
 
+        .action-btns {
+            display: flex;
+            gap: 10px;
+        }
+
         .btn-logout {
             padding: 8px 16px;
             background: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-refresh {
+            padding: 8px 16px;
+            background: var(--primary);
             color: white;
             border: none;
             border-radius: 8px;
@@ -139,17 +154,17 @@
 
     <!-- LOGIN BOX -->
     <div id="loginBox" class="login-card">
-        <h2>🔒 Login Admin</h2>
+        <h2>🔒 Login Admin Desa</h2>
         <form id="loginForm">
             <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Masukkan username" required>
+                <label for="username">Username Admin</label>
+                <input type="text" id="username" placeholder="Masukkan username" required autocomplete="off">
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" placeholder="Masukkan password" required>
             </div>
-            <button type="submit" class="btn-login">Masuk</button>
+            <button type="submit" class="btn-login">Masuk ke Dashboard</button>
         </form>
     </div>
 
@@ -157,7 +172,10 @@
     <div id="adminDashboard" class="dashboard">
         <div class="header-admin">
             <h2>📬 Pesan Masuk Desa Pusaka</h2>
-            <button id="logoutBtn" class="btn-logout">Keluar (Logout)</button>
+            <div class="action-btns">
+                <button id="refreshBtn" class="btn-refresh" onclick="muatDataPesan()">🔄 Muat Ulang Data</button>
+                <button id="logoutBtn" class="btn-logout">Keluar (Logout)</button>
+            </div>
         </div>
 
         <div class="table-responsive">
@@ -183,11 +201,13 @@
 </div>
 
 <script>
-    // Konfigurasi Akun Login
-    const ADMIN_USER = "admin";
-    const ADMIN_PASS = "pusaka123";
+    // =========================================================
+    // KREDENSIAL AKUN ADMIN (Ubah sesuai kebutuhan)
+    // =========================================================
+    const DEFAULT_USER = "admin";
+    const DEFAULT_PASS = "PusakaDesa2026!"; // <-- Password login admin di sini
 
-    // API SheetDB
+    // URL Database SheetDB
     const SHEETDB_URL = "https://sheetdb.io/api/v1/wdiapwaud3dcz";
 
     const loginBox = document.getElementById("loginBox");
@@ -196,40 +216,42 @@
     const logoutBtn = document.getElementById("logoutBtn");
     const tableBody = document.getElementById("tableBody");
 
-    // Cek Status Login
+    // Cek Status Login dari Sesi Browser
     if (sessionStorage.getItem("isAdminLoggedIn") === "true") {
         tampilkanDashboard();
     }
 
-    // Aksi Submit Login
+    // Aksi Submit Form Login
     loginForm.addEventListener("submit", function(e) {
         e.preventDefault();
         const user = document.getElementById("username").value.trim();
         const pass = document.getElementById("password").value.trim();
 
-        if (user === ADMIN_USER && pass === ADMIN_PASS) {
+        if (user === DEFAULT_USER && pass === DEFAULT_PASS) {
             sessionStorage.setItem("isAdminLoggedIn", "true");
             tampilkanDashboard();
         } else {
-            alert("❌ Username atau Password salah!");
+            alert("❌ Akses Ditolak: Username atau Password Admin salah!");
         }
     });
 
-    // Logout
+    // Logout Admin
     logoutBtn.addEventListener("click", function() {
         sessionStorage.removeItem("isAdminLoggedIn");
         location.reload();
     });
 
-    // Tampilkan Halaman Admin
+    // Menampilkan Halaman Dashboard
     function tampilkanDashboard() {
         loginBox.style.display = "none";
         adminDashboard.style.display = "block";
         muatDataPesan();
     }
 
-    // Ambil Data dari Database SheetDB
+    // Mengambil Data Pesan dari API
     async function muatDataPesan() {
+        tableBody.innerHTML = `<tr><td colspan="5" style="text-align: center;">Memuat data terbaru...</td></tr>`;
+        
         try {
             const response = await fetch(SHEETDB_URL);
             const data = await response.json();
@@ -250,7 +272,11 @@
                     <tr>
                         <td>${index + 1}</td>
                         <td><b>${nama}</b></td>
-                        <td><a href="https://wa.me/${wa.replace(/[^0-9]/g, '')}" target="_blank" style="color: green; font-weight: 600;">${wa} 💬</a></td>
+                        <td>
+                            <a href="https://wa.me/${wa.replace(/[^0-9]/g, '')}" target="_blank" style="color: #0d5437; font-weight: 700; text-decoration: none;">
+                                ${wa} 💬
+                            </a>
+                        </td>
                         <td>${dusun}</td>
                         <td>${pesan}</td>
                     </tr>
@@ -261,7 +287,7 @@
 
         } catch (error) {
             console.error("Gagal mengambil data:", error);
-            tableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: red;">Gagal memuat data dari database.</td></tr>`;
+            tableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: red;">Gagal memuat data dari database. Periksa koneksi internet Anda.</td></tr>`;
         }
     }
 </script>
