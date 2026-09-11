@@ -70,7 +70,6 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 100px;
         }
 
         body {
@@ -230,7 +229,7 @@
                     rgba(6, 47, 32, 0.82) 0%,
                     rgba(6, 47, 32, 0.90) 100%
                 ),
-                url('https://images.unsplash.com/photo-1590483736622-39da86788790?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+                url('masjid.jpg') center/cover no-repeat;
 
             text-align: center;
         }
@@ -400,10 +399,6 @@
 
         .news-img {
             height: 200px;
-
-            background-size: cover;
-
-            background-position: center;
         }
 
         .news-body {
@@ -957,8 +952,9 @@
                 <div
                     class="news-img"
                     style="
-                        background-image:
-                        url('https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=600&auto=format&fit=crop');
+                        background:
+                        url('gotong-royong.jpg')
+                        center/cover;
                     ">
                 </div>
 
@@ -984,8 +980,9 @@
                 <div
                     class="news-img"
                     style="
-                        background-image:
-                        url('https://images.unsplash.com/photo-1530587191325-3db32d826c18?q=80&w=600&auto=format&fit=crop');
+                        background:
+                        url('pertanian-desaa.jpg')
+                        center/cover;
                     ">
                 </div>
 
@@ -1011,8 +1008,9 @@
                 <div
                     class="news-img"
                     style="
-                        background-image:
-                        url('https://images.unsplash.com/photo-1577495508048-b635879837f1?q=80&w=600&auto=format&fit=crop');
+                        background:
+                        url('kegiatan-warga.jpg')
+                        center/cover;
                     ">
                 </div>
 
@@ -1066,7 +1064,7 @@
         <div class="form-container">
 
 
-            <form id="pesanForm" action="#">
+            <form id="pesanForm">
 
 
                 <!-- NAMA -->
@@ -1127,12 +1125,12 @@
 
                 <div class="form-group">
 
-                    <label for="inputPesan">
+                    <label for="pesanTeks">
                         Keperluan / Pesan
                     </label>
 
                     <textarea
-                        id="inputPesan"
+                        id="pesanTeks"
                         name="Keperluan/Pesan"
                         placeholder="Tuliskan keperluan atau pesan Anda..."
                         required></textarea>
@@ -1336,9 +1334,16 @@
                 document.getElementById("statusMessage");
 
 
+            /* Pastikan form ditemukan */
+
             if (!pesanForm) {
-                console.error("Form pesan tidak ditemukan.");
+
+                console.error(
+                    "Form pesan tidak ditemukan."
+                );
+
                 return;
+
             }
 
 
@@ -1378,12 +1383,14 @@
 
                     const pesan =
                         document
-                        .getElementById("inputPesan")
+                        .getElementById("pesanTeks")
                         .value
                         .trim();
 
 
-                    /* Validasi */
+                    /* =================================================
+                       VALIDASI
+                       ================================================= */
 
                     if (
                         nama === "" ||
@@ -1403,7 +1410,9 @@
                     }
 
 
-                    /* Status Loading */
+                    /* =================================================
+                       TOMBOL LOADING
+                       ================================================= */
 
                     submitBtn.disabled = true;
 
@@ -1412,13 +1421,15 @@
 
 
                     statusMessage.textContent =
-                        "Sedang mengirim data ke server...";
+                        "Sedang mengirim data...";
 
                     statusMessage.className =
-                        "status-message status-success";
+                        "status-message";
 
 
-                    /* Kirim Data */
+                    /* =================================================
+                       KIRIM DATA
+                       ================================================= */
 
                     try {
 
@@ -1441,12 +1452,23 @@
 
                                             data: {
 
-                                                "Nama Lengkap": nama,
-                                                "Nomor WA": wa,
-                                                "Nomor Wa": wa,
-                                                "Dusun/RT": dusun,
-                                                "Dusun/Rt": dusun,
-                                                "Keperluan/Pesan": pesan
+                                                "Nama Lengkap":
+                                                    nama,
+
+                                                "Nomor WA":
+                                                    wa,
+
+                                                "Nomor Wa":
+                                                    wa,
+
+                                                "Dusun/RT":
+                                                    dusun,
+
+                                                "Dusun/Rt":
+                                                    dusun,
+
+                                                "Keperluan/Pesan":
+                                                    pesan
 
                                             }
 
@@ -1455,6 +1477,8 @@
                                 }
                             );
 
+
+                        /* Ambil response */
 
                         const hasil =
                             await response.json();
@@ -1466,6 +1490,10 @@
                         );
 
 
+                        /* =================================================
+                           CEK RESPONSE
+                           ================================================= */
+
                         if (!response.ok) {
 
                             throw new Error(
@@ -1475,17 +1503,27 @@
                         }
 
 
+                        /* =================================================
+                           BERHASIL
+                           ================================================= */
+
                         statusMessage.textContent =
-                            "✅ Pesan berhasil dikirim! Data sudah tersimpan di database.";
+                            "✅ Pesan berhasil dikirim! Data sudah tersimpan.";
 
                         statusMessage.className =
                             "status-message status-success";
 
 
+                        /* Kosongkan form */
+
                         pesanForm.reset();
 
                     }
 
+
+                    /* =================================================
+                       ERROR
+                       ================================================= */
 
                     catch (error) {
 
@@ -1496,13 +1534,17 @@
 
 
                         statusMessage.textContent =
-                            "❌ Pesan gagal dikirim. Periksa koneksi atau coba lagi nanti.";
+                            "❌ Pesan gagal dikirim. Silakan coba lagi.";
 
                         statusMessage.className =
                             "status-message status-error";
 
                     }
 
+
+                    /* =================================================
+                       KEMBALIKAN TOMBOL
+                       ================================================= */
 
                     finally {
 
@@ -1525,16 +1567,22 @@
        =================================================== */
 
     const themeToggleBtn =
-        document.getElementById("themeToggle");
+        document.getElementById(
+            "themeToggle"
+        );
 
 
     if (
-        localStorage.getItem("theme") === "dark"
+        localStorage.getItem("theme")
+        === "dark"
     ) {
 
-        document.body.classList.add("dark-mode");
+        document.body.classList.add(
+            "dark-mode"
+        );
 
-        themeToggleBtn.textContent = "☀️";
+        themeToggleBtn.textContent =
+            "☀️";
 
     }
 
@@ -1543,14 +1591,29 @@
         "click",
         () => {
 
-            document.body.classList.toggle("dark-mode");
+            document.body.classList.toggle(
+                "dark-mode"
+            );
+
 
             const isDark =
-                document.body.classList.contains("dark-mode");
+                document.body.classList.contains(
+                    "dark-mode"
+                );
 
-            themeToggleBtn.textContent = isDark ? "☀️" : "🌙";
 
-            localStorage.setItem("theme", isDark ? "dark" : "light");
+            themeToggleBtn.textContent =
+                isDark
+                    ? "☀️"
+                    : "🌙";
+
+
+            localStorage.setItem(
+                "theme",
+                isDark
+                    ? "dark"
+                    : "light"
+            );
 
         }
     );
@@ -1561,11 +1624,15 @@
        =================================================== */
 
     const header =
-        document.getElementById("header");
+        document.getElementById(
+            "header"
+        );
 
 
     const backToTopBtn =
-        document.getElementById("backToTop");
+        document.getElementById(
+            "backToTop"
+        );
 
 
     window.addEventListener(
