@@ -166,8 +166,9 @@
 
         nav ul {
             display: flex;
-            gap: 15px;
+            gap: 10px;
             list-style: none;
+            align-items: center;
         }
 
         nav a {
@@ -186,6 +187,25 @@
         nav li.active > a {
             color: var(--primary-light);
             background: rgba(45, 138, 95, 0.08);
+        }
+
+        /* --- STYLE TOMBOL ADMIN BIRU --- */
+        .btn-admin-nav {
+            background-color: #1e73be !important;
+            color: #ffffff !important;
+            padding: 8px 16px !important;
+            border-radius: 10px !important;
+            font-weight: 700 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+            box-shadow: 0 4px 10px rgba(30, 115, 190, 0.3);
+            transition: var(--transition);
+        }
+
+        .btn-admin-nav:hover {
+            background-color: #155a96 !important;
+            transform: translateY(-2px);
         }
 
         .nav-actions {
@@ -758,31 +778,38 @@
 
                     <li>
                         <a href="profil.html">
-                            Profil Desa
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="pelayanan.html">
-                            Pelayanan Surat
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="fasilitas.html">
-                            Fasilitas
+                            Profil
                         </a>
                     </li>
 
                     <li>
                         <a href="potensi.html">
-                            UMKM & Potensi
+                            Potensi
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="fasilitas.html">
+                            Galeri
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="pelayanan.html">
+                            Layanan Surat
                         </a>
                     </li>
 
                     <li>
                         <a href="#pesan">
                             Kirim Pesan
+                        </a>
+                    </li>
+
+                    <!-- TOMBOL ADMIN BIRU SEPERTI DI GAMBAR -->
+                    <li>
+                        <a href="admin.html" class="btn-admin-nav">
+                            🔐 Admin
                         </a>
                     </li>
 
@@ -1037,9 +1064,7 @@
 </section>
 
 
-<!-- ===================================================== -->
-<!-- FORM DATABASE DESA PUSAKA -->
-<!-- ===================================================== -->
+<!-- ================= FORM DATABASE ================= -->
 
 <section
     class="database-section"
@@ -1067,8 +1092,6 @@
             <form id="pesanForm">
 
 
-                <!-- NAMA -->
-
                 <div class="form-group">
 
                     <label for="nama">
@@ -1084,8 +1107,6 @@
 
                 </div>
 
-
-                <!-- NOMOR WA -->
 
                 <div class="form-group">
 
@@ -1103,8 +1124,6 @@
                 </div>
 
 
-                <!-- DUSUN -->
-
                 <div class="form-group">
 
                     <label for="dusun">
@@ -1121,8 +1140,6 @@
                 </div>
 
 
-                <!-- PESAN -->
-
                 <div class="form-group">
 
                     <label for="pesanTeks">
@@ -1138,8 +1155,6 @@
                 </div>
 
 
-                <!-- BUTTON -->
-
                 <button
                     type="submit"
                     class="submit-btn"
@@ -1149,8 +1164,6 @@
 
                 </button>
 
-
-                <!-- STATUS -->
 
                 <div
                     id="statusMessage"
@@ -1279,8 +1292,7 @@
 
     <div class="footer-bottom">
 
-        <!-- Akses Rahasia Admin dengan Klik Teks Copyright -->
-        <p style="cursor: pointer;" onclick="window.location.href='admin.html'">
+        <p>
 
             © 2026 Pemerintah Desa Pusaka.
             All Rights Reserved.
@@ -1303,376 +1315,99 @@
 </button>
 
 
-<!-- ===================================================== -->
-<!-- JAVASCRIPT -->
-<!-- ===================================================== -->
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
-    /* ===================================================
-       DATABASE SHEETDB DESA PUSAKA
-       =================================================== */
+    const SHEETDB_URL = "https://sheetdb.io/api/v1/wdiapwaud3dcz";
 
-    const SHEETDB_URL =
-        "https://sheetdb.io/api/v1/wdiapwaud3dcz";
+    document.addEventListener("DOMContentLoaded", function () {
 
+        const pesanForm = document.getElementById("pesanForm");
+        const submitBtn = document.getElementById("submitBtn");
+        const statusMessage = document.getElementById("statusMessage");
 
-    /* ===================================================
-       FORM DATABASE
-       =================================================== */
+        if (!pesanForm) return;
 
-    document.addEventListener(
-        "DOMContentLoaded",
-        function () {
+        pesanForm.addEventListener("submit", async function (event) {
+            event.preventDefault();
 
-            const pesanForm =
-                document.getElementById("pesanForm");
+            const nama = document.getElementById("nama").value.trim();
+            const wa = document.getElementById("wa").value.trim();
+            const dusun = document.getElementById("dusun").value.trim();
+            const pesan = document.getElementById("pesanTeks").value.trim();
 
-            const submitBtn =
-                document.getElementById("submitBtn");
-
-            const statusMessage =
-                document.getElementById("statusMessage");
-
-
-            /* Pastikan form ditemukan */
-
-            if (!pesanForm) {
-
-                console.error(
-                    "Form pesan tidak ditemukan."
-                );
-
+            if (nama === "" || wa === "" || dusun === "" || pesan === "") {
+                statusMessage.textContent = "⚠️ Semua kolom wajib diisi.";
+                statusMessage.className = "status-message status-error";
                 return;
-
             }
 
+            submitBtn.disabled = true;
+            submitBtn.textContent = "⏳ Mengirim data...";
+            statusMessage.textContent = "Sedang mengirim data...";
+            statusMessage.className = "status-message";
 
-            /* =================================================
-               TOMBOL KIRIM PESAN
-               ================================================= */
-
-            pesanForm.addEventListener(
-                "submit",
-                async function (event) {
-
-                    event.preventDefault();
-
-
-                    /* Ambil data dari form */
-
-                    const nama =
-                        document
-                        .getElementById("nama")
-                        .value
-                        .trim();
-
-
-                    const wa =
-                        document
-                        .getElementById("wa")
-                        .value
-                        .trim();
-
-
-                    const dusun =
-                        document
-                        .getElementById("dusun")
-                        .value
-                        .trim();
-
-
-                    const pesan =
-                        document
-                        .getElementById("pesanTeks")
-                        .value
-                        .trim();
-
-
-                    /* =================================================
-                       VALIDASI
-                       ================================================= */
-
-                    if (
-                        nama === "" ||
-                        wa === "" ||
-                        dusun === "" ||
-                        pesan === ""
-                    ) {
-
-                        statusMessage.textContent =
-                            "⚠️ Semua kolom wajib diisi.";
-
-                        statusMessage.className =
-                            "status-message status-error";
-
-                        return;
-
-                    }
-
-
-                    /* =================================================
-                       TOMBOL LOADING
-                       ================================================= */
-
-                    submitBtn.disabled = true;
-
-                    submitBtn.textContent =
-                        "⏳ Mengirim data...";
-
-
-                    statusMessage.textContent =
-                        "Sedang mengirim data...";
-
-                    statusMessage.className =
-                        "status-message";
-
-
-                    /* =================================================
-                       KIRIM DATA
-                       ================================================= */
-
-                    try {
-
-                        const response =
-                            await fetch(
-                                SHEETDB_URL,
-                                {
-
-                                    method: "POST",
-
-                                    headers: {
-
-                                        "Content-Type":
-                                            "application/json"
-
-                                    },
-
-                                    body:
-                                        JSON.stringify({
-
-                                            data: {
-
-                                                "Nama Lengkap":
-                                                    nama,
-
-                                                "Nomor WA":
-                                                    wa,
-
-                                                "Nomor Wa":
-                                                    wa,
-
-                                                "Dusun/RT":
-                                                    dusun,
-
-                                                "Dusun/Rt":
-                                                    dusun,
-
-                                                "Keperluan/Pesan":
-                                                    pesan
-
-                                            }
-
-                                        })
-
-                                }
-                            );
-
-
-                        /* Ambil response */
-
-                        const hasil =
-                            await response.json();
-
-
-                        console.log(
-                            "Response SheetDB:",
-                            hasil
-                        );
-
-
-                        /* =================================================
-                           CEK RESPONSE
-                           ================================================= */
-
-                        if (!response.ok) {
-
-                            throw new Error(
-                                "Gagal mengirim data ke SheetDB."
-                            );
-
+            try {
+                const response = await fetch(SHEETDB_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        data: {
+                            "Nama Lengkap": nama,
+                            "Nomor WA": wa,
+                            "Nomor Wa": wa,
+                            "Dusun/RT": dusun,
+                            "Dusun/Rt": dusun,
+                            "Keperluan/Pesan": pesan
                         }
+                    })
+                });
 
+                if (!response.ok) throw new Error("Gagal mengirim data.");
 
-                        /* =================================================
-                           BERHASIL
-                           ================================================= */
+                statusMessage.textContent = "✅ Pesan berhasil dikirim! Data sudah tersimpan.";
+                statusMessage.className = "status-message status-success";
+                pesanForm.reset();
 
-                        statusMessage.textContent =
-                            "✅ Pesan berhasil dikirim! Data sudah tersimpan.";
+            } catch (error) {
+                console.error("Error:", error);
+                statusMessage.textContent = "❌ Pesan gagal dikirim. Silakan coba lagi.";
+                statusMessage.className = "status-message status-error";
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "📩 Kirim Pesan";
+            }
+        });
 
-                        statusMessage.className =
-                            "status-message status-success";
+    });
 
-
-                        /* Kosongkan form */
-
-                        pesanForm.reset();
-
-                    }
-
-
-                    /* =================================================
-                       ERROR
-                       ================================================= */
-
-                    catch (error) {
-
-                        console.error(
-                            "Error SheetDB:",
-                            error
-                        );
-
-
-                        statusMessage.textContent =
-                            "❌ Pesan gagal dikirim. Silakan coba lagi.";
-
-                        statusMessage.className =
-                            "status-message status-error";
-
-                    }
-
-
-                    /* =================================================
-                       KEMBALIKAN TOMBOL
-                       ================================================= */
-
-                    finally {
-
-                        submitBtn.disabled = false;
-
-                        submitBtn.textContent =
-                            "📩 Kirim Pesan";
-
-                    }
-
-                }
-            );
-
-        }
-    );
-
-
-    /* ===================================================
-       DARK MODE
-       =================================================== */
-
-    const themeToggleBtn =
-        document.getElementById(
-            "themeToggle"
-        );
-
-
-    if (
-        localStorage.getItem("theme")
-        === "dark"
-    ) {
-
-        document.body.classList.add(
-            "dark-mode"
-        );
-
-        themeToggleBtn.textContent =
-            "☀️";
-
+    // Dark Mode Toggle
+    const themeToggleBtn = document.getElementById("themeToggle");
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        themeToggleBtn.textContent = "☀️";
     }
 
+    themeToggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        const isDark = document.body.classList.contains("dark-mode");
+        themeToggleBtn.textContent = isDark ? "☀️" : "🌙";
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
 
-    themeToggleBtn.addEventListener(
-        "click",
-        () => {
+    // Header Scroll & Back To Top
+    const header = document.getElementById("header");
+    const backToTopBtn = document.getElementById("backToTop");
 
-            document.body.classList.toggle(
-                "dark-mode"
-            );
+    window.addEventListener("scroll", () => {
+        header.classList.toggle("scrolled", window.scrollY > 60);
+        backToTopBtn.classList.toggle("show", window.scrollY > 400);
+    });
 
-
-            const isDark =
-                document.body.classList.contains(
-                    "dark-mode"
-                );
-
-
-            themeToggleBtn.textContent =
-                isDark
-                    ? "☀️"
-                    : "🌙";
-
-
-            localStorage.setItem(
-                "theme",
-                isDark
-                    ? "dark"
-                    : "light"
-            );
-
-        }
-    );
-
-
-    /* ===================================================
-       HEADER SCROLL
-       =================================================== */
-
-    const header =
-        document.getElementById(
-            "header"
-        );
-
-
-    const backToTopBtn =
-        document.getElementById(
-            "backToTop"
-        );
-
-
-    window.addEventListener(
-        "scroll",
-        () => {
-
-            header.classList.toggle(
-                "scrolled",
-                window.scrollY > 60
-            );
-
-
-            backToTopBtn.classList.toggle(
-                "show",
-                window.scrollY > 400
-            );
-
-        }
-    );
-
-
-    /* ===================================================
-       BACK TO TOP
-       =================================================== */
-
-    backToTopBtn.addEventListener(
-        "click",
-        () => {
-
-            window.scrollTo({
-
-                top: 0,
-
-                behavior: "smooth"
-
-            });
-
-        }
-    );
+    backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
 </script>
 
