@@ -8,7 +8,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
     <style>
@@ -255,6 +254,7 @@
             font-weight: 700;
             border-radius: 50px;
             transition: var(--transition);
+            cursor: pointer;
         }
 
         .btn-primary:hover {
@@ -382,7 +382,6 @@
         }
 
         .form-group input,
-        .form-group select,
         .form-group textarea {
             width: 100%;
             padding: 14px 16px;
@@ -397,7 +396,6 @@
         }
 
         .form-group input:focus,
-        .form-group select:focus,
         .form-group textarea:focus {
             border-color: var(--primary-light);
             box-shadow: 0 0 0 3px rgba(45, 138, 95, 0.12);
@@ -551,6 +549,7 @@
                     <li><a href="potensi.html">Potensi</a></li>
                     <li><a href="fasilitas.html">Galeri</a></li>
                     <li><a href="pelayanan.html">Layanan Surat</a></li>
+                    <!-- Tombol ini mengarah ke ID #pesan -->
                     <li><a href="#pesan">Kirim Pesan</a></li>
                     <li><a href="admin.html" class="btn-admin-nav">🔐 Admin</a></li>
                 </ul>
@@ -569,7 +568,7 @@
         <div class="hero-badge">📍 KECAMATAN TEBAS • KABUPATEN SAMBAS</div>
         <h1>Selamat Datang di Desa Pusaka</h1>
         <p>Mewujudkan tata kelola pemerintahan desa yang transparan, religius, mandiri, dan berdaya saing tinggi berbasis potensi lokal.</p>
-        <a href="profil.html" class="btn-primary">🌿 Jelajahi Profil Desa</a>
+        <a href="#pesan" class="btn-primary">📩 Kirim Pesan Sekarang</a>
     </div>
 </section>
 
@@ -633,7 +632,7 @@
     </div>
 </section>
 
-<!-- FORM DATABASE -->
+<!-- FORM DATABASE (Memiliki id="pesan") -->
 <section class="database-section" id="pesan">
     <div class="container">
         <div class="section-title">
@@ -643,21 +642,18 @@
 
         <div class="form-container">
             <form id="pesanForm">
-                <!-- Kolom B: Nama -->
                 <div class="form-group">
                     <label for="nama">Nama Lengkap</label>
                     <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
                 </div>
 
-                <!-- Kolom C: Email -->
                 <div class="form-group">
                     <label for="email">Alamat Email</label>
                     <input type="email" id="email" name="email" placeholder="Contoh: nama@gmail.com" required>
                 </div>
 
-                <!-- Kolom D: Pesan/keperluan -->
                 <div class="form-group">
-                    <label for="pesanTeks">Pesan / Keperluan</label>
+                    <label for="pesanTeks">Pesan</label>
                     <textarea id="pesanTeks" name="pesan" placeholder="Tuliskan pesan Anda..." required></textarea>
                 </div>
 
@@ -697,7 +693,7 @@
 
 <!-- JAVASCRIPT INTEGRASI GOOGLE SHEETS -->
 <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw-IhBM8WvLmFSWVPYlTxIHeQv5Me0Pi_Q6_0dCOwLjBwBoRmPZm7Oe_tUOvtbR6Lh2xQ/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyLrdCF9WZWLwS8fBqcbyyu-my7JDvYE1ZXVm0E2-33Uil5J-kkaiHt-k63S53-zLzfAg/exec";
 
     document.addEventListener("DOMContentLoaded", function () {
         const pesanForm = document.getElementById("pesanForm");
@@ -725,18 +721,14 @@
             statusMessage.textContent = "Sedang mengirim data ke Google Sheets...";
             statusMessage.className = "status-message";
 
-            // Menggunakan URLSearchParams untuk dikirim ke Google Apps Script
-            const formData = new URLSearchParams();
+            const formData = new FormData();
             formData.append("nama", nama);
             formData.append("email", email);
             formData.append("pesan", pesan);
 
             fetch(SCRIPT_URL, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded"
-                },
-                body: formData.toString()
+                body: formData
             })
             .then(response => response.json())
             .then(data => {
@@ -750,7 +742,7 @@
             })
             .catch(error => {
                 console.error("Error:", error);
-                statusMessage.textContent = "❌ Gagal mengirim pesan. Pastikan Google Apps Script sudah di-deploy dengan benar.";
+                statusMessage.textContent = "❌ Gagal mengirim pesan. Pastikan koneksi lancar dan skrip sudah di-deploy.";
                 statusMessage.className = "status-message status-error";
             })
             .finally(() => {
