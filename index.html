@@ -189,7 +189,6 @@
             background: rgba(45, 138, 95, 0.08);
         }
 
-        /* --- STYLE TOMBOL ADMIN BIRU --- */
         .btn-admin-nav {
             background-color: #1e73be !important;
             color: #ffffff !important;
@@ -806,7 +805,6 @@
                         </a>
                     </li>
 
-                    <!-- TOMBOL ADMIN BIRU SEPERTI DI GAMBAR -->
                     <li>
                         <a href="admin.html" class="btn-admin-nav">
                             🔐 Admin
@@ -1101,7 +1099,7 @@
                     <input
                         type="text"
                         id="nama"
-                        name="Nama Lengkap"
+                        name="nama"
                         placeholder="Masukkan nama lengkap"
                         required>
 
@@ -1110,31 +1108,15 @@
 
                 <div class="form-group">
 
-                    <label for="wa">
-                        Nomor WhatsApp
+                    <label for="email">
+                        Alamat Email
                     </label>
 
                     <input
-                        type="tel"
-                        id="wa"
-                        name="Nomor WA"
-                        placeholder="Contoh: 083896895383"
-                        required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="dusun">
-                        Dusun / RT
-                    </label>
-
-                    <input
-                        type="text"
-                        id="dusun"
-                        name="Dusun/RT"
-                        placeholder="Contoh: Dusun Puting / RT 01"
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Contoh: nama@gmail.com"
                         required>
 
                 </div>
@@ -1143,13 +1125,13 @@
                 <div class="form-group">
 
                     <label for="pesanTeks">
-                        Keperluan / Pesan
+                        Pesan / Keperluan
                     </label>
 
                     <textarea
                         id="pesanTeks"
-                        name="Keperluan/Pesan"
-                        placeholder="Tuliskan keperluan atau pesan Anda..."
+                        name="pesan"
+                        placeholder="Tuliskan pesan Anda..."
                         required></textarea>
 
                 </div>
@@ -1319,7 +1301,8 @@
 
 <script>
 
-    const SHEETDB_URL = "https://sheetdb.io/api/v1/wdiapwaud3dcz";
+    // GANTI URL DI BAWAH DENGAN URL WEB APP GOOGLE APPS SCRIPT ANDA
+    const SCRIPT_URL = "GANTI_DENGAN_URL_WEB_APP_GOOGLE_APPS_SCRIPT_ANDA";
 
     document.addEventListener("DOMContentLoaded", function () {
 
@@ -1333,11 +1316,10 @@
             event.preventDefault();
 
             const nama = document.getElementById("nama").value.trim();
-            const wa = document.getElementById("wa").value.trim();
-            const dusun = document.getElementById("dusun").value.trim();
+            const email = document.getElementById("email").value.trim();
             const pesan = document.getElementById("pesanTeks").value.trim();
 
-            if (nama === "" || wa === "" || dusun === "" || pesan === "") {
+            if (nama === "" || email === "" || pesan === "") {
                 statusMessage.textContent = "⚠️ Semua kolom wajib diisi.";
                 statusMessage.className = "status-message status-error";
                 return;
@@ -1349,26 +1331,25 @@
             statusMessage.className = "status-message";
 
             try {
-                const response = await fetch(SHEETDB_URL, {
+                const formData = new FormData();
+                formData.append("nama", nama);
+                formData.append("email", email);
+                formData.append("pesan", pesan);
+
+                const response = await fetch(SCRIPT_URL, {
                     method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        data: {
-                            "Nama Lengkap": nama,
-                            "Nomor WA": wa,
-                            "Nomor Wa": wa,
-                            "Dusun/RT": dusun,
-                            "Dusun/Rt": dusun,
-                            "Keperluan/Pesan": pesan
-                        }
-                    })
+                    body: formData
                 });
 
-                if (!response.ok) throw new Error("Gagal mengirim data.");
+                const result = await response.json();
 
-                statusMessage.textContent = "✅ Pesan berhasil dikirim! Data sudah tersimpan.";
-                statusMessage.className = "status-message status-success";
-                pesanForm.reset();
+                if (result.result === "success") {
+                    statusMessage.textContent = "✅ Pesan berhasil dikirim! Data sudah tersimpan.";
+                    statusMessage.className = "status-message status-success";
+                    pesanForm.reset();
+                } else {
+                    throw new Error("Gagal menyimpan data.");
+                }
 
             } catch (error) {
                 console.error("Error:", error);
