@@ -611,7 +611,8 @@
             <div class="logo-icon">🌿</div>
             <div class="logo-text">
                 Desa Pusaka
-                <small>Kab. Sambas</small>
+                <!-- PENAMBAHAN: Tempat Tampilan Tanggal Otomatis di Header -->
+                <small>Kab. Sambas • <span id="tanggalHariIni"></span></small>
             </div>
         </a>
 
@@ -766,9 +767,20 @@
 
 <!-- JAVASCRIPT -->
 <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyLrdCF9WZWLwS8fBqcbyyu-my7JDvYE1ZXVm0E2-33Uil5J-kkaiHt-k63S53-zLzfAg/exec";
+    // URL Deployment Google Apps Script Terbaru kamu
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyf3dGo8cjjs3N3yI7nLfTqo5r9eD6JbBJHZkE0Ryr-s0vsTjjQ2hLPkNIr80WTB3nRGw/exec";
 
     document.addEventListener("DOMContentLoaded", function () {
+        
+        // 1. PENAMBAHAN: MENAMPILKAN TANGGAL HARI INI DI HEADER
+        const optionsTgl = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+        const tanggalSekarang = new Date().toLocaleDateString('id-ID', optionsTgl);
+        const elemTanggal = document.getElementById("tanggalHariIni");
+        if (elemTanggal) {
+            elemTanggal.textContent = tanggalSekarang;
+        }
+
+        // 2. FORM INTEGRASI GOOGLE SHEETS
         const pesanForm = document.getElementById("pesanForm");
         const submitBtn = document.getElementById("submitBtn");
         const statusMessage = document.getElementById("statusMessage");
@@ -795,8 +807,12 @@
             statusMessage.textContent = "Sedang mengirim data ke Google Sheets...";
             statusMessage.className = "status-message";
 
-            // Menggunakan URLSearchParams untuk format x-www-form-urlencoded
+            // PENAMBAHAN: Format tanggal & waktu pengiriman pesan
+            const tanggalKirim = new Date().toLocaleString("id-ID", { timeZone: "Asia/Jakarta" });
+
+            // Mengirim data menggunakan URLSearchParams
             const payload = new URLSearchParams();
+            payload.append("tanggal", tanggalKirim); // Parameter tanggal dikirim ke Google Sheets
             payload.append("nama", nama);
             payload.append("email", email);
             payload.append("pesan", pesan);
@@ -820,7 +836,7 @@
             })
             .catch(error => {
                 console.error("Error:", error);
-                statusMessage.textContent = "❌ Gagal mengirim pesan. Pastikan skrip sudah di-deploy ulang dan aksesnya publik.";
+                statusMessage.textContent = "❌ Gagal mengirim pesan. Pastikan skrip Apps Script sudah di-deploy ulang sebagai 'Anyone' (Siapa saja).";
                 statusMessage.className = "status-message status-error";
             })
             .finally(() => {
