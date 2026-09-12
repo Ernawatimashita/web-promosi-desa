@@ -611,7 +611,6 @@
             <div class="logo-icon">🌿</div>
             <div class="logo-text">
                 Desa Pusaka
-                <!-- PENAMBAHAN: Tempat Tampilan Tanggal Otomatis di Header -->
                 <small>Kab. Sambas • <span id="tanggalHariIni"></span></small>
             </div>
         </a>
@@ -767,12 +766,12 @@
 
 <!-- JAVASCRIPT -->
 <script>
-    // URL Deployment Google Apps Script Terbaru kamu
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyf3dGo8cjjs3N3yI7nLfTqo5r9eD6JbBJHZkE0Ryr-s0vsTjjQ2hLPkNIr80WTB3nRGw/exec";
+    // URL Deployment Google Apps Script Terbaru
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxarAbira-dF_6WTRprv4-PFq9tM1rQ8MhvkucWWLVDsRkTd4RU7uIwi2XIiQ6uKTmdDw/exec";
 
     document.addEventListener("DOMContentLoaded", function () {
         
-        // 1. PENAMBAHAN: MENAMPILKAN TANGGAL HARI INI DI HEADER
+        // 1. TAMPILKAN TANGGAL HARI INI DI HEADER
         const optionsTgl = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
         const tanggalSekarang = new Date().toLocaleDateString('id-ID', optionsTgl);
         const elemTanggal = document.getElementById("tanggalHariIni");
@@ -807,12 +806,12 @@
             statusMessage.textContent = "Sedang mengirim data ke Google Sheets...";
             statusMessage.className = "status-message";
 
-            // PENAMBAHAN: Format tanggal & waktu pengiriman pesan
+            // Format tanggal & waktu pengiriman pesan
             const tanggalKirim = new Date().toLocaleString("id-ID", { timeZone: "Asia/Jakarta" });
 
             // Mengirim data menggunakan URLSearchParams
             const payload = new URLSearchParams();
-            payload.append("tanggal", tanggalKirim); // Parameter tanggal dikirim ke Google Sheets
+            payload.append("tanggal", tanggalKirim);
             payload.append("nama", nama);
             payload.append("email", email);
             payload.append("pesan", pesan);
