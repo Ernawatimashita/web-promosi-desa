@@ -1067,6 +1067,23 @@
             <form id="pesanForm">
 
 
+                <!-- TANGGAL -->
+
+                <div class="form-group">
+
+                    <label for="tanggal">
+                        Tanggal
+                    </label>
+
+                    <input
+                        type="date"
+                        id="tanggal"
+                        name="Tanggal"
+                        required>
+
+                </div>
+
+
                 <!-- NAMA -->
 
                 <div class="form-group">
@@ -1078,44 +1095,26 @@
                     <input
                         type="text"
                         id="nama"
-                        name="Nama Lengkap"
+                        name="Nama"
                         placeholder="Masukkan nama lengkap"
                         required>
 
                 </div>
 
 
-                <!-- NOMOR WA -->
+                <!-- EMAIL -->
 
                 <div class="form-group">
 
-                    <label for="wa">
-                        Nomor WhatsApp
+                    <label for="email">
+                        Alamat Email
                     </label>
 
                     <input
-                        type="tel"
-                        id="wa"
-                        name="Nomor WA"
-                        placeholder="Contoh: 083896895383"
-                        required>
-
-                </div>
-
-
-                <!-- DUSUN -->
-
-                <div class="form-group">
-
-                    <label for="dusun">
-                        Dusun / RT
-                    </label>
-
-                    <input
-                        type="text"
-                        id="dusun"
-                        name="Dusun/RT"
-                        placeholder="Contoh: Dusun Puting / RT 01"
+                        type="email"
+                        id="email"
+                        name="Email"
+                        placeholder="Contoh: nama@gmail.com"
                         required>
 
                 </div>
@@ -1126,13 +1125,13 @@
                 <div class="form-group">
 
                     <label for="pesanTeks">
-                        Keperluan / Pesan
+                        Pesan / Keperluan
                     </label>
 
                     <textarea
                         id="pesanTeks"
-                        name="Keperluan/Pesan"
-                        placeholder="Tuliskan keperluan atau pesan Anda..."
+                        name="Pesan"
+                        placeholder="Tuliskan pesan Anda..."
                         required></textarea>
 
                 </div>
@@ -1333,6 +1332,16 @@
             const statusMessage =
                 document.getElementById("statusMessage");
 
+            const tanggalInput =
+                document.getElementById("tanggal");
+
+
+            /* Set default nilai tanggal hari ini jika kosong */
+            if (tanggalInput && !tanggalInput.value) {
+                const today = new Date().toISOString().split('T')[0];
+                tanggalInput.value = today;
+            }
+
 
             /* Pastikan form ditemukan */
 
@@ -1360,26 +1369,22 @@
 
                     /* Ambil data dari form */
 
+                    const tanggal =
+                        document
+                        .getElementById("tanggal")
+                        .value;
+
                     const nama =
                         document
                         .getElementById("nama")
                         .value
                         .trim();
 
-
-                    const wa =
+                    const email =
                         document
-                        .getElementById("wa")
+                        .getElementById("email")
                         .value
                         .trim();
-
-
-                    const dusun =
-                        document
-                        .getElementById("dusun")
-                        .value
-                        .trim();
-
 
                     const pesan =
                         document
@@ -1393,9 +1398,9 @@
                        ================================================= */
 
                     if (
+                        tanggal === "" ||
                         nama === "" ||
-                        wa === "" ||
-                        dusun === "" ||
+                        email === "" ||
                         pesan === ""
                     ) {
 
@@ -1452,22 +1457,16 @@
 
                                             data: {
 
-                                                "Nama Lengkap":
+                                                "Tanggal":
+                                                    tanggal,
+
+                                                "Nama":
                                                     nama,
 
-                                                "Nomor WA":
-                                                    wa,
+                                                "Email":
+                                                    email,
 
-                                                "Nomor Wa":
-                                                    wa,
-
-                                                "Dusun/RT":
-                                                    dusun,
-
-                                                "Dusun/Rt":
-                                                    dusun,
-
-                                                "Keperluan/Pesan":
+                                                "Pesan":
                                                     pesan
 
                                             }
@@ -1514,9 +1513,12 @@
                             "status-message status-success";
 
 
-                        /* Kosongkan form */
+                        /* Kosongkan form & setel ulang tanggal ke hari ini */
 
                         pesanForm.reset();
+                        if (tanggalInput) {
+                            tanggalInput.value = new Date().toISOString().split('T')[0];
+                        }
 
                     }
 
