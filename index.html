@@ -766,8 +766,8 @@
 
 <!-- JAVASCRIPT -->
 <script>
-    // URL Deployment Google Apps Script Terbaru
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzXEadVoaJh0XyPnO1ziM7aHxD5jVPv-CZ1AyqgLeV5hulYFDx-8GyEyPF-s4SSMBL4Ag/exec";
+    // URL Web App Google Apps Script Terbaru
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyD0PIRa5-jri1RNdd0p9GTjD7R2n9gxZ2HvSVMDKfQIcBRxKujxaVXZi5FtYK2c_rqzw/exec";
 
     document.addEventListener("DOMContentLoaded", function () {
         
@@ -803,12 +803,11 @@
             submitBtn.disabled = true;
             submitBtn.textContent = "⏳ Mengirim data...";
             statusMessage.style.display = "block";
-            statusMessage.textContent = "Sedang mengirim data...";
+            statusMessage.textContent = "Sedang mengirim data ke Google Sheets...";
             statusMessage.className = "status-message";
 
             const tanggalKirim = new Date().toLocaleString("id-ID", { timeZone: "Asia/Jakarta" });
 
-            // Menggunakan FormData agar terhindar dari kendala CORS di GitHub Pages
             const formData = new FormData();
             formData.append("tanggal", tanggalKirim);
             formData.append("nama", nama);
