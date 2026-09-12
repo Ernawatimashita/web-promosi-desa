@@ -8,11 +8,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
     <style>
-
         :root {
             --primary: #0d5437;
             --primary-dark: #062f20;
@@ -87,8 +85,7 @@
             color: inherit;
         }
 
-        /* ================= HEADER ================= */
-
+        /* HEADER */
         header {
             position: fixed;
             top: 0;
@@ -96,12 +93,9 @@
             width: 100%;
             height: 90px;
             z-index: 1000;
-
             background: var(--header-bg);
             backdrop-filter: blur(15px);
-
             border-bottom: 1px solid rgba(13, 84, 55, 0.1);
-
             transition: var(--transition);
         }
 
@@ -115,7 +109,6 @@
             width: min(1280px, calc(100% - 40px));
             height: 100%;
             margin: auto;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -125,9 +118,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-
             color: var(--primary);
-
             font-family: "Playfair Display", serif;
             font-size: 22px;
             font-weight: 800;
@@ -136,28 +127,21 @@
         .logo-icon {
             width: 44px;
             height: 44px;
-
             background: var(--primary);
             color: white;
-
             border-radius: 12px;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             font-size: 22px;
         }
 
         .logo-text small {
             display: block;
-
             font-family: "Plus Jakarta Sans", sans-serif;
             font-size: 10px;
             font-weight: 600;
-
             text-transform: uppercase;
-
             color: var(--text-muted);
         }
 
@@ -177,12 +161,9 @@
         nav a {
             font-size: 14px;
             font-weight: 600;
-
             color: var(--text-main);
-
             padding: 8px 12px;
             border-radius: 8px;
-
             transition: var(--transition);
         }
 
@@ -218,23 +199,16 @@
 
         .theme-toggle {
             background: var(--surface);
-
             border: 1px solid var(--border-color);
-
             color: var(--text-main);
-
             width: 42px;
             height: 42px;
-
             border-radius: 12px;
-
             cursor: pointer;
-
             font-size: 18px;
         }
 
-        /* ================= MAIN CONTENT ================= */
-
+        /* MAIN CONTENT */
         main {
             flex: 1;
             padding-top: 130px;
@@ -246,8 +220,7 @@
             margin: auto;
         }
 
-        /* ================= LOGIN CARD ================= */
-
+        /* LOGIN CARD */
         .login-card {
             max-width: 450px;
             margin: 40px auto;
@@ -321,8 +294,7 @@
             transform: translateY(-2px);
         }
 
-        /* ================= DASHBOARD ADMIN ================= */
-
+        /* DASHBOARD ADMIN */
         .dashboard {
             display: none;
         }
@@ -383,7 +355,6 @@
         }
 
         /* TABEL DATA */
-
         .table-responsive {
             background: var(--surface);
             border-radius: var(--radius-lg);
@@ -419,20 +390,16 @@
             background: var(--bg-alt);
         }
 
-        .wa-link {
+        .email-link {
             color: var(--primary);
             font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
         }
 
-        .wa-link:hover {
+        .email-link:hover {
             text-decoration: underline;
         }
 
-        /* ================= FOOTER ================= */
-
+        /* FOOTER */
         footer {
             background: #031c13;
             color: #8ba398;
@@ -455,8 +422,7 @@
             padding-top: 20px;
         }
 
-        /* ================= BACK TO TOP ================= */
-
+        /* BACK TO TOP */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -481,372 +447,157 @@
             opacity: 1;
         }
 
-        /* ================= RESPONSIVE ================= */
-
+        /* RESPONSIVE */
         @media (max-width: 900px) {
-            .navbar {
-                width: calc(100% - 25px);
-            }
-
-            nav ul {
-                gap: 5px;
-            }
-
-            nav a {
-                font-size: 12px;
-                padding: 7px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
+            .navbar { width: calc(100% - 25px); }
+            nav ul { gap: 5px; }
+            nav a { font-size: 12px; padding: 7px; }
+            .footer-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 700px) {
-            header {
-                height: auto;
-                min-height: 75px;
-            }
-
-            .navbar {
-                flex-wrap: wrap;
-                padding: 12px 0;
-                gap: 10px;
-            }
-
-            .nav-container {
-                order: 3;
-                width: 100%;
-                overflow-x: auto;
-            }
-
-            nav ul {
-                width: max-content;
-            }
-
-            main {
-                padding-top: 140px;
-            }
-
-            .dashboard-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .action-btns {
-                width: 100%;
-            }
-
-            .action-btns button {
-                flex: 1;
-            }
+            header { height: auto; min-height: 75px; }
+            .navbar { flex-wrap: wrap; padding: 12px 0; gap: 10px; }
+            .nav-container { order: 3; width: 100%; overflow-x: auto; }
+            nav ul { width: max-content; }
+            main { padding-top: 140px; }
+            .dashboard-header { flex-direction: column; align-items: flex-start; }
+            .action-btns { width: 100%; }
+            .action-btns button { flex: 1; }
         }
 
         @media (max-width: 450px) {
-            .logo {
-                font-size: 18px;
-            }
-
-            .logo-icon {
-                width: 38px;
-                height: 38px;
-            }
-
-            .login-card {
-                padding: 25px 20px;
-            }
+            .logo { font-size: 18px; }
+            .logo-icon { width: 38px; height: 38px; }
+            .login-card { padding: 25px 20px; }
         }
-
     </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-
+<!-- HEADER -->
 <header id="header">
-
     <div class="navbar">
-
         <a href="index.html" class="logo">
-
-            <div class="logo-icon">
-                🌿
-            </div>
-
+            <div class="logo-icon">🌿</div>
             <div class="logo-text">
-
                 Desa Pusaka
-
-                <small>
-                    Kab. Sambas
-                </small>
-
+                <small>Kab. Sambas</small>
             </div>
-
         </a>
 
-
         <div class="nav-container">
-
             <nav>
-
                 <ul>
-
-                    <li>
-                        <a href="index.html">
-                            Beranda
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="profil.html">
-                            Profil
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="potensi.html">
-                            Potensi
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="fasilitas.html">
-                            Galeri
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="pelayanan.html">
-                            Layanan Surat
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="index.html#pesan">
-                            Kirim Pesan
-                        </a>
-                    </li>
-
-                    <li class="active">
-                        <a href="admin.html" class="btn-admin-nav">
-                            🔐 Admin
-                        </a>
-                    </li>
-
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="potensi.html">Potensi</a></li>
+                    <li><a href="fasilitas.html">Galeri</a></li>
+                    <li><a href="pelayanan.html">Layanan Surat</a></li>
+                    <li><a href="index.html#pesan">Kirim Pesan</a></li>
+                    <li class="active"><a href="admin.html" class="btn-admin-nav">🔐 Admin</a></li>
                 </ul>
-
             </nav>
-
         </div>
-
 
         <div class="nav-actions">
-
-            <button
-                class="theme-toggle"
-                id="themeToggle"
-                aria-label="Ganti tema">
-
-                🌙
-
-            </button>
-
+            <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema">🌙</button>
         </div>
-
     </div>
-
 </header>
 
-
-<!-- ================= MAIN CONTENT ================= -->
-
+<!-- MAIN CONTENT -->
 <main>
-
     <div class="container">
-
         <!-- LOGIN BOX -->
         <div id="loginBox" class="login-card">
-
             <h2>🔐 Login Admin Desa</h2>
             <p>Silakan masuk menggunakan kredensial pengelola desa.</p>
 
             <form id="loginForm">
-
                 <div class="form-group">
                     <label for="username">Username Admin</label>
-                    <input
-                        type="text"
-                        id="username"
-                        placeholder="Masukkan username"
-                        required
-                        autocomplete="off">
+                    <input type="text" id="username" placeholder="Masukkan username" required autocomplete="off">
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        placeholder="Masukkan password"
-                        required>
+                    <input type="password" id="password" placeholder="Masukkan password" required>
                 </div>
 
-                <button type="submit" class="btn-primary">
-                    Masuk ke Dashboard
-                </button>
-
+                <button type="submit" class="btn-primary">Masuk ke Dashboard</button>
             </form>
-
         </div>
-
 
         <!-- DASHBOARD ADMIN -->
         <div id="adminDashboard" class="dashboard">
-
             <div class="dashboard-header">
-
                 <h2>📬 Pesan Masuk Desa Pusaka</h2>
 
                 <div class="action-btns">
-
-                    <button
-                        id="refreshBtn"
-                        class="btn-refresh"
-                        onclick="muatDataPesan()">
-
-                        🔄 Muat Ulang Data
-
-                    </button>
-
-                    <button
-                        id="logoutBtn"
-                        class="btn-logout">
-
-                        🚪 Keluar (Logout)
-
-                    </button>
-
+                    <button id="refreshBtn" class="btn-refresh" onclick="muatDataPesan()">🔄 Muat Ulang Data</button>
+                    <button id="logoutBtn" class="btn-logout">🚪 Keluar (Logout)</button>
                 </div>
-
             </div>
 
-
             <div class="table-responsive">
-
                 <table>
-
                     <thead>
-
                         <tr>
                             <th>No</th>
+                            <th>Tanggal</th>
                             <th>Nama Lengkap</th>
-                            <th>Nomor WA</th>
-                            <th>Dusun / RT</th>
-                            <th>Keperluan / Pesan</th>
+                            <th>Email</th>
+                            <th>Pesan</th>
                         </tr>
-
                     </thead>
-
                     <tbody id="tableBody">
-
                         <tr>
                             <td colspan="5" style="text-align: center;">Memuat data...</td>
                         </tr>
-
                     </tbody>
-
                 </table>
-
             </div>
-
         </div>
-
     </div>
-
 </main>
 
-
-<!-- ================= FOOTER ================= -->
-
+<!-- FOOTER -->
 <footer>
-
     <div class="footer-grid">
-
         <div>
-
-            <h3 style="color: white; font-family: 'Playfair Display', serif; margin-bottom: 12px;">
-                🌿 Desa Pusaka
-            </h3>
-
-            <p>
-                Website Resmi Pemerintah Desa Pusaka,
-                Kecamatan Tebas, Kabupaten Sambas,
-                Kalimantan Barat.
-            </p>
-
+            <h3 style="color: white; font-family: 'Playfair Display', serif; margin-bottom: 12px;">🌿 Desa Pusaka</h3>
+            <p>Website Resmi Pemerintah Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat.</p>
         </div>
-
-
         <div>
-
-            <h4 style="color: white; margin-bottom: 12px;">
-                Navigasi
-            </h4>
-
+            <h4 style="color: white; margin-bottom: 12px;">Navigasi</h4>
             <p><a href="index.html" style="color:#8ba398;">Beranda</a></p>
             <p><a href="profil.html" style="color:#8ba398;">Profil Desa</a></p>
             <p><a href="pelayanan.html" style="color:#8ba398;">Pelayanan Surat</a></p>
-
         </div>
-
-
         <div>
-
-            <h4 style="color: white; margin-bottom: 12px;">
-                Kontak
-            </h4>
-
-            <p>
-                Kecamatan Tebas,
-                Kab. Sambas,
-                Kalbar (79461)
-            </p>
-
+            <h4 style="color: white; margin-bottom: 12px;">Kontak</h4>
+            <p>Kecamatan Tebas, Kab. Sambas, Kalbar (79461)</p>
         </div>
-
     </div>
-
 
     <div class="footer-bottom">
-
-        <p>
-            © 2026 Pemerintah Desa Pusaka. All Rights Reserved.
-        </p>
-
+        <p>© 2026 Pemerintah Desa Pusaka. All Rights Reserved.</p>
     </div>
-
 </footer>
 
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop">↑</button>
 
-<!-- ================= BACK TO TOP ================= -->
-
-<button class="back-to-top" id="backToTop">
-    ↑
-</button>
-
-
-<!-- ================= JAVASCRIPT ================= -->
-
+<!-- JAVASCRIPT -->
 <script>
-
     // KREDENSIAL AKUN ADMIN
     const DEFAULT_USER = "admin";
     const DEFAULT_PASS = "PusakaDesa2026!";
 
-    // URL Database SheetDB
-    const SHEETDB_URL = "https://sheetdb.io/api/v1/wdiapwaud3dcz";
+    // URL Google Apps Script Web App yang Sama Dengan Index.html
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyD0PIRa5-jri1RNdd0p9GTjD7R2n9gxZ2HvSVMDKfQIcBRxKujxaVXZi5FtYK2c_rqzw/exec";
 
     const loginBox = document.getElementById("loginBox");
     const adminDashboard = document.getElementById("adminDashboard");
@@ -854,12 +605,12 @@
     const logoutBtn = document.getElementById("logoutBtn");
     const tableBody = document.getElementById("tableBody");
 
-    // Cek Status Login dari Sesi Browser
+    // Cek Status Login
     if (sessionStorage.getItem("isAdminLoggedIn") === "true") {
         tampilkanDashboard();
     }
 
-    // Aksi Submit Form Login
+    // Login Admin
     loginForm.addEventListener("submit", function(e) {
         e.preventDefault();
         const user = document.getElementById("username").value.trim();
@@ -879,19 +630,18 @@
         location.reload();
     });
 
-    // Menampilkan Halaman Dashboard
     function tampilkanDashboard() {
         loginBox.style.display = "none";
         adminDashboard.style.display = "block";
         muatDataPesan();
     }
 
-    // Mengambil Data Pesan dari API
+    // Memuat Data dari Google Sheets via Apps Script
     async function muatDataPesan() {
         tableBody.innerHTML = `<tr><td colspan="5" style="text-align: center;">Memuat data terbaru...</td></tr>`;
-        
+
         try {
-            const response = await fetch(SHEETDB_URL);
+            const response = await fetch(SCRIPT_URL);
             const data = await response.json();
 
             if (!data || data.length === 0) {
@@ -900,22 +650,19 @@
             }
 
             let htmlContent = "";
-            data.forEach((row, index) => {
-                const nama = row["Nama Lengkap"] || "-";
-                const wa = row["Nomor WA"] || row["Nomor Wa"] || "-";
-                const dusun = row["Dusun/RT"] || row["Dusun/Rt"] || "-";
-                const pesan = row["Keperluan/Pesan"] || "-";
+            // Menampilkan data berurutan dari yang terbaru
+            data.reverse().forEach((row, index) => {
+                const tanggal = row.tanggal || "-";
+                const nama = row.nama || "-";
+                const email = row.email || "-";
+                const pesan = row.pesan || "-";
 
                 htmlContent += `
                     <tr>
                         <td>${index + 1}</td>
+                        <td>${tanggal}</td>
                         <td><b>${nama}</b></td>
-                        <td>
-                            <a href="https://wa.me/${wa.replace(/[^0-9]/g, '')}" target="_blank" class="wa-link">
-                                ${wa} 💬
-                            </a>
-                        </td>
-                        <td>${dusun}</td>
+                        <td><a href="mailto:${email}" class="email-link">${email}</a></td>
                         <td>${pesan}</td>
                     </tr>
                 `;
@@ -925,7 +672,7 @@
 
         } catch (error) {
             console.error("Gagal mengambil data:", error);
-            tableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: red;">Gagal memuat data dari database. Periksa koneksi internet Anda.</td></tr>`;
+            tableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: red;">Gagal memuat data. Pastikan Google Apps Script mendukung metode GET/doGet.</td></tr>`;
         }
     }
 
@@ -955,7 +702,6 @@
     backToTopBtn.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
-
 </script>
 
 </body>
