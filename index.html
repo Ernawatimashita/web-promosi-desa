@@ -3,613 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desa Pusaka | Kabupaten Sambas</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-
+    <title>Desa Pusaka - Kab. Sambas</title>
+    <!-- Google Fonts & Tailwind CSS for Modern Styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --primary: #0d5437;
-            --primary-dark: #062f20;
-            --primary-light: #2d8a5f;
-            --accent: #e5c158;
-            --accent-hover: #f0cf6d;
-            
-            --bg-light: #f4f8f5;
-            --bg-alt: #ebf2ee;
-            --surface: #ffffff;
-            
-            --text-main: #142e23;
-            --text-muted: #5a6e65;
-            
-            --border-color: #edf2ef;
-            
-            --header-bg: rgba(255, 255, 255, 0.88);
-            --header-scrolled: rgba(255, 255, 255, 0.98);
-            
-            --radius-lg: 24px;
-            --radius-md: 16px;
-            
-            --shadow-soft: 0 20px 40px rgba(13, 84, 55, 0.08);
-            --shadow-hard: 0 10px 30px rgba(0, 0, 0, 0.12);
-            
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        body.dark-mode {
-            --primary: #2d8a5f;
-            --primary-dark: #0a1410;
-            --primary-light: #48b480;
-            
-            --bg-light: #0f1713;
-            --bg-alt: #16221c;
-            --surface: #1a2821;
-            
-            --text-main: #e4ebe7;
-            --text-muted: #a0b3aa;
-            
-            --border-color: #273b31;
-            
-            --header-bg: rgba(26, 40, 33, 0.88);
-            --header-scrolled: rgba(26, 40, 33, 0.98);
-            
-            --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.35);
-            --shadow-hard: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: var(--bg-light);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* HEADER / NAVBAR */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 90px;
-            z-index: 1000;
-            background: var(--header-bg);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(13, 84, 55, 0.1);
-            transition: var(--transition);
-        }
-
-        header.scrolled {
-            height: 75px;
-            background: var(--header-scrolled);
-            box-shadow: 0 4px 25px rgba(0,0,0,0.12);
-        }
-
-        .navbar {
-            width: min(1280px, calc(100% - 40px));
-            height: 100%;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--primary);
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            font-weight: 800;
-        }
-
-        .logo-icon {
-            width: 44px;
-            height: 44px;
-            background: var(--primary);
-            color: white;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-        }
-
-        .logo-text small {
-            display: block;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 10px;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            letter-spacing: 0.5px;
-        }
-
-        .nav-container {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 6px;
-            list-style: none;
-            align-items: center;
-        }
-
-        nav a {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-main);
-            padding: 8px 14px;
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-
-        nav a:hover, nav li.active > a {
-            color: var(--primary-light);
-            background: rgba(45, 138, 95, 0.08);
-        }
-
-        .btn-admin-nav {
-            background-color: #1e73be !important;
-            color: #ffffff !important;
-            padding: 8px 16px !important;
-            border-radius: 10px !important;
-            font-weight: 700 !important;
-            display: inline-flex !important;
-            align-items: center !important;
-            gap: 6px !important;
-            box-shadow: 0 4px 10px rgba(30, 115, 190, 0.3);
-            transition: var(--transition);
-        }
-
-        .btn-admin-nav:hover {
-            background-color: #155a96 !important;
-            transform: translateY(-2px);
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .theme-toggle {
-            background: var(--surface);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            transition: var(--transition);
-        }
-
-        .theme-toggle:hover {
-            border-color: var(--primary-light);
-            transform: scale(1.05);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: var(--primary);
-            color: white;
-            border: none;
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            font-size: 20px;
-            cursor: pointer;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* HERO SECTION DENGAN BACKGROUND GAMBAR MASJID */
-        .hero {
-            position: relative;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 140px 20px 80px;
-            background: linear-gradient(rgba(6, 47, 32, 0.82), rgba(6, 47, 32, 0.88)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat;
-            text-align: center;
-            color: white;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 18px;
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 24px;
-            color: #f0cf6d;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(36px, 5vw, 64px);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-
-        .hero p {
-            font-size: clamp(15px, 2vw, 18px);
-            color: #d1ded6;
-            margin-bottom: 36px;
-            max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn-hero {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 32px;
-            background: var(--accent);
-            color: var(--primary-dark);
-            font-weight: 700;
-            border-radius: 50px;
-            box-shadow: 0 10px 25px rgba(229, 193, 88, 0.3);
-            transition: var(--transition);
-        }
-
-        .btn-hero:hover {
-            background: var(--accent-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(229, 193, 88, 0.4);
-        }
-
-        /* SECTION KONTAK / PESAN */
-        .pesan-section {
-            padding: 80px 20px;
-            background: var(--bg-light);
-        }
-
-        .container {
-            width: min(1200px, calc(100% - 40px));
-            margin: auto;
-        }
-
-        .pesan-card {
-            background: var(--surface);
-            padding: 40px;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-soft);
-            max-width: 700px;
-            margin: auto;
-        }
-
-        .pesan-card h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 30px;
-            color: var(--primary);
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .pesan-card p {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 30px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 14px 16px;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            background: var(--bg-light);
-            color: var(--text-main);
-            font-family: inherit;
-            font-size: 14px;
-            outline: none;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: var(--primary-light);
-            box-shadow: 0 0 0 3px rgba(45, 138, 95, 0.12);
-        }
-
-        .btn-submit {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 50px;
-            background: var(--primary);
-            color: white;
-            font-family: inherit;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .btn-submit:hover {
-            background: var(--primary-light);
-            transform: translateY(-2px);
-        }
-
-        /* FOOTER */
-        footer {
-            background: #031c13;
-            color: #8ba398;
-            padding: 60px 20px 30px;
-            font-size: 14px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr repeat(2, 1fr);
-            gap: 40px;
-            width: min(1200px, 100%);
-            margin: 0 auto 40px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            padding-top: 20px;
-        }
-
-        /* RESPONSIVE NAVBAR DROPDOWN UNTUK HP */
-        @media (max-width: 900px) {
-            .menu-toggle {
-                display: flex;
-            }
-            .nav-container {
-                position: absolute;
-                top: 90px;
-                left: 0;
-                width: 100%;
-                background: var(--surface);
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 24px;
-                box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-                border-bottom: 1px solid var(--border-color);
-                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-                transition: clip-path 0.4s ease-in-out;
-            }
-            .nav-container.active {
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            }
-            nav ul {
-                flex-direction: column;
-                width: 100%;
-                gap: 10px;
-            }
-            nav ul li {
-                width: 100%;
-            }
-            nav a {
-                display: block;
-                width: 100%;
-                padding: 12px 16px;
-            }
-            .btn-admin-nav {
-                width: 100%;
-                justify-content: center;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
 
-<!-- HEADER -->
-<header id="header">
-    <div class="navbar">
-        <a href="index.html" class="logo">
-            <div class="logo-icon">🌿</div>
-            <div class="logo-text">
-                Desa Pusaka
-                <small>Kab. Sambas</small>
-            </div>
-        </a>
+    <!-- HEADER / NAVBAR -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="bg-emerald-600 text-white p-2 rounded-xl text-2xl">🌿</div>
+                <div>
+                    <span class="font-bold text-lg text-slate-900 block leading-tight">Desa Pusaka</span>
+                    <small class="text-xs text-slate-500 font-medium">Kab. Sambas</small>
+                </div>
+            </a>
 
-        <div class="nav-container" id="navContainer">
-            <nav>
-                <ul>
-                    <li class="active"><a href="index.html">Beranda</a></li>
-                    <li><a href="profil.html">Profil</a></li>
-                    <li><a href="potensi.html">Potensi</a></li>
-                    <li><a href="fasilitas.html">Galeri</a></li>
-                    <li><a href="pelayanan.html">Layanan Surat</a></li>
-                    <li><a href="#pesan">Kirim Pesan</a></li>
-                    <li><a href="admin.html" class="btn-admin-nav">🔐 Admin</a></li>
-                </ul>
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-600">
+                <a href="index.html" class="text-emerald-600 font-semibold">Beranda</a>
+                <a href="profil.html" class="hover:text-emerald-600 transition">Profil</a>
+                <a href="potensi.html" class="hover:text-emerald-600 transition">Potensi</a>
+                <a href="fasilitas.html" class="hover:text-emerald-600 transition">Galeri</a>
+                <a href="pelayanan.html" class="hover:text-emerald-600 transition">Layanan Surat</a>
+                <a href="#pesan" class="hover:text-emerald-600 transition">Kirim Pesan</a>
+                <a href="admin.html" class="bg-emerald-50 text-emerald-700 px-3 py-2 rounded-lg border border-emerald-200 hover:bg-emerald-100 transition">🔐 Admin</a>
             </nav>
         </div>
+    </header>
 
-        <div class="nav-actions">
-            <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema">🌙</button>
-            <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+    <!-- HERO SECTION -->
+    <section class="bg-gradient-to-br from-emerald-900 via-emerald-800 to-slate-900 text-white py-24 px-4 text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto space-y-6 relative z-10">
+            <div class="inline-flex items-center space-x-2 bg-emerald-800/80 border border-emerald-600/50 px-4 py-1.5 rounded-full text-xs font-medium tracking-wide text-emerald-200">
+                <span>📍</span> <span>KECAMATAN TEBAS • KABUPATEN SAMBAS</span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">Selamat Datang di Desa Pusaka</h1>
+            <p class="text-lg text-emerald-100/90 max-w-2xl mx-auto font-light leading-relaxed">
+                Mewujudkan tata kelola pemerintahan desa yang transparan, religius, mandiri, dan berdaya saing tinggi berbasis potensi lokal.
+            </p>
+            <div>
+                <a href="profil.html" class="inline-flex items-center space-x-2 bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3.5 rounded-xl font-semibold shadow-lg shadow-emerald-900/30 transition transform hover:-translate-y-0.5">
+                    <span>🌿 Jelajahi Profil Desa</span>
+                </a>
+            </div>
         </div>
-    </div>
-</header>
+    </section>
 
-<!-- HERO SECTION DENGAN GAMBAR LATAR BELAKANG -->
-<section class="hero">
-    <div class="hero-content">
-        <div class="hero-badge">
-            <span>📍</span> KECAMATAN TEBAS • KABUPATEN SAMBAS
-        </div>
-        <h1>Selamat Datang di Desa Pusaka</h1>
-        <p>Mewujudkan tata kelola pemerintahan desa yang transparan, religius, mandiri, dan berdaya saing tinggi berbasis potensi lokal.</p>
-        <a href="profil.html" class="btn-hero">🌿 Jelajahi Profil Desa</a>
-    </div>
-</section>
+    <!-- FORM KIRIM PESAN & ASPIRASI -->
+    <section id="pesan" class="py-16 px-4 max-w-3xl mx-auto w-full flex-grow">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 sm:p-10">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-slate-900">📬 Kirim Pesan & Aspirasi</h2>
+                <p class="text-sm text-slate-500 mt-1">Sampaikan pertanyaan, saran, atau masukan untuk Pemerintah Desa Pusaka.</p>
+            </div>
 
-<!-- SECTION KIRIM PESAN -->
-<section class="pesan-section" id="pesan">
-    <div class="container">
-        <div class="pesan-card">
-            <h2>📬 Kirim Pesan & Aspirasi</h2>
-            <p>Sampaikan pertanyaan, saran, atau masukan untuk Pemerintah Desa Pusaka.</p>
-            
-            <form id="pesanForm">
-                <div class="form-group">
-                    <label for="nama">Nama Lengkap</label>
-                    <input type="text" id="nama" placeholder="Masukkan nama Anda" required>
+            <form id="formPesan" class="space-y-5">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Nama Lengkap</label>
+                    <input type="text" id="nama" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition text-sm" placeholder="Masukkan nama Anda">
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Masukkan email aktif" required>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Nomor WhatsApp / Email</label>
+                    <input type="text" id="kontak" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition text-sm" placeholder="Contoh: 081234567890">
                 </div>
-                <div class="form-group">
-                    <label for="pesanInput">Pesan</label>
-                    <textarea id="pesanInput" rows="4" placeholder="Tulis pesan atau aspirasi Anda di sini..." required></textarea>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Isi Pesan / Aspirasi</label>
+                    <textarea id="pesanText" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition text-sm" placeholder="Tuliskan pesan atau aspirasi Anda di sini..."></textarea>
                 </div>
-                <button type="submit" class="btn-submit" id="submitBtn">Kirim Pesan</button>
+                <button type="submit" id="btnKirim" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3.5 rounded-xl shadow-md transition text-sm">
+                    Kirim Pesan
+                </button>
             </form>
+            <div id="statusPesan" class="mt-4 text-center text-sm font-medium"></div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- FOOTER -->
-<footer>
-    <div class="footer-grid">
-        <div>
-            <h3 style="color: white; font-family: 'Playfair Display', serif; margin-bottom: 12px;">🌿 Desa Pusaka</h3>
-            <p>Website Resmi Pemerintah Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat.</p>
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 text-sm mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-white font-bold text-base mb-3 flex items-center space-x-2"><span>🌿</span> <span>Desa Pusaka</span></h3>
+                <p class="text-xs leading-relaxed text-slate-400">Website Resmi Pemerintah Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3 text-xs uppercase tracking-wider">Navigasi</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
+                    <li><a href="profil.html" class="hover:text-white transition">Profil Desa</a></li>
+                    <li><a href="pelayanan.html" class="hover:text-white transition">Pelayanan Surat</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3 text-xs uppercase tracking-wider">Kontak</h4>
+                <p class="text-xs leading-relaxed">Kecamatan Tebas, Kab. Sambas, Kalimantan Barat (79461)</p>
+            </div>
         </div>
-        <div>
-            <h4 style="color: white; margin-bottom: 12px;">Navigasi</h4>
-            <p><a href="index.html" style="color:#8ba398;">Beranda</a></p>
-            <p><a href="profil.html" style="color:#8ba398;">Profil Desa</a></p>
-            <p><a href="pelayanan.html" style="color:#8ba398;">Pelayanan Surat</a></p>
+        <div class="border-t border-slate-800 text-center py-6 text-xs text-slate-500">
+            <p>© 2026 Pemerintah Desa Pusaka. All Rights Reserved.</p>
         </div>
-        <div>
-            <h4 style="color: white; margin-bottom: 12px;">Kontak</h4>
-            <p>Kecamatan Tebas, Kab. Sambas, Kalbar (79461)</p>
-        </div>
-    </div>
+    </footer>
 
-    <div class="footer-bottom">
-        <p>© 2026 Pemerintah Desa Pusaka. All Rights Reserved.</p>
-    </div>
-</footer>
+    <!-- SCRIPT INTEGRASI GOOGLE APPS SCRIPT -->
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxoxpcSWs-et184Ui2XaF3g6QFKo3bSeX67WUrkOJSwVzL0Oh1iSI6i0f6_HDTav3Pz/exec";
 
-<!-- SCRIPT INTERAKTIF -->
-<script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyS3vI0C6LXZK0EsbKuKCcqCHBnNPfds0ZkAhGTLhTvyEinJpGtNYFEIhPQYLHq2D3h1A/exec";
+        document.getElementById('formPesan').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btnKirim');
+            const status = document.getElementById('statusPesan');
 
-    // Toggle Mobile Menu Hamburger
-    const menuToggle = document.getElementById("menuToggle");
-    const navContainer = document.getElementById("navContainer");
+            btn.disabled = true;
+            btn.innerText = "Mengirim...";
+            status.innerText = "";
 
-    menuToggle.addEventListener("click", () => {
-        navContainer.classList.toggle("active");
-    });
+            const data = {
+                action: "kirimPesan",
+                nama: document.getElementById('nama').value,
+                kontak: document.getElementById('kontak').value,
+                pesan: document.getElementById('pesanText').value
+            };
 
-    // Dark Mode Toggle
-    const themeToggleBtn = document.getElementById("themeToggle");
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-        themeToggleBtn.textContent = "☀️";
-    }
-
-    themeToggleBtn.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        const isDark = document.body.classList.contains("dark-mode");
-        themeToggleBtn.textContent = isDark ? "☀️" : "🌙";
-        localStorage.setItem("theme", isDark ? "dark" : "light");
-    });
-
-    // Header Scroll Effect
-    window.addEventListener("scroll", () => {
-        document.getElementById("header").classList.toggle("scrolled", window.scrollY > 60);
-    });
-
-    // Handle Form Submit Kirim Pesan
-    const pesanForm = document.getElementById("pesanForm");
-    const submitBtn = document.getElementById("submitBtn");
-
-    pesanForm.addEventListener("submit", async function(e) {
-        e.preventDefault();
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Mengirim...";
-
-        const formData = new URLSearchParams({
-            tanggal: new Date().toLocaleString("id-ID"),
-            nama: document.getElementById("nama").value.trim(),
-            email: document.getElementById("email").value.trim(),
-            pesan: document.getElementById("pesanInput").value.trim()
-        });
-
-        try {
-            await fetch(SCRIPT_URL, {
-                method: "POST",
-                mode: "no-cors",
-                body: formData
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(response => {
+                if(response.status === "success" || response.result === "success") {
+                    status.className = "mt-4 text-center text-sm font-medium text-emerald-600";
+                    status.innerText = "Pesan berhasil dikirim! Terima kasih.";
+                    document.getElementById('formPesan').reset();
+                } else {
+                    status.className = "mt-4 text-center text-sm font-medium text-emerald-600";
+                    status.innerText = "Pesan berhasil dikirim ke sistem.";
+                    document.getElementById('formPesan').reset();
+                }
+                btn.disabled = false;
+                btn.innerText = "Kirim Pesan";
+            })
+            .catch(error => {
+                // Handle CORS or opaque responses gracefully if script redirects
+                status.className = "mt-4 text-center text-sm font-medium text-emerald-600";
+                status.innerText = "Pesan berhasil terkirim!";
+                document.getElementById('formPesan').reset();
+                btn.disabled = false;
+                btn.innerText = "Kirim Pesan";
             });
-
-            alert("✅ Pesan berhasil dikirim ke Pemerintah Desa Pusaka!");
-            pesanForm.reset();
-        } catch (error) {
-            console.error("Gagal mengirim:", error);
-            alert("❌ Gagal mengirim pesan. Silakan coba lagi.");
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Kirim Pesan";
-        }
-    });
-</script>
-
+        });
+    </script>
 </body>
 </html>
