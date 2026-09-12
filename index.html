@@ -168,7 +168,6 @@
             display: flex;
             gap: 15px;
             list-style: none;
-            align-items: center;
         }
 
         nav a {
@@ -187,18 +186,6 @@
         nav li.active > a {
             color: var(--primary-light);
             background: rgba(45, 138, 95, 0.08);
-        }
-
-        /* Khusus Tombol Admin di Navigasi */
-        .admin-nav-btn {
-            background: var(--primary) !important;
-            color: white !important;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .admin-nav-btn:hover {
-            background: var(--primary-light) !important;
         }
 
         .nav-actions {
@@ -570,130 +557,6 @@
             color: #a12626;
         }
 
-        /* ================= MODAL LOGIN ADMIN ================= */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            opacity: 0;
-            pointer-events: none;
-            transition: var(--transition);
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-box {
-            background: var(--surface);
-            width: min(400px, calc(100% - 40px));
-            padding: 30px;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-hard);
-            transform: translateY(20px);
-            transition: var(--transition);
-        }
-
-        .modal-overlay.active .modal-box {
-            transform: translateY(0);
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .modal-header h3 {
-            font-family: "Playfair Display", serif;
-            font-size: 22px;
-            color: var(--primary);
-        }
-
-        .close-modal {
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            color: var(--text-muted);
-        }
-
-        /* ================= HALAMAN ADMIN PANEL ================= */
-        .admin-panel-section {
-            display: none;
-            padding-top: 120px;
-            min-height: 80vh;
-        }
-
-        .admin-panel-section.active {
-            display: block;
-        }
-
-        .admin-card {
-            background: var(--surface);
-            padding: 30px;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-soft);
-            margin-top: 20px;
-        }
-
-        .admin-actions-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .table-responsive {
-            width: 100%;
-            overflow-x: auto;
-        }
-
-        .admin-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 14px;
-        }
-
-        .admin-table th, .admin-table td {
-            padding: 12px 15px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .admin-table th {
-            background: var(--bg-alt);
-            font-weight: 700;
-        }
-
-        .btn-logout {
-            background: #a12626;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 8px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        .btn-logout:hover {
-            background: #801d1d;
-        }
-
         /* ================= FOOTER ================= */
 
         footer {
@@ -888,7 +751,7 @@
                 <ul>
 
                     <li class="active">
-                        <a href="#beranda" onclick="showMainContent()">
+                        <a href="index.html">
                             Beranda
                         </a>
                     </li>
@@ -923,13 +786,6 @@
                         </a>
                     </li>
 
-                    <!-- MENU ADMIN -->
-                    <li>
-                        <a href="#" class="admin-nav-btn" id="openLoginModal">
-                            🔒 Admin
-                        </a>
-                    </li>
-
                 </ul>
 
             </nav>
@@ -955,12 +811,9 @@
 </header>
 
 
-<!-- ================= KONTEN UTAMA (BERANDA) ================= -->
-<div id="mainContentWrapper">
-
 <!-- ================= HERO ================= -->
 
-<section class="hero" id="beranda">
+<section class="hero">
 
     <div class="hero-content">
 
@@ -1202,7 +1055,7 @@
 
             <p>
                 Silakan isi formulir berikut.
-                Data akan tersimpan otomatis ke Google Sheets Desa Pusaka.
+                Data akan tersimpan otomatis ke database Desa Pusaka.
             </p>
 
         </div>
@@ -1225,26 +1078,44 @@
                     <input
                         type="text"
                         id="nama"
-                        name="nama"
+                        name="Nama Lengkap"
                         placeholder="Masukkan nama lengkap"
                         required>
 
                 </div>
 
 
-                <!-- EMAIL -->
+                <!-- NOMOR WA -->
 
                 <div class="form-group">
 
-                    <label for="email">
-                        Email
+                    <label for="wa">
+                        Nomor WhatsApp
                     </label>
 
                     <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Contoh: nama@email.com"
+                        type="tel"
+                        id="wa"
+                        name="Nomor WA"
+                        placeholder="Contoh: 083896895383"
+                        required>
+
+                </div>
+
+
+                <!-- DUSUN -->
+
+                <div class="form-group">
+
+                    <label for="dusun">
+                        Dusun / RT
+                    </label>
+
+                    <input
+                        type="text"
+                        id="dusun"
+                        name="Dusun/RT"
+                        placeholder="Contoh: Dusun Puting / RT 01"
                         required>
 
                 </div>
@@ -1255,13 +1126,13 @@
                 <div class="form-group">
 
                     <label for="pesanTeks">
-                        Pesan
+                        Keperluan / Pesan
                     </label>
 
                     <textarea
                         id="pesanTeks"
-                        name="pesan"
-                        placeholder="Tuliskan pesan Anda..."
+                        name="Keperluan/Pesan"
+                        placeholder="Tuliskan keperluan atau pesan Anda..."
                         required></textarea>
 
                 </div>
@@ -1294,67 +1165,6 @@
     </div>
 
 </section>
-
-</div> <!-- End Main Content Wrapper -->
-
-
-<!-- ================= HALAMAN ADMIN PANEL (DISEMBUNYIKAN AWAL) ================= -->
-<section class="admin-panel-section" id="adminPanelSection">
-    <div class="container">
-        <div class="admin-actions-bar">
-            <div>
-                <h2>Panel Admin Desa Pusaka</h2>
-                <p>Kelola dan pantau data pesan masuk dari masyarakat.</p>
-            </div>
-            <button class="btn-logout" id="btnLogout">Keluar (Logout)</button>
-        </div>
-
-        <div class="admin-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <h3 style="font-family: 'Playfair Display', serif; color: var(--primary);">Data Pesan & Aspirasi Masuk</h3>
-                <button class="submit-btn" style="width: auto; padding: 8px 16px; font-size: 13px;" id="refreshDataBtn">🔄 Refresh Data</button>
-            </div>
-            
-            <div class="table-responsive">
-                <table class="admin-table">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Tanggal</th>
-                            <th>Nama</th>
-                            <th>Email</th>
-                            <th>Pesan</th>
-                        </tr>
-                    </thead>
-                    <tbody id="adminTableBody">
-                        <tr>
-                            <td colspan="5" style="text-align: center; color: var(--text-muted);">Memuat data dari Google Sheets...</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- ================= MODAL LOGIN ADMIN ================= -->
-<div class="modal-overlay" id="loginModal">
-    <div class="modal-box">
-        <div class="modal-header">
-            <h3>Login Admin</h3>
-            <button class="close-modal" id="closeLoginModal">&times;</button>
-        </div>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="adminPassword">Password Admin</label>
-                <input type="password" id="adminPassword" placeholder="Masukkan password..." required>
-            </div>
-            <div id="loginError" style="color: #a12626; font-size: 13px; margin-bottom: 15px; display: none;">Password salah! Coba "admin123".</div>
-            <button type="submit" class="submit-btn">Masuk Panel</button>
-        </form>
-    </div>
-</div>
 
 
 <!-- ================= FOOTER ================= -->
@@ -1499,13 +1309,15 @@
 <script>
 
     /* ===================================================
-       GOOGLE APPS SCRIPT URL
+       DATABASE SHEETDB DESA PUSAKA
        =================================================== */
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzpiclDtkqwzboUmlLhdD0K5VjFMEXCX97N5BRtGwwL8mbUfwJde1HMUhTaNZmFd_DzRg/exec";
+
+    const SHEETDB_URL =
+        "https://sheetdb.io/api/v1/wdiapwaud3dcz";
 
 
     /* ===================================================
-       FORM DATABASE (KIRIM KE GOOGLE SHEETS)
+       FORM DATABASE
        =================================================== */
 
     document.addEventListener(
@@ -1522,8 +1334,22 @@
                 document.getElementById("statusMessage");
 
 
-            if (!pesanForm) return;
+            /* Pastikan form ditemukan */
 
+            if (!pesanForm) {
+
+                console.error(
+                    "Form pesan tidak ditemukan."
+                );
+
+                return;
+
+            }
+
+
+            /* =================================================
+               TOMBOL KIRIM PESAN
+               ================================================= */
 
             pesanForm.addEventListener(
                 "submit",
@@ -1531,49 +1357,202 @@
 
                     event.preventDefault();
 
-                    const nama = document.getElementById("nama").value.trim();
-                    const email = document.getElementById("email").value.trim();
-                    const pesan = document.getElementById("pesanTeks").value.trim();
 
-                    if (!nama || !email || !pesan) {
-                        statusMessage.textContent = "⚠️ Semua kolom wajib diisi.";
-                        statusMessage.className = "status-message status-error";
+                    /* Ambil data dari form */
+
+                    const nama =
+                        document
+                        .getElementById("nama")
+                        .value
+                        .trim();
+
+
+                    const wa =
+                        document
+                        .getElementById("wa")
+                        .value
+                        .trim();
+
+
+                    const dusun =
+                        document
+                        .getElementById("dusun")
+                        .value
+                        .trim();
+
+
+                    const pesan =
+                        document
+                        .getElementById("pesanTeks")
+                        .value
+                        .trim();
+
+
+                    /* =================================================
+                       VALIDASI
+                       ================================================= */
+
+                    if (
+                        nama === "" ||
+                        wa === "" ||
+                        dusun === "" ||
+                        pesan === ""
+                    ) {
+
+                        statusMessage.textContent =
+                            "⚠️ Semua kolom wajib diisi.";
+
+                        statusMessage.className =
+                            "status-message status-error";
+
                         return;
+
                     }
 
+
+                    /* =================================================
+                       TOMBOL LOADING
+                       ================================================= */
+
                     submitBtn.disabled = true;
-                    submitBtn.textContent = "⏳ Mengirim data...";
-                    statusMessage.textContent = "Sedang mengirim data ke Google Sheets...";
-                    statusMessage.className = "status-message";
+
+                    submitBtn.textContent =
+                        "⏳ Mengirim data...";
+
+
+                    statusMessage.textContent =
+                        "Sedang mengirim data...";
+
+                    statusMessage.className =
+                        "status-message";
+
+
+                    /* =================================================
+                       KIRIM DATA
+                       ================================================= */
 
                     try {
-                        const formData = new URLSearchParams();
-                        formData.append("nama", nama);
-                        formData.append("email", email);
-                        formData.append("pesan", pesan);
 
-                        const response = await fetch(SCRIPT_URL, {
-                            method: "POST",
-                            body: formData
-                        });
+                        const response =
+                            await fetch(
+                                SHEETDB_URL,
+                                {
 
-                        const result = await response.json();
+                                    method: "POST",
 
-                        if (result.result === "success") {
-                            statusMessage.textContent = "✅ Pesan berhasil dikirim! Data sudah tersimpan.";
-                            statusMessage.className = "status-message status-success";
-                            pesanForm.reset();
-                        } else {
-                            throw new Error("Gagal menyimpan ke Google Sheets.");
+                                    headers: {
+
+                                        "Content-Type":
+                                            "application/json"
+
+                                    },
+
+                                    body:
+                                        JSON.stringify({
+
+                                            data: {
+
+                                                "Nama Lengkap":
+                                                    nama,
+
+                                                "Nomor WA":
+                                                    wa,
+
+                                                "Nomor Wa":
+                                                    wa,
+
+                                                "Dusun/RT":
+                                                    dusun,
+
+                                                "Dusun/Rt":
+                                                    dusun,
+
+                                                "Keperluan/Pesan":
+                                                    pesan
+
+                                            }
+
+                                        })
+
+                                }
+                            );
+
+
+                        /* Ambil response */
+
+                        const hasil =
+                            await response.json();
+
+
+                        console.log(
+                            "Response SheetDB:",
+                            hasil
+                        );
+
+
+                        /* =================================================
+                           CEK RESPONSE
+                           ================================================= */
+
+                        if (!response.ok) {
+
+                            throw new Error(
+                                "Gagal mengirim data ke SheetDB."
+                            );
+
                         }
 
-                    } catch (error) {
-                        console.error("Error Google Script:", error);
-                        statusMessage.textContent = "❌ Pesan gagal dikirim. Silakan periksa koneksi atau URL Google Script Anda.";
-                        statusMessage.className = "status-message status-error";
-                    } finally {
+
+                        /* =================================================
+                           BERHASIL
+                           ================================================= */
+
+                        statusMessage.textContent =
+                            "✅ Pesan berhasil dikirim! Data sudah tersimpan.";
+
+                        statusMessage.className =
+                            "status-message status-success";
+
+
+                        /* Kosongkan form */
+
+                        pesanForm.reset();
+
+                    }
+
+
+                    /* =================================================
+                       ERROR
+                       ================================================= */
+
+                    catch (error) {
+
+                        console.error(
+                            "Error SheetDB:",
+                            error
+                        );
+
+
+                        statusMessage.textContent =
+                            "❌ Pesan gagal dikirim. Silakan coba lagi.";
+
+                        statusMessage.className =
+                            "status-message status-error";
+
+                    }
+
+
+                    /* =================================================
+                       KEMBALIKAN TOMBOL
+                       ================================================= */
+
+                    finally {
+
                         submitBtn.disabled = false;
-                        submitBtn.textContent = "📩 Kirim Pesan";
+
+                        submitBtn.textContent =
+                            "📩 Kirim Pesan";
+
                     }
 
                 }
@@ -1584,149 +1563,115 @@
 
 
     /* ===================================================
-       SISTEM ADMIN & PASSWORD MODAL
-       =================================================== */
-    const loginModal = document.getElementById("loginModal");
-    const openLoginModalBtn = document.getElementById("openLoginModal");
-    const closeLoginModalBtn = document.getElementById("closeLoginModal");
-    const loginForm = document.getElementById("loginForm");
-    const adminPasswordInput = document.getElementById("adminPassword");
-    const loginError = document.getElementById("loginError");
-
-    const mainContentWrapper = document.getElementById("mainContentWrapper");
-    const adminPanelSection = document.getElementById("adminPanelSection");
-    const btnLogout = document.getElementById("btnLogout");
-    const refreshDataBtn = document.getElementById("refreshDataBtn");
-    const adminTableBody = document.getElementById("adminTableBody");
-
-    const ADMIN_PASSWORD_CORRECT = "admin123";
-
-    openLoginModalBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (sessionStorage.getItem("isAdminLoggedIn") === "true") {
-            showAdminPanel();
-        } else {
-            loginModal.classList.add("active");
-            adminPasswordInput.value = "";
-            loginError.style.display = "none";
-        }
-    });
-
-    closeLoginModalBtn.addEventListener("click", () => {
-        loginModal.classList.remove("active");
-    });
-
-    loginModal.addEventListener("click", (e) => {
-        if (e.target === loginModal) {
-            loginModal.classList.remove("active");
-        }
-    });
-
-    loginForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        if (adminPasswordInput.value === ADMIN_PASSWORD_CORRECT) {
-            sessionStorage.setItem("isAdminLoggedIn", "true");
-            loginModal.classList.remove("active");
-            showAdminPanel();
-        } else {
-            loginError.style.display = "block";
-        }
-    });
-
-    function showAdminPanel() {
-        mainContentWrapper.style.display = "none";
-        adminPanelSection.classList.add("active");
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        loadAdminData();
-    }
-
-    btnLogout.addEventListener("click", () => {
-        sessionStorage.removeItem("isAdminLoggedIn");
-        adminPanelSection.classList.remove("active");
-        mainContentWrapper.style.display = "block";
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    function showMainContent() {
-        adminPanelSection.classList.remove("active");
-        mainContentWrapper.style.display = "block";
-    }
-
-    async function loadAdminData() {
-        adminTableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--text-muted);">Memuat data dari Google Sheets...</td></tr>`;
-        
-        try {
-            const response = await fetch(SCRIPT_URL);
-            const data = await response.json();
-
-            if (!data || data.length === 0) {
-                adminTableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--text-muted);">Belum ada data pesan yang masuk.</td></tr>`;
-                return;
-            }
-
-            let rowsHTML = "";
-            data.forEach((row, index) => {
-                const tanggal = row.tanggal || row.Tanggal || "-";
-                const nama = row.nama || row.Nama || "-";
-                const email = row.email || row.Email || "-";
-                const pesan = row.pesan || row.Pesan || "-";
-
-                rowsHTML += `
-                    <tr>
-                        <td>${index + 1}</td>
-                        <td>${tanggal}</td>
-                        <td><strong>${nama}</strong></td>
-                        <td>${email}</td>
-                        <td>${pesan}</td>
-                    </tr>
-                `;
-            });
-
-            adminTableBody.innerHTML = rowsHTML;
-
-        } catch (error) {
-            console.error("Gagal memuat data admin:", error);
-            adminTableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: #a12626;">Gagal memuat data. Pastikan URL Google Script sudah di-deploy dengan benar (akses siapa saja / anyone).</td></tr>`;
-        }
-    }
-
-    refreshDataBtn.addEventListener("click", loadAdminData);
-
-
-    /* ===================================================
        DARK MODE
        =================================================== */
 
-    const themeToggleBtn = document.getElementById("themeToggle");
+    const themeToggleBtn =
+        document.getElementById(
+            "themeToggle"
+        );
 
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-        themeToggleBtn.textContent = "☀️";
+
+    if (
+        localStorage.getItem("theme")
+        === "dark"
+    ) {
+
+        document.body.classList.add(
+            "dark-mode"
+        );
+
+        themeToggleBtn.textContent =
+            "☀️";
+
     }
 
-    themeToggleBtn.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        const isDark = document.body.classList.contains("dark-mode");
-        themeToggleBtn.textContent = isDark ? "☀️" : "🌙";
-        localStorage.setItem("theme", isDark ? "dark" : "light");
-    });
+
+    themeToggleBtn.addEventListener(
+        "click",
+        () => {
+
+            document.body.classList.toggle(
+                "dark-mode"
+            );
+
+
+            const isDark =
+                document.body.classList.contains(
+                    "dark-mode"
+                );
+
+
+            themeToggleBtn.textContent =
+                isDark
+                    ? "☀️"
+                    : "🌙";
+
+
+            localStorage.setItem(
+                "theme",
+                isDark
+                    ? "dark"
+                    : "light"
+            );
+
+        }
+    );
 
 
     /* ===================================================
-       HEADER SCROLL & BACK TO TOP
+       HEADER SCROLL
        =================================================== */
 
-    const header = document.getElementById("header");
-    const backToTopBtn = document.getElementById("backToTop");
+    const header =
+        document.getElementById(
+            "header"
+        );
 
-    window.addEventListener("scroll", () => {
-        header.classList.toggle("scrolled", window.scrollY > 60);
-        backToTopBtn.classList.toggle("show", window.scrollY > 400);
-    });
 
-    backToTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    const backToTopBtn =
+        document.getElementById(
+            "backToTop"
+        );
+
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            header.classList.toggle(
+                "scrolled",
+                window.scrollY > 60
+            );
+
+
+            backToTopBtn.classList.toggle(
+                "show",
+                window.scrollY > 400
+            );
+
+        }
+    );
+
+
+    /* ===================================================
+       BACK TO TOP
+       =================================================== */
+
+    backToTopBtn.addEventListener(
+        "click",
+        () => {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+    );
 
 </script>
 
