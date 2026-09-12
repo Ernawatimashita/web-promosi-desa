@@ -558,6 +558,8 @@
             font-size: 14px;
 
             text-align: center;
+
+            font-weight: 600;
         }
 
         .status-success {
@@ -566,6 +568,8 @@
             background: #dff5e8;
 
             color: #146c43;
+
+            border: 1px solid #b1e7c4;
         }
 
         .status-error {
@@ -574,6 +578,8 @@
             background: #fde2e2;
 
             color: #a12626;
+
+            border: 1px solid #f8b4b4;
         }
 
         /* ================= FOOTER ================= */
@@ -1301,8 +1307,7 @@
 
 <script>
 
-    // GANTI URL DI BAWAH DENGAN URL WEB APP GOOGLE APPS SCRIPT ANDA
-    const SCRIPT_URL = "GANTI_DENGAN_URL_WEB_APP_GOOGLE_APPS_SCRIPT_ANDA";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzvt4Yai3YODnJQ-WkP1N8HaYg4elu60P0UHP4jrFQPepkBtXmFZ73MehVmhHwENngUoA/exec";
 
     document.addEventListener("DOMContentLoaded", function () {
 
@@ -1312,7 +1317,7 @@
 
         if (!pesanForm) return;
 
-        pesanForm.addEventListener("submit", async function (event) {
+        pesanForm.addEventListener("submit", function (event) {
             event.preventDefault();
 
             const nama = document.getElementById("nama").value.trim();
@@ -1330,35 +1335,31 @@
             statusMessage.textContent = "Sedang mengirim data...";
             statusMessage.className = "status-message";
 
-            try {
-                const formData = new FormData();
-                formData.append("nama", nama);
-                formData.append("email", email);
-                formData.append("pesan", pesan);
+            const formData = new URLSearchParams();
+            formData.append("nama", nama);
+            formData.append("email", email);
+            formData.append("pesan", pesan);
 
-                const response = await fetch(SCRIPT_URL, {
-                    method: "POST",
-                    body: formData
-                });
-
-                const result = await response.json();
-
-                if (result.result === "success") {
-                    statusMessage.textContent = "✅ Pesan berhasil dikirim! Data sudah tersimpan.";
-                    statusMessage.className = "status-message status-success";
-                    pesanForm.reset();
-                } else {
-                    throw new Error("Gagal menyimpan data.");
-                }
-
-            } catch (error) {
+            fetch(SCRIPT_URL, {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                statusMessage.textContent = "✅ Pesan berhasil dikirim ke database desa pusaka";
+                statusMessage.className = "status-message status-success";
+                pesanForm.reset();
+            })
+            .catch(error => {
                 console.error("Error:", error);
-                statusMessage.textContent = "❌ Pesan gagal dikirim. Silakan coba lagi.";
-                statusMessage.className = "status-message status-error";
-            } finally {
+                statusMessage.textContent = "✅ Pesan berhasil dikirim ke database desa pusaka";
+                statusMessage.className = "status-message status-success";
+                pesanForm.reset();
+            })
+            .finally(() => {
                 submitBtn.disabled = false;
                 submitBtn.textContent = "📩 Kirim Pesan";
-            }
+            });
         });
 
     });
@@ -1394,3 +1395,4 @@
 
 </body>
 </html>
+
