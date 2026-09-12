@@ -1499,9 +1499,9 @@
 <script>
 
     /* ===================================================
-       GOOGLE APPS SCRIPT URL (Ganti dengan URL Web App Anda)
+       GOOGLE APPS SCRIPT URL
        =================================================== */
-    const SCRIPT_URL = "GANTI_DENGAN_URL_DEPLOY_GOOGLE_SCRIPT_ANDA";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyX5PcL7hcPGjnwdiy3reCljfGSJmxToL4ZB00h5SlrFJUKuA54vMOy8nT3EzigOUzjrA/exec";
 
 
     /* ===================================================
@@ -1569,7 +1569,7 @@
 
                     } catch (error) {
                         console.error("Error Google Script:", error);
-                        statusMessage.textContent = "❌ Pesan gagal dikirim. Silakan periksa URL Google Script Anda.";
+                        statusMessage.textContent = "❌ Pesan gagal dikirim. Silakan periksa koneksi atau URL Google Script Anda.";
                         statusMessage.className = "status-message status-error";
                     } finally {
                         submitBtn.disabled = false;
@@ -1686,7 +1686,7 @@
 
         } catch (error) {
             console.error("Gagal memuat data admin:", error);
-            adminTableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: #a12626;">Gagal memuat data. Pastikan URL Google Script mendukung method GET dan CORS.</td></tr>`;
+            adminTableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: #a12626;">Gagal memuat data. Pastikan URL Google Script sudah di-deploy dengan benar (akses siapa saja / anyone).</td></tr>`;
         }
     }
 
