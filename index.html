@@ -781,7 +781,7 @@
                     </li>
 
                     <li>
-                        <a href="#pesan-section">
+                        <a href="#pesan">
                             Kirim Pesan
                         </a>
                     </li>
@@ -1043,7 +1043,7 @@
 
 <section
     class="database-section"
-    id="pesan-section">
+    id="pesan">
 
     <div class="container">
 
@@ -1125,12 +1125,12 @@
 
                 <div class="form-group">
 
-                    <label for="pesan">
+                    <label for="pesanTeks">
                         Keperluan / Pesan
                     </label>
 
                     <textarea
-                        id="pesan"
+                        id="pesanTeks"
                         name="Keperluan/Pesan"
                         placeholder="Tuliskan keperluan atau pesan Anda..."
                         required></textarea>
@@ -1383,7 +1383,7 @@
 
                     const pesan =
                         document
-                        .getElementById("pesan")
+                        .getElementById("pesanTeks")
                         .value
                         .trim();
 
@@ -1455,8 +1455,17 @@
                                                 "Nama Lengkap":
                                                     nama,
 
-                                                "Email":
-                                                    email,
+                                                "Nomor WA":
+                                                    wa,
+
+                                                "Nomor Wa":
+                                                    wa,
+
+                                                "Dusun/RT":
+                                                    dusun,
+
+                                                "Dusun/Rt":
+                                                    dusun,
 
                                                 "Keperluan/Pesan":
                                                     pesan
