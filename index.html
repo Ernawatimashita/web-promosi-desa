@@ -1202,7 +1202,7 @@
 
             <p>
                 Silakan isi formulir berikut.
-                Data akan tersimpan otomatis ke database Google Sheets Desa Pusaka.
+                Data akan tersimpan otomatis ke Google Sheets Desa Pusaka.
             </p>
 
         </div>
@@ -1232,37 +1232,19 @@
                 </div>
 
 
-                <!-- NOMOR WA -->
+                <!-- EMAIL -->
 
                 <div class="form-group">
 
-                    <label for="wa">
-                        Nomor WhatsApp
+                    <label for="email">
+                        Email
                     </label>
 
                     <input
-                        type="tel"
-                        id="wa"
-                        name="wa"
-                        placeholder="Contoh: 083896895383"
-                        required>
-
-                </div>
-
-
-                <!-- DUSUN -->
-
-                <div class="form-group">
-
-                    <label for="dusun">
-                        Dusun / RT
-                    </label>
-
-                    <input
-                        type="text"
-                        id="dusun"
-                        name="dusun"
-                        placeholder="Contoh: Dusun Puting / RT 01"
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Contoh: nama@email.com"
                         required>
 
                 </div>
@@ -1273,13 +1255,13 @@
                 <div class="form-group">
 
                     <label for="pesanTeks">
-                        Keperluan / Pesan
+                        Pesan
                     </label>
 
                     <textarea
                         id="pesanTeks"
                         name="pesan"
-                        placeholder="Tuliskan keperluan atau pesan Anda..."
+                        placeholder="Tuliskan pesan Anda..."
                         required></textarea>
 
                 </div>
@@ -1338,16 +1320,15 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Waktu</th>
-                            <th>Nama Lengkap</th>
-                            <th>Nomor WA</th>
-                            <th>Dusun / RT</th>
-                            <th>Keperluan / Pesan</th>
+                            <th>Tanggal</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Pesan</th>
                         </tr>
                     </thead>
                     <tbody id="adminTableBody">
                         <tr>
-                            <td colspan="6" style="text-align: center; color: var(--text-muted);">Memuat data dari Google Sheets...</td>
+                            <td colspan="5" style="text-align: center; color: var(--text-muted);">Memuat data dari Google Sheets...</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1551,11 +1532,10 @@
                     event.preventDefault();
 
                     const nama = document.getElementById("nama").value.trim();
-                    const wa = document.getElementById("wa").value.trim();
-                    const dusun = document.getElementById("dusun").value.trim();
+                    const email = document.getElementById("email").value.trim();
                     const pesan = document.getElementById("pesanTeks").value.trim();
 
-                    if (!nama || !wa || !dusun || !pesan) {
+                    if (!nama || !email || !pesan) {
                         statusMessage.textContent = "⚠️ Semua kolom wajib diisi.";
                         statusMessage.className = "status-message status-error";
                         return;
@@ -1567,11 +1547,9 @@
                     statusMessage.className = "status-message";
 
                     try {
-                        // Menggunakan URLSearchParams agar kompatibel dengan doPost Google Apps Script (application/x-www-form-urlencoded)
                         const formData = new URLSearchParams();
                         formData.append("nama", nama);
-                        formData.append("wa", wa);
-                        formData.append("dusun", dusun);
+                        formData.append("email", email);
                         formData.append("pesan", pesan);
 
                         const response = await fetch(SCRIPT_URL, {
@@ -1675,32 +1653,30 @@
     }
 
     async function loadAdminData() {
-        adminTableBody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted);">Memuat data dari Google Sheets...</td></tr>`;
+        adminTableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--text-muted);">Memuat data dari Google Sheets...</td></tr>`;
         
         try {
             const response = await fetch(SCRIPT_URL);
             const data = await response.json();
 
             if (!data || data.length === 0) {
-                adminTableBody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted);">Belum ada data pesan yang masuk.</td></tr>`;
+                adminTableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--text-muted);">Belum ada data pesan yang masuk.</td></tr>`;
                 return;
             }
 
             let rowsHTML = "";
             data.forEach((row, index) => {
-                const waktu = row.waktu || row.Waktu || "-";
-                const nama = row.nama || row["Nama Lengkap"] || "-";
-                const wa = row.wa || row["Nomor WA"] || "-";
-                const dusun = row.dusun || row["Dusun/RT"] || "-";
-                const pesan = row.pesan || row["Keperluan/Pesan"] || "-";
+                const tanggal = row.tanggal || row.Tanggal || "-";
+                const nama = row.nama || row.Nama || "-";
+                const email = row.email || row.Email || "-";
+                const pesan = row.pesan || row.Pesan || "-";
 
                 rowsHTML += `
                     <tr>
                         <td>${index + 1}</td>
-                        <td>${waktu}</td>
+                        <td>${tanggal}</td>
                         <td><strong>${nama}</strong></td>
-                        <td>${wa}</td>
-                        <td>${dusun}</td>
+                        <td>${email}</td>
                         <td>${pesan}</td>
                     </tr>
                 `;
@@ -1710,7 +1686,7 @@
 
         } catch (error) {
             console.error("Gagal memuat data admin:", error);
-            adminTableBody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: #a12626;">Gagal memuat data. Pastikan URL Google Script mendukung method GET dan CORS.</td></tr>`;
+            adminTableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: #a12626;">Gagal memuat data. Pastikan URL Google Script mendukung method GET dan CORS.</td></tr>`;
         }
     }
 
