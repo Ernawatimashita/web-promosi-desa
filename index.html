@@ -1038,7 +1038,7 @@
 
 
 <!-- ===================================================== -->
-<!-- FORM DATABASE DESA PUSAKA -->
+<!-- FORM GOOGLE SCRIPT DESA PUSAKA -->
 <!-- ===================================================== -->
 
 <section
@@ -1055,7 +1055,7 @@
 
             <p>
                 Silakan isi formulir berikut.
-                Data akan tersimpan otomatis ke database Desa Pusaka.
+                Data akan tersimpan otomatis ke Google Sheets.
             </p>
 
         </div>
@@ -1065,6 +1065,23 @@
 
 
             <form id="pesanForm">
+
+
+                <!-- TANGGAL -->
+
+                <div class="form-group">
+
+                    <label for="tanggal">
+                        Tanggal
+                    </label>
+
+                    <input
+                        type="date"
+                        id="tanggal"
+                        name="tanggal"
+                        required>
+
+                </div>
 
 
                 <!-- NAMA -->
@@ -1078,44 +1095,26 @@
                     <input
                         type="text"
                         id="nama"
-                        name="Nama Lengkap"
+                        name="nama"
                         placeholder="Masukkan nama lengkap"
                         required>
 
                 </div>
 
 
-                <!-- NOMOR WA -->
+                <!-- EMAIL -->
 
                 <div class="form-group">
 
-                    <label for="wa">
-                        Nomor WhatsApp
+                    <label for="email">
+                        Alamat Email
                     </label>
 
                     <input
-                        type="tel"
-                        id="wa"
-                        name="Nomor WA"
-                        placeholder="Contoh: 083896895383"
-                        required>
-
-                </div>
-
-
-                <!-- DUSUN -->
-
-                <div class="form-group">
-
-                    <label for="dusun">
-                        Dusun / RT
-                    </label>
-
-                    <input
-                        type="text"
-                        id="dusun"
-                        name="Dusun/RT"
-                        placeholder="Contoh: Dusun Puting / RT 01"
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Contoh: nama@email.com"
                         required>
 
                 </div>
@@ -1126,13 +1125,13 @@
                 <div class="form-group">
 
                     <label for="pesanTeks">
-                        Keperluan / Pesan
+                        Pesan
                     </label>
 
                     <textarea
                         id="pesanTeks"
-                        name="Keperluan/Pesan"
-                        placeholder="Tuliskan keperluan atau pesan Anda..."
+                        name="pesan"
+                        placeholder="Tuliskan pesan Anda..."
                         required></textarea>
 
                 </div>
@@ -1309,15 +1308,15 @@
 <script>
 
     /* ===================================================
-       DATABASE SHEETDB DESA PUSAKA
+       GOOGLE APPS SCRIPT URL 
+       (Ganti URL di bawah dengan Web App URL dari Google Apps Script Anda)
        =================================================== */
 
-    const SHEETDB_URL =
-        "https://sheetdb.io/api/v1/wdiapwaud3dcz";
+    const SCRIPT_URL = "https://script.google.com/macros/s/MASUKKAN_URL_WEB_APP_ANDA_DISINI/exec";
 
 
     /* ===================================================
-       FORM DATABASE
+       FORM GOOGLE SCRIPT
        =================================================== */
 
     document.addEventListener(
@@ -1360,26 +1359,23 @@
 
                     /* Ambil data dari form */
 
+                    const tanggal =
+                        document
+                        .getElementById("tanggal")
+                        .value
+                        .trim();
+
                     const nama =
                         document
                         .getElementById("nama")
                         .value
                         .trim();
 
-
-                    const wa =
+                    const email =
                         document
-                        .getElementById("wa")
+                        .getElementById("email")
                         .value
                         .trim();
-
-
-                    const dusun =
-                        document
-                        .getElementById("dusun")
-                        .value
-                        .trim();
-
 
                     const pesan =
                         document
@@ -1393,9 +1389,9 @@
                        ================================================= */
 
                     if (
+                        tanggal === "" ||
                         nama === "" ||
-                        wa === "" ||
-                        dusun === "" ||
+                        email === "" ||
                         pesan === ""
                     ) {
 
@@ -1428,51 +1424,21 @@
 
 
                     /* =================================================
-                       KIRIM DATA
+                       KIRIM DATA MENGGUNAKAN FORMDATA (MENGATASI CORS)
                        ================================================= */
+
+                    const formData = new FormData(pesanForm);
 
                     try {
 
                         const response =
                             await fetch(
-                                SHEETDB_URL,
+                                SCRIPT_URL,
                                 {
 
                                     method: "POST",
 
-                                    headers: {
-
-                                        "Content-Type":
-                                            "application/json"
-
-                                    },
-
-                                    body:
-                                        JSON.stringify({
-
-                                            data: {
-
-                                                "Nama Lengkap":
-                                                    nama,
-
-                                                "Nomor WA":
-                                                    wa,
-
-                                                "Nomor Wa":
-                                                    wa,
-
-                                                "Dusun/RT":
-                                                    dusun,
-
-                                                "Dusun/Rt":
-                                                    dusun,
-
-                                                "Keperluan/Pesan":
-                                                    pesan
-
-                                            }
-
-                                        })
+                                    body: formData
 
                                 }
                             );
@@ -1485,7 +1451,7 @@
 
 
                         console.log(
-                            "Response SheetDB:",
+                            "Response Google Script:",
                             hasil
                         );
 
@@ -1494,10 +1460,10 @@
                            CEK RESPONSE
                            ================================================= */
 
-                        if (!response.ok) {
+                        if (hasil.result !== "success") {
 
                             throw new Error(
-                                "Gagal mengirim data ke SheetDB."
+                                "Gagal mengirim data ke Google Sheets."
                             );
 
                         }
@@ -1528,7 +1494,7 @@
                     catch (error) {
 
                         console.error(
-                            "Error SheetDB:",
+                            "Error Google Script:",
                             error
                         );
 
