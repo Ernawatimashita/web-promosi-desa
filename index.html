@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desa Pusaka | Beranda</title>
+    <title>Desa Pusaka</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,30 +11,30 @@
 
     <style>
         :root {
-            --primary: #1b4d3e;
-            --primary-dark: #113328;
-            --primary-light: #2e6f5c;
+            --primary: #0d5437;
+            --primary-dark: #062f20;
+            --primary-light: #2d8a5f;
             --accent: #e5c158;
             --bg-light: #f4f8f5;
             --surface: #ffffff;
             --text-main: #142e23;
             --text-muted: #5a6e65;
             --border-color: #edf2ef;
-            --header-bg: rgba(255, 255, 255, 0.9);
+            --header-bg: rgba(255, 255, 255, 0.88);
             --radius-lg: 24px;
-            --shadow-soft: 0 20px 40px rgba(27, 77, 62, 0.08);
+            --shadow-soft: 0 20px 40px rgba(13, 84, 55, 0.08);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         body.dark-mode {
-            --primary: #2e6f5c;
+            --primary: #2d8a5f;
             --primary-dark: #0a1410;
             --bg-light: #0f1713;
             --surface: #1a2821;
             --text-main: #e4ebe7;
             --text-muted: #a0b3aa;
             --border-color: #273b31;
-            --header-bg: rgba(26, 40, 33, 0.9);
+            --header-bg: rgba(26, 40, 33, 0.88);
         }
 
         * {
@@ -62,28 +62,23 @@
             color: inherit;
         }
 
-        /* HEADER & NAVBAR */
+        /* HEADER */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
+            height: 100px;
             z-index: 1000;
             background: var(--header-bg);
             backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(27, 77, 62, 0.1);
-            padding: 12px 20px;
+            border-bottom: 1px solid rgba(13, 84, 55, 0.1);
         }
 
         .navbar {
-            width: min(1200px, 100%);
+            width: min(1280px, calc(100% - 40px));
+            height: 100%;
             margin: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .nav-top {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -92,286 +87,183 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             color: var(--primary);
             font-family: "Playfair Display", serif;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 800;
         }
 
         .logo-icon {
-            width: 38px;
-            height: 38px;
+            width: 44px;
+            height: 44px;
             background: var(--primary);
             color: white;
-            border-radius: 10px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 22px;
         }
 
-        .nav-menu-row1 {
+        .logo-text small {
+            display: block;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .nav-menu {
             display: flex;
-            gap: 8px;
+            gap: 28px;
             list-style: none;
             align-items: center;
-            overflow-x: auto;
-            padding-bottom: 4px;
         }
 
-        .nav-menu-row1 a {
-            font-size: 13px;
+        .nav-menu a {
+            font-size: 15px;
             font-weight: 600;
-            color: var(--text-main);
-            padding: 6px 12px;
-            border-radius: 20px;
-            background: rgba(27, 77, 62, 0.05);
+            color: var(--text-muted);
             transition: var(--transition);
-            white-space: nowrap;
         }
 
-        .nav-menu-row1 a.active, 
-        .nav-menu-row1 a:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .nav-menu-row2 {
-            display: flex;
-            gap: 8px;
-            list-style: none;
-            align-items: center;
-            overflow-x: auto;
-        }
-
-        .nav-menu-row2 a {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-main);
-            padding: 6px 14px;
-            border-radius: 20px;
-            background: var(--surface);
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-            white-space: nowrap;
-        }
-
-        .nav-menu-row2 a:hover {
-            border-color: var(--primary);
+        .nav-menu a:hover,
+        .nav-menu a.active {
             color: var(--primary);
         }
 
-        /* TOMBOL ADMIN */
+        /* TOMBOL ADMIN BARU SESUAI GAMBAR REFERENSI */
         .btn-admin {
             background: #2563eb !important;
             color: white !important;
-            border: none !important;
+            padding: 8px 16px !important;
+            border-radius: 12px;
             display: inline-flex !important;
-            align-items: center !important;
-            gap: 6px !important;
+            align-items: center;
+            gap: 6px;
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            transition: var(--transition);
         }
 
         .btn-admin:hover {
             background: #1d4ed8 !important;
+            color: white !important;
             transform: translateY(-1px);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
 
         .theme-toggle {
             background: var(--surface);
             border: 1px solid var(--border-color);
             color: var(--text-main);
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
             cursor: pointer;
-            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: var(--transition);
         }
 
-        /* MAIN HERO SECTION */
+        .theme-toggle:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* MAIN CONTENT */
         main {
             flex: 1;
             padding-top: 140px;
-            padding-bottom: 60px;
+            padding-bottom: 80px;
         }
 
         .container {
-            width: min(1200px, calc(100% - 30px));
+            width: min(1200px, calc(100% - 40px));
             margin: auto;
         }
 
         .hero {
-            background: linear-gradient(rgba(17, 51, 40, 0.75), rgba(27, 77, 62, 0.85)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop') center/cover;
+            background: linear-gradient(rgba(13, 84, 55, 0.85), rgba(6, 47, 32, 0.9)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop') center/cover;
             color: white;
-            padding: 50px 30px;
+            padding: 80px 60px;
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-soft);
         }
 
-        .badge-info {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 6px 14px;
-            border-radius: 30px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
         .hero h1 {
             font-family: "Playfair Display", serif;
-            font-size: clamp(28px, 4vw, 42px);
+            font-size: 42px;
             margin-bottom: 16px;
-            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 14px;
-            opacity: 0.95;
-            max-width: 650px;
+            font-size: 16px;
+            opacity: 0.9;
+            max-width: 600px;
             margin-bottom: 30px;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .btn {
-            padding: 12px 22px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-        }
-
-        .btn-success {
-            background: #10b981;
-            color: white;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-        }
-
-        .btn-success:hover {
-            background: #059669;
-            transform: translateY(-2px);
-        }
-
-        .btn-surface {
-            background: white;
-            color: var(--text-main);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        .btn-surface:hover {
-            background: #f8fafc;
-            transform: translateY(-2px);
-        }
-
-        .btn-location {
-            background: #b91c1c;
-            color: white;
-            box-shadow: 0 4px 12px rgba(185, 28, 28, 0.3);
-        }
-
-        .btn-location:hover {
-            background: #991b1b;
-            transform: translateY(-2px);
         }
 
         /* FOOTER */
         footer {
-            background: #0b1f18;
+            background: #031c13;
             color: #8ba398;
-            padding: 30px 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 13px;
+            font-size: 14px;
             margin-top: auto;
-        }
-
-        @media (max-width: 768px) {
-            .hero-actions {
-                flex-direction: column;
-            }
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
         }
     </style>
 </head>
 <body>
 
-<!-- HEADER & NAVIGASI -->
-<header id="header">
+<header>
     <div class="navbar">
-        <div class="nav-top">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">🌿</div>
-                <span>Desa Pusaka</span>
-            </a>
-            <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema">🌙</button>
-        </div>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">
+                Desa Pusaka
+                <small>Kabupaten Sambas</small>
+            </div>
+        </a>
 
-        <!-- Menu Baris 1 -->
-        <ul class="nav-menu-row1">
+        <ul class="nav-menu">
             <li><a href="index.html" class="active">Beranda</a></li>
             <li><a href="profil.html">Profil</a></li>
             <li><a href="potensi.html">Potensi</a></li>
-            <li><a href="fasilitas.html">Galeri</a></li>
-            <li><a href="pelayanan.html">Layanan Surat</a></li>
-        </ul>
-
-        <!-- Menu Baris 2 -->
-        <ul class="nav-menu-row2">
-            <li><a href="map.html">Map</a></li>
-            <li><a href="web-resmi.html">Web Resmi</a></li>
+            <li><a href="layanan.html">Layanan Surat</a></li>
+            <!-- Menu Admin Baru Ditambahkan Di Sini -->
             <li><a href="admin.html" class="btn-admin">🔐 Admin</a></li>
         </ul>
+
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Ganti Tema">🌙</button>
+        </div>
     </div>
 </header>
 
-<!-- MAIN CONTENT -->
 <main>
     <div class="container">
         <section class="hero">
-            <div class="badge-info">
-                <span>🌿</span> WEBSITE INFORMASI DESA
-            </div>
-            <h1>Desa Pusaka<br>Mengenal Lebih Dekat Desa Pusaka</h1>
-            <p>Mengenal lebih dekat Desa Pusaka, pusat informasi resmi, pelayanan administrasi kependudukan, dan transparansi kegiatan pemerintahan di Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat.</p>
-            
-            <div class="hero-actions">
-                <a href="pelayanan.html" class="btn btn-success">
-                    <span>📄</span> Ajukan Surat
-                </a>
-                <a href="profil.html" class="btn btn-surface">
-                    <span>👁️</span> Lihat Profil
-                </a>
-                <a href="map.html" class="btn btn-location">
-                    <span>📍</span> Lihat Lokasi
-                </a>
-            </div>
+            <h1>Selamat Datang di Website Resmi Desa Pusaka</h1>
+            <p>Pusat informasi layanan publik, transparansi pemerintahan, dan potensi kearifan lokal Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat.</p>
         </section>
     </div>
 </main>
 
-<!-- FOOTER -->
 <footer>
-    <p>© 2026 Pemerintah Desa Pusaka, Kec. Tebas, Kab. Sambas, Kalbar. All Rights Reserved.</p>
+    <p>© 2026 Pemerintah Desa Pusaka. All Rights Reserved.</p>
 </footer>
 
-<!-- SCRIPT PENDUKUNG -->
 <script>
     const themeToggleBtn = document.getElementById("themeToggle");
     if (localStorage.getItem("theme") === "dark") {
