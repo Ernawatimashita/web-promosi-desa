@@ -545,7 +545,6 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>No</th>
                             <th>Tanggal</th>
                             <th>Nama Lengkap</th>
                             <th>Email</th>
@@ -554,7 +553,7 @@
                     </thead>
                     <tbody id="tableBody">
                         <tr>
-                            <td colspan="5" style="text-align: center;">Memuat data...</td>
+                            <td colspan="4" style="text-align: center;">Memuat data...</td>
                         </tr>
                     </tbody>
                 </table>
@@ -638,20 +637,20 @@
 
     // Mengambil Data Langsung dari Google Apps Script Web App
     async function muatDataPesan() {
-        tableBody.innerHTML = `<tr><td colspan="5" style="text-align: center;">Memuat data terbaru...</td></tr>`;
+        tableBody.innerHTML = `<tr><td colspan="4" style="text-align: center;">Memuat data terbaru...</td></tr>`;
 
         try {
             const response = await fetch(SCRIPT_URL);
             const data = await response.json();
 
             if (!data || data.length === 0) {
-                tableBody.innerHTML = `<tr><td colspan="5" style="text-align: center;">Belum ada pesan masuk.</td></tr>`;
+                tableBody.innerHTML = `<tr><td colspan="4" style="text-align: center;">Belum ada pesan masuk.</td></tr>`;
                 return;
             }
 
             let htmlContent = "";
             // Menampilkan urutan data terbaru berada paling atas
-            data.reverse().forEach((row, index) => {
+            data.reverse().forEach((row) => {
                 const tanggal = row.tanggal || "-";
                 const nama = row.nama || "-";
                 const email = row.email || "-";
@@ -659,7 +658,6 @@
 
                 htmlContent += `
                     <tr>
-                        <td>${index + 1}</td>
                         <td>${tanggal}</td>
                         <td><b>${nama}</b></td>
                         <td><a href="mailto:${email}" class="email-link">${email}</a></td>
@@ -672,7 +670,7 @@
 
         } catch (error) {
             console.error("Gagal mengambil data:", error);
-            tableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: red;">Gagal memuat data dari Google Script. Pastikan fungsi doGet sudah di-deploy.</td></tr>`;
+            tableBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: red;">Gagal memuat data dari Google Script. Pastikan fungsi doGet sudah di-deploy.</td></tr>`;
         }
     }
 
