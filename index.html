@@ -623,7 +623,6 @@
                     <li><a href="potensi.html">Potensi</a></li>
                     <li><a href="fasilitas.html">Galeri</a></li>
                     <li><a href="pelayanan.html">Layanan Surat</a></li>
-                    <!-- Tombol ini berfungsi scrol langsung ke ID #pesan -->
                     <li><a href="#pesan">Kirim Pesan</a></li>
                     <li><a href="admin.html" class="btn-admin-nav">🔐 Admin</a></li>
                 </ul>
@@ -706,7 +705,7 @@
     </div>
 </section>
 
-<!-- FORM PESAN (Ditandai dengan id="pesan") -->
+<!-- FORM PESAN -->
 <section class="database-section" id="pesan">
     <div class="container">
         <div class="section-title">
@@ -786,6 +785,7 @@
             if (nama === "" || email === "" || pesan === "") {
                 statusMessage.textContent = "⚠️ Semua kolom wajib diisi.";
                 statusMessage.className = "status-message status-error";
+                statusMessage.style.display = "block";
                 return;
             }
 
@@ -795,18 +795,22 @@
             statusMessage.textContent = "Sedang mengirim data ke Google Sheets...";
             statusMessage.className = "status-message";
 
-            const formData = new FormData();
-            formData.append("nama", nama);
-            formData.append("email", email);
-            formData.append("pesan", pesan);
+            // Menggunakan URLSearchParams untuk format x-www-form-urlencoded
+            const payload = new URLSearchParams();
+            payload.append("nama", nama);
+            payload.append("email", email);
+            payload.append("pesan", pesan);
 
             fetch(SCRIPT_URL, {
                 method: "POST",
-                body: formData
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: payload.toString()
             })
             .then(response => response.json())
             .then(data => {
-                if(data.result === "success") {
+                if (data.result === "success") {
                     statusMessage.textContent = "✅ Pesan berhasil disimpan ke Google Sheets!";
                     statusMessage.className = "status-message status-success";
                     pesanForm.reset();
@@ -816,7 +820,7 @@
             })
             .catch(error => {
                 console.error("Error:", error);
-                statusMessage.textContent = "❌ Gagal mengirim pesan. Pastikan koneksi lancar dan skrip sudah di-deploy.";
+                statusMessage.textContent = "❌ Gagal mengirim pesan. Pastikan skrip sudah di-deploy ulang dan aksesnya publik.";
                 statusMessage.className = "status-message status-error";
             })
             .finally(() => {
