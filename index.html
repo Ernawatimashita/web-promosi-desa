@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Desa Pusaka | Beranda</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- ================= GOOGLE FONT ================= -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
 
     <style>
 
+        /* =====================================================
+           ROOT
+        ===================================================== */
+
         :root {
+
             --primary: #0d5437;
             --primary-dark: #062f20;
             --primary-light: #2d8a5f;
+
             --accent: #e5c158;
             --accent-hover: #f0cf6d;
 
             --bg-light: #f4f8f5;
             --bg-alt: #ebf2ee;
+
             --surface: #ffffff;
 
             --text-main: #142e23;
@@ -29,25 +49,36 @@
 
             --border-color: #edf2ef;
 
-            --header-bg: rgba(255, 255, 255, 0.88);
-            --header-scrolled: rgba(255, 255, 255, 0.98);
+            --header-bg: rgba(255,255,255,0.88);
+            --header-scrolled: rgba(255,255,255,0.98);
 
             --radius-lg: 24px;
             --radius-md: 16px;
 
-            --shadow-soft: 0 20px 40px rgba(13, 84, 55, 0.08);
-            --shadow-hard: 0 10px 30px rgba(0, 0, 0, 0.12);
+            --shadow-soft:
+                0 20px 40px rgba(13,84,55,0.08);
 
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-hard:
+                0 10px 30px rgba(0,0,0,0.12);
+
+            --transition:
+                all 0.3s cubic-bezier(0.4,0,0.2,1);
         }
 
+
+        /* =====================================================
+           DARK MODE
+        ===================================================== */
+
         body.dark-mode {
+
             --primary: #2d8a5f;
             --primary-dark: #0a1410;
             --primary-light: #48b480;
 
             --bg-light: #0f1713;
             --bg-alt: #16221c;
+
             --surface: #1a2821;
 
             --text-main: #e4ebe7;
@@ -55,151 +86,267 @@
 
             --border-color: #273b31;
 
-            --header-bg: rgba(26, 40, 33, 0.88);
-            --header-scrolled: rgba(26, 40, 33, 0.98);
+            --header-bg:
+                rgba(26,40,33,0.88);
 
-            --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.35);
-            --shadow-hard: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --header-scrolled:
+                rgba(26,40,33,0.98);
+
+            --shadow-soft:
+                0 20px 40px rgba(0,0,0,0.35);
+
+            --shadow-hard:
+                0 10px 30px rgba(0,0,0,0.5);
         }
 
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
         * {
+
             margin: 0;
             padding: 0;
+
             box-sizing: border-box;
         }
 
+
         html {
+
             scroll-behavior: smooth;
         }
 
+
         body {
-            font-family: "Plus Jakarta Sans", sans-serif;
-            background: var(--bg-light);
-            color: var(--text-main);
+
+            font-family:
+                "Plus Jakarta Sans",
+                sans-serif;
+
+            background:
+                var(--bg-light);
+
+            color:
+                var(--text-main);
+
             line-height: 1.6;
         }
 
+
         a {
+
             text-decoration: none;
+
             color: inherit;
         }
 
-        /* ================= HEADER ================= */
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
 
         header {
+
             position: fixed;
+
             top: 0;
             left: 0;
+
             width: 100%;
+
             height: 90px;
+
             z-index: 1000;
 
-            background: var(--header-bg);
-            backdrop-filter: blur(15px);
+            background:
+                var(--header-bg);
 
-            border-bottom: 1px solid rgba(13, 84, 55, 0.1);
+            backdrop-filter:
+                blur(15px);
 
-            transition: var(--transition);
+            border-bottom:
+                1px solid rgba(13,84,55,0.1);
+
+            transition:
+                var(--transition);
         }
+
 
         header.scrolled {
+
             height: 75px;
-            background: var(--header-scrolled);
-            box-shadow: 0 4px 25px rgba(0,0,0,0.12);
+
+            background:
+                var(--header-scrolled);
+
+            box-shadow:
+                0 4px 25px rgba(0,0,0,0.12);
         }
 
+
         .navbar {
-            width: min(1280px, calc(100% - 40px));
+
+            width:
+                min(1280px, calc(100% - 40px));
+
             height: 100%;
+
             margin: auto;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
         }
 
+
+        /* =====================================================
+           LOGO
+        ===================================================== */
+
         .logo {
+
             display: flex;
+
             align-items: center;
+
             gap: 12px;
 
-            color: var(--primary);
+            color:
+                var(--primary);
 
-            font-family: "Playfair Display", serif;
+            font-family:
+                "Playfair Display",
+                serif;
+
             font-size: 22px;
+
             font-weight: 800;
         }
 
+
         .logo-icon {
+
             width: 44px;
             height: 44px;
 
-            background: var(--primary);
+            background:
+                var(--primary);
+
             color: white;
 
             border-radius: 12px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             font-size: 22px;
         }
 
+
         .logo-text small {
+
             display: block;
 
-            font-family: "Plus Jakarta Sans", sans-serif;
+            font-family:
+                "Plus Jakarta Sans",
+                sans-serif;
+
             font-size: 10px;
+
             font-weight: 600;
 
-            text-transform: uppercase;
+            text-transform:
+                uppercase;
 
-            color: var(--text-muted);
+            color:
+                var(--text-muted);
         }
 
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
         .nav-container {
+
             display: flex;
+
             align-items: center;
+
             gap: 20px;
         }
 
+
         nav ul {
+
             display: flex;
+
             gap: 15px;
+
             list-style: none;
         }
 
+
         nav a {
+
             font-size: 14px;
+
             font-weight: 600;
 
-            color: var(--text-main);
+            color:
+                var(--text-main);
 
-            padding: 8px 12px;
+            padding:
+                8px 12px;
+
             border-radius: 8px;
 
-            transition: var(--transition);
+            transition:
+                var(--transition);
         }
+
 
         nav a:hover,
         nav li.active > a {
-            color: var(--primary-light);
-            background: rgba(45, 138, 95, 0.08);
+
+            color:
+                var(--primary-light);
+
+            background:
+                rgba(45,138,95,0.08);
         }
 
+
         .nav-actions {
+
             display: flex;
+
             align-items: center;
+
             gap: 12px;
         }
 
+
+        /* =====================================================
+           THEME BUTTON
+        ===================================================== */
+
         .theme-toggle {
-            background: var(--surface);
 
-            border: 1px solid var(--border-color);
+            background:
+                var(--surface);
 
-            color: var(--text-main);
+            border:
+                1px solid var(--border-color);
+
+            color:
+                var(--text-main);
 
             width: 42px;
             height: 42px;
@@ -209,102 +356,158 @@
             cursor: pointer;
 
             font-size: 18px;
+
+            transition:
+                var(--transition);
         }
 
-        /* ================= HERO ================= */
+
+        .theme-toggle:hover {
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
 
         .hero {
+
             min-height: 90vh;
 
             display: flex;
+
             align-items: center;
 
-            padding: 160px 20px 100px;
+            padding:
+                160px 20px 100px;
 
             color: white;
 
             background:
+
                 linear-gradient(
                     180deg,
-                    rgba(6, 47, 32, 0.82) 0%,
-                    rgba(6, 47, 32, 0.90) 100%
+                    rgba(6,47,32,0.82) 0%,
+                    rgba(6,47,32,0.90) 100%
                 ),
-                url('masjid.jpg') center/cover no-repeat;
+
+                url('masjid.jpg')
+                center/cover no-repeat;
 
             text-align: center;
         }
 
+
         .hero-content {
+
             max-width: 850px;
+
             margin: auto;
         }
 
+
         .hero-badge {
+
             display: inline-block;
 
-            padding: 8px 18px;
+            padding:
+                8px 18px;
 
-            background: rgba(255,255,255,0.15);
+            background:
+                rgba(255,255,255,0.15);
 
             border-radius: 50px;
 
             font-size: 12px;
+
             font-weight: 700;
 
             margin-bottom: 24px;
 
-            text-transform: uppercase;
+            text-transform:
+                uppercase;
         }
 
-        .hero h1 {
-            font-family: "Playfair Display", serif;
 
-            font-size: clamp(42px, 6vw, 76px);
+        .hero h1 {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(42px,6vw,76px);
 
             margin-bottom: 24px;
         }
 
+
         .hero p {
+
             max-width: 700px;
-            margin: 0 auto 30px;
+
+            margin:
+                0 auto 30px;
 
             font-size: 16px;
         }
 
+
         .btn-primary {
+
             display: inline-flex;
 
             align-items: center;
+
             gap: 8px;
 
-            padding: 16px 36px;
+            padding:
+                16px 36px;
 
-            background: var(--accent);
-            color: #062f20;
+            background:
+                var(--accent);
+
+            color:
+                #062f20;
 
             font-weight: 700;
 
             border-radius: 50px;
 
-            transition: var(--transition);
+            transition:
+                var(--transition);
         }
+
 
         .btn-primary:hover {
-            background: var(--accent-hover);
-            transform: translateY(-3px);
+
+            background:
+                var(--accent-hover);
+
+            transform:
+                translateY(-3px);
         }
 
-        /* ================= STATS ================= */
+
+        /* =====================================================
+           STATS
+        ===================================================== */
 
         .stats-container {
-            width: min(1200px, calc(100% - 40px));
 
-            margin: -60px auto 60px;
+            width:
+                min(1200px,calc(100% - 40px));
+
+            margin:
+                -60px auto 60px;
 
             display: grid;
 
             grid-template-columns:
-                repeat(auto-fit, minmax(220px, 1fr));
+                repeat(auto-fit,minmax(220px,1fr));
 
             gap: 20px;
 
@@ -313,134 +516,226 @@
             z-index: 10;
         }
 
+
         .stat-card {
-            background: var(--surface);
 
-            padding: 28px 24px;
+            background:
+                var(--surface);
 
-            border-radius: var(--radius-md);
+            padding:
+                28px 24px;
 
-            text-align: center;
+            border-radius:
+                var(--radius-md);
 
-            border: 1px solid var(--border-color);
+            text-align:
+                center;
 
-            box-shadow: var(--shadow-soft);
+            border:
+                1px solid var(--border-color);
+
+            box-shadow:
+                var(--shadow-soft);
+
+            transition:
+                var(--transition);
         }
 
+
+        .stat-card:hover {
+
+            transform:
+                translateY(-5px);
+        }
+
+
         .stat-card .icon {
+
             font-size: 28px;
         }
 
+
         .stat-card h3 {
+
             font-size: 38px;
 
-            font-family: "Playfair Display", serif;
+            font-family:
+                "Playfair Display",
+                serif;
 
-            color: var(--primary);
+            color:
+                var(--primary);
         }
 
-        /* ================= SECTION ================= */
+
+        /* =====================================================
+           SECTION
+        ===================================================== */
 
         section {
-            padding: 60px 20px;
+
+            padding:
+                60px 20px;
         }
 
+
         .container {
-            width: min(1200px, 100%);
+
+            width:
+                min(1200px,100%);
+
             margin: auto;
         }
 
+
         .section-title {
+
             text-align: center;
+
             margin-bottom: 40px;
         }
 
+
         .section-title h2 {
-            font-family: "Playfair Display", serif;
+
+            font-family:
+                "Playfair Display",
+                serif;
 
             font-size: 36px;
 
             margin-bottom: 10px;
         }
 
+
         .section-title p {
-            color: var(--text-muted);
+
+            color:
+                var(--text-muted);
         }
 
-        /* ================= NEWS ================= */
+
+        /* =====================================================
+           NEWS
+        ===================================================== */
 
         .news-grid {
+
             display: grid;
 
             grid-template-columns:
-                repeat(auto-fit, minmax(300px, 1fr));
+                repeat(auto-fit,minmax(300px,1fr));
 
             gap: 28px;
         }
 
+
         .news-card {
-            background: var(--surface);
 
-            border-radius: var(--radius-md);
+            background:
+                var(--surface);
 
-            overflow: hidden;
+            border-radius:
+                var(--radius-md);
 
-            border: 1px solid var(--border-color);
+            overflow:
+                hidden;
 
-            box-shadow: var(--shadow-soft);
+            border:
+                1px solid var(--border-color);
 
-            transition: var(--transition);
+            box-shadow:
+                var(--shadow-soft);
+
+            transition:
+                var(--transition);
         }
+
 
         .news-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-hard);
+
+            transform:
+                translateY(-6px);
+
+            box-shadow:
+                var(--shadow-hard);
         }
+
 
         .news-img {
+
             height: 200px;
+
+            background-size:
+                cover !important;
+
+            background-position:
+                center !important;
         }
 
+
         .news-body {
+
             padding: 20px;
         }
 
+
         .news-body h3 {
+
             margin-bottom: 10px;
         }
 
+
         .news-body p {
-            color: var(--text-muted);
+
+            color:
+                var(--text-muted);
+
             font-size: 14px;
         }
 
-        /* ================= DATABASE FORM ================= */
+
+        /* =====================================================
+           DATABASE SECTION
+        ===================================================== */
 
         .database-section {
-            background: var(--bg-alt);
+
+            background:
+                var(--bg-alt);
         }
 
+
         .form-container {
+
             max-width: 750px;
 
             margin: auto;
 
-            background: var(--surface);
+            background:
+                var(--surface);
 
             padding: 35px;
 
-            border-radius: var(--radius-lg);
+            border-radius:
+                var(--radius-lg);
 
-            border: 1px solid var(--border-color);
+            border:
+                1px solid var(--border-color);
 
-            box-shadow: var(--shadow-soft);
+            box-shadow:
+                var(--shadow-soft);
         }
 
+
         .form-group {
+
             margin-bottom: 20px;
         }
 
+
         .form-group label {
+
             display: block;
 
             margin-bottom: 8px;
@@ -450,20 +745,25 @@
             font-weight: 700;
         }
 
+
         .form-group input,
-        .form-group select,
         .form-group textarea {
+
             width: 100%;
 
-            padding: 14px 16px;
+            padding:
+                14px 16px;
 
-            border: 1px solid var(--border-color);
+            border:
+                1px solid var(--border-color);
 
             border-radius: 12px;
 
-            background: var(--bg-light);
+            background:
+                var(--bg-light);
 
-            color: var(--text-main);
+            color:
+                var(--text-main);
 
             font-family: inherit;
 
@@ -471,25 +771,37 @@
 
             outline: none;
 
-            transition: var(--transition);
+            transition:
+                var(--transition);
         }
+
 
         .form-group input:focus,
-        .form-group select:focus,
         .form-group textarea:focus {
-            border-color: var(--primary-light);
+
+            border-color:
+                var(--primary-light);
 
             box-shadow:
-                0 0 0 3px rgba(45, 138, 95, 0.12);
+                0 0 0 3px
+                rgba(45,138,95,0.12);
         }
 
+
         .form-group textarea {
-            min-height: 130px;
+
+            min-height: 150px;
 
             resize: vertical;
         }
 
+
+        /* =====================================================
+           SUBMIT BUTTON
+        ===================================================== */
+
         .submit-btn {
+
             width: 100%;
 
             padding: 15px;
@@ -498,7 +810,8 @@
 
             border-radius: 50px;
 
-            background: var(--primary);
+            background:
+                var(--primary);
 
             color: white;
 
@@ -510,16 +823,23 @@
 
             cursor: pointer;
 
-            transition: var(--transition);
+            transition:
+                var(--transition);
         }
+
 
         .submit-btn:hover {
-            background: var(--primary-light);
 
-            transform: translateY(-2px);
+            background:
+                var(--primary-light);
+
+            transform:
+                translateY(-2px);
         }
 
+
         .submit-btn:disabled {
+
             opacity: 0.6;
 
             cursor: not-allowed;
@@ -527,10 +847,17 @@
             transform: none;
         }
 
+
+        /* =====================================================
+           STATUS MESSAGE
+        ===================================================== */
+
         .status-message {
+
             margin-top: 18px;
 
-            padding: 12px 15px;
+            padding:
+                12px 15px;
 
             border-radius: 10px;
 
@@ -541,59 +868,130 @@
             text-align: center;
         }
 
+
         .status-success {
+
             display: block;
 
-            background: #dff5e8;
+            background:
+                #dff5e8;
 
-            color: #146c43;
+            color:
+                #146c43;
         }
+
 
         .status-error {
+
             display: block;
 
-            background: #fde2e2;
+            background:
+                #fde2e2;
 
-            color: #a12626;
+            color:
+                #a12626;
         }
 
-        /* ================= FOOTER ================= */
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
 
         footer {
-            background: #031c13;
 
-            color: #8ba398;
+            background:
+                #031c13;
 
-            padding: 60px 20px 30px;
+            color:
+                #8ba398;
+
+            padding:
+                60px 20px 30px;
 
             font-size: 14px;
         }
 
+
         .footer-grid {
+
             display: grid;
 
             grid-template-columns:
-                2fr repeat(2, 1fr);
+                2fr repeat(2,1fr);
 
             gap: 40px;
 
-            width: min(1200px, 100%);
+            width:
+                min(1200px,100%);
 
-            margin: 0 auto 40px;
+            margin:
+                0 auto 40px;
         }
 
+
+        .footer-grid h3,
+        .footer-grid h4 {
+
+            color: white;
+        }
+
+
+        .footer-grid h3 {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            margin-bottom: 12px;
+        }
+
+
+        .footer-grid h4 {
+
+            margin-bottom: 12px;
+        }
+
+
+        .footer-grid p {
+
+            margin-bottom: 8px;
+        }
+
+
+        .footer-grid a {
+
+            color:
+                #8ba398;
+
+            transition:
+                var(--transition);
+        }
+
+
+        .footer-grid a:hover {
+
+            color: white;
+        }
+
+
         .footer-bottom {
+
             text-align: center;
 
             border-top:
-                1px solid rgba(255,255,255,0.08);
+                1px solid
+                rgba(255,255,255,0.08);
 
             padding-top: 20px;
         }
 
-        /* ================= BACK TO TOP ================= */
+
+        /* =====================================================
+           BACK TO TOP
+        ===================================================== */
 
         .back-to-top {
+
             position: fixed;
 
             bottom: 30px;
@@ -602,9 +1000,11 @@
             width: 50px;
             height: 50px;
 
-            background: var(--accent);
+            background:
+                var(--accent);
 
-            color: #062f20;
+            color:
+                #062f20;
 
             border-radius: 50%;
 
@@ -621,46 +1021,74 @@
 
             opacity: 0;
 
-            transition: var(--transition);
+            pointer-events: none;
+
+            transition:
+                var(--transition);
 
             z-index: 999;
         }
 
+
         .back-to-top.show {
+
             opacity: 1;
+
+            pointer-events: auto;
         }
 
-        /* ================= RESPONSIVE ================= */
+
+        /* =====================================================
+           RESPONSIVE 900PX
+        ===================================================== */
 
         @media (max-width: 900px) {
 
             .navbar {
-                width: calc(100% - 25px);
+
+                width:
+                    calc(100% - 25px);
             }
 
+
             nav ul {
+
                 gap: 5px;
             }
 
+
             nav a {
+
                 font-size: 12px;
+
                 padding: 7px;
             }
 
+
             .footer-grid {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
             }
         }
+
+
+        /* =====================================================
+           RESPONSIVE 700PX
+        ===================================================== */
 
         @media (max-width: 700px) {
 
             header {
+
                 height: auto;
 
                 min-height: 75px;
             }
 
+
             .navbar {
+
                 flex-wrap: wrap;
 
                 padding: 12px 0;
@@ -668,7 +1096,9 @@
                 gap: 10px;
             }
 
+
             .nav-container {
+
                 order: 3;
 
                 width: 100%;
@@ -676,67 +1106,123 @@
                 overflow-x: auto;
             }
 
+
             nav ul {
+
                 width: max-content;
             }
 
+
             .hero {
+
                 padding-top: 150px;
             }
 
+
             .hero h1 {
+
                 font-size: 42px;
             }
 
+
             .stats-container {
+
                 grid-template-columns:
-                    repeat(2, 1fr);
+                    repeat(2,1fr);
             }
 
+
             .form-container {
-                padding: 25px 20px;
+
+                padding:
+                    25px 20px;
             }
         }
+
+
+        /* =====================================================
+           RESPONSIVE 450PX
+        ===================================================== */
 
         @media (max-width: 450px) {
 
             .stats-container {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
             }
 
+
             .logo {
+
                 font-size: 18px;
             }
 
+
             .logo-icon {
+
                 width: 38px;
                 height: 38px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 36px;
+            }
+
+
+            .section-title h2 {
+
+                font-size: 30px;
+            }
+
+
+            .back-to-top {
+
+                right: 20px;
+
+                bottom: 20px;
             }
         }
 
     </style>
+
 </head>
+
 
 <body>
 
-<!-- ================= HEADER ================= -->
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header id="header">
 
     <div class="navbar">
 
-        <a href="index.html" class="logo">
+
+        <!-- LOGO -->
+
+        <a href="index.html"
+           class="logo">
 
             <div class="logo-icon">
+
                 🌿
+
             </div>
+
 
             <div class="logo-text">
 
                 Desa Pusaka
 
                 <small>
+
                     Kab. Sambas
+
                 </small>
 
             </div>
@@ -744,47 +1230,80 @@
         </a>
 
 
+        <!-- NAVIGATION -->
+
         <div class="nav-container">
 
             <nav>
 
                 <ul>
 
+
                     <li class="active">
+
                         <a href="index.html">
+
                             Beranda
+
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a href="profil.html">
+
                             Profil Desa
+
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a href="pelayanan.html">
+
                             Pelayanan Surat
+
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a href="fasilitas.html">
+
                             Fasilitas
+
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a href="potensi.html">
+
                             UMKM & Potensi
+
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a href="#pesan">
+
                             Kirim Pesan
+
                         </a>
+
                     </li>
+
 
                 </ul>
 
@@ -792,6 +1311,8 @@
 
         </div>
 
+
+        <!-- DARK MODE -->
 
         <div class="nav-actions">
 
@@ -806,16 +1327,20 @@
 
         </div>
 
+
     </div>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
     <div class="hero-content">
+
 
         <div class="hero-badge">
 
@@ -825,7 +1350,9 @@
 
 
         <h1>
+
             Selamat Datang di Desa Pusaka
+
         </h1>
 
 
@@ -838,35 +1365,44 @@
         </p>
 
 
-        <a
-            href="profil.html"
-            class="btn-primary">
+        <a href="profil.html"
+           class="btn-primary">
 
             🌿 Jelajahi Profil Desa
 
         </a>
+
 
     </div>
 
 </section>
 
 
-<!-- ================= STATISTIK ================= -->
+<!-- =====================================================
+     STATISTIK
+===================================================== -->
 
 <div class="stats-container">
 
+
     <div class="stat-card">
 
         <span class="icon">
+
             🏛️
+
         </span>
 
         <h3>
+
             1779
+
         </h3>
 
         <p>
+
             Tahun Awal Kisah
+
         </p>
 
     </div>
@@ -875,15 +1411,21 @@
     <div class="stat-card">
 
         <span class="icon">
+
             👥
+
         </span>
 
         <h3>
+
             3.031
+
         </h3>
 
         <p>
+
             Jumlah Penduduk
+
         </p>
 
     </div>
@@ -892,15 +1434,21 @@
     <div class="stat-card">
 
         <span class="icon">
+
             🏡
+
         </span>
 
         <h3>
+
             3
+
         </h3>
 
         <p>
+
             Wilayah Dusun
+
         </p>
 
     </div>
@@ -909,36 +1457,51 @@
     <div class="stat-card">
 
         <span class="icon">
+
             🌾
+
         </span>
 
         <h3>
+
             120+
+
         </h3>
 
         <p>
+
             Hektar Pertanian
+
         </p>
 
     </div>
+
 
 </div>
 
 
-<!-- ================= BERITA ================= -->
+<!-- =====================================================
+     BERITA
+===================================================== -->
 
 <section>
 
     <div class="container">
 
+
         <div class="section-title">
 
             <h2>
+
                 Kabar Terbaru & Berita Desa
+
             </h2>
 
+
             <p>
+
                 Informasi dan kegiatan terbaru masyarakat Desa Pusaka
+
             </p>
 
         </div>
@@ -947,26 +1510,35 @@
         <div class="news-grid">
 
 
+            <!-- BERITA 1 -->
+
             <div class="news-card">
 
                 <div
                     class="news-img"
                     style="
-                        background:
-                        url('gotong-royong.jpg')
-                        center/cover;
+                        background-image:
+                        url('gotong-royong.jpg');
                     ">
                 </div>
+
 
                 <div class="news-body">
 
                     <h3>
-                        Kegiatan Gotong Royong Massal Warga Dusun Puting
+
+                        Kegiatan Gotong Royong Massal
+                        Warga Dusun Puting
+
                     </h3>
 
+
                     <p>
-                        Semangat kebersamaan yang tak pernah padam.
-                        Warga antusias membersihkan saluran irigasi.
+
+                        Semangat kebersamaan yang tak pernah
+                        padam. Warga antusias membersihkan
+                        saluran irigasi.
+
                     </p>
 
                 </div>
@@ -974,27 +1546,34 @@
             </div>
 
 
+            <!-- BERITA 2 -->
 
             <div class="news-card">
 
                 <div
                     class="news-img"
                     style="
-                        background:
-                        url('pertanian-desaa.jpg')
-                        center/cover;
+                        background-image:
+                        url('pertanian-desaa.jpg');
                     ">
                 </div>
+
 
                 <div class="news-body">
 
                     <h3>
-                        Pelatihan Pertanian Modern & Pembuatan Pupuk Organik
+
+                        Pelatihan Pertanian Modern &
+                        Pembuatan Pupuk Organik
+
                     </h3>
 
+
                     <p>
-                        Inovasi untuk hasil bumi yang lebih sehat
-                        dan berkualitas tinggi.
+
+                        Inovasi untuk hasil bumi yang lebih
+                        sehat dan berkualitas tinggi.
+
                     </p>
 
                 </div>
@@ -1002,27 +1581,34 @@
             </div>
 
 
+            <!-- BERITA 3 -->
 
             <div class="news-card">
 
                 <div
                     class="news-img"
                     style="
-                        background:
-                        url('kegiatan-warga.jpg')
-                        center/cover;
+                        background-image:
+                        url('kegiatan-warga.jpg');
                     ">
                 </div>
+
 
                 <div class="news-body">
 
                     <h3>
-                        Musyawarah Perencanaan Pembangunan Desa
+
+                        Musyawarah Perencanaan
+                        Pembangunan Desa
+
                     </h3>
 
+
                     <p>
+
                         Wujud transparansi dan demokrasi desa
                         merumuskan arah pembangunan.
+
                     </p>
 
                 </div>
@@ -1037,25 +1623,34 @@
 </section>
 
 
-<!-- ===================================================== -->
-<!-- FORM DATABASE DESA PUSAKA -->
-<!-- ===================================================== -->
+<!-- =====================================================
+     FORM DATABASE
+     TANGGAL - NAMA - EMAIL - PESAN
+===================================================== -->
 
 <section
     class="database-section"
     id="pesan">
 
+
     <div class="container">
+
 
         <div class="section-title">
 
             <h2>
+
                 Sampaikan Pesan kepada Desa Pusaka
+
             </h2>
 
+
             <p>
+
                 Silakan isi formulir berikut.
-                Data akan tersimpan otomatis ke database Desa Pusaka.
+                Data akan tersimpan otomatis
+                ke database Desa Pusaka.
+
             </p>
 
         </div>
@@ -1067,78 +1662,101 @@
             <form id="pesanForm">
 
 
-                <!-- NAMA -->
+                <!-- =================================================
+                     TANGGAL
+                ================================================= -->
+
+                <div class="form-group">
+
+                    <label for="tanggal">
+
+                        Tanggal
+
+                    </label>
+
+
+                    <input
+                        type="date"
+                        id="tanggal"
+                        name="Tanggal"
+                        required>
+
+                </div>
+
+
+                <!-- =================================================
+                     NAMA
+                ================================================= -->
 
                 <div class="form-group">
 
                     <label for="nama">
-                        Nama Lengkap
+
+                        Nama
+
                     </label>
+
 
                     <input
                         type="text"
                         id="nama"
-                        name="Nama Lengkap"
+                        name="Nama"
                         placeholder="Masukkan nama lengkap"
+                        autocomplete="name"
                         required>
 
                 </div>
 
 
-                <!-- NOMOR WA -->
+                <!-- =================================================
+                     EMAIL
+                ================================================= -->
 
                 <div class="form-group">
 
-                    <label for="wa">
-                        Nomor WhatsApp
+                    <label for="email">
+
+                        Email
+
                     </label>
 
+
                     <input
-                        type="tel"
-                        id="wa"
-                        name="Nomor WA"
-                        placeholder="Contoh: 083896895383"
+                        type="email"
+                        id="email"
+                        name="Email"
+                        placeholder="contoh@email.com"
+                        autocomplete="email"
                         required>
 
                 </div>
 
 
-                <!-- DUSUN -->
-
-                <div class="form-group">
-
-                    <label for="dusun">
-                        Dusun / RT
-                    </label>
-
-                    <input
-                        type="text"
-                        id="dusun"
-                        name="Dusun/RT"
-                        placeholder="Contoh: Dusun Puting / RT 01"
-                        required>
-
-                </div>
-
-
-                <!-- PESAN -->
+                <!-- =================================================
+                     PESAN
+                ================================================= -->
 
                 <div class="form-group">
 
                     <label for="pesanTeks">
-                        Keperluan / Pesan
+
+                        Pesan
+
                     </label>
+
 
                     <textarea
                         id="pesanTeks"
-                        name="Keperluan/Pesan"
+                        name="Pesan"
                         placeholder="Tuliskan keperluan atau pesan Anda..."
                         required></textarea>
 
                 </div>
 
 
-                <!-- BUTTON -->
+                <!-- =================================================
+                     BUTTON
+                ================================================= -->
 
                 <button
                     type="submit"
@@ -1150,11 +1768,14 @@
                 </button>
 
 
-                <!-- STATUS -->
+                <!-- =================================================
+                     STATUS
+                ================================================= -->
 
                 <div
                     id="statusMessage"
                     class="status-message">
+
                 </div>
 
 
@@ -1167,21 +1788,21 @@
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
+
 
     <div class="footer-grid">
 
 
+        <!-- TENTANG -->
+
         <div>
 
-            <h3
-                style="
-                    color: white;
-                    font-family: 'Playfair Display', serif;
-                    margin-bottom: 12px;
-                ">
+            <h3>
 
                 🌿 Desa Pusaka
 
@@ -1199,14 +1820,11 @@
         </div>
 
 
+        <!-- NAVIGASI -->
 
         <div>
 
-            <h4
-                style="
-                    color: white;
-                    margin-bottom: 12px;
-                ">
+            <h4>
 
                 Navigasi
 
@@ -1214,49 +1832,68 @@
 
 
             <p>
-                <a
-                    href="index.html"
-                    style="color:#8ba398;">
+
+                <a href="index.html">
 
                     Beranda
 
                 </a>
+
             </p>
 
 
             <p>
-                <a
-                    href="profil.html"
-                    style="color:#8ba398;">
+
+                <a href="profil.html">
 
                     Profil Desa
 
                 </a>
+
             </p>
 
 
             <p>
-                <a
-                    href="pelayanan.html"
-                    style="color:#8ba398;">
+
+                <a href="pelayanan.html">
 
                     Pelayanan Surat
 
                 </a>
+
+            </p>
+
+
+            <p>
+
+                <a href="fasilitas.html">
+
+                    Fasilitas
+
+                </a>
+
+            </p>
+
+
+            <p>
+
+                <a href="potensi.html">
+
+                    UMKM & Potensi
+
+                </a>
+
             </p>
 
 
         </div>
 
 
+        <!-- KONTAK -->
 
         <div>
 
-            <h4
-                style="
-                    color: white;
-                    margin-bottom: 12px;
-                ">
+            <h4>
 
                 Kontak
 
@@ -1267,7 +1904,14 @@
 
                 Kecamatan Tebas,
                 Kab. Sambas,
-                Kalbar (79461)
+                Kalimantan Barat
+
+            </p>
+
+
+            <p>
+
+                📍 Desa Pusaka
 
             </p>
 
@@ -1288,77 +1932,132 @@
 
     </div>
 
+
 </footer>
 
 
-<!-- ================= BACK TO TOP ================= -->
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
 
 <button
     class="back-to-top"
-    id="backToTop">
+    id="backToTop"
+    aria-label="Kembali ke atas">
 
     ↑
 
 </button>
 
 
-<!-- ===================================================== -->
-<!-- JAVASCRIPT -->
-<!-- ===================================================== -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
-    /* ===================================================
-       DATABASE SHEETDB DESA PUSAKA
-       =================================================== */
+
+    /* =====================================================
+       URL SHEETDB
+    ===================================================== */
 
     const SHEETDB_URL =
         "https://sheetdb.io/api/v1/wdiapwaud3dcz";
 
 
-    /* ===================================================
-       FORM DATABASE
-       =================================================== */
+    /* =====================================================
+       DOM LOADED
+    ===================================================== */
 
     document.addEventListener(
         "DOMContentLoaded",
         function () {
 
+
+            /* =================================================
+               ELEMENT FORM
+            ================================================= */
+
             const pesanForm =
-                document.getElementById("pesanForm");
-
-            const submitBtn =
-                document.getElementById("submitBtn");
-
-            const statusMessage =
-                document.getElementById("statusMessage");
-
-
-            /* Pastikan form ditemukan */
-
-            if (!pesanForm) {
-
-                console.error(
-                    "Form pesan tidak ditemukan."
+                document.getElementById(
+                    "pesanForm"
                 );
 
-                return;
 
-            }
+            const submitBtn =
+                document.getElementById(
+                    "submitBtn"
+                );
+
+
+            const statusMessage =
+                document.getElementById(
+                    "statusMessage"
+                );
+
+
+            const tanggalInput =
+                document.getElementById(
+                    "tanggal"
+                );
 
 
             /* =================================================
-               TOMBOL KIRIM PESAN
-               ================================================= */
+               TANGGAL OTOMATIS
+            ================================================= */
+
+            function setTanggalHariIni() {
+
+                const hariIni =
+                    new Date();
+
+
+                const tahun =
+                    hariIni.getFullYear();
+
+
+                const bulan =
+                    String(
+                        hariIni.getMonth() + 1
+                    ).padStart(2,"0");
+
+
+                const tanggal =
+                    String(
+                        hariIni.getDate()
+                    ).padStart(2,"0");
+
+
+                tanggalInput.value =
+                    `${tahun}-${bulan}-${tanggal}`;
+            }
+
+
+            setTanggalHariIni();
+
+
+            /* =================================================
+               SUBMIT FORM
+            ================================================= */
 
             pesanForm.addEventListener(
                 "submit",
                 async function (event) {
 
+
                     event.preventDefault();
 
 
-                    /* Ambil data dari form */
+                    /* =================================================
+                       AMBIL DATA
+                    ================================================= */
+
+                    const tanggal =
+                        document
+                        .getElementById("tanggal")
+                        .value
+                        .trim();
+
 
                     const nama =
                         document
@@ -1367,16 +2066,9 @@
                         .trim();
 
 
-                    const wa =
+                    const email =
                         document
-                        .getElementById("wa")
-                        .value
-                        .trim();
-
-
-                    const dusun =
-                        document
-                        .getElementById("dusun")
+                        .getElementById("email")
                         .value
                         .trim();
 
@@ -1389,49 +2081,79 @@
 
 
                     /* =================================================
-                       VALIDASI
-                       ================================================= */
+                       VALIDASI KOSONG
+                    ================================================= */
 
                     if (
+                        tanggal === "" ||
                         nama === "" ||
-                        wa === "" ||
-                        dusun === "" ||
+                        email === "" ||
                         pesan === ""
                     ) {
+
 
                         statusMessage.textContent =
                             "⚠️ Semua kolom wajib diisi.";
 
+
                         statusMessage.className =
                             "status-message status-error";
 
-                        return;
 
+                        return;
                     }
 
 
                     /* =================================================
-                       TOMBOL LOADING
-                       ================================================= */
+                       VALIDASI EMAIL
+                    ================================================= */
+
+                    const emailPattern =
+                        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+                    if (
+                        !emailPattern.test(email)
+                    ) {
+
+
+                        statusMessage.textContent =
+                            "⚠️ Masukkan alamat email yang valid.";
+
+
+                        statusMessage.className =
+                            "status-message status-error";
+
+
+                        return;
+                    }
+
+
+                    /* =================================================
+                       BUTTON LOADING
+                    ================================================= */
 
                     submitBtn.disabled = true;
+
 
                     submitBtn.textContent =
                         "⏳ Mengirim data...";
 
 
                     statusMessage.textContent =
-                        "Sedang mengirim data...";
+                        "Sedang menyimpan pesan...";
+
 
                     statusMessage.className =
                         "status-message";
 
 
                     /* =================================================
-                       KIRIM DATA
-                       ================================================= */
+                       KIRIM KE SHEETDB
+                    ================================================= */
 
                     try {
+
 
                         const response =
                             await fetch(
@@ -1452,22 +2174,16 @@
 
                                             data: {
 
-                                                "Nama Lengkap":
+                                                "Tanggal":
+                                                    tanggal,
+
+                                                "Nama":
                                                     nama,
 
-                                                "Nomor WA":
-                                                    wa,
+                                                "Email":
+                                                    email,
 
-                                                "Nomor Wa":
-                                                    wa,
-
-                                                "Dusun/RT":
-                                                    dusun,
-
-                                                "Dusun/Rt":
-                                                    dusun,
-
-                                                "Keperluan/Pesan":
+                                                "Pesan":
                                                     pesan
 
                                             }
@@ -1478,7 +2194,9 @@
                             );
 
 
-                        /* Ambil response */
+                        /* =================================================
+                           AMBIL RESPONSE
+                        ================================================= */
 
                         const hasil =
                             await response.json();
@@ -1492,12 +2210,14 @@
 
                         /* =================================================
                            CEK RESPONSE
-                           ================================================= */
+                        ================================================= */
 
-                        if (!response.ok) {
+                        if (
+                            !response.ok
+                        ) {
 
                             throw new Error(
-                                "Gagal mengirim data ke SheetDB."
+                                "Gagal menyimpan data ke SheetDB."
                             );
 
                         }
@@ -1505,27 +2225,37 @@
 
                         /* =================================================
                            BERHASIL
-                           ================================================= */
+                        ================================================= */
 
                         statusMessage.textContent =
-                            "✅ Pesan berhasil dikirim! Data sudah tersimpan.";
+                            "✅ Pesan berhasil dikirim! Data sudah tersimpan di database Desa Pusaka.";
+
 
                         statusMessage.className =
                             "status-message status-success";
 
 
-                        /* Kosongkan form */
+                        /* =================================================
+                           RESET FORM
+                        ================================================= */
 
                         pesanForm.reset();
+
+
+                        /* Isi kembali tanggal */
+
+                        setTanggalHariIni();
+
 
                     }
 
 
                     /* =================================================
                        ERROR
-                       ================================================= */
+                    ================================================= */
 
                     catch (error) {
+
 
                         console.error(
                             "Error SheetDB:",
@@ -1536,6 +2266,7 @@
                         statusMessage.textContent =
                             "❌ Pesan gagal dikirim. Silakan coba lagi.";
 
+
                         statusMessage.className =
                             "status-message status-error";
 
@@ -1543,12 +2274,14 @@
 
 
                     /* =================================================
-                       KEMBALIKAN TOMBOL
-                       ================================================= */
+                       BUTTON NORMAL
+                    ================================================= */
 
                     finally {
 
+
                         submitBtn.disabled = false;
+
 
                         submitBtn.textContent =
                             "📩 Kirim Pesan";
@@ -1558,122 +2291,134 @@
                 }
             );
 
-        }
-    );
+
+            /* =================================================
+               DARK MODE
+            ================================================= */
+
+            const themeToggleBtn =
+                document.getElementById(
+                    "themeToggle"
+                );
 
 
-    /* ===================================================
-       DARK MODE
-       =================================================== */
-
-    const themeToggleBtn =
-        document.getElementById(
-            "themeToggle"
-        );
+            if (
+                localStorage.getItem("theme")
+                === "dark"
+            ) {
 
 
-    if (
-        localStorage.getItem("theme")
-        === "dark"
-    ) {
-
-        document.body.classList.add(
-            "dark-mode"
-        );
-
-        themeToggleBtn.textContent =
-            "☀️";
-
-    }
-
-
-    themeToggleBtn.addEventListener(
-        "click",
-        () => {
-
-            document.body.classList.toggle(
-                "dark-mode"
-            );
-
-
-            const isDark =
-                document.body.classList.contains(
+                document.body.classList.add(
                     "dark-mode"
                 );
 
 
-            themeToggleBtn.textContent =
-                isDark
-                    ? "☀️"
-                    : "🌙";
+                themeToggleBtn.textContent =
+                    "☀️";
+
+            }
 
 
-            localStorage.setItem(
-                "theme",
-                isDark
-                    ? "dark"
-                    : "light"
-            );
-
-        }
-    );
+            themeToggleBtn.addEventListener(
+                "click",
+                function () {
 
 
-    /* ===================================================
-       HEADER SCROLL
-       =================================================== */
-
-    const header =
-        document.getElementById(
-            "header"
-        );
+                    document.body.classList.toggle(
+                        "dark-mode"
+                    );
 
 
-    const backToTopBtn =
-        document.getElementById(
-            "backToTop"
-        );
+                    const isDark =
+                        document.body.classList.contains(
+                            "dark-mode"
+                        );
 
 
-    window.addEventListener(
-        "scroll",
-        () => {
+                    themeToggleBtn.textContent =
+                        isDark
+                            ? "☀️"
+                            : "🌙";
 
-            header.classList.toggle(
-                "scrolled",
-                window.scrollY > 60
+
+                    localStorage.setItem(
+                        "theme",
+                        isDark
+                            ? "dark"
+                            : "light"
+                    );
+
+                }
             );
 
 
-            backToTopBtn.classList.toggle(
-                "show",
-                window.scrollY > 400
+            /* =================================================
+               HEADER SCROLL
+            ================================================= */
+
+            const header =
+                document.getElementById(
+                    "header"
+                );
+
+
+            const backToTopBtn =
+                document.getElementById(
+                    "backToTop"
+                );
+
+
+            window.addEventListener(
+                "scroll",
+                function () {
+
+
+                    /* Header */
+
+                    header.classList.toggle(
+                        "scrolled",
+                        window.scrollY > 60
+                    );
+
+
+                    /* Back to top */
+
+                    backToTopBtn.classList.toggle(
+                        "show",
+                        window.scrollY > 400
+                    );
+
+                }
             );
 
-        }
-    );
+
+            /* =================================================
+               BACK TO TOP
+            ================================================= */
+
+            backToTopBtn.addEventListener(
+                "click",
+                function () {
 
 
-    /* ===================================================
-       BACK TO TOP
-       =================================================== */
+                    window.scrollTo({
 
-    backToTopBtn.addEventListener(
-        "click",
-        () => {
+                        top: 0,
 
-            window.scrollTo({
+                        behavior: "smooth"
 
-                top: 0,
+                    });
 
-                behavior: "smooth"
+                }
+            );
 
-            });
 
         }
     );
 
 </script>
 
+
 </body>
-</html>
+
+    </html>
