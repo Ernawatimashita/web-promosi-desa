@@ -596,7 +596,7 @@
     const DEFAULT_USER = "admin";
     const DEFAULT_PASS = "PusakaDesa2026!";
 
-    // URL Google Apps Script Web App yang Sama Dengan Index.html
+    // URL WEB APP GOOGLE APPS SCRIPT (Sama dengan index.html)
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyD0PIRa5-jri1RNdd0p9GTjD7R2n9gxZ2HvSVMDKfQIcBRxKujxaVXZi5FtYK2c_rqzw/exec";
 
     const loginBox = document.getElementById("loginBox");
@@ -605,12 +605,12 @@
     const logoutBtn = document.getElementById("logoutBtn");
     const tableBody = document.getElementById("tableBody");
 
-    // Cek Status Login
+    // Cek Status Login Sesi
     if (sessionStorage.getItem("isAdminLoggedIn") === "true") {
         tampilkanDashboard();
     }
 
-    // Login Admin
+    // Aksi Submit Form Login
     loginForm.addEventListener("submit", function(e) {
         e.preventDefault();
         const user = document.getElementById("username").value.trim();
@@ -636,7 +636,7 @@
         muatDataPesan();
     }
 
-    // Memuat Data dari Google Sheets via Apps Script
+    // Mengambil Data Langsung dari Google Apps Script Web App
     async function muatDataPesan() {
         tableBody.innerHTML = `<tr><td colspan="5" style="text-align: center;">Memuat data terbaru...</td></tr>`;
 
@@ -650,7 +650,7 @@
             }
 
             let htmlContent = "";
-            // Menampilkan data berurutan dari yang terbaru
+            // Menampilkan urutan data terbaru berada paling atas
             data.reverse().forEach((row, index) => {
                 const tanggal = row.tanggal || "-";
                 const nama = row.nama || "-";
@@ -672,7 +672,7 @@
 
         } catch (error) {
             console.error("Gagal mengambil data:", error);
-            tableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: red;">Gagal memuat data. Pastikan Google Apps Script mendukung metode GET/doGet.</td></tr>`;
+            tableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: red;">Gagal memuat data dari Google Script. Pastikan fungsi doGet sudah di-deploy.</td></tr>`;
         }
     }
 
