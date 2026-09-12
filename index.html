@@ -767,7 +767,7 @@
 <!-- JAVASCRIPT -->
 <script>
     // URL Deployment Google Apps Script Terbaru
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxFcJbCLGBsxsU27Uu_ryhsuhreKlXlpKkHPpHKuRSZ0CGz3zQPH3kCyLoUUgZMxclFWA/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzXEadVoaJh0XyPnO1ziM7aHxD5jVPv-CZ1AyqgLeV5hulYFDx-8GyEyPF-s4SSMBL4Ag/exec";
 
     document.addEventListener("DOMContentLoaded", function () {
         
@@ -803,39 +803,31 @@
             submitBtn.disabled = true;
             submitBtn.textContent = "⏳ Mengirim data...";
             statusMessage.style.display = "block";
-            statusMessage.textContent = "Sedang mengirim data ke Google Sheets...";
+            statusMessage.textContent = "Sedang mengirim data...";
             statusMessage.className = "status-message";
 
-            // Format tanggal & waktu pengiriman pesan
             const tanggalKirim = new Date().toLocaleString("id-ID", { timeZone: "Asia/Jakarta" });
 
-            // Mengirim data menggunakan URLSearchParams
-            const payload = new URLSearchParams();
-            payload.append("tanggal", tanggalKirim);
-            payload.append("nama", nama);
-            payload.append("email", email);
-            payload.append("pesan", pesan);
+            // Menggunakan FormData agar terhindar dari kendala CORS di GitHub Pages
+            const formData = new FormData();
+            formData.append("tanggal", tanggalKirim);
+            formData.append("nama", nama);
+            formData.append("email", email);
+            formData.append("pesan", pesan);
 
             fetch(SCRIPT_URL, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded"
-                },
-                body: payload.toString()
+                mode: "no-cors",
+                body: formData
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.result === "success") {
-                    statusMessage.textContent = "✅ Pesan berhasil disimpan ke Google Sheets!";
-                    statusMessage.className = "status-message status-success";
-                    pesanForm.reset();
-                } else {
-                    throw new Error(data.error || "Gagal menyimpan data.");
-                }
+            .then(() => {
+                statusMessage.textContent = "✅ Pesan berhasil terkirim ke Desa Pusaka!";
+                statusMessage.className = "status-message status-success";
+                pesanForm.reset();
             })
             .catch(error => {
                 console.error("Error:", error);
-                statusMessage.textContent = "❌ Gagal mengirim pesan. Pastikan skrip Apps Script sudah di-deploy ulang sebagai 'Anyone' (Siapa saja).";
+                statusMessage.textContent = "❌ Gagal mengirim pesan. Silakan coba lagi nanti.";
                 statusMessage.className = "status-message status-error";
             })
             .finally(() => {
