@@ -557,162 +557,261 @@
             color: #a12626;
         }
 
-        /* ================= FOOTER ================= */
+        /* ================= ADMIN MODAL ================= */
 
-        footer {
-            background: #031c13;
+        .admin-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
 
-            color: #8ba398;
+        .admin-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
 
-            padding: 60px 20px 30px;
+        .admin-card {
+            background: var(--surface);
+            width: min(900px, calc(100% - 40px));
+            max-height: 85vh;
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-hard);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
 
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .close-modal {
+            background: transparent;
+            border: none;
+            font-size: 22px;
+            color: var(--text-main);
+            cursor: pointer;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            flex-grow: 1;
+        }
+
+        table.admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
             font-size: 14px;
         }
 
-        .footer-grid {
-            display: grid;
-
-            grid-template-columns:
-                2fr repeat(2, 1fr);
-
-            gap: 40px;
-
-            width: min(1200px, 100%);
-
-            margin: 0 auto 40px;
+        table.admin-table th, 
+        table.admin-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .footer-bottom {
+        table.admin-table th {
+            background: var(--bg-alt);
+            font-weight: 700;
+        }
+
+        .login-box {
+            max-width: 400px;
+            margin: auto;
             text-align: center;
-
-            border-top:
-                1px solid rgba(255,255,255,0.08);
-
-            padding-top: 20px;
         }
 
-        /* ================= BACK TO TOP ================= */
+        /* ================= FOOTER ================= */
 
-        .back-to-top {
-            position: fixed;
+        <footer>
 
-            bottom: 30px;
-            right: 30px;
+            <div class="footer-grid">
 
-            width: 50px;
-            height: 50px;
 
-            background: var(--accent);
+                <div>
 
-            color: #062f20;
+                    <h3
+                        style="
+                            color: white;
+                            font-family: 'Playfair Display', serif;
+                            margin-bottom: 12px;
+                        ">
 
-            border-radius: 50%;
+                        🌿 Desa Pusaka
 
-            display: flex;
+                    </h3>
 
-            align-items: center;
-            justify-content: center;
 
-            font-size: 22px;
+                    <p>
 
-            cursor: pointer;
+                        Website Resmi Pemerintah Desa Pusaka,
+                        Kecamatan Tebas, Kabupaten Sambas,
+                        Kalimantan Barat.
 
-            border: none;
+                    </p>
 
-            opacity: 0;
+                </div>
 
-            transition: var(--transition);
 
-            z-index: 999;
-        }
 
-        .back-to-top.show {
-            opacity: 1;
-        }
+                <div>
 
-        /* ================= RESPONSIVE ================= */
+                    <h4
+                        style="
+                            color: white;
+                            margin-bottom: 12px;
+                        ">
 
-        @media (max-width: 900px) {
+                        Navigasi
 
-            .navbar {
-                width: calc(100% - 25px);
-            }
+                    </h4>
 
-            nav ul {
-                gap: 5px;
-            }
 
-            nav a {
-                font-size: 12px;
-                padding: 7px;
-            }
+                    <p>
+                        <a
+                            href="index.html"
+                            style="color:#8ba398;">
 
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+                            Beranda
 
-        @media (max-width: 700px) {
+                        </a>
+                    </p>
 
-            header {
-                height: auto;
 
-                min-height: 75px;
-            }
+                    <p>
+                        <a
+                            href="profil.html"
+                            style="color:#8ba398;">
 
-            .navbar {
-                flex-wrap: wrap;
+                            Profil Desa
 
-                padding: 12px 0;
+                        </a>
+                    </p>
 
-                gap: 10px;
-            }
 
-            .nav-container {
-                order: 3;
+                    <p>
+                        <a
+                            href="pelayanan.html"
+                            style="color:#8ba398;">
 
-                width: 100%;
+                            Pelayanan Surat
 
-                overflow-x: auto;
-            }
+                        </a>
+                    </p>
 
-            nav ul {
-                width: max-content;
-            }
 
-            .hero {
-                padding-top: 150px;
-            }
+                </div>
 
-            .hero h1 {
-                font-size: 42px;
-            }
 
-            .stats-container {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
 
-            .form-container {
-                padding: 25px 20px;
-            }
-        }
+                <div>
 
-        @media (max-width: 450px) {
+                    <h4
+                        style="
+                            color: white;
+                            margin-bottom: 12px;
+                        ">
 
-            .stats-container {
-                grid-template-columns: 1fr;
-            }
+                        Kontak
 
-            .logo {
-                font-size: 18px;
-            }
+                    </h4>
 
-            .logo-icon {
-                width: 38px;
-                height: 38px;
-            }
-        }
+
+                    <p>
+
+                        Kecamatan Tebas,
+                        Kab. Sambas,
+                        Kalbar (79461)
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+
+                    © 2026 Pemerintah Desa Pusaka.
+                    All Rights Reserved.
+
+                </p>
+
+            </div>
+
+        </footer>
+
+
+        <!-- ================= BACK TO TOP ================= -->
+
+        <button
+            class="back-to-top"
+            id="backToTop">
+
+            ↑
+
+        </button>
+
+
+        <!-- ================= ADMIN MODAL INTERFACE ================= -->
+        <div class="admin-modal" id="adminModal">
+            <div class="admin-card">
+                <div class="admin-header">
+                    <h3 style="font-family: 'Playfair Display', serif;">Dashboard Admin Desa</h3>
+                    <button class="close-modal" id="closeAdmin">✕</button>
+                </div>
+
+                <!-- Form Login Admin -->
+                <div id="adminLoginSection" class="login-box">
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Masukkan PIN Admin untuk melihat pesan masuk.</p>
+                    <div class="form-group">
+                        <input type="password" id="adminPin" placeholder="Masukkan PIN (contoh: 1234)">
+                    </div>
+                    <button class="submit-btn" id="loginBtn">Masuk Dashboard</button>
+                    <p id="loginError" style="color: #a12626; font-size: 13px; margin-top: 10px; display: none;">PIN Salah!</p>
+                </div>
+
+                <!-- Konten Data Pesan -->
+                <div id="adminDashboardSection" style="display: none; flex-direction: column; flex-grow: 1; overflow: hidden;">
+                    <p style="color: var(--text-muted); margin-bottom: 15px;">Daftar Pesan Masuk dari Warga (Database SheetDB):</p>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <th>Nama</th>
+                                    <th>Email</th>
+                                    <th>Pesan</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminTableBody">
+                                <!-- Data dimuat via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </style>
 </head>
@@ -783,6 +882,13 @@
                     <li>
                         <a href="#pesan">
                             Kirim Pesan
+                        </a>
+                    </li>
+
+                    <!-- MENU ADMIN TAMBAHAN -->
+                    <li>
+                        <a href="#" id="openAdminModal" style="color: var(--accent);">
+                            🔐 Admin
                         </a>
                     </li>
 
@@ -1166,141 +1272,6 @@
 </section>
 
 
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <div class="footer-grid">
-
-
-        <div>
-
-            <h3
-                style="
-                    color: white;
-                    font-family: 'Playfair Display', serif;
-                    margin-bottom: 12px;
-                ">
-
-                🌿 Desa Pusaka
-
-            </h3>
-
-
-            <p>
-
-                Website Resmi Pemerintah Desa Pusaka,
-                Kecamatan Tebas, Kabupaten Sambas,
-                Kalimantan Barat.
-
-            </p>
-
-        </div>
-
-
-
-        <div>
-
-            <h4
-                style="
-                    color: white;
-                    margin-bottom: 12px;
-                ">
-
-                Navigasi
-
-            </h4>
-
-
-            <p>
-                <a
-                    href="index.html"
-                    style="color:#8ba398;">
-
-                    Beranda
-
-                </a>
-            </p>
-
-
-            <p>
-                <a
-                    href="profil.html"
-                    style="color:#8ba398;">
-
-                    Profil Desa
-
-                </a>
-            </p>
-
-
-            <p>
-                <a
-                    href="pelayanan.html"
-                    style="color:#8ba398;">
-
-                    Pelayanan Surat
-
-                </a>
-            </p>
-
-
-        </div>
-
-
-
-        <div>
-
-            <h4
-                style="
-                    color: white;
-                    margin-bottom: 12px;
-                ">
-
-                Kontak
-
-            </h4>
-
-
-            <p>
-
-                Kecamatan Tebas,
-                Kab. Sambas,
-                Kalbar (79461)
-
-            </p>
-
-        </div>
-
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        <p>
-
-            © 2026 Pemerintah Desa Pusaka.
-            All Rights Reserved.
-
-        </p>
-
-    </div>
-
-</footer>
-
-
-<!-- ================= BACK TO TOP ================= -->
-
-<button
-    class="back-to-top"
-    id="backToTop">
-
-    ↑
-
-</button>
-
-
 <!-- ===================================================== -->
 <!-- JAVASCRIPT -->
 <!-- ===================================================== -->
@@ -1674,6 +1645,77 @@
 
         }
     );
+
+
+    /* ===================================================
+       ADMIN DASHBOARD LOGIC
+       =================================================== */
+
+    const openAdminModal = document.getElementById("openAdminModal");
+    const adminModal = document.getElementById("adminModal");
+    const closeAdmin = document.getElementById("closeAdmin");
+    const loginBtn = document.getElementById("loginBtn");
+    const adminPin = document.getElementById("adminPin");
+    const loginError = document.getElementById("loginError");
+    const adminLoginSection = document.getElementById("adminLoginSection");
+    const adminDashboardSection = document.getElementById("adminDashboardSection");
+    const adminTableBody = document.getElementById("adminTableBody");
+
+    openAdminModal.addEventListener("click", (e) => {
+        e.preventDefault();
+        adminModal.classList.add("active");
+    });
+
+    closeAdmin.addEventListener("click", () => {
+        adminModal.classList.remove("active");
+        // Reset tampilan saat ditutup
+        adminLoginSection.style.display = "block";
+        adminDashboardSection.style.display = "none";
+        adminPin.value = "";
+        loginError.style.display = "none";
+    });
+
+    loginBtn.addEventListener("click", async () => {
+        // PIN default admin diset "1234" (silakan diubah sesuai kebutuhan)
+        if (adminPin.value === "1234") {
+            loginError.style.display = "none";
+            adminLoginSection.style.display = "none";
+            adminDashboardSection.style.display = "flex";
+
+            // Ambil data dari SheetDB untuk ditampilkan ke tabel admin
+            adminTableBody.innerHTML = `<tr><td colspan="4" style="text-align: center;">Memuat data...</td></tr>`;
+            
+            try {
+                const response = await fetch(SHEETDB_URL);
+                const data = await response.json();
+
+                if (data.length === 0) {
+                    adminTableBody.innerHTML = `<tr><td colspan="4" style="text-align: center;">Belum ada pesan masuk.</td></tr>`;
+                    return;
+                }
+
+                let rows = "";
+                data.forEach(item => {
+                    rows += `
+                        <tr>
+                            <td>${item.Tanggal || '-'}</td>
+                            <td>${item.Nama || '-'}</td>
+                            <td>${item.Email || '-'}</td>
+                            <td>${item.Pesan || '-'}</td>
+                        </tr>
+                    `;
+                });
+                adminTableBody.innerHTML = rows;
+
+            } catch (err) {
+                console.error("Gagal mengambil data admin:", err);
+                adminTableBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: red;">Gagal memuat data dari database.</td></tr>`;
+            }
+
+        } else {
+            loginError.style.display = "block";
+        }
+    });
 
 </script>
 
