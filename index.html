@@ -168,6 +168,7 @@
             display: flex;
             gap: 15px;
             list-style: none;
+            align-items: center;
         }
 
         nav a {
@@ -438,6 +439,7 @@
 
         .form-group {
             margin-bottom: 20px;
+            text-align: left;
         }
 
         .form-group label {
@@ -636,6 +638,8 @@
             max-width: 400px;
             margin: auto;
             text-align: center;
+            width: 100%;
+            padding: 20px 0;
         }
 
         /* ================= FOOTER ================= */
@@ -762,56 +766,128 @@
         </footer>
 
 
-        <!-- ================= BACK TO TOP ================= -->
+        /* ================= BACK TO TOP ================= */
 
-        <button
-            class="back-to-top"
-            id="backToTop">
+        .back-to-top {
+            position: fixed;
 
-            ↑
+            bottom: 30px;
+            right: 30px;
 
-        </button>
+            width: 50px;
+            height: 50px;
 
+            background: var(--accent);
 
-        <!-- ================= ADMIN MODAL INTERFACE ================= -->
-        <div class="admin-modal" id="adminModal">
-            <div class="admin-card">
-                <div class="admin-header">
-                    <h3 style="font-family: 'Playfair Display', serif;">Dashboard Admin Desa</h3>
-                    <button class="close-modal" id="closeAdmin">✕</button>
-                </div>
+            color: #062f20;
 
-                <!-- Form Login Admin -->
-                <div id="adminLoginSection" class="login-box">
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">Masukkan PIN Admin untuk melihat pesan masuk.</p>
-                    <div class="form-group">
-                        <input type="password" id="adminPin" placeholder="Masukkan PIN (contoh: 1234)">
-                    </div>
-                    <button class="submit-btn" id="loginBtn">Masuk Dashboard</button>
-                    <p id="loginError" style="color: #a12626; font-size: 13px; margin-top: 10px; display: none;">PIN Salah!</p>
-                </div>
+            border-radius: 50%;
 
-                <!-- Konten Data Pesan -->
-                <div id="adminDashboardSection" style="display: none; flex-direction: column; flex-grow: 1; overflow: hidden;">
-                    <p style="color: var(--text-muted); margin-bottom: 15px;">Daftar Pesan Masuk dari Warga (Database SheetDB):</p>
-                    <div class="table-responsive">
-                        <table class="admin-table">
-                            <thead>
-                                <tr>
-                                    <th>Tanggal</th>
-                                    <th>Nama</th>
-                                    <th>Email</th>
-                                    <th>Pesan</th>
-                                </tr>
-                            </thead>
-                            <tbody id="adminTableBody">
-                                <!-- Data dimuat via JavaScript -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            border: none;
+
+            opacity: 0;
+
+            transition: var(--transition);
+
+            z-index: 999;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .navbar {
+                width: calc(100% - 25px);
+            }
+
+            nav ul {
+                gap: 5px;
+            }
+
+            nav a {
+                font-size: 12px;
+                padding: 7px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                height: auto;
+
+                min-height: 75px;
+            }
+
+            .navbar {
+                flex-wrap: wrap;
+
+                padding: 12px 0;
+
+                gap: 10px;
+            }
+
+            .nav-container {
+                order: 3;
+
+                width: 100%;
+
+                overflow-x: auto;
+            }
+
+            nav ul {
+                width: max-content;
+            }
+
+            .hero {
+                padding-top: 150px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .stats-container {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .form-container {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .logo-icon {
+                width: 38px;
+                height: 38px;
+            }
+        }
 
     </style>
 </head>
@@ -885,7 +961,7 @@
                         </a>
                     </li>
 
-                    <!-- MENU ADMIN TAMBAHAN -->
+                    <!-- MENU ADMIN -->
                     <li>
                         <a href="#" id="openAdminModal" style="color: var(--accent);">
                             🔐 Admin
@@ -1272,6 +1348,182 @@
 </section>
 
 
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <h3
+                style="
+                    color: white;
+                    font-family: 'Playfair Display', serif;
+                    margin-bottom: 12px;
+                ">
+
+                🌿 Desa Pusaka
+
+            </h3>
+
+
+            <p>
+
+                Website Resmi Pemerintah Desa Pusaka,
+                Kecamatan Tebas, Kabupaten Sambas,
+                Kalimantan Barat.
+
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <h4
+                style="
+                    color: white;
+                    margin-bottom: 12px;
+                ">
+
+                Navigasi
+
+            </h4>
+
+
+            <p>
+                <a
+                    href="index.html"
+                    style="color:#8ba398;">
+
+                    Beranda
+
+                </a>
+            </p>
+
+
+            <p>
+                <a
+                    href="profil.html"
+                    style="color:#8ba398;">
+
+                    Profil Desa
+
+                </a>
+            </p>
+
+
+            <p>
+                <a
+                    href="pelayanan.html"
+                    style="color:#8ba398;">
+
+                    Pelayanan Surat
+
+                </a>
+            </p>
+
+
+        </div>
+
+
+
+        <div>
+
+            <h4
+                style="
+                    color: white;
+                    margin-bottom: 12px;
+                ">
+
+                Kontak
+
+            </h4>
+
+
+            <p>
+
+                Kecamatan Tebas,
+                Kab. Sambas,
+                Kalbar (79461)
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+
+            © 2026 Pemerintah Desa Pusaka.
+            All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= BACK TO TOP ================= -->
+
+<button
+    class="back-to-top"
+    id="backToTop">
+
+    ↑
+
+</button>
+
+
+<!-- ================= ADMIN MODAL ================= -->
+<div class="admin-modal" id="adminModal">
+    <div class="admin-card">
+        <div class="admin-header">
+            <h3 style="font-family: 'Playfair Display', serif;">Dashboard Admin Desa</h3>
+            <button class="close-modal" id="closeAdmin">✕</button>
+        </div>
+
+        <!-- Form Login Admin -->
+        <div id="adminLoginSection" class="login-box">
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Masukkan PIN Admin untuk melihat pesan masuk.</p>
+            <div class="form-group">
+                <input type="password" id="adminPin" placeholder="Masukkan PIN (Default: 1234)">
+            </div>
+            <button class="submit-btn" id="loginBtn">Masuk Dashboard</button>
+            <p id="loginError" style="color: #a12626; font-size: 13px; margin-top: 10px; display: none;">PIN Salah!</p>
+        </div>
+
+        <!-- Tabel Pesan Masuk -->
+        <div id="adminDashboardSection" style="display: none; flex-direction: column; flex-grow: 1; overflow: hidden;">
+            <p style="color: var(--text-muted); margin-bottom: 15px;">Daftar Pesan Masuk dari Database:</p>
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Tanggal</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Pesan</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminTableBody">
+                        <!-- Data dimuat lewat Javascript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- ===================================================== -->
 <!-- JAVASCRIPT -->
 <!-- ===================================================== -->
@@ -1648,7 +1900,7 @@
 
 
     /* ===================================================
-       ADMIN DASHBOARD LOGIC
+       ADMIN DASHBOARD INTERACTION & DATABASE FETCH
        =================================================== */
 
     const openAdminModal = document.getElementById("openAdminModal");
@@ -1668,7 +1920,6 @@
 
     closeAdmin.addEventListener("click", () => {
         adminModal.classList.remove("active");
-        // Reset tampilan saat ditutup
         adminLoginSection.style.display = "block";
         adminDashboardSection.style.display = "none";
         adminPin.value = "";
@@ -1676,20 +1927,19 @@
     });
 
     loginBtn.addEventListener("click", async () => {
-        // PIN default admin diset "1234" (silakan diubah sesuai kebutuhan)
+        // PIN default admin diatur "1234" (dapat diganti sesuai keinginan Anda)
         if (adminPin.value === "1234") {
             loginError.style.display = "none";
             adminLoginSection.style.display = "none";
             adminDashboardSection.style.display = "flex";
 
-            // Ambil data dari SheetDB untuk ditampilkan ke tabel admin
-            adminTableBody.innerHTML = `<tr><td colspan="4" style="text-align: center;">Memuat data...</td></tr>`;
-            
+            adminTableBody.innerHTML = `<tr><td colspan="4" style="text-align: center;">Memuat data dari database...</td></tr>`;
+
             try {
                 const response = await fetch(SHEETDB_URL);
                 const data = await response.json();
 
-                if (data.length === 0) {
+                if (!data || data.length === 0) {
                     adminTableBody.innerHTML = `<tr><td colspan="4" style="text-align: center;">Belum ada pesan masuk.</td></tr>`;
                     return;
                 }
@@ -1708,7 +1958,7 @@
                 adminTableBody.innerHTML = rows;
 
             } catch (err) {
-                console.error("Gagal mengambil data admin:", err);
+                console.error("Gagal mengambil data database:", err);
                 adminTableBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: red;">Gagal memuat data dari database.</td></tr>`;
             }
 
