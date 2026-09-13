@@ -1523,159 +1523,63 @@
                     }
 
 
-                    /* =================================================
-                       ERROR
+                  /* =================================================
+                       ERROR HANDLING
                        ================================================= */
-
                     catch (error) {
-
-                        console.error(
-                            "Error SheetDB:",
-                            error
-                        );
-
+                        console.error("Error SheetDB:", error);
 
                         statusMessage.textContent =
-                            "❌ Pesan gagal dikirim. Silakan coba lagi.";
-
+                            "❌ Terjadi kesalahan. Gagal mengirim pesan.";
                         statusMessage.className =
                             "status-message status-error";
-
-                    }
-
-
-                    /* =================================================
-                       KEMBALIKAN TOMBOL
-                       ================================================= */
-
+                    } 
                     finally {
-
                         submitBtn.disabled = false;
-
-                        submitBtn.textContent =
-                            "📩 Kirim Pesan";
-
+                        submitBtn.textContent = "📩 Kirim Pesan";
                     }
-
                 }
             );
-
         }
     );
-
 
     /* ===================================================
-       DARK MODE
+       TOGGLE DARK / LIGHT MODE
        =================================================== */
-
-    const themeToggleBtn =
-        document.getElementById(
-            "themeToggle"
-        );
-
-
-    if (
-        localStorage.getItem("theme")
-        === "dark"
-    ) {
-
-        document.body.classList.add(
-            "dark-mode"
-        );
-
-        themeToggleBtn.textContent =
-            "☀️";
-
-    }
-
-
-    themeToggleBtn.addEventListener(
-        "click",
-        () => {
-
-            document.body.classList.toggle(
-                "dark-mode"
-            );
-
-
-            const isDark =
-                document.body.classList.contains(
-                    "dark-mode"
-                );
-
-
-            themeToggleBtn.textContent =
-                isDark
-                    ? "☀️"
-                    : "🌙";
-
-
-            localStorage.setItem(
-                "theme",
-                isDark
-                    ? "dark"
-                    : "light"
-            );
-
+    const themeToggle = document.getElementById("themeToggle");
+    themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+            themeToggle.textContent = "☀️";
+        } else {
+            themeToggle.textContent = "🌙";
         }
-    );
-
+    });
 
     /* ===================================================
-       HEADER SCROLL
+       HEADER & BACK TO TOP SCROLL EVENT
        =================================================== */
+    const header = document.getElementById("header");
+    const backToTop = document.getElementById("backToTop");
 
-    const header =
-        document.getElementById(
-            "header"
-        );
-
-
-    const backToTopBtn =
-        document.getElementById(
-            "backToTop"
-        );
-
-
-    window.addEventListener(
-        "scroll",
-        () => {
-
-            header.classList.toggle(
-                "scrolled",
-                window.scrollY > 60
-            );
-
-
-            backToTopBtn.classList.toggle(
-                "show",
-                window.scrollY > 400
-            );
-
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+            backToTop.classList.add("show");
+        } else {
+            header.classList.remove("scrolled");
+            backToTop.classList.remove("show");
         }
-    );
+    });
 
-
-    /* ===================================================
-       BACK TO TOP
-       =================================================== */
-
-    backToTopBtn.addEventListener(
-        "click",
-        () => {
-
-            window.scrollTo({
-
-                top: 0,
-
-                behavior: "smooth"
-
-            });
-
-        }
-    );
-
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
 </script>
 
 </body>
 </html>
+   
