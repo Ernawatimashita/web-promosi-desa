@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Admin - Desa Pusaka</title>
+  <style>
+    * { box-sizing: border-box; font-family: sans-serif; }
+    body { background-color: #f4f7f4; margin: 0; padding: 20px; }
+    .container { max-width: 900px; margin: auto; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    input[type="password"] { padding: 10px; width: 250px; border: 1px solid #ccc; border-radius: 4px; }
+    button { padding: 10px 15px; background-color: #2e7d32; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background-color: #1b5e20; }
+    .btn-logout { background-color: #d32f2f; }
+    .btn-logout:hover { background-color: #9a0007; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+    th { background-color: #f0f0f0; }
+    .hidden { display: none; }
+    .error { color: red; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Form Login Admin -->
+    <div id="loginSection">
+      <h2>Login Admin Desa</h2>
+      <p>Masukkan kata sandi untuk melihat pesan/masukan warga.</p>
+      <input type="password" id="adminPassword" placeholder="Masukkan password...">
+      <button onclick="checkPassword()">Masuk</button>
+      <p id="errorMsg" class="error hidden">Password salah!</p>
+    </div>
+
+    <!-- Halaman Konten Data Admin -->
+    <div id="adminContent" class="hidden">
+      <div class="header">
+        <h2>Data Masukan Warga</h2>
+        <button class="btn-logout" id="btnLogout" onclick="logout()">Logout</button>
+      </div>
+
+      <p id="loadingMsg">Mengambil data dari server...</p>
+
+      <table id="dataTable" class="hidden">
+        <thead>
+          <tr>
+            <th>Waktu</th>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Pesan</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    // Konfigurasi Variabel Utama
+    const PASSWORD_BENAR = "admin123"; // Ganti password di sini
+    const scriptURL = "GANTI_DENGAN_URL_WEB_APP_ANDA"; // Masukkan Web App URL dari Apps Script
+
+    function checkPassword() {
+      const inputPass = document.getElementById('adminPassword').value;
+      const errorMsg = document.getElementById('errorMsg');
+
+      if (inputPass === PASSWORD_BENAR) {
+        document.getElementById('loginSection').classList.add('hidden');
+        document.getElementById('adminContent').classList.remove('hidden');
+        errorMsg.classList.add('hidden');
+        loadData();
+      } else {
+        errorMsg.classList.remove('hidden');
+      }
+    }
+
+    function loadData() {
+      const loadingMsg = document.getElementById('loadingMsg');
+      const dataTable = document.getElementById('dataTable');
+      const tableBody = document.getElementById('tableBody');
+
+      fetch(scriptURL)
+        .then(response => response.json())
+        .then(data => {
+          loadingMsg.classList.add('hidden');
+          dataTable.classList.remove('hidden');
+          tableBody.innerHTML = '';
+
+          if (data.length === 0) {
+            tableBody.innerHTML = '<tr><td colspan="4">Belum ada data masuk.</td></tr>';
+            return;
+          }
+
+          data.forEach(row => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td>${row.waktu || '-'}</td>
+              <td>${row.nama || '-'}</td>
+              <td>${row.email || '-'}</td>
+              <td>${row.pesan || '-'}</td>
+            `;
+            tableBody.appendChild(tr);
+          });
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          loadingMsg.innerText = 'Gagal memuat data. Periksa kembali URL Apps Script Anda.';
+        });
+    }
+
+    function logout() {
+      document.getElementById('loginSection').classList.remove('hidden');
+      document.getElementById('adminContent').classList.add('hidden');
+      document.getElementById('adminPassword').value = '';
+    }
+  </script>
+</body>
+</html>
