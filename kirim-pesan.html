@@ -309,6 +309,25 @@
 <script>
     const SHEETDB_URL = "https://sheetdb.io/api/v1/wdiapwaud3dcz";
 
+    // Fungsi Format Tanggal (Mengubah angka serial Excel/SheetDB menjadi DD/MM/YYYY)
+    function formatDate(value) {
+        if (!value) return '-';
+        if (!isNaN(value)) {
+            const utcDays = Math.floor(value - 25569);
+            const utcValue = utcDays * 86400;
+            const dateInfo = new Date(utcValue * 1000);
+            const day = String(dateInfo.getDate()).padStart(2, '0');
+            const month = String(dateInfo.getMonth() + 1).padStart(2, '0');
+            const year = dateInfo.getFullYear();
+            return `${day}/${month}/${year}`;
+        }
+        const parts = value.split('-');
+        if (parts.length === 3) {
+            return `${parts[2]}/${parts[1]}/${parts[0]}`;
+        }
+        return value;
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
         const pesanForm = document.getElementById("pesanForm");
         const submitBtn = document.getElementById("submitBtn");
@@ -428,7 +447,7 @@
                 hasilTracking.innerHTML = `
                     <div style="background: var(--bg-light); padding: 15px; border-radius: 12px; border: 1px solid var(--border-color);">
                         <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 5px;">Status: <span style="font-weight: 700; color: ${statusBadgeColor};">${item.Status || 'Menunggu'}</span></p>
-                        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">Tanggal: ${item.Tanggal}</p>
+                        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">Tanggal: ${formatDate(item.Tanggal)}</p>
                         
                         <div class="chat-container">
                             <div class="chat-bubble chat-user"><strong>${item.Nama} (Anda):</strong><br>${item.Pesan}</div>
