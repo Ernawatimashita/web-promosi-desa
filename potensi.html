@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desa Pusaka | UMKM & Kontak</title>
+    <title>Desa Pusaka | UMKM & Potensi</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #0d5437; --primary-light: #2d8a5f; --accent: #e5c158; --bg-light: #f4f8f5; --surface: #ffffff; --text-main: #142e23; --text-muted: #5a6e65; --border-color: #edf2ef; --header-bg: rgba(255, 255, 255, 0.88); }
@@ -19,7 +19,7 @@
         nav a { font-size: 14px; font-weight: 600; padding: 8px 12px; border-radius: 8px; }
         nav li.active a { color: var(--primary-light); background: rgba(45, 138, 95, 0.08); }
         .container { width: min(1200px, calc(100% - 40px)); margin: auto; padding: 40px 0; }
-        .umkm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 60px; }
+        .umkm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 40px; }
         .umkm-card { background: var(--surface); padding: 20px; border-radius: 16px; border: 1px solid var(--border-color); text-align: center; }
         .umkm-img { height: 160px; border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
         .btn-primary { padding: 8px 16px; background: var(--accent); color: #062f20; font-weight: 700; border-radius: 50px; border: none; cursor: pointer; width: 100%; }
@@ -45,6 +45,7 @@
         <button id="themeToggle" style="background:none; border:none; cursor:pointer; font-size:18px;">🌙</button>
     </div>
 </header>
+
 <div class="container">
     <h1 style="font-family: 'Playfair Display', serif; font-size: 42px; text-align: center;">Potensi & Produk UMKM</h1>
     <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Hasil produk bumi dan herbal olahan warga lokal Desa Pusaka.</p>
@@ -74,22 +75,19 @@
             <button class="btn-primary" onclick="alert('Hubungi Kantor Desa untuk pemesanan.')">Pesan Lokal</button>
         </div>
     </div>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; text-align: center; margin-bottom: 20px;">Lokasi Kantor Desa</h2>
-    <div style="text-align: center; margin-bottom: 20px; color: var(--text-muted);">
-        📍 Desa Pusaka, Kecamatan Tebas, Kabupaten Sambas, Kalimantan Barat (79461)
-    </div>
-    <div style="border-radius: 16px; overflow: hidden; height: 350px; border: 1px solid var(--border-color);">
-        <iframe src="https://www.google.com/maps?q=Desa%20Pusaka,%20Kecamatan%20Tebas,%20Kabupaten%20Sambas,%20Kalimantan%20Barat&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
 </div>
+
 <footer>
     <p>© 2026 Pemerintah Desa Pusaka. All Rights Reserved.</p>
 </footer>
+
 <script>
     const themeToggleBtn = document.getElementById('themeToggle');
     if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
-    themeToggleBtn.addEventListener('click', () => { document.body.classList.toggle('dark-mode'); localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light'); });
+    themeToggleBtn.addEventListener('click', () => { 
+        document.body.classList.toggle('dark-mode'); 
+        localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light'); 
+    });
 </script>
 </body>
 </html>
