@@ -124,7 +124,7 @@
         }
         .admin-modal.active { opacity: 1; pointer-events: auto; }
         .admin-card {
-            background: var(--surface); width: min(1000px, calc(100% - 40px)); max-height: 85vh;
+            background: var(--surface); width: min(1050px, calc(100% - 40px)); max-height: 85vh;
             border-radius: var(--radius-lg); padding: 30px; box-shadow: var(--shadow-hard); border: 1px solid var(--border-color); display: flex; flex-direction: column; overflow: hidden;
         }
         .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
@@ -209,6 +209,18 @@
                     <label for="email">Alamat Email</label>
                     <input type="email" id="email" name="Email" placeholder="Contoh: nama@gmail.com" required>
                 </div>
+                <!-- TAMBAHAN: PILIHAN KATEGORI -->
+                <div class="form-group">
+                    <label for="kategori">Kategori Pesan / Aspirasi</label>
+                    <select id="kategori" name="Kategori" required>
+                        <option value="" disabled selected>Pilih kategori aduan...</option>
+                        <option value="Infrastruktur">Infrastruktur & Pembangunan</option>
+                        <option value="Administrasi">Administrasi Kependudukan</option>
+                        <option value="Keamanan">Keamanan & Ketertiban</option>
+                        <option value="UMKM">UMKM & Ekonomi Desa</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="pesanTeks">Pesan / Keperluan / Aspirasi</label>
                     <textarea id="pesanTeks" name="Pesan" placeholder="Tuliskan pesan atau aduan Anda..." required></textarea>
@@ -283,6 +295,7 @@
                         <tr>
                             <th>Token</th>
                             <th>Pengirim</th>
+                            <th>Kategori</th>
                             <th>Pesan</th>
                             <th>Status</th>
                             <th>Aksi</th>
@@ -309,7 +322,6 @@
 <script>
     const SHEETDB_URL = "https://sheetdb.io/api/v1/wdiapwaud3dcz";
 
-    // Fungsi Format Tanggal (Mengubah angka serial Excel/SheetDB menjadi DD/MM/YYYY)
     function formatDate(value) {
         if (!value) return '-';
         if (!isNaN(value)) {
@@ -363,6 +375,7 @@
                 const tanggal = document.getElementById("tanggal").value;
                 const nama = document.getElementById("nama").value.trim();
                 const email = document.getElementById("email").value.trim();
+                const kategori = document.getElementById("kategori").value;
                 const pesan = document.getElementById("pesanTeks").value.trim();
                 
                 const randomCode = Math.floor(1000 + Math.random() * 9000);
@@ -380,6 +393,7 @@
                                 "Tanggal": tanggal,
                                 "Nama": nama,
                                 "Email": email,
+                                "Kategori": kategori,
                                 "Pesan": pesan,
                                 "Token": tokenUnik,
                                 "Status": "Menunggu",
@@ -439,6 +453,7 @@
                 const item = data[0];
                 let statusBadgeColor = item.Status === "Selesai" ? "#146c43" : (item.Status === "Dibaca" ? "#0d5437" : "#d97706");
                 const teksBalasan = item.Balasan || item.balasan || "";
+                const kategoriVal = item.Kategori || item.kategori || "-";
 
                 let balasanHtml = teksBalasan ? 
                     `<div class="chat-bubble chat-admin"><strong>Admin Desa:</strong><br>${teksBalasan}</div>` : 
@@ -447,6 +462,7 @@
                 hasilTracking.innerHTML = `
                     <div style="background: var(--bg-light); padding: 15px; border-radius: 12px; border: 1px solid var(--border-color);">
                         <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 5px;">Status: <span style="font-weight: 700; color: ${statusBadgeColor};">${item.Status || 'Menunggu'}</span></p>
+                        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 5px;">Kategori: <strong style="color: var(--primary);">${kategoriVal}</strong></p>
                         <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">Tanggal: ${formatDate(item.Tanggal)}</p>
                         
                         <div class="chat-container">
@@ -528,24 +544,26 @@
     });
 
     async function loadAdminData() {
-        adminTableBody.innerHTML = `<tr><td colspan="5" style="text-align: center;">Memuat data...</td></tr>`;
+        adminTableBody.innerHTML = `<tr><td colspan="6" style="text-align: center;">Memuat data...</td></tr>`;
         try {
             const response = await fetch(SHEETDB_URL);
             const data = await response.json();
 
             if (!data || data.length === 0) {
-                adminTableBody.innerHTML = `<tr><td colspan="5" style="text-align: center;">Belum ada pesan masuk.</td></tr>`;
+                adminTableBody.innerHTML = `<tr><td colspan="6" style="text-align: center;">Belum ada pesan masuk.</td></tr>`;
                 return;
             }
 
             let rows = "";
             data.forEach(item => {
                 let tokenVal = item.Token || item.token || '-';
+                let kategoriVal = item.Kategori || item.kategori || '-';
                 if(tokenVal !== '-') {
                     rows += `
                         <tr>
                             <td><strong>${tokenVal}</strong></td>
                             <td>${item.Nama || item.nama || '-'}<br><small>${item.Email || item.email || ''}</small></td>
+                            <td><span style="background: rgba(45,138,95,0.1); color: var(--primary); padding: 4px 8px; border-radius: 6px; font-weight: 600;">${kategoriVal}</span></td>
                             <td>${item.Pesan || item.pesan || '-'}</td>
                             <td>${item.Status || item.status || 'Menunggu'}</td>
                             <td>
@@ -555,10 +573,10 @@
                     `;
                 }
             });
-            adminTableBody.innerHTML = rows || `<tr><td colspan="5" style="text-align: center;">Belum ada pesan dengan token valid.</td></tr>`;
+            adminTableBody.innerHTML = rows || `<tr><td colspan="6" style="text-align: center;">Belum ada pesan dengan token valid.</td></tr>`;
         } catch (err) {
             console.error("Gagal load:", err);
-            adminTableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: red;">Gagal memuat data.</td></tr>`;
+            adminTableBody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: red;">Gagal memuat data.</td></tr>`;
         }
     }
 
